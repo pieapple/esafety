@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-09 11:36+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Zhihong Liu <pieapple03@gmail.com>\n"
+"Language-Team: Zhihong Liu\n"
+"Language: zh-CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: eexam/models.py:9
+msgid "Question Tag"
+msgstr "题库标签"
+
+#: eexam/models.py:10
+msgid "Question Tags"
+msgstr "题库标签"
+
+#: eexam/models.py:22 eexam/models.py:23
+msgid "Choice Question"
+msgstr "选择题"
+
+#: eexam/models.py:34
+msgid "Choice"
+msgstr "选项"
+
+#: eexam/models.py:35
+msgid "Choices"
+msgstr "选项"
+
+#: eexam/models.py:50
+msgid "Exam"
+msgstr "考试"
+
+#: eexam/models.py:51
+msgid "Exams"
+msgstr "考试"
+
+#: eexam/models.py:65
+msgid "Exam Score"
+msgstr "考试成绩"
+
+#: eexam/models.py:66
+msgid "Exam Scores"
+msgstr "考试成绩"
+
+#: eexam/models.py:78
+msgid "Exam Score Detail"
+msgstr "考试成绩明细"
+
+#: eexam/models.py:79
+msgid "Exam Score Details"
+msgstr "考试成绩明细"
+
+#: etraining/models.py:19
+msgid "Training Document"
+msgstr "培训文档"
+
+#: etraining/models.py:20
+msgid "Training Documents"
+msgstr "培训文档"
+
+#: etraining/models.py:34
+msgid "Training"
+msgstr "培训"
+
+#: etraining/models.py:35
+msgid "Trainings"
+msgstr "培训"
+
+#: etraining/models.py:49
+msgid "Training Record"
+msgstr "培训记录"
+
+#: etraining/models.py:50
+msgid "Training Records"
+msgstr "培训记录"
+
+#: templates/base_esafety.html:35 templates/eexam/available_exams.html:6
+msgid "Available Exams"
+msgstr "可参加的考试"
+
+#: templates/base_esafety.html:36 templates/eexam/passed_exams.html:6
+msgid "Passed Exams"
+msgstr "已结束的考试"
+
+#: templates/base_esafety.html:39
+#: templates/etraining/available_trainings.html:6
+msgid "Available Trainings"
+msgstr "可参加的培训"
+
+#: templates/base_esafety.html:40 templates/etraining/passed_trainings.html:6
+msgid "Passed Trainings"
+msgstr "已结束的培训"
+
+#: templates/base_esafety.html:49
+msgid "Login"
+msgstr "登录"
+
+#: templates/index.html:6
+msgid "Hello World"
+msgstr "你好，世界"
+
+#: templates/admin/app_index.html:8 templates/admin/base_site.html:33
+#: templates/admin/change_form.html:19 templates/admin/change_list.html:43
+#: templates/registration/password_change_done.html:7
+#: templates/registration/password_change_form.html:8
+msgid "Home"
+msgstr "首页"
+
+#: templates/admin/app_index.html:11 templates/admin/base_site.html:59
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:16
+msgid "eSafety System Administration"
+msgstr "企业安全生产管理系统"
+
+#: templates/admin/base_site.html:21
+msgid "Welcome,"
+msgstr "欢迎，"
+
+#: templates/admin/base_site.html:24
+#: templates/registration/password_change_form.html:5
+#msgid "Change password"
+#msgstr "修改密码"
+
+#: templates/admin/base_site.html:25
+#: templates/registration/password_change_form.html:5
+#msgid "Log out"
+#msgstr "注销"
+
+#: templates/admin/base_site.html:66 templates/admin/change_form.html:22
+#msgid "Add"
+#msgstr "添加"
+
+#: templates/admin/base_site.html:69
+#msgid "Change"
+#msgstr "修改"
+
+#: templates/admin/base_site.html:105
+msgid "Copy Right "
+msgstr "版权所有"
+
+#: templates/admin/change_form.html:35 templates/admin/change_list.html:56
+#: templates/registration/password_change_form.html:22
+#msgid "Please correct the error below."
+#msgid_plural "Please correct the errors below."
+#msgstr[0] ""
+#msgstr[1] ""
+
+#: templates/admin/change_list.html:67
+#msgid "Filter"
+#msgstr ""
+
+#: templates/admin/login.html:25
+#msgid "Username:"
+#msgstr ""
+
+#: templates/admin/login.html:28
+#msgid "Password:"
+#msgstr ""
+
+#: templates/eexam/available_exams.html:10
+#: templates/eexam/passed_exams.html:10
+#: templates/etraining/available_trainings.html:10
+#: templates/etraining/passed_trainings.html:10
+msgid "Name"
+msgstr "姓名"
+
+#: templates/eexam/available_exams.html:18 templates/eexam/take_exam.html:6
+msgid "Take Exam"
+msgstr "参加考试"
+
+#: templates/eexam/passed_exam_detail.html:6
+msgid "Exam Details"
+msgstr "考试明细"
+
+#: templates/eexam/passed_exam_detail.html:9
+msgid "Question is:"
+msgstr "题目是："
+
+#: templates/eexam/passed_exam_detail.html:10
+msgid "Correct Answer is:"
+msgstr "正确答案是："
+
+#: templates/eexam/passed_exams.html:19
+msgid "View Exam Score Details"
+msgstr "查看考试成绩明细"
+
+#: templates/etraining/available_trainings.html:18
+#: templates/etraining/take_training.html:6
+msgid "Take Training"
+msgstr "参加培训"
+
+#: templates/etraining/take_training.html:10
+msgid "Listen to Audio"
+msgstr "听录音"
+
+#: templates/registration/login.html:37
+msgid "版本信息"
+msgstr ""
+
+#: templates/registration/login.html:38
+msgid "Esafety Information System"
+msgstr "企业安全生产信息系统"
+
+msgid "Auth"
+msgstr "用户权限管理"
+
+msgid "Eexam"
+msgstr "考试管理"
+
+msgid "Etraining"
+msgstr "培训管理"
+
+#: templates/registration/login.html:43
+#msgid "Your username and password didn't match. Please try again."
+#msgstr "你的用户名和密码不匹配"
+
+#: templates/registration/password_change_done.html:8
+#: templates/registration/password_change_form.html:9
+#: templates/registration/password_change_form.html:13
+#: templates/registration/password_change_form.html:14
+#msgid "Password change"
+#msgstr ""
+
+#: templates/registration/password_change_done.html:12
+#: templates/registration/password_change_done.html:14
+#msgid "Password change successful"
+#msgstr ""
+
+#: templates/registration/password_change_done.html:18
+#msgid "Your password was changed."
+#msgstr ""
+
+#: templates/registration/password_change_form.html:5
+#msgid "Documentation"
+#msgstr ""
+
+#: templates/registration/password_change_form.html:26
+#msgid ""
+#"Please enter your old password, for security's sake, and then enter your new "
+#"password twice so we can verify you typed it in correctly."
+#msgstr ""
+
+#: templates/registration/password_change_form.html:32
+#msgid "Old password"
+#msgstr ""
+
+#: templates/registration/password_change_form.html:37
+#msgid "New password"
+#msgstr ""
+
+#: templates/registration/password_change_form.html:42
+#msgid "Password (again)"
+#msgstr ""
+
+#: templates/registration/password_change_form.html:48
+#msgid "Change my password"
+#msgstr ""

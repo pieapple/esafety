@@ -1,0 +1,443 @@
+# Copyright (C) 2012-2013
+# This file is distributed under the same license as the package.
+# zhihong liu <pieapple03@gmail.com>, 2012.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-13 22:56+0800\n"
+"PO-Revision-Date: 2012-06-13 22:31+0800\n"
+"Last-Translator: Zhihong Liu <pieapple03@gmail.com>\n"
+"Language-Team: Zhihong Liu\n"
+"Language: zh-CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: eexam/models.py:6 eexam/models.py:9 eexam/models.py:17 eexam/models.py:51
+msgid "Question Tag"
+msgstr "题库标签"
+
+#: eexam/models.py:10
+msgid "Question Tags"
+msgstr "题库标签"
+
+#: eexam/models.py:16
+msgid "Question Body"
+msgstr "题目内容"
+
+#: eexam/models.py:20 eexam/models.py:38
+msgid "Choice Question"
+msgstr "选择题"
+
+#: eexam/models.py:21 eexam/models.py:52
+msgid "Choice Questions"
+msgstr "选择题"
+
+#: eexam/models.py:32 eexam/models.py:81
+msgid "Correct Answer"
+msgstr "正确答案是"
+
+#: eexam/models.py:39 eexam/models.py:43
+msgid "Choice"
+msgstr "选项"
+
+#: eexam/models.py:40
+msgid "Is Answer?"
+msgstr "是答案么？"
+
+#: eexam/models.py:44
+msgid "Choices"
+msgstr "选项"
+
+#: eexam/models.py:50 eexam/models.py:94
+#: templates/eexam/available_exams.html:17
+#: templates/eexam/passed_exams.html:17
+msgid "Exam Name"
+msgstr "考试成绩"
+
+#: eexam/models.py:53
+msgid "Exam Attendees"
+msgstr "考试参加者"
+
+#: eexam/models.py:54 templates/eexam/available_exams.html:18
+#: templates/eexam/passed_exams.html:18
+msgid "Exam Expire At"
+msgstr "考试有效期"
+
+#: eexam/models.py:55
+msgid "Exam Duration(minutes)"
+msgstr "考试时间长度（分钟）"
+
+#: eexam/models.py:58 eexam/models.py:66
+msgid "Exam"
+msgstr "考试"
+
+#: eexam/models.py:59
+msgid "Exams"
+msgstr "考试"
+
+#: eexam/models.py:65 eexam/models.py:90
+msgid "Exam Attendee"
+msgstr "考试参加者"
+
+#: eexam/models.py:67 templates/eexam/passed_exam_detail.html:20
+#: templates/eexam/passed_exams.html:21
+msgid "Exam Start Time"
+msgstr "考试开始时间"
+
+#: eexam/models.py:68 templates/eexam/passed_exam_detail.html:24
+#: templates/eexam/passed_exams.html:22
+msgid "Exam End Time"
+msgstr "考试结束时间"
+
+#: eexam/models.py:69
+msgid "Exam Completed?"
+msgstr "考试是否结束？"
+
+#: eexam/models.py:70 eexam/models.py:72 eexam/models.py:79
+#: templates/eexam/passed_exam_detail.html:16
+#: templates/eexam/passed_exams.html:20
+msgid "Exam Score"
+msgstr "考试成绩"
+
+#: eexam/models.py:73
+msgid "Exam Scores"
+msgstr "考试成绩"
+
+#: eexam/models.py:76
+#, python-format
+msgid "%(attendee)s scored %(score)s in %(exam)s"
+msgstr "%(attendee)s在%(exam)s中考了%(score)s分"
+
+#: eexam/models.py:80
+msgid "Exam Question"
+msgstr "选择题"
+
+#: eexam/models.py:82
+msgid "Answer Provided"
+msgstr "您的答案是"
+
+#: eexam/models.py:85
+msgid "Exam Score Detail"
+msgstr "考试成绩明细"
+
+#: eexam/models.py:86
+msgid "Exam Score Details"
+msgstr "考试成绩明细"
+
+#: etraining/models.py:15
+msgid "Training Doc Name"
+msgstr "培训文档标题"
+
+#: etraining/models.py:16
+msgid "Training Doc Content"
+msgstr "培训文档内容"
+
+#: etraining/models.py:17
+msgid "Training Doc Audio File"
+msgstr "培训文档语音文件"
+
+#: etraining/models.py:20
+msgid "Training Document"
+msgstr "培训文档"
+
+#: etraining/models.py:21 etraining/models.py:28
+msgid "Training Documents"
+msgstr "培训文档"
+
+#: etraining/models.py:27 templates/etraining/available_trainings.html:17
+#: templates/etraining/passed_trainings.html:17
+msgid "Training Name"
+msgstr "培训名称"
+
+#: etraining/models.py:29 templates/etraining/available_trainings.html:18
+#: templates/etraining/passed_trainings.html:18
+msgid "Training Expire At"
+msgstr "培训有效期"
+
+#: etraining/models.py:30
+msgid "Training Attendees"
+msgstr "培训参加人员"
+
+#: etraining/models.py:33 etraining/models.py:41
+msgid "Training"
+msgstr "培训"
+
+#: etraining/models.py:34
+msgid "Trainings"
+msgstr "培训"
+
+#: etraining/models.py:40
+msgid "Training Attendee"
+msgstr "培训参加人员"
+
+#: etraining/models.py:42 templates/etraining/passed_trainings.html:20
+msgid "Training Start Time"
+msgstr "培训开始时间"
+
+#: etraining/models.py:43 templates/etraining/passed_trainings.html:21
+msgid "Training End Time"
+msgstr "培训结束时间"
+
+#: etraining/models.py:44
+msgid "Training Completed?"
+msgstr "培训是否结束？"
+
+#: etraining/models.py:47
+msgid "Training Record"
+msgstr "培训记录"
+
+#: etraining/models.py:48
+msgid "Training Records"
+msgstr "培训记录"
+
+#: etraining/models.py:51
+#, python-format
+msgid "%(attendee)s completed %(training)s"
+msgstr "%(attendee)s参加了%(training)s"
+
+#: templates/base_esafety.html:13 templates/admin/base_site.html:25
+#: templates/registration/password_change_form.html:5
+msgid "Log out"
+msgstr "注销"
+
+#: templates/base_esafety.html:21 templates/eexam/available_exams.html:7
+#: templates/eexam/passed_exam_detail.html:7
+#: templates/eexam/passed_exams.html:7 templates/eexam/take_exam.html:7
+#: templates/etraining/available_trainings.html:7
+#: templates/etraining/passed_trainings.html:7
+#: templates/etraining/take_training.html:7
+msgid "Your Position: "
+msgstr "你的位置："
+
+#: templates/base_esafety.html:21 templates/admin/app_index.html:8
+#: templates/admin/base_site.html:36 templates/admin/change_form.html:19
+#: templates/admin/change_list.html:43 templates/eexam/available_exams.html:7
+#: templates/eexam/passed_exam_detail.html:7
+#: templates/eexam/passed_exams.html:7 templates/eexam/take_exam.html:7
+#: templates/etraining/available_trainings.html:7
+#: templates/etraining/passed_trainings.html:7
+#: templates/etraining/take_training.html:7
+#: templates/registration/password_change_done.html:7
+#: templates/registration/password_change_form.html:8
+msgid "Home"
+msgstr "首页"
+
+#: templates/base_esafety.html:35 templates/eexam/available_exams.html:7
+#: templates/eexam/available_exams.html:13
+msgid "Available Exams"
+msgstr "可参加的考试"
+
+#: templates/base_esafety.html:36 templates/eexam/passed_exams.html:7
+#: templates/eexam/passed_exams.html:13
+msgid "Passed Exams"
+msgstr "已结束的考试"
+
+#: templates/base_esafety.html:39
+#: templates/etraining/available_trainings.html:7
+#: templates/etraining/available_trainings.html:13
+msgid "Available Trainings"
+msgstr "可参加的培训"
+
+#: templates/base_esafety.html:40 templates/etraining/passed_trainings.html:7
+#: templates/etraining/passed_trainings.html:13
+msgid "Passed Trainings"
+msgstr "已结束的培训"
+
+#: templates/base_esafety.html:70 templates/admin/base_site.html:108
+#: templates/registration/login.html:37
+msgid "Copy Right"
+msgstr "版权所有"
+
+#: templates/index.html:6 templates/admin/index.html:5
+msgid "Hello"
+msgstr "你好"
+
+#: templates/index.html:6 templates/admin/index.html:5
+msgid "Welcome to visit our system."
+msgstr "欢迎访问我们的系统。"
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:15
+msgid "eSafety System Administration"
+msgstr "企业安全生产管理系统"
+
+#: templates/admin/base_site.html:21
+msgid "Welcome,"
+msgstr "欢迎，"
+
+#: templates/admin/base_site.html:24
+#: templates/registration/password_change_form.html:5
+msgid "Change password"
+msgstr "修改密码"
+
+#: templates/admin/base_site.html:70 templates/admin/change_form.html:22
+msgid "Add"
+msgstr "增加"
+
+#: templates/admin/base_site.html:73
+msgid "Change"
+msgstr "修改"
+
+#: templates/admin/change_form.html:35 templates/admin/change_list.html:56
+#: templates/admin/etraining/trainingdoc/add_form.html:23
+#: templates/registration/password_change_form.html:22
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "请修正下面的错误。"
+
+#: templates/admin/change_list.html:67
+msgid "Filter"
+msgstr "过滤器"
+
+#: templates/admin/login.html:25
+msgid "Username:"
+msgstr "用户名："
+
+#: templates/admin/login.html:28
+msgid "Password:"
+msgstr "密码："
+
+#: templates/admin/etraining/trainingdoc/add_form.html:11
+msgid "History"
+msgstr "历史"
+
+#: templates/admin/etraining/trainingdoc/add_form.html:12
+msgid "View on site"
+msgstr "在站点上查看"
+
+#: templates/eexam/available_exams.html:25 templates/eexam/take_exam.html:7
+msgid "Take Exam"
+msgstr "参加考试"
+
+#: templates/eexam/available_exams.html:30
+#: templates/eexam/passed_exams.html:45
+msgid "No Exam is avaliable."
+msgstr "没有符合条件的考试。"
+
+#: templates/eexam/passed_exam_detail.html:7
+#: templates/eexam/passed_exam_detail.html:13
+msgid "Exam Details"
+msgstr "考试明细"
+
+#: templates/eexam/passed_exam_detail.html:30
+msgid "Question is:"
+msgstr "题目是："
+
+#: templates/eexam/passed_exam_detail.html:32
+msgid "Your Anwer is Correct:"
+msgstr "你的答案是正确的："
+
+#: templates/eexam/passed_exam_detail.html:34
+msgid "Correct Answer is:"
+msgstr "正确答案是："
+
+#: templates/eexam/passed_exam_detail.html:35
+msgid "Your Answer is:"
+msgstr "你的答案是："
+
+#: templates/eexam/passed_exams.html:19
+msgid "Have Taken Exam?"
+msgstr "已参加考试否？"
+
+#: templates/eexam/passed_exams.html:30
+#: templates/etraining/passed_trainings.html:28
+msgid "Yes"
+msgstr "是"
+
+#: templates/eexam/passed_exams.html:35
+#: templates/etraining/passed_trainings.html:32
+msgid "No"
+msgstr "否"
+
+#: templates/eexam/passed_exams.html:40
+msgid "View Exam Score Details"
+msgstr "查看考试成绩明细"
+
+#: templates/eexam/take_exam.html:29
+msgid "submit exam"
+msgstr "交卷"
+
+#: templates/etraining/available_trainings.html:25
+#: templates/etraining/take_training.html:7
+msgid "Take Training"
+msgstr "参加培训"
+
+#: templates/etraining/available_trainings.html:30
+#: templates/etraining/passed_trainings.html:40
+msgid "No Training is avaliable."
+msgstr "没有符合条件的培训。"
+
+#: templates/etraining/passed_trainings.html:19
+msgid "Have Taken Training?"
+msgstr "已参加培训否？"
+
+#: templates/etraining/take_training.html:16
+msgid "Listen to Audio"
+msgstr "听录音"
+
+#: templates/registration/login.html:28
+msgid "Log in"
+msgstr "登录"
+
+#: templates/registration/login.html:38
+msgid "Esafety Information System"
+msgstr "企业安全生产信息系统"
+
+#: templates/registration/login.html:43
+msgid "Your username and password didn't match. Please try again."
+msgstr "你的用户名和密码不匹配。请重新输入。"
+
+#: templates/registration/password_change_done.html:8
+#: templates/registration/password_change_form.html:9
+#: templates/registration/password_change_form.html:13
+#: templates/registration/password_change_form.html:14
+msgid "Password change"
+msgstr "修改密码"
+
+#: templates/registration/password_change_done.html:12
+#: templates/registration/password_change_done.html:14
+msgid "Password change successful"
+msgstr "你的密码修改成功"
+
+#: templates/registration/password_change_done.html:18
+msgid "Your password was changed."
+msgstr "你的密码已修改成功。"
+
+#: templates/registration/password_change_form.html:5
+msgid "Documentation"
+msgstr "文档"
+
+#: templates/registration/password_change_form.html:26
+# msgid ""
+# "Please enter your old password, for security's sake, and then enter your new "
+# "password twice so we can verify you typed it in correctly."
+# msgstr ""
+
+#: templates/registration/password_change_form.html:32
+msgid "Old password"
+msgstr "旧密码"
+
+#: templates/registration/password_change_form.html:37
+msgid "New password"
+msgstr "新密码"
+
+#: templates/registration/password_change_form.html:42
+msgid "Password (again)"
+msgstr "密码（再次输入）"
+
+#: templates/registration/password_change_form.html:48
+msgid "Change my password"
+msgstr "修改我的密码"
+
+msgid "Auth"
+msgstr "用户权限管理"
+
+msgid "Eexam"
+msgstr "考试管理"
+
+msgid "Etraining"
+msgstr "培训管理"

@@ -270,3 +270,6 @@ msgstr "培训管理"
 #: templates/registration/password_change_form.html:48
 #msgid "Change my password"
 #msgstr ""
+
+msgid "Search Person"
+msgstr "人员查询"

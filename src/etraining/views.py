@@ -5,10 +5,8 @@ from django.template import RequestContext
 import datetime
 from django.utils.timezone import utc
 
-@login_required
-def available_trainings(request):
-    now = datetime.datetime.utcnow().replace(tzinfo=utc)
-    return render_to_response("etraining/available_trainings.html",
+def search_person(request):
+    return render_to_response("etraining/search_person.html",
             {},
             context_instance=RequestContext(request))
 # Create your views here.

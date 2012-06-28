@@ -441,3 +441,6 @@ msgstr "考试管理"
 
 msgid "Etraining"
 msgstr "培训管理"
+
+msgid "Search Person"
+msgstr "人员查询"

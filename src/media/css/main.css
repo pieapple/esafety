@@ -33,7 +33,7 @@ header .tools .logout .logouttext {
 }
 
 header .top-nav {
-  background-image: url("main_10.gif");
+  background-image: url("../img/main_10.gif");
   background-repeat: repeat-x;
   height: 20px;
   padding-top: 5px;

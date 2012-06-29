@@ -24,355 +24,355 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `esafety` /*!40100 DEFAULT CHARACTER SE
 USE `esafety`;
 
 --
--- Table structure for table `choice`
+-- Table structure for table `etraining_choice`
 --
 
-DROP TABLE IF EXISTS `choice`;
+DROP TABLE IF EXISTS `etraining_choice`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `choice` (
+CREATE TABLE `etraining_choice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` text NOT NULL,
-  `is_answer` tinyint(4) DEFAULT '0',
-  `question` int(11) DEFAULT NULL,
+  `text` longtext NOT NULL,
+  `is_answer` tinyint(1) NOT NULL,
+  `question_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `question` (`question`),
-  CONSTRAINT `question` FOREIGN KEY (`question`) REFERENCES `question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `etraining_choice_1f92e550` (`question_id`),
+  CONSTRAINT `question_id_refs_id_8f115b4` FOREIGN KEY (`question_id`) REFERENCES `etraining_question` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=557 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `choice`
+-- Dumping data for table `etraining_choice`
 --
 
-LOCK TABLES `choice` WRITE;
-/*!40000 ALTER TABLE `choice` DISABLE KEYS */;
-INSERT INTO `choice` VALUES (1,'鸣喇叭警告',0,1),(2,'加速通过',0,1),(3,'主动减速让行',1,1),(4,'临近时突然加速',0,1),(9,'正确',0,2),(10,'错误',1,2),(13,'漏雨',0,4),(14,'漏电',0,4),(15,'漏油',1,4),(16,'漏光',0,4),(17,'作为正常轮胎长期使用',1,5),(18,'发生爆胎时临时使用',0,5),(19,'在轮胎漏气临时使用',0,5),(20,'不能作为正常轮胎使用',0,5),(21,'正确',0,6),(22,'错误',1,6),(23,'正确',0,7),(24,'错误',1,7),(25,'允许改变损伤时瞬间的位置',0,8),(26,'应避免活动',1,8),(27,'尽量自行复位',0,8),(28,'可适当调整损伤时的姿势',0,8),(31,'采取紧急制动',0,10),(32,'迅速向逆风向转动转向盘',0,10),(33,'迅速向顺风方向转动转向盘',0,10),(34,'双手稳握转向盘,适当减速',1,10),(35,'正确',1,11),(36,'错误',0,11),(37,'正确',1,12),(38,'错误',0,12),(39,'立即减速停车',0,13),(40,'关闭点火开关',0,13),(41,'将变速器操纵杆置于空挡行驶',0,13),(42,'开启右转向灯,将车缓慢滑行到路边停车检查',1,13),(43,'正确',1,14),(44,'错误',0,14),(45,'正确',0,15),(46,'错误',1,15),(47,'正确',1,16),(48,'错误',0,16),(49,'应开启右转向灯',0,17),(50,'应开启危险报警闪光灯',0,17),(51,'应开启左转向灯',0,17),(52,'不用开启转向灯',1,17),(53,'迅速减速或紧急制动',0,18),(54,'让出适当空间加速行驶',0,18),(55,'主动减速并示意后车超越',1,18),(56,'靠道路右侧加速行驶',0,18),(57,'特别注意减速慢行',1,19),(58,'迅速加速通过',0,19),(59,'保持正常车速通过',0,19),(60,'低档加速通过',0,19),(61,'正确',0,20),(62,'错误',1,20),(63,'不踏制动踏板',0,21),(64,'踏下加速踏板',0,21),(65,'踏下制动踏板',1,21),(66,'放松驻车制动',0,21),(85,'右转弯',1,27),(86,'左转弯',0,27),(87,'T形路口的转弯',0,27),(88,'各方行驶',0,27),(89,'正确',1,28),(90,'错误',0,28),(91,'单位证明',0,29),(92,'居委会证明',0,29),(93,'机动车驾驶人的身份证明',1,29),(94,'车辆证明',0,29),(95,'正确',1,30),(96,'错误',0,30),(97,'可在匝道、加速车道、减速车道上超车',0,31),(98,'不准倒车、逆行、穿越中央分隔带掉头',1,31),(99,'非紧急情况时可在应急车道行驶',0,31),(100,'可以试车或学习驾驶',0,31),(101,'正确',0,32),(102,'错误',1,32),(103,'3个月',0,33),(104,'6个月',0,33),(105,'12个月',1,33),(106,'24个月',0,33),(107,'1年',0,34),(108,'2年',0,34),(109,'5年',1,34),(110,'10年',0,34),(111,'停车让行',1,35),(112,'绕行通过',0,35),(113,'持续鸣喇叭通过',0,35),(114,'提前加速通过',0,35),(115,'正确',1,36),(116,'错误',0,36),(117,'正确',1,37),(118,'错误',0,37),(119,'正确',0,38),(120,'错误',1,38),(121,'200元',0,39),(122,'500元',0,39),(123,'1000元',0,39),(124,'2000元',1,39),(125,'6个月',1,40),(126,'1年',0,40),(127,'2年',0,40),(128,'3年',0,40),(133,'正确',1,42),(134,'错误',0,42),(135,'正确',0,43),(136,'错误',1,43),(137,'交通部门',0,44),(138,'公安部门',0,44),(139,'运输部门',0,44),(140,'铁路部门',1,44),(141,'4米',1,45),(142,'4.2米',0,45),(143,'5米',0,45),(144,'5.5米',0,45),(145,'200元',0,46),(146,'500元',0,46),(147,'1000元',0,46),(148,'2000元',1,46),(149,'正确',0,47),(150,'错误',1,47),(151,'正确',1,48),(152,'错误',0,48),(153,'运算器、控制器、存储器、输入设备和输出设备',0,49),(154,'主机和外部设备',0,49),(155,'硬件系统和软件系统',1,49),(156,'主机箱、显示器、键盘、鼠标、打印机',0,49),(157,'Windows xp',0,50),(158,'unix',0,50),(159,'linux',0,50),(160,'microsoft office',1,50),(161,'8个',0,51),(162,'16个',0,51),(163,'128个',0,51),(164,'256个',1,51),(165,'磁盘',0,52),(166,'硬盘',0,52),(167,'内存',1,52),(168,'外存',0,52),(169,'显示器',1,53),(170,'键盘',0,53),(171,'鼠标',0,53),(172,'手字板',0,53),(173,'102',0,54),(174,'210',1,54),(175,'103',0,54),(176,'28',0,54),(177,'只读存储器',0,55),(178,'高速缓存器',0,55),(179,'随机存储器',1,55),(180,'软盘存储器',0,55),(181,'运算器和控制器',1,56),(182,'控制器和寄存器',0,56),(183,'运算器和内存',0,56),(184,'控制器和内存',0,56),(185,'每秒传输的字节数',0,57),(186,'每秒传输的指令数',0,57),(187,'每秒传输的字数',0,57),(188,'每秒传输的位数',1,57),(189,'RAM',1,58),(190,'ROM',0,58),(191,'CMOS',0,58),(192,'Cache',0,58),(193,'1011',0,59),(194,'1100',0,59),(195,'10111',0,59),(196,'11011',1,59),(197,'树形结构 ',1,60),(198,'线形结构 ',0,60),(199,'层次结构 ',0,60),(200,'网状结构',0,60),(201,'桌面上',0,61),(202,'“我的文档”中',0,61),(203,'内存中 ',0,61),(204,'被删除的位置',1,61),(205,'有下级子菜单',1,62),(206,'单击鼠标可直接执行',0,62),(207,'双击鼠标可直接执行',0,62),(208,'右击鼠标可直接执行',0,62),(209,'控制总线',0,63),(210,'地址总线',0,63),(211,'传输总线',1,63),(212,'数据总线',0,63),(213,'数据层',0,64),(214,'逻辑层',0,64),(215,'用户层',0,64),(216,'应用层',1,64),(217,'外码',1,65),(218,'内码',0,65),(219,'ASCII码',0,65),(220,'标准码',0,65),(221,'一个窗口',0,66),(222,'一个文件夹 ',0,66),(223,'一块内存区间',1,66),(224,'一块磁盘区间',0,66),(225,'最小化',0,67),(226,'最大化',0,67),(227,'移动',0,67),(228,'旋转',1,67),(229,'UPS',0,68),(230,'USP',0,68),(231,'UBS',0,68),(232,'USB',1,68),(233,'黑体、3号 ',0,69),(234,'楷体、4号',0,69),(235,'宋体、5号',1,69),(236,'仿宋、6号',0,69),(237,'保存',0,70),(238,'另存为',1,70),(239,'新建',0,70),(240,'关闭',0,70),(241,'3∶4',0,71),(242,'4∶3',0,71),(243,'D3',1,71),(244,'C4',0,71),(245,'普通视图',0,72),(246,'页面视图',1,72),(247,'大纲视图',0,72),(248,'Web视图',0,72),(249,'2',0,73),(250,'3',1,73),(251,'4',0,73),(252,'5',0,73),(253,'单元格显示宽度不够',1,74),(254,'计算数据出错',0,74),(255,'计算机公式出错',0,74),(256,'数据格式出错',0,74),(257,'Enter',0,75),(258,'Ctrl+Enter',0,75),(259,'Alt+Enter',1,75),(260,'Shift+Enter',0,75),(261,'.pwp',0,76),(262,'.ppt',1,76),(263,'.ppn',0,76),(264,'.pop',0,76),(265,'逻辑结构',1,77),(266,'选择结构',0,77),(267,'循环结构',0,77),(268,'顺序结构',0,77),(269,'汇编',0,78),(270,'编译',1,78),(271,'解释',0,78),(272,'连接',0,78),(273,'机器',1,79),(274,'汇编',0,79),(275,'高级',0,79),(276,'网络',0,79),(277,'层次结构',0,80),(278,'树形结构',0,80),(279,'网状结构',0,80),(280,'二维表格',1,80),(281,'环型',0,81),(282,'总线型',1,81),(283,'星型',0,81),(284,'树型',0,81),(285,'8',0,82),(286,'16',0,82),(287,'32',1,82),(288,'64',0,82),(289,'协议',1,83),(290,'主机',0,83),(291,'地址',0,83),(292,'资源',0,83),(293,'TCP/IP',0,84),(294,'IPX/SPX',0,84),(295,'POP3/SMTP',1,84),(296,'NetBEUI',0,84),(297,'浏览服务模式',1,85),(298,'网络主机',0,85),(299,'网络服务器',0,85),(300,'网络模式',0,85),(301,'.JPG',0,86),(302,'.TIF',0,86),(303,'.BMP',1,86),(304,'.GIF',0,86),(305,'音频文件',0,87),(306,'视频文件',1,87),(307,'图片文件',0,87),(308,'文本文件',0,87),(309,'细菌',0,88),(310,'文本',0,88),(311,'程序',1,88),(312,'微生物',0,88),(313,'女职工委员',1,89),(314,'女职工代表',0,89),(315,'女职工主任',0,89),(316,'信息部门',0,90),(317,'公安部门',1,90),(318,'检察院',0,90),(319,'法院',0,90),(320,'高噪声',0,91),(321,'有害气体',1,91),(322,'高频电磁波',0,91),(323,'制度规定',0,92),(324,'公告栏',1,92),(325,'黑板报',0,92),(326,'口头通知',0,93),(327,'如实告知',1,93),(328,'书面通知',0,93),(329,'通报表彰',0,94),(330,'奖状和奖金',0,94),(331,'表彰奖励',1,94),(332,'预防为主、防治结合',1,95),(333,'安全第一、预防为主',0,95),(334,'预防为主、治理整顿',0,95),(335,'劳动者',1,96),(336,'企业职工',0,96),(337,'公民',0,96),(338,'防护用品',1,97),(339,'劳保用品',0,97),(340,'防毒服装',0,97),(341,'检查督促',0,98),(342,'监督协助',0,98),(343,'监督检查',1,98),(347,'管生产必须管安全',0,100),(348,'安全第一，预防为主',1,100),(349,'保障劳动者的安全与健康',0,100),(350,'900秒',0,101),(351,'600秒',0,101),(352,'300秒',1,101),(353,'1~3',0,102),(354,'5~7',1,102),(355,'15~30',0,102),(356,'形状是等边三角形、顶角向上；标志是黄底、黑边、黑图案  ',1,103),(357,'形状是圆形或顶角向下的等边三角形，标志的是白底、红圈、红杠、黑图案  ',0,103),(358,'圆形、长方形和正方法；标志是蓝底、白图案',0,103),(359,'撤离危险现场',1,104),(360,'停止生产作业',0,104),(361,'保护现场',0,104),(362,'四十',1,105),(363,'四十四',0,105),(364,'四十八',0,105),(365,'岗位津贴',1,106),(366,'工资补贴',0,106),(367,'生活照顾',0,106),(368,'三分之一',1,107),(369,'四分之一',0,107),(370,'二分之一',0,107),(371,'2',0,108),(372,'10',1,108),(373,'30',0,108),(374,'经济责任',0,109),(375,'行政责任',0,109),(376,'刑事责任',1,109),(377,'50',1,110),(378,'100',0,110),(379,'150',0,110),(380,'大专以上',1,111),(381,'中专以上',0,111),(382,'高中以上',0,111),(383,'迅速处理',0,112),(384,'上诉控告',0,112),(385,'及时报告',1,112),(386,'用人单位',1,113),(387,'劳动者',0,113),(388,'劳动者和用人单位共同',0,113),(389,'正三角形边框，颜色为图象是白色，背景是蓝色',0,114),(390,'正方开边框，颜色为图象是绿色，文字是白色，背景是绿色或红色',0,114),(391,'圆形边框，颜色为图象是白色，背景是蓝色',1,114),(392,'80分贝',0,115),(393,'120分贝',1,115),(394,'180分贝',0,115),(395,'生产车间',0,116),(396,'生产班组',1,116),(397,'作业岗位',0,116),(398,'在班前、班中、班后进行安全检查',1,117),(399,'在早、中、晚进行巡回检查',0,117),(400,'每天进行三次安全检查。',0,117),(401,'烯、炔',0,118),(402,'苯、酚',1,118),(403,'醚、醇',0,118),(404,'拒绝执行',1,119),(405,'进行抵制',0,119),(406,'要求经济补偿',0,119),(407,'打开电灯，仔细寻找破损地方',0,120),(408,'及时关闭总阀门',1,120),(409,'立即关闭窗户，防止煤气扩散',0,120),(410,'国家教育、学校教育、企业教育',0,121),(411,'入厂教育、车间教育、岗位或班组教育',1,121),(412,'车间主任教育、班级教育',0,121),(413,'用打火机去试',0,122),(414,'用鼻子去闻',0,122),(415,'用肥皂水刷到接口处检查',1,122),(416,'11月9日',1,123),(417,'1月19日',0,123),(418,'12月9日',0,123),(419,'违反劳动纪律、违反企业制度',0,124),(420,'违章指挥、违章作业',1,124),(421,'违反作业规程、违反企业纪律',0,124),(422,'每年的3月最后个星期一',1,125),(423,'每年的2月第一个星期一',0,125),(424,'每年的9月第一个星期一',0,125),(425,'监督检查员',1,126),(426,'监督委员',0,126),(427,'群众监督员',0,126),(428,'八项',1,127),(429,'十项',0,127),(430,'十二项',0,127),(431,'正确',0,128),(432,'不正确',1,128),(433,'1919',0,129),(434,'1920',0,129),(435,'1921',1,129),(436,'8',1,130),(437,'9',0,130),(438,'10',0,130),(439,'江西',0,131),(440,'湖南',1,131),(441,'广东',0,131),(442,'农村包围城市',0,132),(443,'武装夺取政权',0,132),(444,'农村包围城市，武装夺取政权',1,132),(445,'九一八事变',0,133),(446,'华北事变',0,133),(447,'七七事变',1,133),(448,'遵义会议',0,134),(449,'瓦窑堡会议',0,134),(450,'洛川会议',1,134),(451,'党的七大',1,135),(452,'党的八大',0,135),(453,'党的十五大',0,135),(454,'实事求是、独立民主、群众路线',0,136),(455,'统一战线、武装斗争、党的建设',1,136),(456,'解放思想、实事求是、与时俱进',0,136),(457,'北京',0,137),(458,'延安',1,137),(459,'西柏坡',0,137),(460,'没收官僚资本，进行土地改革',0,138),(461,'恢复国民经济',1,138),(462,'进行社会主义改造',0,138),(463,'辛亥革命',0,139),(464,'五四运动',1,139),(465,'中国共产党的成立',0,139),(466,'革命纲领不同',0,140),(467,'革命路线不同',0,140),(468,'革命领导权不同',1,140),(469,'瑞金',1,141),(470,'兴国',0,141),(471,'于都',0,141),(472,'没收地主阶级的土地和富农多余的土地',0,142),(473,'没收一切土地',0,142),(474,'减租减息',1,142),(475,'实事求是',1,143),(476,'独立自主',0,143),(477,'争取外援',0,143),(478,'党的七大',0,144),(479,'党的的七届二中全会',1,144),(480,'新的政治协商会议',0,144),(481,'1951年',0,145),(482,'1952年',0,145),(483,'1953年',1,145),(484,'全国人民代表大会',1,146),(485,'中国人民政治协商会议',0,146),(486,'国务院',0,146),(487,'1949年',0,147),(488,'1956年',1,147),(489,'1978年',0,147),(490,'1971年10月',1,148),(491,'1972年2月',0,148),(492,'1972年9月',0,148),(493,'党的八大',0,149),(494,'党的的十一届三中全会',1,149),(495,'党的十二大',0,149),(496,'党的十一届三中全会',0,150),(497,'党的十二大',1,150),(498,'党的十三大',0,150),(499,'容国团',0,151),(500,'许海峰',1,151),(501,'李宁',0,151),(502,'邓小平',0,152),(503,'江泽民',0,152),(504,'叶剑英',1,152),(505,'一个中心，两个基本点',1,153),(506,'以经济建设为中心',0,153),(507,'坚持四项基本原则，坚持改革开放',0,153),(508,'450万',1,154),(509,'340万',0,154),(510,'500万',0,154),(511,'《婚姻法》',1,155),(512,'《土地改革法》',0,155),(513,'《宪法》',0,155),(514,'万隆会议',0,156),(515,'日内瓦会议',1,156),(516,'四国外长会议',0,156),(517,'1949年',0,157),(518,'1953年',0,157),(519,'1956年',1,157),(520,'《红旗》',1,158),(521,'《求是》',0,158),(522,'《党建》',0,158),(523,'爱心工程',0,159),(524,'形象工程',0,159),(525,'希望工程',1,159),(526,'农村地区',1,160),(527,'老少边穷地区',0,160),(528,'西部地区',0,160),(529,'实现共产主义',0,161),(530,'建设社会主义',0,161),(531,'解放和发展生产力',1,161),(532,'京广铁路',0,162),(533,'京九铁路',1,162),(534,'兰新铁路',0,162),(535,'个别吸收',1,163),(536,'成批发展',0,163),(537,'突击发展',0,163),(538,'集体领导',0,164),(539,'民主集中制',1,164),(540,'民主制',0,164),(541,'战争与和平',0,165),(542,'战争与革命',0,165),(543,'和平与发展',1,165),(544,'坚持一个中国的原则',1,166),(545,'一中一台',0,166),(546,'把台湾分裂出去',0,166),(547,'2000年江泽民在广东茂名、高州的讲话',0,167),(548,'2001年江泽民“七一讲话”',1,167),(549,'2002年江泽民在党的十六大上的报告',0,167),(550,'1999年7月13日',0,168),(551,'2000年7月13日',0,168),(552,'2001年7月13日',1,168),(553,'前面',0,169),(554,'后面',0,169),(555,'上风侧',0,169),(556,'下风侧',1,169);
-/*!40000 ALTER TABLE `choice` ENABLE KEYS */;
+LOCK TABLES `etraining_choice` WRITE;
+/*!40000 ALTER TABLE `etraining_choice` DISABLE KEYS */;
+INSERT INTO `etraining_choice` VALUES (1,'鸣喇叭警告',0,1),(2,'加速通过',0,1),(3,'主动减速让行',1,1),(4,'临近时突然加速',0,1),(9,'正确',0,2),(10,'错误',1,2),(13,'漏雨',0,4),(14,'漏电',0,4),(15,'漏油',1,4),(16,'漏光',0,4),(17,'作为正常轮胎长期使用',1,5),(18,'发生爆胎时临时使用',0,5),(19,'在轮胎漏气临时使用',0,5),(20,'不能作为正常轮胎使用',0,5),(21,'正确',0,6),(22,'错误',1,6),(23,'正确',0,7),(24,'错误',1,7),(25,'允许改变损伤时瞬间的位置',0,8),(26,'应避免活动',1,8),(27,'尽量自行复位',0,8),(28,'可适当调整损伤时的姿势',0,8),(31,'采取紧急制动',0,10),(32,'迅速向逆风向转动转向盘',0,10),(33,'迅速向顺风方向转动转向盘',0,10),(34,'双手稳握转向盘,适当减速',1,10),(35,'正确',1,11),(36,'错误',0,11),(37,'正确',1,12),(38,'错误',0,12),(39,'立即减速停车',0,13),(40,'关闭点火开关',0,13),(41,'将变速器操纵杆置于空挡行驶',0,13),(42,'开启右转向灯,将车缓慢滑行到路边停车检查',1,13),(43,'正确',1,14),(44,'错误',0,14),(45,'正确',0,15),(46,'错误',1,15),(47,'正确',1,16),(48,'错误',0,16),(49,'应开启右转向灯',0,17),(50,'应开启危险报警闪光灯',0,17),(51,'应开启左转向灯',0,17),(52,'不用开启转向灯',1,17),(53,'迅速减速或紧急制动',0,18),(54,'让出适当空间加速行驶',0,18),(55,'主动减速并示意后车超越',1,18),(56,'靠道路右侧加速行驶',0,18),(57,'特别注意减速慢行',1,19),(58,'迅速加速通过',0,19),(59,'保持正常车速通过',0,19),(60,'低档加速通过',0,19),(61,'正确',0,20),(62,'错误',1,20),(63,'不踏制动踏板',0,21),(64,'踏下加速踏板',0,21),(65,'踏下制动踏板',1,21),(66,'放松驻车制动',0,21),(85,'右转弯',1,27),(86,'左转弯',0,27),(87,'T形路口的转弯',0,27),(88,'各方行驶',0,27),(89,'正确',1,28),(90,'错误',0,28),(91,'单位证明',0,29),(92,'居委会证明',0,29),(93,'机动车驾驶人的身份证明',1,29),(94,'车辆证明',0,29),(95,'正确',1,30),(96,'错误',0,30),(97,'可在匝道、加速车道、减速车道上超车',0,31),(98,'不准倒车、逆行、穿越中央分隔带掉头',1,31),(99,'非紧急情况时可在应急车道行驶',0,31),(100,'可以试车或学习驾驶',0,31),(101,'正确',0,32),(102,'错误',1,32),(103,'3个月',0,33),(104,'6个月',0,33),(105,'12个月',1,33),(106,'24个月',0,33),(107,'1年',0,34),(108,'2年',0,34),(109,'5年',1,34),(110,'10年',0,34),(111,'停车让行',1,35),(112,'绕行通过',0,35),(113,'持续鸣喇叭通过',0,35),(114,'提前加速通过',0,35),(115,'正确',1,36),(116,'错误',0,36),(117,'正确',1,37),(118,'错误',0,37),(119,'正确',0,38),(120,'错误',1,38),(121,'200元',0,39),(122,'500元',0,39),(123,'1000元',0,39),(124,'2000元',1,39),(125,'6个月',1,40),(126,'1年',0,40),(127,'2年',0,40),(128,'3年',0,40),(133,'正确',1,42),(134,'错误',0,42),(135,'正确',0,43),(136,'错误',1,43),(137,'交通部门',0,44),(138,'公安部门',0,44),(139,'运输部门',0,44),(140,'铁路部门',1,44),(141,'4米',1,45),(142,'4.2米',0,45),(143,'5米',0,45),(144,'5.5米',0,45),(145,'200元',0,46),(146,'500元',0,46),(147,'1000元',0,46),(148,'2000元',1,46),(149,'正确',0,47),(150,'错误',1,47),(151,'正确',1,48),(152,'错误',0,48),(153,'运算器、控制器、存储器、输入设备和输出设备',0,49),(154,'主机和外部设备',0,49),(155,'硬件系统和软件系统',1,49),(156,'主机箱、显示器、键盘、鼠标、打印机',0,49),(157,'Windows xp',0,50),(158,'unix',0,50),(159,'linux',0,50),(160,'microsoft office',1,50),(161,'8个',0,51),(162,'16个',0,51),(163,'128个',0,51),(164,'256个',1,51),(165,'磁盘',0,52),(166,'硬盘',0,52),(167,'内存',1,52),(168,'外存',0,52),(169,'显示器',1,53),(170,'键盘',0,53),(171,'鼠标',0,53),(172,'手字板',0,53),(173,'102',0,54),(174,'210',1,54),(175,'103',0,54),(176,'28',0,54),(177,'只读存储器',0,55),(178,'高速缓存器',0,55),(179,'随机存储器',1,55),(180,'软盘存储器',0,55),(181,'运算器和控制器',1,56),(182,'控制器和寄存器',0,56),(183,'运算器和内存',0,56),(184,'控制器和内存',0,56),(185,'每秒传输的字节数',0,57),(186,'每秒传输的指令数',0,57),(187,'每秒传输的字数',0,57),(188,'每秒传输的位数',1,57),(189,'RAM',1,58),(190,'ROM',0,58),(191,'CMOS',0,58),(192,'Cache',0,58),(193,'1011',0,59),(194,'1100',0,59),(195,'10111',0,59),(196,'11011',1,59),(197,'树形结构 ',1,60),(198,'线形结构 ',0,60),(199,'层次结构 ',0,60),(200,'网状结构',0,60),(201,'桌面上',0,61),(202,'“我的文档”中',0,61),(203,'内存中 ',0,61),(204,'被删除的位置',1,61),(205,'有下级子菜单',1,62),(206,'单击鼠标可直接执行',0,62),(207,'双击鼠标可直接执行',0,62),(208,'右击鼠标可直接执行',0,62),(209,'控制总线',0,63),(210,'地址总线',0,63),(211,'传输总线',1,63),(212,'数据总线',0,63),(213,'数据层',0,64),(214,'逻辑层',0,64),(215,'用户层',0,64),(216,'应用层',1,64),(217,'外码',1,65),(218,'内码',0,65),(219,'ASCII码',0,65),(220,'标准码',0,65),(221,'一个窗口',0,66),(222,'一个文件夹 ',0,66),(223,'一块内存区间',1,66),(224,'一块磁盘区间',0,66),(225,'最小化',0,67),(226,'最大化',0,67),(227,'移动',0,67),(228,'旋转',1,67),(229,'UPS',0,68),(230,'USP',0,68),(231,'UBS',0,68),(232,'USB',1,68),(233,'黑体、3号 ',0,69),(234,'楷体、4号',0,69),(235,'宋体、5号',1,69),(236,'仿宋、6号',0,69),(237,'保存',0,70),(238,'另存为',1,70),(239,'新建',0,70),(240,'关闭',0,70),(241,'3∶4',0,71),(242,'4∶3',0,71),(243,'D3',1,71),(244,'C4',0,71),(245,'普通视图',0,72),(246,'页面视图',1,72),(247,'大纲视图',0,72),(248,'Web视图',0,72),(249,'2',0,73),(250,'3',1,73),(251,'4',0,73),(252,'5',0,73),(253,'单元格显示宽度不够',1,74),(254,'计算数据出错',0,74),(255,'计算机公式出错',0,74),(256,'数据格式出错',0,74),(257,'Enter',0,75),(258,'Ctrl+Enter',0,75),(259,'Alt+Enter',1,75),(260,'Shift+Enter',0,75),(261,'.pwp',0,76),(262,'.ppt',1,76),(263,'.ppn',0,76),(264,'.pop',0,76),(265,'逻辑结构',1,77),(266,'选择结构',0,77),(267,'循环结构',0,77),(268,'顺序结构',0,77),(269,'汇编',0,78),(270,'编译',1,78),(271,'解释',0,78),(272,'连接',0,78),(273,'机器',1,79),(274,'汇编',0,79),(275,'高级',0,79),(276,'网络',0,79),(277,'层次结构',0,80),(278,'树形结构',0,80),(279,'网状结构',0,80),(280,'二维表格',1,80),(281,'环型',0,81),(282,'总线型',1,81),(283,'星型',0,81),(284,'树型',0,81),(285,'8',0,82),(286,'16',0,82),(287,'32',1,82),(288,'64',0,82),(289,'协议',1,83),(290,'主机',0,83),(291,'地址',0,83),(292,'资源',0,83),(293,'TCP/IP',0,84),(294,'IPX/SPX',0,84),(295,'POP3/SMTP',1,84),(296,'NetBEUI',0,84),(297,'浏览服务模式',1,85),(298,'网络主机',0,85),(299,'网络服务器',0,85),(300,'网络模式',0,85),(301,'.JPG',0,86),(302,'.TIF',0,86),(303,'.BMP',1,86),(304,'.GIF',0,86),(305,'音频文件',0,87),(306,'视频文件',1,87),(307,'图片文件',0,87),(308,'文本文件',0,87),(309,'细菌',0,88),(310,'文本',0,88),(311,'程序',1,88),(312,'微生物',0,88),(313,'女职工委员',1,89),(314,'女职工代表',0,89),(315,'女职工主任',0,89),(316,'信息部门',0,90),(317,'公安部门',1,90),(318,'检察院',0,90),(319,'法院',0,90),(320,'高噪声',0,91),(321,'有害气体',1,91),(322,'高频电磁波',0,91),(323,'制度规定',0,92),(324,'公告栏',1,92),(325,'黑板报',0,92),(326,'口头通知',0,93),(327,'如实告知',1,93),(328,'书面通知',0,93),(329,'通报表彰',0,94),(330,'奖状和奖金',0,94),(331,'表彰奖励',1,94),(332,'预防为主、防治结合',1,95),(333,'安全第一、预防为主',0,95),(334,'预防为主、治理整顿',0,95),(335,'劳动者',1,96),(336,'企业职工',0,96),(337,'公民',0,96),(338,'防护用品',1,97),(339,'劳保用品',0,97),(340,'防毒服装',0,97),(341,'检查督促',0,98),(342,'监督协助',0,98),(343,'监督检查',1,98),(347,'管生产必须管安全',0,100),(348,'安全第一，预防为主',1,100),(349,'保障劳动者的安全与健康',0,100),(350,'900秒',0,101),(351,'600秒',0,101),(352,'300秒',1,101),(353,'1~3',0,102),(354,'5~7',1,102),(355,'15~30',0,102),(356,'形状是等边三角形、顶角向上；标志是黄底、黑边、黑图案  ',1,103),(357,'形状是圆形或顶角向下的等边三角形，标志的是白底、红圈、红杠、黑图案  ',0,103),(358,'圆形、长方形和正方法；标志是蓝底、白图案',0,103),(359,'撤离危险现场',1,104),(360,'停止生产作业',0,104),(361,'保护现场',0,104),(362,'四十',1,105),(363,'四十四',0,105),(364,'四十八',0,105),(365,'岗位津贴',1,106),(366,'工资补贴',0,106),(367,'生活照顾',0,106),(368,'三分之一',1,107),(369,'四分之一',0,107),(370,'二分之一',0,107),(371,'2',0,108),(372,'10',1,108),(373,'30',0,108),(374,'经济责任',0,109),(375,'行政责任',0,109),(376,'刑事责任',1,109),(377,'50',1,110),(378,'100',0,110),(379,'150',0,110),(380,'大专以上',1,111),(381,'中专以上',0,111),(382,'高中以上',0,111),(383,'迅速处理',0,112),(384,'上诉控告',0,112),(385,'及时报告',1,112),(386,'用人单位',1,113),(387,'劳动者',0,113),(388,'劳动者和用人单位共同',0,113),(389,'正三角形边框，颜色为图象是白色，背景是蓝色',0,114),(390,'正方开边框，颜色为图象是绿色，文字是白色，背景是绿色或红色',0,114),(391,'圆形边框，颜色为图象是白色，背景是蓝色',1,114),(392,'80分贝',0,115),(393,'120分贝',1,115),(394,'180分贝',0,115),(395,'生产车间',0,116),(396,'生产班组',1,116),(397,'作业岗位',0,116),(398,'在班前、班中、班后进行安全检查',1,117),(399,'在早、中、晚进行巡回检查',0,117),(400,'每天进行三次安全检查。',0,117),(401,'烯、炔',0,118),(402,'苯、酚',1,118),(403,'醚、醇',0,118),(404,'拒绝执行',1,119),(405,'进行抵制',0,119),(406,'要求经济补偿',0,119),(407,'打开电灯，仔细寻找破损地方',0,120),(408,'及时关闭总阀门',1,120),(409,'立即关闭窗户，防止煤气扩散',0,120),(410,'国家教育、学校教育、企业教育',0,121),(411,'入厂教育、车间教育、岗位或班组教育',1,121),(412,'车间主任教育、班级教育',0,121),(413,'用打火机去试',0,122),(414,'用鼻子去闻',0,122),(415,'用肥皂水刷到接口处检查',1,122),(416,'11月9日',1,123),(417,'1月19日',0,123),(418,'12月9日',0,123),(419,'违反劳动纪律、违反企业制度',0,124),(420,'违章指挥、违章作业',1,124),(421,'违反作业规程、违反企业纪律',0,124),(422,'每年的3月最后个星期一',1,125),(423,'每年的2月第一个星期一',0,125),(424,'每年的9月第一个星期一',0,125),(425,'监督检查员',1,126),(426,'监督委员',0,126),(427,'群众监督员',0,126),(428,'八项',1,127),(429,'十项',0,127),(430,'十二项',0,127),(431,'正确',0,128),(432,'不正确',1,128),(433,'1919',0,129),(434,'1920',0,129),(435,'1921',1,129),(436,'8',1,130),(437,'9',0,130),(438,'10',0,130),(439,'江西',0,131),(440,'湖南',1,131),(441,'广东',0,131),(442,'农村包围城市',0,132),(443,'武装夺取政权',0,132),(444,'农村包围城市，武装夺取政权',1,132),(445,'九一八事变',0,133),(446,'华北事变',0,133),(447,'七七事变',1,133),(448,'遵义会议',0,134),(449,'瓦窑堡会议',0,134),(450,'洛川会议',1,134),(451,'党的七大',1,135),(452,'党的八大',0,135),(453,'党的十五大',0,135),(454,'实事求是、独立民主、群众路线',0,136),(455,'统一战线、武装斗争、党的建设',1,136),(456,'解放思想、实事求是、与时俱进',0,136),(457,'北京',0,137),(458,'延安',1,137),(459,'西柏坡',0,137),(460,'没收官僚资本，进行土地改革',0,138),(461,'恢复国民经济',1,138),(462,'进行社会主义改造',0,138),(463,'辛亥革命',0,139),(464,'五四运动',1,139),(465,'中国共产党的成立',0,139),(466,'革命纲领不同',0,140),(467,'革命路线不同',0,140),(468,'革命领导权不同',1,140),(469,'瑞金',1,141),(470,'兴国',0,141),(471,'于都',0,141),(472,'没收地主阶级的土地和富农多余的土地',0,142),(473,'没收一切土地',0,142),(474,'减租减息',1,142),(475,'实事求是',1,143),(476,'独立自主',0,143),(477,'争取外援',0,143),(478,'党的七大',0,144),(479,'党的的七届二中全会',1,144),(480,'新的政治协商会议',0,144),(481,'1951年',0,145),(482,'1952年',0,145),(483,'1953年',1,145),(484,'全国人民代表大会',1,146),(485,'中国人民政治协商会议',0,146),(486,'国务院',0,146),(487,'1949年',0,147),(488,'1956年',1,147),(489,'1978年',0,147),(490,'1971年10月',1,148),(491,'1972年2月',0,148),(492,'1972年9月',0,148),(493,'党的八大',0,149),(494,'党的的十一届三中全会',1,149),(495,'党的十二大',0,149),(496,'党的十一届三中全会',0,150),(497,'党的十二大',1,150),(498,'党的十三大',0,150),(499,'容国团',0,151),(500,'许海峰',1,151),(501,'李宁',0,151),(502,'邓小平',0,152),(503,'江泽民',0,152),(504,'叶剑英',1,152),(505,'一个中心，两个基本点',1,153),(506,'以经济建设为中心',0,153),(507,'坚持四项基本原则，坚持改革开放',0,153),(508,'450万',1,154),(509,'340万',0,154),(510,'500万',0,154),(511,'《婚姻法》',1,155),(512,'《土地改革法》',0,155),(513,'《宪法》',0,155),(514,'万隆会议',0,156),(515,'日内瓦会议',1,156),(516,'四国外长会议',0,156),(517,'1949年',0,157),(518,'1953年',0,157),(519,'1956年',1,157),(520,'《红旗》',1,158),(521,'《求是》',0,158),(522,'《党建》',0,158),(523,'爱心工程',0,159),(524,'形象工程',0,159),(525,'希望工程',1,159),(526,'农村地区',1,160),(527,'老少边穷地区',0,160),(528,'西部地区',0,160),(529,'实现共产主义',0,161),(530,'建设社会主义',0,161),(531,'解放和发展生产力',1,161),(532,'京广铁路',0,162),(533,'京九铁路',1,162),(534,'兰新铁路',0,162),(535,'个别吸收',1,163),(536,'成批发展',0,163),(537,'突击发展',0,163),(538,'集体领导',0,164),(539,'民主集中制',1,164),(540,'民主制',0,164),(541,'战争与和平',0,165),(542,'战争与革命',0,165),(543,'和平与发展',1,165),(544,'坚持一个中国的原则',1,166),(545,'一中一台',0,166),(546,'把台湾分裂出去',0,166),(547,'2000年江泽民在广东茂名、高州的讲话',0,167),(548,'2001年江泽民“七一讲话”',1,167),(549,'2002年江泽民在党的十六大上的报告',0,167),(550,'1999年7月13日',0,168),(551,'2000年7月13日',0,168),(552,'2001年7月13日',1,168),(553,'前面',0,169),(554,'后面',0,169),(555,'上风侧',0,169),(556,'下风侧',1,169);
+/*!40000 ALTER TABLE `etraining_choice` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `document`
+-- Table structure for table `etraining_document`
 --
 
-DROP TABLE IF EXISTS `document`;
+DROP TABLE IF EXISTS `etraining_document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `document` (
+CREATE TABLE `etraining_document` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` text,
-  `audioClip` varchar(1000) DEFAULT NULL,
+  `text` longtext NOT NULL,
+  `audio_clip` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `document`
+-- Dumping data for table `etraining_document`
 --
 
-LOCK TABLES `document` WRITE;
-/*!40000 ALTER TABLE `document` DISABLE KEYS */;
-/*!40000 ALTER TABLE `document` ENABLE KEYS */;
+LOCK TABLES `etraining_document` WRITE;
+/*!40000 ALTER TABLE `etraining_document` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_document` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `employee`
+-- Table structure for table `etraining_employee`
 --
 
-DROP TABLE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `etraining_employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `employee` (
+CREATE TABLE `etraining_employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `identity` varchar(45) NOT NULL COMMENT '身份证号码',
-  `name` varchar(45) DEFAULT NULL COMMENT '姓名',
-  `sex` tinyint(4) NOT NULL COMMENT '性别',
-  `edu` varchar(45) DEFAULT NULL COMMENT '学历',
-  `major` varchar(45) DEFAULT NULL COMMENT '专业',
-  `duty` varchar(45) DEFAULT NULL COMMENT '职务',
-  `homeAddress` varchar(1000) DEFAULT NULL COMMENT '家庭住址',
-  `isAdmin` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否管理员',
-  `employeeGroup` int(11) DEFAULT NULL,
-  `phoneNumber` varchar(45) DEFAULT NULL,
+  `identity` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `sex` tinyint(1) NOT NULL,
+  `edu` varchar(255) NOT NULL,
+  `major` varchar(255) NOT NULL,
+  `duty` varchar(255) NOT NULL,
+  `home_address` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `is_admin` int(11) NOT NULL,
+  `employee_group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `identity_UNIQUE` (`identity`),
-  KEY `employee_group` (`employeeGroup`),
-  KEY `employeeGroup` (`employeeGroup`),
-  CONSTRAINT `employeeGroup` FOREIGN KEY (`employeeGroup`) REFERENCES `group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `etraining_employee_29158556` (`employee_group_id`),
+  CONSTRAINT `employee_group_id_refs_id_676b7d93` FOREIGN KEY (`employee_group_id`) REFERENCES `etraining_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `employee`
+-- Dumping data for table `etraining_employee`
 --
 
-LOCK TABLES `employee` WRITE;
-/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+LOCK TABLES `etraining_employee` WRITE;
+/*!40000 ALTER TABLE `etraining_employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `employee_training`
+-- Table structure for table `etraining_employeetraining`
 --
 
-DROP TABLE IF EXISTS `employee_training`;
+DROP TABLE IF EXISTS `etraining_employeetraining`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `employee_training` (
-  `id` int(11) NOT NULL,
-  `training` int(11) DEFAULT NULL,
-  `employee` int(11) DEFAULT NULL,
-  `attendDate` date DEFAULT NULL,
-  `trainingDate` date DEFAULT NULL,
-  `score` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `attendee` (`employee`),
-  KEY `employee_training` (`training`),
-  CONSTRAINT `attendee` FOREIGN KEY (`employee`) REFERENCES `employee` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `employee_training` FOREIGN KEY (`training`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `employee_training`
---
-
-LOCK TABLES `employee_training` WRITE;
-/*!40000 ALTER TABLE `employee_training` DISABLE KEYS */;
-/*!40000 ALTER TABLE `employee_training` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `group`
---
-
-DROP TABLE IF EXISTS `group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group` (
-  `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `parentGroup` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group`
---
-
-LOCK TABLES `group` WRITE;
-/*!40000 ALTER TABLE `group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `group_training`
---
-
-DROP TABLE IF EXISTS `group_training`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group_training` (
-  `id` int(11) NOT NULL,
-  `group` int(11) DEFAULT NULL,
-  `training` int(11) DEFAULT NULL,
-  `deadline` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `group` (`group`),
-  KEY `group_training` (`training`),
-  CONSTRAINT `group` FOREIGN KEY (`group`) REFERENCES `group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `group_training` FOREIGN KEY (`training`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group_training`
---
-
-LOCK TABLES `group_training` WRITE;
-/*!40000 ALTER TABLE `group_training` DISABLE KEYS */;
-/*!40000 ALTER TABLE `group_training` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `nonemployee_registration`
---
-
-DROP TABLE IF EXISTS `nonemployee_registration`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `nonemployee_registration` (
-  `id` int(11) NOT NULL,
-  `group` int(11) DEFAULT NULL,
-  `certID` varchar(45) DEFAULT NULL,
-  `reason` text NOT NULL,
-  `entranceTime` datetime NOT NULL,
-  `entranceTraining` int(11) NOT NULL,
-  `identity` varchar(45) DEFAULT NULL,
-  `sex` tinyint(4) DEFAULT NULL,
-  `edu` varchar(45) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `major` varchar(45) DEFAULT NULL,
-  `duty` varchar(45) DEFAULT NULL,
-  `org` varchar(45) DEFAULT NULL,
-  `homeAddress` varchar(45) DEFAULT NULL,
-  `phoneNumber` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entrance_training` (`entranceTraining`),
-  KEY `group2` (`group`),
-  CONSTRAINT `entrance_training` FOREIGN KEY (`entranceTraining`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `group2` FOREIGN KEY (`group`) REFERENCES `group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `nonemployee_registration`
---
-
-LOCK TABLES `nonemployee_registration` WRITE;
-/*!40000 ALTER TABLE `nonemployee_registration` DISABLE KEYS */;
-/*!40000 ALTER TABLE `nonemployee_registration` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `nonemployee_training`
---
-
-DROP TABLE IF EXISTS `nonemployee_training`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `nonemployee_training` (
-  `id` int(11) NOT NULL,
-  `training` int(11) DEFAULT NULL,
-  `registration` int(11) DEFAULT NULL,
-  `attendDate` date DEFAULT NULL,
-  `trainingDate` date DEFAULT NULL,
-  `score` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `nonemployee_training` (`training`),
-  KEY `registration` (`registration`),
-  CONSTRAINT `registration` FOREIGN KEY (`registration`) REFERENCES `nonemployee_registration` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `nonemployee_training` FOREIGN KEY (`training`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `nonemployee_training`
---
-
-LOCK TABLES `nonemployee_training` WRITE;
-/*!40000 ALTER TABLE `nonemployee_training` DISABLE KEYS */;
-/*!40000 ALTER TABLE `nonemployee_training` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `question`
---
-
-DROP TABLE IF EXISTS `question`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `question` (
+CREATE TABLE `etraining_employeetraining` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text NOT NULL,
-  `type` int(11) DEFAULT NULL,
+  `training_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `attend_date` date NOT NULL,
+  `training_date` date NOT NULL,
+  `score` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `type` (`type`),
-  CONSTRAINT `question_type` FOREIGN KEY (`type`) REFERENCES `question_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `etraining_employeetraining_16dec52a` (`training_id`),
+  KEY `etraining_employeetraining_359f2ab4` (`employee_id`),
+  CONSTRAINT `employee_id_refs_id_2fb84db5` FOREIGN KEY (`employee_id`) REFERENCES `etraining_employee` (`id`),
+  CONSTRAINT `training_id_refs_id_2ad49665` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_employeetraining`
+--
+
+LOCK TABLES `etraining_employeetraining` WRITE;
+/*!40000 ALTER TABLE `etraining_employeetraining` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_employeetraining` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `etraining_group`
+--
+
+DROP TABLE IF EXISTS `etraining_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `parentgroup_id` int(11) NOT NULL,
+  `is_employee_group` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `etraining_group_1a9ea78a` (`parentgroup_id`),
+  CONSTRAINT `parentgroup_id_refs_id_4b38287d` FOREIGN KEY (`parentgroup_id`) REFERENCES `etraining_group` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_group`
+--
+
+LOCK TABLES `etraining_group` WRITE;
+/*!40000 ALTER TABLE `etraining_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `etraining_group_trainings`
+--
+
+DROP TABLE IF EXISTS `etraining_group_trainings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_group_trainings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `training_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `group_id` (`group_id`,`training_id`),
+  KEY `etraining_group_trainings_425ae3c4` (`group_id`),
+  KEY `etraining_group_trainings_16dec52a` (`training_id`),
+  CONSTRAINT `group_id_refs_id_5e22ff03` FOREIGN KEY (`group_id`) REFERENCES `etraining_group` (`id`),
+  CONSTRAINT `training_id_refs_id_5b19eb0d` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_group_trainings`
+--
+
+LOCK TABLES `etraining_group_trainings` WRITE;
+/*!40000 ALTER TABLE `etraining_group_trainings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_group_trainings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `etraining_nonemployeeregistration`
+--
+
+DROP TABLE IF EXISTS `etraining_nonemployeeregistration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_nonemployeeregistration` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `identity` varchar(255) NOT NULL,
+  `sex` tinyint(1) NOT NULL,
+  `edu` varchar(255) NOT NULL,
+  `major` varchar(255) NOT NULL,
+  `duty` varchar(255) NOT NULL,
+  `org` varchar(255) NOT NULL,
+  `home_address` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `certid` varchar(255) NOT NULL,
+  `reason` longtext NOT NULL,
+  `entrance_time` datetime NOT NULL,
+  `entrance_training_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `etraining_nonemployeeregistration_425ae3c4` (`group_id`),
+  KEY `etraining_nonemployeeregistration_4898616e` (`entrance_training_id`),
+  CONSTRAINT `group_id_refs_id_3e37b112` FOREIGN KEY (`group_id`) REFERENCES `etraining_group` (`id`),
+  CONSTRAINT `entrance_training_id_refs_id_46fc9224` FOREIGN KEY (`entrance_training_id`) REFERENCES `etraining_training` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_nonemployeeregistration`
+--
+
+LOCK TABLES `etraining_nonemployeeregistration` WRITE;
+/*!40000 ALTER TABLE `etraining_nonemployeeregistration` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_nonemployeeregistration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `etraining_nonemployeetraining`
+--
+
+DROP TABLE IF EXISTS `etraining_nonemployeetraining`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_nonemployeetraining` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `training_id` int(11) NOT NULL,
+  `registration_id` int(11) NOT NULL,
+  `attend_date` date NOT NULL,
+  `training_date` date NOT NULL,
+  `score` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `etraining_nonemployeetraining_16dec52a` (`training_id`),
+  KEY `etraining_nonemployeetraining_4db98c09` (`registration_id`),
+  CONSTRAINT `training_id_refs_id_4706c941` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `registration_id_refs_id_3f4a8a68` FOREIGN KEY (`registration_id`) REFERENCES `etraining_nonemployeeregistration` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_nonemployeetraining`
+--
+
+LOCK TABLES `etraining_nonemployeetraining` WRITE;
+/*!40000 ALTER TABLE `etraining_nonemployeetraining` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_nonemployeetraining` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `etraining_question`
+--
+
+DROP TABLE IF EXISTS `etraining_question`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` longtext NOT NULL,
+  `question_type_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `etraining_question_6fb4906a` (`question_type_id`),
+  CONSTRAINT `question_type_id_refs_id_40bd5571` FOREIGN KEY (`question_type_id`) REFERENCES `etraining_questiontype` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `question`
+-- Dumping data for table `etraining_question`
 --
 
-LOCK TABLES `question` WRITE;
-/*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (1,'行车中，遇非机动车抢行时，应___。',1),(2,'伤员上肢骨折固定时，肢体要伸直捆绑。',1),(4,'行驶途中停车时，应检查各部位有无漏水、___、漏气三漏现象。',1),(5,'专用备胎使用的错误做法是___。',1),(6,'为了避免爆胎，要定期进行轮胎换位，适当降低轮胎气压。',1),(7,'专用备胎不仅是在轮胎漏气或者发生爆胎时临时使用，也可作为正常轮胎使用。',1),(8,'关节损伤(扭伤、脱臼、骨折)的伤员，___。',1),(10,'车辆行至高速公路隧道出口或凿开的山谷出口处，容易遇到横风，驾驶人感到车辆行驶方向偏移时，应',1),(11,'车辆发生爆胎后，驾驶人在尚未控制住车速前，不要冒险使用行车制动器停车，以避免车辆横甩发生更大的险情。',1),(12,'下坡路制动突然失效后，在不得已的情况下，可用前保险杠侧面撞击山坡，迫使车辆停住。',1),(13,'行车中发动机突然熄火后，应',1),(14,'车辆进入山区道路后，要特别注意“连续转弯”标志，并主动避让车辆及行人，适时减速和提前鸣喇叭。',1),(15,'行车中遇老人横过道路，行动缓慢，可持续鸣喇叭催促。',1),(16,'驾驶车辆进入交叉路口前，应降低行驶速度，注意观察，确认安全。',1),(17,'驾驶车辆进入环岛时',1),(18,'遇后车发出超车信号后，只要具备让超条件就应___。',1),(19,'驾驶人在行车中经过积水路面时，应___。',1),(20,'自动挡汽车在陡坡行驶时使用“2”挡。',1),(21,'驾驶自动挡汽车起步时，___，从P挡换入其他挡位。',1),(27,'交通信号灯红灯亮时，___车辆在不妨碍被放行的车辆、行人通行的情况下，可以通行。',1),(28,'绿色方向指示信号灯的箭头方向向右，表示准许车辆右转弯。',1),(29,'机动车驾驶证遗失的，申请补发时应提供___和遗失的书面声明',1),(30,'在划有导向车道的路口，机动车应按所需行进方向驶入导向车道。',1),(31,'机动车在高速公路上行驶，___。',1),(32,'因醉酒后驾驶机动车被吊销驾驶证的，终身禁驾。',1),(33,'道路交通安全违法行为累积记分周期为',1),(34,'醉酒驾驶机动车的，由公安机关交通管理部门约束至酒醒，吊销机动车驾驶证，______内不得重新取得机动车驾驶证，并依法追究刑事责任。',1),(35,'机动车遇行人正在通过人行横道时，应当___。',1),(36,'客车驾驶人在行车中，应始终保持良好的心理状态，不得带着不良情绪驾驶车辆。',1),(37,'铰接式客车不得进入高速公路',1),(38,'大型载客汽车允许牵引总质量700千克以下的挂车。',1),(39,'醉酒后驾驶营运机动车的，由公安机关交通管理部门约束至酒醒，处15日以下拘留和暂扣6个月机动车驾驶证，',1),(40,'大型、中型非营运载客汽车从注册登记之日起，超过10年的，每___检验1次。',1),(42,'汽车列车在转弯过程中，要注意提前做好让车准备。',1),(43,'机动车载物不得超过机动车行驶证上核定的载质量，装载长度、宽度超出车厢不得超过1米',1),(44,'机动车载运超限物品行经铁路道口时，应当按照当地___规定的铁路道口、时间通过。',1),(45,'重型、中型载货汽车，半挂车载物，高度从地面起不得超过___。',1),(46,'醉酒后驾驶营运机动车的，由公安机关交通管理部门约束至酒醒，处15日以下拘留和暂扣6个月驾驶证，并处_',1),(47,'轮式专用机械车驾驶人在现场作业时可将头伸出车外。',1),(48,'轮式专用机械车驾驶人离开车时，应拉紧手闸，切断电路，锁好车门。',1),(49,'完整的计算机系统由____组成。',2),(50,'以下软件中，____不是操作系统软件。',2),(51,'用一个字节最多能编出____不同的码。',2),(52,'任何程序都必须加载到____中才能被CPU执行。',2),(53,'下列设备中，属于输出设备的是____。',2),(54,'计算机信息计量单位中的K代表____。',2),(55,'RAM代表的是____。',2),(56,'组成计算机的CPU的两大部件是____。',2),(57,'在描述信息传输中bps表示的是____。',2),(58,'微型计算机的内存容量主要指____的容量。',2),(59,'十进制数27对应的二进制数为____。',2),(60,'Windows的目录结构采用的是____。',2),(61,'将回收站中的文件还原时，被还原的文件将回到____。',2),(62,'在Windows 的窗口菜单中，若某命令项后面有向右的黑三角，则表示该命令项____。',2),(63,'计算机的三类总线中，不包括____。',2),(64,'操作系统按其功能关系分为系统层、管理层和____三个层次。',2),(65,'汉字的拼音输入码属于汉字的____。',2),(66,'Windows的剪贴板是用于临时存放信息的____。',2),(67,'对处于还原状态的Windows应用程序窗口，不能实现的操作是____。',2),(68,'在计算机上插U盘的接口通常是____标准接口。',2),(69,'新建文档时，Word默认的字体和字号分别是____。',2),(70,'第一次保存Word文档时，系统将打开____对话框。',2),(71,'在Word表格中，位于第三行第四列的单元格名称是____。',2),(72,'Word编辑文档时，所见即所得的视图是____。',2),(73,'新建的Excel工作簿中默认有____张工作表。',2),(74,'在Excel工作表的单元格中计算一组数据后出现########，这是由于____所致。',2),(75,'若在Excel的同一单元格中输入的文本有两个段落，则在第一段落输完后应使用____键。',2),(76,'用PowerPoint制作的演示文稿默认的扩展名是____。',2),(77,'算法的基本结构中不包括____。',2),(78,'用C语言编写的程序需要用____程序翻译后计算机才能识别。',2),(79,'可被计算机直接执行的程序由____语言编写的程序。',2),(80,'关系数据库中的数据逻辑结构是____。',2),(81,'用以太网形式构成的局域网，其拓扑结构为____。',2),(82,'在Internet中的IP地址由____位二进制数组成。',2),(83,'在IE地址栏输入的“http://www.cqu.edu.cn/”中，http代表的是____。',2),(84,'在Internet上用于收发电子邮件的协议是____。',2),(85,'在Internet上广泛使用的WWW是一种____。',2),(86,'对同一幅照片采用以下格式存储时，占用存储空间最大的格式是____。',2),(87,'扩展名为.MOV的文件通常是一个____。',2),(88,'从本质上讲，计算机病毒是一种____。',2),(89,'工会劳动保护监督检查委员会设主任委员1人，副主任委员1-2人，委员若干人，女职业工相对集中的单位，应设____。主任委员应由工会委员会主席或副主席担任。',3),(90,'企业负责人接到发生重伤、死亡、重(特)大伤亡事故报告后，必须立即将事故概况(包括事故发生时间、地点、原因和伤亡人数)，用快速办法报告企业主管部门和企业所在地政府安全监察部门、____和工会。',3),(91,'复印机会产生____等有害物质。',3),(92,'产生职业病危害的用人单位，应当在醒目位置设置____，公布有关职业病防治的规章制度、操作规程、职业病危害事故应急求援措施和工段场所职业病危害因素检测结果。',3),(93,'用人单位与劳动者订立劳动合同时，应当将工作过程中可能产生的职业病危害及其后果、职业病防护措施和待遇等____劳动者，并在劳动合同中写明，不得隐瞒或者欺骗。',3),(94,'任命机关定期考核工会劳动保护监督检查员的工作。对成绩显著者给予____，对失职者取消其监督检查员资格。',3),(95,'职业病防治工作坚持____的方针，实行分类管理、综合治理。',3),(96,'用人单位应当为劳动者创造符合国家职业卫生标准和卫生要求的工作环境和条件，并采取措施保障____获得职业卫生保护。',3),(97,'用人单位应当为劳动创造符合国家职业卫生标准和卫生要求的工作环境和条件，并采取措施保障____获得职业卫生保护。',3),(98,'《工会劳动保护监督检查员工作条例》规定工会劳动保护监督检查员的职权：____本地区、行业和企事业的劳动安全卫生工作，对劳动安全卫生状况进行分析，对危害职工劳动安全与健康的问题进行调查，向下和府有关部门、企事业单位反映需要解决的问题，提出整改治理的建议。',3),(100,'我国的安全生产工作方针是：',3),(101,'对于工伤事故中停止呼吸和心跳的伤员，在____内抢救成功率极高。',3),(102,'建筑物起火的____分钟内是灭火的最好时机，超过这个时间，就要设法逃离火灾现场。',3),(103,'交通标志中的警告标志的形状、颜色是____',3),(104,'发现危及职工生命安全的情况时，工会有权向企业建议组织职工____，企业必须及时作出处理决定。',3),(105,'国务院1995年174号令规定：国家实行劳动者每日工作时间不超过八小时、平均每周工作时间不超过____小时的工时制度。',3),(106,'用人单位对从事接触职业病危害的作业的劳动者，应当给予适当____。',3),(107,'工会劳动保护监督检查委员会委员可聘请行政管理人员担任，但不得超过委员会总人数的____。',3),(108,'各种气瓶的存放，必须保证安全距离，气瓶距离明火在____米以上，避免阳光暴晒。',3),(109,'用人单位强令劳动者违章冒险作业，发生重大伤亡事故，造成严重后果的，对责任人依法追究____。',3),(110,'电流为____毫安时，称为致死电流。',3),(111,'工会劳动保护监督检查员应具有____文化程度、具有一定的生产实践经验，并从事工会劳动保护工作一年以上，应有较高的政策、业务水平，熟悉和掌握有关劳动安全卫生法律法规和劳动保护业务；科级以上、从事五年以上劳动保护工作的工会干部也可以担任工会劳动保护监督检查员。',3),(112,'劳动者应当学习和掌握相关的职业卫生知识，遵守职业病防治法律、法规、规章和操作规程，正确使用、维护职业病防护设备和个人使用的职业病防护用品，发现职业病危害事故隐患应当____。',3),(113,'对从事接触职业病危害的作业的劳动者，用人单位应当按照国务院卫生行政部门的规定组织上岗前、在岗期间和离岗时的职业健康检查，并将检查结果如实告知劳动者。职业健康检查费用由____承担。',3),(114,'指令标志的基本型式是____。',3),(115,'人如长时间暴露在____噪声环境中，将导致永久性的听力损伤。',3),(116,'在工、交、财贸、基本建设等行业的企事业____中，设立工会小组劳动保护检查员。',3),(117,'“一班三检”是指____。',3),(118,'家具的油漆和装修材料中的有机物挥发出的____气体对人体有害。',3),(119,'劳动者对用人单位管理人员违章指挥、强令冒险作业，有权____；对危害生命安全和身体健康的行为，有权提出批评、检举和控告。',3),(120,'发现煤气泄漏后，下列哪个作法是正确的？',3),(121,'三级安全教育是指：____。',3),(122,'检查燃气灶具接口是否漏气，可以采用下列哪种方法？',3),(123,'全国消防宣传日是哪一天？',3),(124,'制止“双违”是指制止____。',3),(125,'全国中小学生安全教育日是哪一天？',3),(126,'《工会劳动保护监督检查员工作条例》规定：在县（含）以上总工会、产业工会中设立工会劳动保护____。',3),(127,'《工会劳动保护监督检查员工作条例》第七条规定工会劳动保护监督检查员有____职权。',3),(128,'企业安全教育中的＂三级教育＂仅仅是对新工人进行的。上述定义是否正确？',3),(129,'中国共产党是____诞生的。',4),(130,'中国早期共产主义小组有____个？',4),(131,'北伐战争时期，农民运动的中心在____',4),(132,'中国革命的道路是____',4),(133,'全民族抗战的起点是____',4),(134,'我党提出全面抗战路线的会议是____',4),(135,'在____上毛泽东思想被确立为党的指导思想。',4),(136,'党在民主革命时期的三大法宝是____',4),(137,'党的七大是在____召开的',4),(138,'中华人民共和国建国后头三年的主要任务是____',4),(139,'中国新民主主义革命伟大开端的标志是____',4),(140,'区分新旧民主革命的主要标志是____',4),(141,'1931年11月27日，中华苏维埃共和国临时中央政府在____成立',4),(142,'抗日战争时期，中国共产党解决农民问题的基本政策是____',4),(143,'毛泽东思想的精髓是____',4),(144,'党的工作重心由农村转移到城市的决策是____作出的。',4),(145,'我国发展国民经济的第一个五年计划开始于____年',4),(146,'我国最高权力机关是____',4),(147,'我国是____进入社会主义初级阶段的',4),(148,'中国是于____恢复在联合国的合法席位的。',4),(149,'标志着我国进入改革开放新时期的重要会议是____',4),(150,'“建设有中国特色的社会主义”是邓小平在____上最早提出来的。',4),(151,'中国获得奥运史上的第一块金牌运动员是____',4),(152,'《告台湾同胞书》是以____的名义发布的。',4),(153,'党在社会主义初级阶段的基本路线的核心是____',4),(154,'中华人民共和国成立时，中国共产党党员____',4),(155,'中华人民共和国成立后制定的第一部正式法律是____',4),(156,'中华人民共和国首次以五大国之一的身份参与讨论国际问题的会议是____',4),(157,'社会主义制度在中国基本确立的时间是____',4),(158,'1958年6月1日，中共中央的理论刊物正式创刊，它是____',4),(159,'1989年中国青少年发展基金会倡导并组织的资助贫困地区失学儿童重返校园的公益事业是____',4),(160,'“星火计划”是我国政府为促进____发展而制定的',4),(161,'社会主义的根本任务是____',4),(162,'我国铁路建设史上规模最大、投资最多、一次建成里程最长的铁路是____',4),(163,'发展党员应坚持____原则',4),(164,'中国共产党的根本组织原则是____',4),(165,'邓小平提出的世界主题是____',4),(166,'发展台海两岸关系和实现和平统一的基础是____',4),(167,'“三个代表”重要思想形成的标志是____',4),(168,'____，北京赢得2008年奥运会主办权',4),(169,'有害物质的发生源，相对工作地点来说，应布置在机械通风或自然通风的____。',3);
-/*!40000 ALTER TABLE `question` ENABLE KEYS */;
+LOCK TABLES `etraining_question` WRITE;
+/*!40000 ALTER TABLE `etraining_question` DISABLE KEYS */;
+INSERT INTO `etraining_question` VALUES (1,'行车中，遇非机动车抢行时，应___。',1),(2,'伤员上肢骨折固定时，肢体要伸直捆绑。',1),(4,'行驶途中停车时，应检查各部位有无漏水、___、漏气三漏现象。',1),(5,'专用备胎使用的错误做法是___。',1),(6,'为了避免爆胎，要定期进行轮胎换位，适当降低轮胎气压。',1),(7,'专用备胎不仅是在轮胎漏气或者发生爆胎时临时使用，也可作为正常轮胎使用。',1),(8,'关节损伤(扭伤、脱臼、骨折)的伤员，___。',1),(10,'车辆行至高速公路隧道出口或凿开的山谷出口处，容易遇到横风，驾驶人感到车辆行驶方向偏移时，应',1),(11,'车辆发生爆胎后，驾驶人在尚未控制住车速前，不要冒险使用行车制动器停车，以避免车辆横甩发生更大的险情。',1),(12,'下坡路制动突然失效后，在不得已的情况下，可用前保险杠侧面撞击山坡，迫使车辆停住。',1),(13,'行车中发动机突然熄火后，应',1),(14,'车辆进入山区道路后，要特别注意“连续转弯”标志，并主动避让车辆及行人，适时减速和提前鸣喇叭。',1),(15,'行车中遇老人横过道路，行动缓慢，可持续鸣喇叭催促。',1),(16,'驾驶车辆进入交叉路口前，应降低行驶速度，注意观察，确认安全。',1),(17,'驾驶车辆进入环岛时',1),(18,'遇后车发出超车信号后，只要具备让超条件就应___。',1),(19,'驾驶人在行车中经过积水路面时，应___。',1),(20,'自动挡汽车在陡坡行驶时使用“2”挡。',1),(21,'驾驶自动挡汽车起步时，___，从P挡换入其他挡位。',1),(27,'交通信号灯红灯亮时，___车辆在不妨碍被放行的车辆、行人通行的情况下，可以通行。',1),(28,'绿色方向指示信号灯的箭头方向向右，表示准许车辆右转弯。',1),(29,'机动车驾驶证遗失的，申请补发时应提供___和遗失的书面声明',1),(30,'在划有导向车道的路口，机动车应按所需行进方向驶入导向车道。',1),(31,'机动车在高速公路上行驶，___。',1),(32,'因醉酒后驾驶机动车被吊销驾驶证的，终身禁驾。',1),(33,'道路交通安全违法行为累积记分周期为',1),(34,'醉酒驾驶机动车的，由公安机关交通管理部门约束至酒醒，吊销机动车驾驶证，______内不得重新取得机动车驾驶证，并依法追究刑事责任。',1),(35,'机动车遇行人正在通过人行横道时，应当___。',1),(36,'客车驾驶人在行车中，应始终保持良好的心理状态，不得带着不良情绪驾驶车辆。',1),(37,'铰接式客车不得进入高速公路',1),(38,'大型载客汽车允许牵引总质量700千克以下的挂车。',1),(39,'醉酒后驾驶营运机动车的，由公安机关交通管理部门约束至酒醒，处15日以下拘留和暂扣6个月机动车驾驶证，',1),(40,'大型、中型非营运载客汽车从注册登记之日起，超过10年的，每___检验1次。',1),(42,'汽车列车在转弯过程中，要注意提前做好让车准备。',1),(43,'机动车载物不得超过机动车行驶证上核定的载质量，装载长度、宽度超出车厢不得超过1米',1),(44,'机动车载运超限物品行经铁路道口时，应当按照当地___规定的铁路道口、时间通过。',1),(45,'重型、中型载货汽车，半挂车载物，高度从地面起不得超过___。',1),(46,'醉酒后驾驶营运机动车的，由公安机关交通管理部门约束至酒醒，处15日以下拘留和暂扣6个月驾驶证，并处_',1),(47,'轮式专用机械车驾驶人在现场作业时可将头伸出车外。',1),(48,'轮式专用机械车驾驶人离开车时，应拉紧手闸，切断电路，锁好车门。',1),(49,'完整的计算机系统由____组成。',2),(50,'以下软件中，____不是操作系统软件。',2),(51,'用一个字节最多能编出____不同的码。',2),(52,'任何程序都必须加载到____中才能被CPU执行。',2),(53,'下列设备中，属于输出设备的是____。',2),(54,'计算机信息计量单位中的K代表____。',2),(55,'RAM代表的是____。',2),(56,'组成计算机的CPU的两大部件是____。',2),(57,'在描述信息传输中bps表示的是____。',2),(58,'微型计算机的内存容量主要指____的容量。',2),(59,'十进制数27对应的二进制数为____。',2),(60,'Windows的目录结构采用的是____。',2),(61,'将回收站中的文件还原时，被还原的文件将回到____。',2),(62,'在Windows 的窗口菜单中，若某命令项后面有向右的黑三角，则表示该命令项____。',2),(63,'计算机的三类总线中，不包括____。',2),(64,'操作系统按其功能关系分为系统层、管理层和____三个层次。',2),(65,'汉字的拼音输入码属于汉字的____。',2),(66,'Windows的剪贴板是用于临时存放信息的____。',2),(67,'对处于还原状态的Windows应用程序窗口，不能实现的操作是____。',2),(68,'在计算机上插U盘的接口通常是____标准接口。',2),(69,'新建文档时，Word默认的字体和字号分别是____。',2),(70,'第一次保存Word文档时，系统将打开____对话框。',2),(71,'在Word表格中，位于第三行第四列的单元格名称是____。',2),(72,'Word编辑文档时，所见即所得的视图是____。',2),(73,'新建的Excel工作簿中默认有____张工作表。',2),(74,'在Excel工作表的单元格中计算一组数据后出现########，这是由于____所致。',2),(75,'若在Excel的同一单元格中输入的文本有两个段落，则在第一段落输完后应使用____键。',2),(76,'用PowerPoint制作的演示文稿默认的扩展名是____。',2),(77,'算法的基本结构中不包括____。',2),(78,'用C语言编写的程序需要用____程序翻译后计算机才能识别。',2),(79,'可被计算机直接执行的程序由____语言编写的程序。',2),(80,'关系数据库中的数据逻辑结构是____。',2),(81,'用以太网形式构成的局域网，其拓扑结构为____。',2),(82,'在Internet中的IP地址由____位二进制数组成。',2),(83,'在IE地址栏输入的“http://www.cqu.edu.cn/”中，http代表的是____。',2),(84,'在Internet上用于收发电子邮件的协议是____。',2),(85,'在Internet上广泛使用的WWW是一种____。',2),(86,'对同一幅照片采用以下格式存储时，占用存储空间最大的格式是____。',2),(87,'扩展名为.MOV的文件通常是一个____。',2),(88,'从本质上讲，计算机病毒是一种____。',2),(89,'工会劳动保护监督检查委员会设主任委员1人，副主任委员1-2人，委员若干人，女职业工相对集中的单位，应设____。主任委员应由工会委员会主席或副主席担任。',3),(90,'企业负责人接到发生重伤、死亡、重(特)大伤亡事故报告后，必须立即将事故概况(包括事故发生时间、地点、原因和伤亡人数)，用快速办法报告企业主管部门和企业所在地政府安全监察部门、____和工会。',3),(91,'复印机会产生____等有害物质。',3),(92,'产生职业病危害的用人单位，应当在醒目位置设置____，公布有关职业病防治的规章制度、操作规程、职业病危害事故应急求援措施和工段场所职业病危害因素检测结果。',3),(93,'用人单位与劳动者订立劳动合同时，应当将工作过程中可能产生的职业病危害及其后果、职业病防护措施和待遇等____劳动者，并在劳动合同中写明，不得隐瞒或者欺骗。',3),(94,'任命机关定期考核工会劳动保护监督检查员的工作。对成绩显著者给予____，对失职者取消其监督检查员资格。',3),(95,'职业病防治工作坚持____的方针，实行分类管理、综合治理。',3),(96,'用人单位应当为劳动者创造符合国家职业卫生标准和卫生要求的工作环境和条件，并采取措施保障____获得职业卫生保护。',3),(97,'用人单位应当为劳动创造符合国家职业卫生标准和卫生要求的工作环境和条件，并采取措施保障____获得职业卫生保护。',3),(98,'《工会劳动保护监督检查员工作条例》规定工会劳动保护监督检查员的职权：____本地区、行业和企事业的劳动安全卫生工作，对劳动安全卫生状况进行分析，对危害职工劳动安全与健康的问题进行调查，向下和府有关部门、企事业单位反映需要解决的问题，提出整改治理的建议。',3),(100,'我国的安全生产工作方针是：',3),(101,'对于工伤事故中停止呼吸和心跳的伤员，在____内抢救成功率极高。',3),(102,'建筑物起火的____分钟内是灭火的最好时机，超过这个时间，就要设法逃离火灾现场。',3),(103,'交通标志中的警告标志的形状、颜色是____',3),(104,'发现危及职工生命安全的情况时，工会有权向企业建议组织职工____，企业必须及时作出处理决定。',3),(105,'国务院1995年174号令规定：国家实行劳动者每日工作时间不超过八小时、平均每周工作时间不超过____小时的工时制度。',3),(106,'用人单位对从事接触职业病危害的作业的劳动者，应当给予适当____。',3),(107,'工会劳动保护监督检查委员会委员可聘请行政管理人员担任，但不得超过委员会总人数的____。',3),(108,'各种气瓶的存放，必须保证安全距离，气瓶距离明火在____米以上，避免阳光暴晒。',3),(109,'用人单位强令劳动者违章冒险作业，发生重大伤亡事故，造成严重后果的，对责任人依法追究____。',3),(110,'电流为____毫安时，称为致死电流。',3),(111,'工会劳动保护监督检查员应具有____文化程度、具有一定的生产实践经验，并从事工会劳动保护工作一年以上，应有较高的政策、业务水平，熟悉和掌握有关劳动安全卫生法律法规和劳动保护业务；科级以上、从事五年以上劳动保护工作的工会干部也可以担任工会劳动保护监督检查员。',3),(112,'劳动者应当学习和掌握相关的职业卫生知识，遵守职业病防治法律、法规、规章和操作规程，正确使用、维护职业病防护设备和个人使用的职业病防护用品，发现职业病危害事故隐患应当____。',3),(113,'对从事接触职业病危害的作业的劳动者，用人单位应当按照国务院卫生行政部门的规定组织上岗前、在岗期间和离岗时的职业健康检查，并将检查结果如实告知劳动者。职业健康检查费用由____承担。',3),(114,'指令标志的基本型式是____。',3),(115,'人如长时间暴露在____噪声环境中，将导致永久性的听力损伤。',3),(116,'在工、交、财贸、基本建设等行业的企事业____中，设立工会小组劳动保护检查员。',3),(117,'“一班三检”是指____。',3),(118,'家具的油漆和装修材料中的有机物挥发出的____气体对人体有害。',3),(119,'劳动者对用人单位管理人员违章指挥、强令冒险作业，有权____；对危害生命安全和身体健康的行为，有权提出批评、检举和控告。',3),(120,'发现煤气泄漏后，下列哪个作法是正确的？',3),(121,'三级安全教育是指：____。',3),(122,'检查燃气灶具接口是否漏气，可以采用下列哪种方法？',3),(123,'全国消防宣传日是哪一天？',3),(124,'制止“双违”是指制止____。',3),(125,'全国中小学生安全教育日是哪一天？',3),(126,'《工会劳动保护监督检查员工作条例》规定：在县（含）以上总工会、产业工会中设立工会劳动保护____。',3),(127,'《工会劳动保护监督检查员工作条例》第七条规定工会劳动保护监督检查员有____职权。',3),(128,'企业安全教育中的＂三级教育＂仅仅是对新工人进行的。上述定义是否正确？',3),(129,'中国共产党是____诞生的。',4),(130,'中国早期共产主义小组有____个？',4),(131,'北伐战争时期，农民运动的中心在____',4),(132,'中国革命的道路是____',4),(133,'全民族抗战的起点是____',4),(134,'我党提出全面抗战路线的会议是____',4),(135,'在____上毛泽东思想被确立为党的指导思想。',4),(136,'党在民主革命时期的三大法宝是____',4),(137,'党的七大是在____召开的',4),(138,'中华人民共和国建国后头三年的主要任务是____',4),(139,'中国新民主主义革命伟大开端的标志是____',4),(140,'区分新旧民主革命的主要标志是____',4),(141,'1931年11月27日，中华苏维埃共和国临时中央政府在____成立',4),(142,'抗日战争时期，中国共产党解决农民问题的基本政策是____',4),(143,'毛泽东思想的精髓是____',4),(144,'党的工作重心由农村转移到城市的决策是____作出的。',4),(145,'我国发展国民经济的第一个五年计划开始于____年',4),(146,'我国最高权力机关是____',4),(147,'我国是____进入社会主义初级阶段的',4),(148,'中国是于____恢复在联合国的合法席位的。',4),(149,'标志着我国进入改革开放新时期的重要会议是____',4),(150,'“建设有中国特色的社会主义”是邓小平在____上最早提出来的。',4),(151,'中国获得奥运史上的第一块金牌运动员是____',4),(152,'《告台湾同胞书》是以____的名义发布的。',4),(153,'党在社会主义初级阶段的基本路线的核心是____',4),(154,'中华人民共和国成立时，中国共产党党员____',4),(155,'中华人民共和国成立后制定的第一部正式法律是____',4),(156,'中华人民共和国首次以五大国之一的身份参与讨论国际问题的会议是____',4),(157,'社会主义制度在中国基本确立的时间是____',4),(158,'1958年6月1日，中共中央的理论刊物正式创刊，它是____',4),(159,'1989年中国青少年发展基金会倡导并组织的资助贫困地区失学儿童重返校园的公益事业是____',4),(160,'“星火计划”是我国政府为促进____发展而制定的',4),(161,'社会主义的根本任务是____',4),(162,'我国铁路建设史上规模最大、投资最多、一次建成里程最长的铁路是____',4),(163,'发展党员应坚持____原则',4),(164,'中国共产党的根本组织原则是____',4),(165,'邓小平提出的世界主题是____',4),(166,'发展台海两岸关系和实现和平统一的基础是____',4),(167,'“三个代表”重要思想形成的标志是____',4),(168,'____，北京赢得2008年奥运会主办权',4),(169,'有害物质的发生源，相对工作地点来说，应布置在机械通风或自然通风的____。',3);
+/*!40000 ALTER TABLE `etraining_question` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `question_type`
+-- Table structure for table `etraining_questiontype`
 --
 
-DROP TABLE IF EXISTS `question_type`;
+DROP TABLE IF EXISTS `etraining_questiontype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `question_type` (
+CREATE TABLE `etraining_questiontype` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
+  `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `question_type`
+-- Dumping data for table `etraining_questiontype`
 --
 
-LOCK TABLES `question_type` WRITE;
-/*!40000 ALTER TABLE `question_type` DISABLE KEYS */;
-INSERT INTO `question_type` VALUES (1,'驾校考试'),(2,'计算机考试'),(3,'安全知识考试'),(4,'党史考试');
-/*!40000 ALTER TABLE `question_type` ENABLE KEYS */;
+LOCK TABLES `etraining_questiontype` WRITE;
+/*!40000 ALTER TABLE `etraining_questiontype` DISABLE KEYS */;
+INSERT INTO `etraining_questiontype` VALUES (1,'驾校考试'),(2,'计算机考试'),(3,'安全知识考试'),(4,'党史考试');
+/*!40000 ALTER TABLE `etraining_questiontype` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `training`
+-- Table structure for table `etraining_training`
 --
 
-DROP TABLE IF EXISTS `training`;
+DROP TABLE IF EXISTS `etraining_training`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `training` (
+CREATE TABLE `etraining_training` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1000) NOT NULL,
-  `type` int(11) DEFAULT NULL,
-  `examType` int(11) DEFAULT NULL,
-  `passCriteria` int(11) DEFAULT '0',
-  `questionCount` int(11) DEFAULT '0',
+  `name` varchar(255) NOT NULL,
+  `training_type` varchar(255) NOT NULL,
+  `exam_type_id` int(11) NOT NULL,
+  `pass_criteria` int(11) NOT NULL,
+  `question_count` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `training_type` (`type`),
-  KEY `exam` (`examType`),
-  CONSTRAINT `training_exam` FOREIGN KEY (`examType`) REFERENCES `question_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `etraining_training_393940d5` (`exam_type_id`),
+  CONSTRAINT `exam_type_id_refs_id_325436df` FOREIGN KEY (`exam_type_id`) REFERENCES `etraining_questiontype` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `training`
+-- Dumping data for table `etraining_training`
 --
 
-LOCK TABLES `training` WRITE;
-/*!40000 ALTER TABLE `training` DISABLE KEYS */;
-/*!40000 ALTER TABLE `training` ENABLE KEYS */;
+LOCK TABLES `etraining_training` WRITE;
+/*!40000 ALTER TABLE `etraining_training` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_training` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `training_document`
+-- Table structure for table `etraining_training_documents`
 --
 
-DROP TABLE IF EXISTS `training_document`;
+DROP TABLE IF EXISTS `etraining_training_documents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `training_document` (
-  `id` int(11) NOT NULL,
-  `training` int(11) DEFAULT NULL,
-  `document` int(11) DEFAULT NULL,
+CREATE TABLE `etraining_training_documents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `training_id` int(11) NOT NULL,
+  `document_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `training` (`training`),
-  KEY `document` (`document`),
-  CONSTRAINT `document` FOREIGN KEY (`document`) REFERENCES `document` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `training` FOREIGN KEY (`training`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `training_id` (`training_id`,`document_id`),
+  KEY `etraining_training_documents_16dec52a` (`training_id`),
+  KEY `etraining_training_documents_bdd92ed` (`document_id`),
+  CONSTRAINT `training_id_refs_id_383c7552` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `document_id_refs_id_51f898c1` FOREIGN KEY (`document_id`) REFERENCES `etraining_document` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `training_document`
+-- Dumping data for table `etraining_training_documents`
 --
 
-LOCK TABLES `training_document` WRITE;
-/*!40000 ALTER TABLE `training_document` DISABLE KEYS */;
-/*!40000 ALTER TABLE `training_document` ENABLE KEYS */;
+LOCK TABLES `etraining_training_documents` WRITE;
+/*!40000 ALTER TABLE `etraining_training_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_training_documents` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -384,4 +384,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-06-28 22:01:01
+-- Dump completed on 2012-06-30  0:43:11

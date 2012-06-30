@@ -2,15 +2,21 @@ from django.db import models
 
 class QuestionType(models.Model):
     name = models.CharField(max_length=255)
+    def __unicode__(self):
+        return self.name
 
 class Question(models.Model):
     content = models.TextField()
     question_type = models.ForeignKey("QuestionType")
+    def __unicode__(self):
+        return self.content
 
 class Choice(models.Model):
     text = models.TextField()
     is_answer = models.BooleanField()
     question = models.ForeignKey("Question")
+    def __unicode__(self):
+        return self.text + ', is_answer: ' + self.is_answer
 
 class Document(models.Model):
     text = models.TextField()
@@ -23,6 +29,9 @@ class Training(models.Model):
     pass_criteria = models.IntegerField()
     question_count = models.IntegerField()
     documents = models.ManyToManyField("Document")
+    def __unicode__(self):
+        return self.name
+    
 
 class Employee(models.Model):
     identity = models.CharField(max_length=255)
@@ -36,6 +45,8 @@ class Employee(models.Model):
     is_admin = models.IntegerField()
     employee_group = models.ForeignKey("Group")
     trainings = models.ManyToManyField("Training", through="EmployeeTraining")
+    def __unicode__(self):
+        return self.name
 
 class EmployeeTraining(models.Model):
     training = models.ForeignKey("Training")
@@ -43,12 +54,17 @@ class EmployeeTraining(models.Model):
     attend_date = models.DateField()
     training_date = models.DateField()
     score = models.IntegerField()
+    def __unicode__(self):
+        return self.training+'|'+self.employee
 
 class Group(models.Model):
     name = models.CharField(max_length=255)
     parentgroup = models.ForeignKey("Group")
     is_employee_group = models.BooleanField()
     trainings = models.ManyToManyField("Training")
+    def __unicode__(self):
+        return self.name
+    
 
 class NonemployeeRegistration(models.Model):
     group = models.ForeignKey("Group")
@@ -65,6 +81,8 @@ class NonemployeeRegistration(models.Model):
     entrance_time = models.DateTimeField()
     entrance_training = models.ForeignKey("Training", related_name="entrance_training") 
     trainings = models.ManyToManyField("Training", related_name="trainings", through="NonemployeeTraining")
+    def __unicode__(self):
+        return self.identity
 
 class NonemployeeTraining(models.Model):
     training = models.ForeignKey("Training")
@@ -72,3 +90,5 @@ class NonemployeeTraining(models.Model):
     attend_date = models.DateField()
     training_date = models.DateField()
     score = models.IntegerField()
+    def __unicode__(self):
+        return self.training+'|'+self.registration

@@ -1,0 +1,18 @@
+{% extends "etraining/base_etraining.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Employment Training Exam" %}</div>
+<div class="summary">本次考试一共3题，您还有3题未答</div>
+<div class="question">
+<div>第1题，厂区可以吸烟么？</div>
+<input type="radio" name="" value="" />可以
+<input type="radio" name="" value="" />不可以
+</div>
+<div class="submit_row">
+<input type="submit" value="{% trans 'previous page' %}" />
+<input type="submit" value="{% trans 'next page' %}" />
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{{media_url}}css/etraining_admin.css">
+{% endblock %}
+
+{% block branding %}
+<div class="logo"></div>
+<div class="tools">
+<div class="logout">
+    <img src="{{media_url}}img/loginout.gif" /><a class="logouttext" href="/accounts/logout">{% trans "Log out" %}</a>
+</div>
+</div>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="top-nav"> 
+<img src="{{media_url}}img/main_14.gif"/>
+{% trans "Your Position: " %} {% trans "Home" %}
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="side-nav">
+	<div class="sidenav-top"></div>
+    <ul id="nav" class="sidenav-text">
+    </ul>
+    <div class="sidenav-down">
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="tools">{% trans "Copy Right" %}&copy; 2012-2013</div>
+{% endblock %}

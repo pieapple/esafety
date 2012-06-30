@@ -10,7 +10,7 @@ header .logo {
   margin-left:32px;
 }
 
-header .tools, footer .tools { 
+header .tools, footer .tools {
   background-image: url("../img/main_09.gif"); 
   background-repeat: repeat-x; 
   color: #FFFFFF; 

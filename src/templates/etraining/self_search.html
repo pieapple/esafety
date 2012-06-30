@@ -1,0 +1,19 @@
+{% extends "etraining/base_etraining.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Self Training Service" %}</div>
+<div class="submit_row">
+<form action="" method="post">{%csrf_token%}
+<label>{% trans "*Identity Number:" %}</label> <input type="text" value="" />
+<input type="submit" value="{% trans 'search' %}" />
+</form>
+</div>
+<div class="details">
+</div>
+<div class="training_records">
+{% trans "training record" %}
+</div>
+</div>
+{% endblock %}

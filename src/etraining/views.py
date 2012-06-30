@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
 from django.utils.translation import ugettext as _
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 import datetime
 from django.utils.timezone import utc
 from etraining.models import Choice, Question, QuestionType

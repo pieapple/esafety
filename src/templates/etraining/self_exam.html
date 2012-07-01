@@ -5,17 +5,33 @@
 <div class="content clearfix">
 <div class="content_title">{% trans "Employment Training Exam" %}</div>
 <div class="summary">本次考试一共{{ qcount }}题，您还有{{left_qnum}}题未答</div>
-<form action="" method="post">{%csrf_token%}
-<div class="question">
-<div>{{question.content}}</div>
-{% for choice in question.choice_set.all %}
-<input type="radio" name="answer" value="" />{{choice.text}}<br>
-{% endfor %}
-</div>
-<div class="submit_row">
-<input type="submit" value="{% trans 'previous page' %}" />
-<input type="submit" value="{% trans 'next page' %}" />
-</div>
+<form id="form" action="" method="post">{%csrf_token%}
+	<div class="question">
+		<div>{{question.content}}</div>
+		{% for choice in question.choice_set.all %}
+		<input type="radio" name="answer" {% if answer == choice.id %}checked{% endif %} value="{{choice.id}}" />{{choice.text}}<br>
+		{% endfor %}
+	</div>
+	<input id="act" name="act" type="hidden" value="default" />
+	<div class="submit_row">
+		{% if has_pre %}
+		<input type="button" value="{% trans 'previous page' %}" onclick="javascript:go('pre');" />
+		{% endif %}
+		{% if has_next %}
+		<input type="button" value="{% trans 'next page' %}" onclick="javascript:go('next');" />
+		{% else %}
+		<input type="button" value="{% trans 'finish exam' %}" onclick="javascript:go('finish');" />
+		{% endif %}
+	</div>
 </form>
 </div>
+{% endblock %}
+
+{% block extrascript %} 
+<script type="text/javascript" >
+function go(action) {
+	$('#act')[0].value=action;
+	$('#form')[0].submit();
+}
+</script>
 {% endblock %}

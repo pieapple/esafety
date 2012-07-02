@@ -1,0 +1,28 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+  <div class="content_title">{% trans "Training" %}</div>
+  <div class="document">
+    <div class="document_body"> 
+      <div>注意事项一</div>
+      <div>注意事项二</div>
+    </div>
+    <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
+  </div>
+  <div class="submit_row">
+    <form action="" method="post">{%csrf_token%}
+      <input type="hidden" name="training_id" value="{{training_id}}" />
+      <input type="submit" value="{% trans 'confirm visitor accepted safety instructions' %}" />
+    </form>
+    <input type="button" value="{% trans 'print page' %}" />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Schedule Vendor Training" %}</div>
+<form action="" method="post">{% csrf_token %}
+<label>{% trans "Training Name" %}</label><input type="text" value="" />
+<label>{% trans "Training Description" %}</label><input type="text" value="" />
+<label>{% trans "Training Type" %}</label><select><option value="--------" /></select>
+<label>{% trans "Training Content" %}</label><select><option value="--------" /></select>
+<label>{% trans "Training Attendees" %}</label><select><option value="--------" /></select>
+<label>{% trans "Training Date" %}</label><input type="text" value="" />
+<label>{% trans "Training Exam Type" %}</label><select><option value="--------" /></select>
+<label>{% trans "Training Exam Question Count" %}</label><input type="text" value="" />
+<label>{% trans "Training Exam Question Pass Criteria" %}</label><input type="text" value="" />
+<input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

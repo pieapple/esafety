@@ -1,5 +1,24 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns('etraining.admin_views',
-  url(r'vreg$', 'visitor_registration', name='visitor_registration'),
+  url(r'^registration/$', 'visitor_registration', name='visitor_registration'),
+  url(r'^visitor_training/$', 'visitor_training', name='visitor_training'),
+  url(r'^employee_registration/$', 'employee_registration', name='employee_registration'),
+  url(r'^training_list/$', 'training_list', name='training_list'),
+  url(r'^training_signup/$', 'training_signup', name='training_signup'),
+  url(r'^view_training/$', 'view_training', name='view_training'),
+  url(r'^schedule_employee_training/$', 'schedule_employee_training', name='schedule_employee_training'),
+  url(r'^schedule_vendor_training/$', 'schedule_vendor_training', name='schedule_vendor_training'),
+  url(r'^schedule_entrance_training/$', 'schedule_entrance_training', name='schedule_entrance_training'),
+  url(r'^view_employee_training/$', 'view_employee_training', name='view_employee_training'),
+  url(r'^view_employee_training_detail/$', 'view_employee_training_detail', name='view_employee_training_detail'),
+  url(r'^view_vendor_training/$', 'view_vendor_training', name='view_vendor_training'),
+  url(r'^view_vendor_training_detail/$', 'view_vendor_training_detail', name='view_vendor_training_detail'),
+  url(r'^view_training_signup/$', 'view_training_signup', name='view_training_signup'),
+  url(r'^view_visitor_entrance/$', 'view_visitor_entrance', name='view_visitor_entrance'),
+  url(r'^view_visitor_entrance_detail/$', 'view_visitor_entrance_detail', name='view_visitor_entrance_detail'),
+  url(r'^manage_question_poll/$', 'manage_question_poll', name='manage_question_poll'),
+  url(r'^manage_document/$', 'manage_document', name='manage_document'),
+  url(r'^manage_employee_org/$', 'manage_employee_org', name='manage_employee_org'),
+  url(r'^manage_visitor_org/$', 'manage_visitor_org', name='manage_visitor_org'),
 )

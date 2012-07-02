@@ -1,5 +1,0 @@
-/* Author:
-
-*/
-$(document).ready(function(){
-});

@@ -64,6 +64,8 @@ def self_examination(request):
             session['cur_qid'] += -1
         if action == 'next':
             session['cur_qid'] += 1
+        if action == "reexam":
+            session['cur_qid'] = 0
         return render_to_response("etraining/self_exam.html", {
                             'left_qnum' : len(session['questions'])-session['cur_qid'],
                             'qcount' : len(session['questions']),

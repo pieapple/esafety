@@ -8,7 +8,10 @@
 <h2 class="welcome_text">{% trans "Congratulations! Pass!" %}</h2>
 {% else %}
 <h2 class="welcome_text">{% trans "Sorry, no pass!" %}</h2>
-<div><input type="button" value="{% trans 'reenter exam' %}" onclick="" /></div
+<form id="form" action="" method="post">{%csrf_token%}
+<input id="act" name="act" type="hidden" value="reexam" />
+<div><input type="button" value="{% trans 'reenter exam' %}" onclick="javascript:submit();" /></div>
+</form>
 {% endif %}
 </div>
 {% endblock %}

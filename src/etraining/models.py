@@ -20,9 +20,10 @@ class Choice(models.Model):
     question = models.ForeignKey("Question")
 
     def __unicode__(self):
-        return self.text + ', is_answer: ' + self.is_answer
+        return self.text + ', is_answer: ' + str(self.is_answer)
 
 class Document(models.Model):
+    name = models.CharField(max_length=255)
     text = models.TextField()
     audio_clip = models.CharField(max_length=255)
 
@@ -66,7 +67,7 @@ class EmployeeTraining(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=255)
-    parentgroup = models.ForeignKey("Group")
+    parentgroup = models.ForeignKey("self", blank=True, null=True)
     is_employee_group = models.BooleanField()
     trainings = models.ManyToManyField("Training")
 

@@ -1,0 +1,70 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Manage Question Poll" %}</div>
+<form action="" method="post">{% csrf_token %}
+<label for="question_type">{% trans "Choose Question Poll Type" %}</label>
+<select name="question_type" id="question_type">
+{% for question_type in question_type_list %}
+<option value="{{question_type.id}}" {% if question_type.id == select_type %}selected{% endif %}>{{question_type.name}}</option>
+{% endfor %}
+</select>
+<input type="submit" value="Submit" />
+</form>
+{% if question_list %}
+<div class="add_delete_toolbar"></div> <br />
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="questionlist" width="100%">
+	<thead>
+		<tr>
+      <th>{% trans "Question Text" %}</th>
+      <th>{% trans "Choice 1" %}</th>
+      <th>{% trans "Choice 2" %}</th>
+      <th>{% trans "Choice 3" %}</th>
+      <th>{% trans "Choice 4" %}</th>
+      <th>{% trans "Correct Answer" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for question in question_list %}
+  <tr class="{% cycle odd even %}">
+      <td>{{question.content}}</td>
+      {% for choice in question.choice_set.all %}
+      <td>{{choice.text}}</td>
+      {% endfor %}
+      <td></td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+  $('#questionlist').dataTable( {
+    "bJQueryUI": true,
+    "sPaginationType": "full_numbers",
+  } ).makeEditable({
+    oAddNewRowButtonOptions: { 
+      label: "Add...",
+      icons: { primary: 'ui-icon-plus' },
+    },
+    oDeleteRowButtonOptions: {
+      label: "Remove",
+      icons: { primary: 'ui-icon-trash' },
+    },
+  });
+});
+</script>
+{% endblock %}

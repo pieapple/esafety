@@ -1,0 +1,16 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Employee Registration" %}</div>
+{% trans "Registration Successfully" %}
+<a href="{% url employee_registration %}">{% trans "Register another one" %}</a>
+</div>
+{% endblock %}

@@ -44,6 +44,24 @@
 {% endfor %}
   </tbody>
 </table>
+<form id="formAddNewRow" action="#" title="Add new record">
+<input type="hidden" name="question_type" value="1" />
+<label for="question_content">{% trans "Question Content" %}</label>
+<input type="text" name="question_content" id="question_content" class="required" rel="0" />
+<br />
+<label for="choice_1">{% trans "Choice #1" %}</label>
+<input type="text" name="choice_1" id="choice_1" class="required" rel="1" /><input type="checkbox" name="choice_1_is_answer" />
+<br />
+<label for="choice_2">{% trans "Choice #2" %}</label>
+<input type="text" name="choice_2" id="choice_2" class="required" rel="2" /><input type="checkbox" name="choice_2_is_answer" />
+<br />
+<label for="choice_3">{% trans "Choice #3" %}</label>
+<input type="text" name="choice_3" id="choice_3" class="required" rel="3" /><input type="checkbox" name="choice_3_is_answer" />
+<br />
+<label for="choice_4">{% trans "Choice #4" %}</label>
+<input type="text" name="choice_4" id="choice_4" class="required" rel="4" /><input type="checkbox" name="choice_4_is_answer" />
+<br />
+</form>
 {% endif %}
 </div>
 {% endblock %}
@@ -55,6 +73,14 @@ $(document).ready(function() {
   $('#questionlist').dataTable( {
     "bJQueryUI": true,
     "sPaginationType": "full_numbers",
+    "aoColumns": [
+      { "bSortable": true },
+      { "bSortable": false },
+      { "bSortable": false },
+      { "bSortable": false },
+      { "bSortable": false },
+      { "bSortable": false },
+    ]
   } ).makeEditable({
     oAddNewRowButtonOptions: { 
       label: "Add...",

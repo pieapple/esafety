@@ -11,8 +11,62 @@
 <div class="content clearfix">
 <div class="content_title">{% trans "Employee Registration" %}</div>
 <form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
+{{ form.non_field_errors }}
+<table>
+<tr>
+<td><label for="id_identity">{% trans "Identity Card: " %}</label></td>
+<td>{{ form.identity }}</td>
+</tr>
+<tr>
+<td><label for="id_name">{% trans "Name: " %}</label></td>
+<td>{{ form.name }}</td>
+</tr>
+<tr>
+<td><label for="id_sex">{% trans "Sex: " %}</label></td>
+<td>{{ form.sex }}</td>
+</tr>
+<tr>
+<td><label for="id_edu">{% trans "Edu: " %}</label></td>
+<td>{{ form.edu }}</td>
+</tr>
+<tr>
+<td><label for="id_major">{% trans "Major: " %}</label></td>
+<td>{{ form.major }}</td>
+</tr>
+<tr>
+<td><label for="id_home_address">{% trans "Homeaddress: " %}</label></td>
+<td>{{ form.home_address }}</td>
+</tr>
+<tr>
+<td><label for="id_phone_number">{% trans "Phone number: " %}</label></td>
+<td>{{ form.phone_number }}</td>
+</tr>
+<tr>
+<td><label for="id_group">{% trans "Group: " %}</label></td>
+<td>
+<select id="parent" name="group">
+{% for group in groups %}
+<option value="{{group.id}}">{{group.name}}</option>
+{% endfor %}
+</select>
+<select id="child" name="sub_group">
+{% for group in sub_groups %}
+<option class="sub_{{group.parent_group.id}}" value="{{group.id}}">{{group.name}}</option>
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
 <input type="submit" value="Submit" />
 </form>
 </div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+  makeSublist('parent', 'child', false, '');
+});
+</script>
 {% endblock %}

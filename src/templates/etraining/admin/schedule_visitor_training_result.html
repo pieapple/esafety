@@ -1,0 +1,16 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Schedule Visitor Training" %}</div>
+{% trans "Schedule visitor training Successfully" %}
+<a href="{% url schedule_visitor_training %}">{% trans "Schedule another one" %}</a>
+</div>
+{% endblock %}

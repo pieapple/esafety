@@ -251,3 +251,11 @@ table.dataTable th:active {
 	-webkit-overflow-scrolling: touch;
 }
 
+.css_right {
+	float: right;
+}
+
+.css_left {
+	float: left;
+}
+

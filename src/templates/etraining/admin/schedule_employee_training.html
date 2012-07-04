@@ -11,16 +11,74 @@
 <div class="content clearfix">
 <div class="content_title">{% trans "Schedule Employee Training" %}</div>
 <form action="" method="post">{% csrf_token %}
-<label>{% trans "Training Name" %}</label><input type="text" value="" />
-<label>{% trans "Training Description" %}</label><input type="text" value="" />
-<label>{% trans "Training Type" %}</label><select><option value="--------" /></select>
-<label>{% trans "Training Content" %}</label><select><option value="--------" /></select>
-<label>{% trans "Training Attendees" %}</label><select><option value="--------" /></select>
-<label>{% trans "Training Date" %}</label><input type="text" value="" />
-<label>{% trans "Training Exam Type" %}</label><select><option value="--------" /></select>
-<label>{% trans "Training Exam Question Count" %}</label><input type="text" value="" />
-<label>{% trans "Training Exam Question Pass Criteria" %}</label><input type="text" value="" />
+<table>
+<tr>
+<td><label>{% trans "Training Name" %}</label></td>
+<td><input type="text" name="training_name" value="" /><br/></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Description" %}</label></td>
+<td><input type="text" name="training_description" value="" /></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Type" %}</label></td>
+<td><input type="text" name="training_type" value="" /></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Content" %}</label></td>
+<td><select name="document_id"><option value="">------------</option>
+{% for document in documents %}
+<option value="{{document.id}}">{{document.name}}</option>
+{% endfor %}
+</select></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Attendee" %}</label></td>
+<td>
+<select id="parent" name="group"><option value="">{% trans "All People" %}</option>
+{% for group in groups %}
+<option value="{{group.id}}">{{group.name}}</option>
+{% endfor %}
+</select>
+<select id="child" name="sub_group">
+<option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "All People" %}</option>
+{% for group in sub_groups %}
+<option class="sub_{{group.parent_group.id}}" value="{{group.id}}">{{group.name}}</option>
+{% endfor %}
+</select>
+</td>
+</tr>
+<tr>
+<td><label>{% trans "Training Date" %}</label></td>
+<td><input id="datepicker" name="training_date" type="text" value="" /></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Exam Type" %}</label></td>
+<td><select name="exam_type"><option value="">------------</option>
+{% for exam_type in exam_types %}
+<option value="{{exam_type.id}}">{{exam_type.name}}</option>
+{% endfor %}
+</tr>
+<tr>
+<td><label>{% trans "Training Exam Question Count" %}</label></td>
+<td><input type="text" name="question_count" value="" /></td>
+</tr>
+<tr>
+<td><label>{% trans "Training Exam Question Pass Criteria" %}</label></td>
+<td><input type="text" name="pass_criteria" value="" /></td>
+</tr>
+</table>
 <input type="submit" value="Submit" />
 </form>
 </div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+  $("#datepicker").datepicker($.datepicker.regional["zh-CN"]);
+  makeSublist('parent', 'child', false, '');
+});
+</script>
 {% endblock %}

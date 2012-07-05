@@ -35,6 +35,7 @@ class Training(models.Model):
     exam_type = models.ForeignKey("QuestionType", blank=True, null=True)
     pass_criteria = models.IntegerField(blank=True, null=True)
     question_count = models.IntegerField(blank=True, null=True)
+    training_date = models.DateField(blank=True, null=True)
     documents = models.ManyToManyField("Document")
 
     def __unicode__(self):
@@ -44,36 +45,33 @@ class Employee(models.Model):
     identity = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     sex = models.BooleanField()
-    edu = models.CharField(max_length=255)
-    major = models.CharField(max_length=255)
-    duty = models.CharField(max_length=255)
-    home_address = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=255)
-    group = models.ForeignKey("EmployeeGroup")
-    trainings = models.ManyToManyField("Training", through="EmployeeTraining")
+    edu = models.CharField(max_length=255, blank=True, null=True)
+    major = models.CharField(max_length=255, blank=True, null=True)
+    duty = models.CharField(max_length=255, blank=True, null=True)
+    home_address = models.CharField(max_length=255, blank=True, null=True)
+    phone_number = models.CharField(max_length=255, blank=True, null=True)
+    group = models.ForeignKey("Group")
+    trainings = models.ManyToManyField("Training", blank=True, null=True, through="EmployeeTrainingRecord")
 
     def __unicode__(self):
         return self.name
 
-class EmployeeTraining(models.Model):
+class EmployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
     employee = models.ForeignKey("Employee")
-    attend_date = models.DateField()
-    score = models.IntegerField()
-    admin = models.ForeignKey(User)
+    attend_date = models.DateField(blank=True, null=True)
+    score = models.IntegerField(blank=True, null=True)
+    admin = models.ForeignKey(User, blank=True, null=True)
 
     def __unicode__(self):
         return self.training+'|'+self.employee
 
-class EmployeeGroupTrainingSchedule(models.Model):
-    training = models.ForeignKey("Training")
-    employee_group = models.ForeignKey("EmployeeGroup")
-    training_date = models.DateField()
-
-class EmployeeGroup(models.Model):
+class Group(models.Model):
     name = models.CharField(max_length=255)
     parent_group = models.ForeignKey("self", blank=True, null=True)
-    trainings = models.ManyToManyField("Training", blank=True, null=True, through="EmployeeGroupTrainingSchedule")
+    is_employee_group = models.BooleanField() 
+    entrance_training = models.ForeignKey("Training", blank=True, null=True, related_name="entrance_attendee")
+    trainings = models.ManyToManyField("Training", blank=True, null=True)
 
     def __unicode__(self):
         return self.name
@@ -82,7 +80,7 @@ class NonemployeeRegistration(models.Model):
     identity = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     sex = models.BooleanField()
-    edu = models.CharField(max_length=255)
+    edu = models.CharField(max_length=255, blank=True, null=True)
     major = models.CharField(max_length=255, blank=True, null=True)
     duty = models.CharField(max_length=255, blank=True, null=True)
     org = models.CharField(max_length=255, blank=True, null=True)
@@ -90,44 +88,30 @@ class NonemployeeRegistration(models.Model):
     phone_number = models.CharField(max_length=255, blank=True, null=True)
     certid = models.CharField(max_length=255, blank=True, null=True)
     reason = models.TextField()
-    group = models.ForeignKey("NonemployeeGroup")
+    group = models.ForeignKey("Group")
     entrance_time = models.DateTimeField()
     admin = models.ForeignKey(User)
 
-    entrance_training = models.ForeignKey("EntranceTraining", blank=True, null=True)
-    trainings = models.ManyToManyField("Training", blank=True, null=True, through="NonemployeeTraining")
+    entrance_training = models.ForeignKey("EntranceTrainingRecord", blank=True, null=True)
+    trainings = models.ManyToManyField("Training", blank=True, null=True, through="NonemployeeTrainingRecord")
 
     def __unicode__(self):
         return self.identity
 
-class NonemployeeTraining(models.Model):
+class NonemployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
     registration = models.ForeignKey("NonemployeeRegistration")
-    attend_date = models.DateField()
-    score = models.IntegerField()
-    admin = models.ForeignKey(User)
+    attend_date = models.DateField(blank=True, null=True)
+    score = models.IntegerField(blank=True, null=True)
+    admin = models.ForeignKey(User, blank=True, null=True)
 
     def __unicode__(self):
         return self.training+'|'+self.registration
 
-class EntranceTraining(models.Model):
+class EntranceTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
-    registration = models.ForeignKey("NonemployeeRegistration")
-    attend_date = models.DateField()
-    admin = models.ForeignKey(User)
+    attend_date = models.DateField(blank=True, null=True)
+    admin = models.ForeignKey(User, blank=True, null=True)
 
     def __unicode__(self):
         return self.training+'|'+self.registration
-
-class NonemployeeGroupTrainingSchedule(models.Model):
-    training = models.ForeignKey("Training")
-    nonemployee_group = models.ForeignKey("NonemployeeGroup")
-    training_date = models.DateField()
-
-class NonemployeeGroup(models.Model):
-    name = models.CharField(max_length=255)
-    parent_group = models.ForeignKey("self", blank=True, null=True)
-    entrance_training = models.ForeignKey("Training", blank=True, null=True, related_name="entrance_attendee")
-    trainings = models.ManyToManyField("Training", blank=True, null=True, related_name="training_attendee", through="NonemployeeGroupTrainingSchedule")
-    def __unicode__(self):
-        return self.name

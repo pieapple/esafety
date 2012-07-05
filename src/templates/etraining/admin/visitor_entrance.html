@@ -58,7 +58,6 @@
 {% endfor %}
 </select>
 <select id="child" name="sub_group">
-<option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "All People" %}</option>
 {% for group in sub_groups %}
 <option class="sub_{{group.parent_group.id}}" value="{{group.id}}">{{group.name}}</option>
 {% endfor %}

@@ -19,6 +19,7 @@
 </select>
 <input type="submit" value="Submit" />
 </form>
+<button id="create_poll">{% trans "Create Question Poll" %}</button>
 {% if question_list %}
 <div class="add_delete_toolbar"></div> <br />
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="questionlist" width="100%">
@@ -36,10 +37,11 @@
 {% for question in question_list %}
   <tr class="{% cycle odd even %}">
       <td>{{question.content}}</td>
-      {% for choice in question.choice_set.all %}
-      <td>{{choice.text}}</td>
-      {% endfor %}
-      <td></td>
+      <td>{{question.choice_1}}</td>
+      <td>{{question.choice_2}}</td>
+      <td>{{question.choice_3}}</td>
+      <td>{{question.choice_4}}</td>
+      <td>{{question.answer}}</td>
     </tr>
 {% endfor %}
   </tbody>
@@ -64,12 +66,40 @@
 </form>
 {% endif %}
 </div>
+<div id="create_poll_dialog" title="{% trans "Create Question Poll" %}">
+<form id="create_poll_form">
+<fieldset>
+<label for="question_type">{% trans "Question Type" %}</label>
+<input type="text" name="question_type" id="question_type" class="text ui-widget-content ui-corner-all" />
+</fieldset>
+</form>
+</div>
 {% endblock %}
 
 {% block extrascript %}
 {{block.super}}
 <script>
 $(document).ready(function() {
+  $("#create_poll_dialog").dialog({
+    autoOpen: false,
+    height: 160,
+    width: 450,
+    modal: true,
+    buttons: {
+      "{% trans 'Create Question Poll' %}": function() {
+        $.post("{% url add_question_poll %}", $("new_poll_form").serialize());
+        $(this).dialog("close");
+      },
+      Cancel: function() {
+        $(this).dialog("close");
+      }
+    }
+  });
+
+  $("#create_poll" ).button().click(function() {
+    $("#create_poll_dialog" ).dialog( "open" );
+  });
+
   $('#questionlist').dataTable( {
     "bJQueryUI": true,
     "sPaginationType": "full_numbers",

@@ -8,7 +8,7 @@ import datetime
 from django.utils.timezone import utc
 from etraining.models import Choice, Question, QuestionType
 from etraining.models import Document, Training
-from etraining.models import Employee, EmployeeTraining, NonemployeeRegistration, NonemployeeTraining, EmployeeGroup, NonemployeeGroup
+from etraining.models import Employee, EmployeeTrainingRecord, NonemployeeRegistration, NonemployeeTrainingRecord, Group
 
 def visitor_welcome(request):
     return render_to_response("etraining/welcome.html", {}, context_instance=RequestContext(request))

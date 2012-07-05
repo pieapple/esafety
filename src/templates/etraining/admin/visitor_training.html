@@ -12,7 +12,7 @@
   <div class="content_title">{% trans "Factory Safety Instruction" %}</div>
   <div class="document">
     <div class="document_body"> 
-      {% for document in training.documents %}
+      {% for document in training.documents.all %}
       <p>{{ document.name }}</p>
       <p>{{ document.text }}</p>
       {% endfor %}
@@ -22,6 +22,7 @@
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}
       <input type="hidden" name="training_id" value="{{training.pk}}" />
+      <input type="hidden" name="registration_id" value="{{registration.pk}}" />
       <input type="submit" value="{% trans 'confirm visitor accepted safety instructions' %}" />
     </form>
     <input type="button" value="{% trans 'print page' %}" />

@@ -1,0 +1,45 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Training Signup" %}</div>
+<div>{{training.name}}</div>
+<div>{{training.training_date}}</div>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="documentlist" width="100%">
+	<thead>
+		<tr>
+      <th>{% trans "Attendee Name" %}</th>
+      <th>{% trans "Attendee Identity" %}</th>
+      <th>{% trans "Sign Up" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+  {% if group.is_employee_group %}
+  {% for employee in group.employee_set %}
+    <tr id="{{employee.id}}" class="{% cycle odd even %}">
+      <td>{{employee.name}}</td>
+      <td>{{employee.identity}}</td>
+      <td></td>
+    </tr>
+  {% endfor %}
+  {% else %}
+  {% for nonemployee in group.nonemployeeRegisitration_set %}
+    <tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
+      <td>{{nonemployee.name}}</td>
+      <td>{{nonemployee.identity}}</td>
+      <td></td>
+    </tr>
+  {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+<table
+</div>
+{% endblock %}

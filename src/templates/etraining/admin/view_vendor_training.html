@@ -1,0 +1,52 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "View Employee Trainings" %}</div>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="traininglist" width="100%">
+	<thead>
+		<tr>
+      <th>{% trans "Training Name" %}</th>
+      <th>{% trans "Training Description" %}</th>
+      <th>{% trans "Training Attendee Name" %}</th>
+      <th>{% trans "Training Attendee ID" %}</th>
+      <th>{% trans "Training Attend Date" %}</th>
+      <th>{% trans "Training Exam Detail" %}</th>
+      <th>{% trans "Training Admin" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+  {% for vendor_training in vendor_training_list %}
+    <tr class="{% cycle odd even %}">
+      <td>{{vendor_training.training.name}}</td>
+      <td>{{vendor_training.training.description}}</td>
+      <td>{{vendor_training.registration.name}}</td>
+      <td>{{vendor_training.registration.identity}}</td>
+      <td>{{vendor_training.attend_date}}</td>
+      <td>{{vendor_training.score}}</td>
+      <td>{{vendor_training.admin}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+  $('#traininglist').dataTable( {
+    "bJQueryUI": true,
+    "sPaginationType": "full_numbers",
+  });
+});
+</script>
+{% endblock %}

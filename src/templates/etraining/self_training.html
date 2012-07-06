@@ -3,16 +3,18 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "Factory Safety Instruction" %}</div>
-<div class="document">
-<div class="document_body"> 
-<div>注意事项一</div>
-<div>注意事项二</div>
-</div>
-<div class="document_footer"></div>
-</div>
-<div class="submit_row">
-<input type="submit" value="{% trans 'print page' %}" />
-</div>
+  <div class="content_title">{% trans "Factory Safety Instruction" %}</div>
+  <div class="document">
+    <div class="document_body"> 
+      {% for document in training.documents.all %}
+      <h3 style="text-align:center">{{ document.name }}</h3>
+      <p>{{ document.text }}</p>
+      {% endfor %}
+    </div>
+    <audio src="{{audio_clip}}" autoplay="autoplay" />
+  </div>
+  <div class="submit_row">
+    <input type="submit" value="{% trans 'print page' %}" />
+  </div>
 </div>
 {% endblock %}

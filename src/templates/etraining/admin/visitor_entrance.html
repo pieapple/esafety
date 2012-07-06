@@ -8,49 +8,61 @@
 {% endblock %}
 
 {% block content %}
-<div class="content clearfix">
+<div class="content wider clearfix">
 <div class="content_title">{% trans "Visitor Registration" %}</div>
 <form action="" method="post">{% csrf_token %}
-{{ form.non_field_errors }}
-<table>
+<table class="formtable wider">
 <tr>
-<td><label for="id_identity">{% trans "Identity Card: " %}</label></td>
-<td>{{ form.identity }}</td>
+<td class="formlabel"><label for="id_identity">{% trans "Identity Card: " %}</label></td>
+<td colspan="3"><input type="text" id="id_identity" name="identity" style="width:60%" /></td>
 </tr>
 <tr>
-<td><label for="id_name">{% trans "Name: " %}</label></td>
+<td class="formlabel"><label for="id_name">{% trans "Name: " %}</label></td>
 <td>{{ form.name }}</td>
+<td class="formlabel"><label for="id_sex">{% trans "Sex: " %}</label></td>
+<td>
+<select name="sex" id="id_sex">
+<option value=1>男</option>
+<option value=0>女</option>
+</td>
 </tr>
 <tr>
-<td><label for="id_sex">{% trans "Sex: " %}</label></td>
-<td>{{ form.sex }}</td>
+<td class="formlabel"><label for="id_edu">{% trans "Edu: " %}</label></td>
+<td>
+<select name="edu" id="id_edu">
+<option value="小学">小学</option>
+<option value="初中">初中</option>
+<option value="高中">高中</option>
+<option value="大学" selected>大学</option>
+<option value="研究生">研究生</option>
+<option value="其他">其他</option>
+</select>
+</td>
+<td class="formlabel"><label for="id_major">{% trans "Major: " %}</label></td>
+<td>
+<select name="major" id="id_major">
+<option value="计算机">计算机</option>
+<option value="数学">数学</option>
+<option value="物理">物理</option>
+<option value="无线电" selected>无线电</option>
+<option value="其他">其他</option>
+</select>
+</td>
 </tr>
 <tr>
-<td><label for="id_edu">{% trans "Edu: " %}</label></td>
-<td>{{ form.edu }}</td>
-</tr>
-<tr>
-<td><label for="id_major">{% trans "Major: " %}</label></td>
-<td>{{ form.major }}</td>
-</tr>
-<tr>
-<td><label for="id_duty">{% trans "Duty: " %}</label></td>
+<td class="formlabel"><label for="id_duty">{% trans "Duty: " %}</label></td>
 <td>{{ form.duty }}</td>
-</tr>
-<tr>
-<td><label for="id_org">{% trans "Org: " %}</label></td>
+<td class="formlabel"><label for="id_org">{% trans "Org: " %}</label></td>
 <td>{{ form.org }}</td>
 </tr>
 <tr>
-<td><label for="id_home_address">{% trans "Homeaddress: " %}</label></td>
+<td class="formlabel"><label for="id_home_address">{% trans "Homeaddress: " %}</label></td>
 <td>{{ form.home_address }}</td>
-</tr>
-<tr>
-<td><label for="id_phone_number">{% trans "Phone number: " %}</label></td>
+<td class="formlabel"><label for="id_phone_number">{% trans "Phone number: " %}</label></td>
 <td>{{ form.phone_number }}</td>
 </tr>
 <tr>
-<td><label for="id_group">{% trans "Group: " %}</label></td>
+<td class="formlabel"><label for="id_group">{% trans "Group: " %}</label></td>
 <td>
 <select id="parent" name="group">
 {% for group in groups %}
@@ -63,17 +75,17 @@
 {% endfor %}
 </select>
 </td>
-</tr>
-<tr>
-<td><label for="id_certid">{% trans "Cert ID: " %}</label></td>
+<td class="formlabel"><label for="id_certid">{% trans "Cert ID: " %}</label></td>
 <td>{{ form.certid }}</td>
 </tr>
 <tr>
-<td><label for="id_reason">{% trans "Reason: " %}</label></td>
-<td>{{ form.reason }}</td>
+<td class="formlabel"><label for="id_reason">{% trans "Reason: " %}</label></td>
+<td colspan="3"><textarea id="id_reason" name="reason" style="width:70%"></textarea> </td>
+</tr>
+<tr class="submitrow">
+<td colspan="4" class="center"> <input type="submit" value="提交" /></td>
 </tr>
 </table>
-<input type="submit" value="Submit" />
 </form>
 </div>
 {% endblock %}

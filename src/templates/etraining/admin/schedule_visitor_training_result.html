@@ -4,7 +4,12 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li><a href="{% url training_schedule_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
+<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li>{% trans "schedule visitor training" %}</li>
 {% endblock %}
 
 {% block content %}

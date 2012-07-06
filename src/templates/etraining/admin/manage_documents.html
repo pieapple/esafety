@@ -4,14 +4,20 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
+<li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
+<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
+<li>{% trans "manage documents" %}</li>
+<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Manage Documents" %}</div>
 <div class="add_delete_toolbar"></div> <br />
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="documentlist" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 	<thead>
 		<tr>
       <th>{% trans "Document Name" %}</th>
@@ -31,6 +37,7 @@
 </table>
 </div>
 
+<div style="display:none">
 <form id="formAddNewRow" action="#" title="Add new record">
 {% csrf_token %}
 <label for="name">{% trans "Document Name" %}</label>
@@ -41,25 +48,41 @@
 <br />
 <input type="hidden" value="preview" rel="2" />
 </form>
+</div>
 {% endblock %}
 
 {% block extrascript %}
 {{block.super}}
 <script>
 $(document).ready(function() {
-  $('#documentlist').dataTable( {
+  $('.dataTable').dataTable( {
     "bJQueryUI": true,
     "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sLast": "最后一页",
+            "sNext": "下一页",
+            "sPrevious": "上一页"
+        }
+      }
   } ).makeEditable({
     sUpdateURL: '{% url edit_document %}',
     sAddURL: '{% url add_document %}',
     sDeleteURL: '{% url delete_document %}',
     oAddNewRowButtonOptions: { 
-      label: "Add...",
+      label: "增加文档",
       icons: { primary: 'ui-icon-plus' },
     },
     oDeleteRowButtonOptions: {
-      label: "Remove",
+      label: "删除选中文档",
       icons: { primary: 'ui-icon-trash' },
     },
     "aoColumns": [

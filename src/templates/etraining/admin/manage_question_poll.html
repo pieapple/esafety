@@ -4,12 +4,19 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
+<li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
+<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
+<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
+<li>{% trans "manage question poll" %}</li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Manage Question Poll" %}</div>
+<div class="center">
 <form action="" method="post">{% csrf_token %}
 <label for="question_type">{% trans "Choose Question Poll Type" %}</label>
 <select name="question_type" id="question_type">
@@ -17,12 +24,13 @@
 <option value="{{question_type.id}}" {% if question_type.id == select_type %}selected{% endif %}>{{question_type.name}}</option>
 {% endfor %}
 </select>
-<input type="submit" value="Submit" />
+<input type="submit" value="查询" />
+<input type="button" id="create_poll" value="{% trans 'add' %}" />
 </form>
-<button id="create_poll">{% trans "Create Question Poll" %}</button>
+</div>
 {% if question_list %}
-<div class="add_delete_toolbar"></div> <br />
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="questionlist" width="100%">
+<div class="add_delete_toolbar right"></div> <br />
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 	<thead>
 		<tr>
       <th>{% trans "Question Text" %}</th>
@@ -35,7 +43,7 @@
 	</thead>
 	<tbody>
 {% for question in question_list %}
-  <tr class="{% cycle odd even %}">
+  <tr id={{question.id}} class="{% cycle odd even %}">
       <td>{{question.content}}</td>
       <td>{{question.choice_1}}</td>
       <td>{{question.choice_2}}</td>
@@ -46,26 +54,37 @@
 {% endfor %}
   </tbody>
 </table>
+<div style="display:none">
 <form id="formAddNewRow" action="#" title="Add new record">
 <input type="hidden" name="question_type" value="1" />
 <label for="question_content">{% trans "Question Content" %}</label>
 <input type="text" name="question_content" id="question_content" class="required" rel="0" />
 <br />
 <label for="choice_1">{% trans "Choice #1" %}</label>
-<input type="text" name="choice_1" id="choice_1" class="required" rel="1" /><input type="checkbox" name="choice_1_is_answer" />
+<input type="text" name="choice_1" id="choice_1" class="required" rel="1" />
 <br />
 <label for="choice_2">{% trans "Choice #2" %}</label>
-<input type="text" name="choice_2" id="choice_2" class="required" rel="2" /><input type="checkbox" name="choice_2_is_answer" />
+<input type="text" name="choice_2" id="choice_2" class="required" rel="2" />
 <br />
 <label for="choice_3">{% trans "Choice #3" %}</label>
-<input type="text" name="choice_3" id="choice_3" class="required" rel="3" /><input type="checkbox" name="choice_3_is_answer" />
+<input type="text" name="choice_3" id="choice_3" class="required" rel="3" />
 <br />
 <label for="choice_4">{% trans "Choice #4" %}</label>
-<input type="text" name="choice_4" id="choice_4" class="required" rel="4" /><input type="checkbox" name="choice_4_is_answer" />
+<input type="text" name="choice_4" id="choice_4" class="required" rel="4" />
+<br />
+<label for="answer">{% trans "Answer" %}</label>
+<select name="answer" id="answer" class="required" rel="5" >
+<option value="1">A</option>
+<option value="2">B</option>
+<option value="3">C</option>
+<option value="4">D</option>
+</select>
 <br />
 </form>
+</div>
 {% endif %}
 </div>
+<div style="display:none">
 <div id="create_poll_dialog" title="{% trans "Create Question Poll" %}">
 <form id="create_poll_form">
 <fieldset>
@@ -73,6 +92,7 @@
 <input type="text" name="question_type" id="question_type" class="text ui-widget-content ui-corner-all" />
 </fieldset>
 </form>
+</div>
 </div>
 {% endblock %}
 
@@ -87,22 +107,38 @@ $(document).ready(function() {
     modal: true,
     buttons: {
       "{% trans 'Create Question Poll' %}": function() {
-        $.post("{% url add_question_poll %}", $("new_poll_form").serialize());
+        $.post("{% url add_question_poll %}", $("#create_poll_form").serialize());
         $(this).dialog("close");
+        location.reload();
       },
-      Cancel: function() {
+      "取消": function() {
         $(this).dialog("close");
       }
     }
   });
 
-  $("#create_poll" ).button().click(function() {
+  $("#create_poll" ).click(function() {
     $("#create_poll_dialog" ).dialog( "open" );
   });
 
-  $('#questionlist').dataTable( {
+  $('.dataTable').dataTable( {
     "bJQueryUI": true,
     "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sLast": "最后一页",
+            "sNext": "下一页",
+            "sPrevious": "上一页"
+        }
+      },
     "aoColumns": [
       { "bSortable": true },
       { "bSortable": false },
@@ -112,14 +148,29 @@ $(document).ready(function() {
       { "bSortable": false },
     ]
   } ).makeEditable({
+    sUpdateURL: '{% url edit_question %}',
+    sAddURL: '{% url add_question %}',
+    sDeleteURL: '{% url delete_question %}',
     oAddNewRowButtonOptions: { 
-      label: "Add...",
+      label: "增加题目",
       icons: { primary: 'ui-icon-plus' },
     },
     oDeleteRowButtonOptions: {
-      label: "Remove",
+      label: "删除选中题目",
       icons: { primary: 'ui-icon-trash' },
     },
+    "aoColumns": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        type: 'select',
+        onblur: 'submit',
+        data: "{'0':'Please select...', '1':'A','2':'B','3':'C','4':'D'}",
+      }
+    ],
   });
 });
 </script>

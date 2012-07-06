@@ -4,14 +4,19 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li>{% trans "view training list" %}</li>
+<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
+<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Training List" %}</div>
 <div class="add_delete_toolbar"></div> <br />
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="traininglist" width="100%">
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 	<thead>
 		<tr>
       <th>{% trans "Training Name" %}</th>
@@ -24,20 +29,27 @@
 	<tbody>
   {% for group in groups %}
   {% for training in group.trainings.all %}
+  {% if training.training_date >= today %}
   <tr id="{{training.id}}" class="{% cycle odd even %}">
       <td>{{training.name}}</td>
       <td>{{training.description}}</td>
       <td>{{group.name}}</td>
-      {% if training.training_date >= today %}
       <td><a href='{% url training_signup group.id training.id %}'>{% trans "Sign Up" %}</a></td>
-      {% else %}
-      <td><a href='{% url view_training_signup group.id training.id %}'>{% trans "View Sign Up" %}</a></td>
-      {% endif %}
       <td><a href='{% url attend_training training.id %}'>{% trans "Play Training" %}</a></td>
   </tr>
+  {% endif %}
   {% endfor %}
   {% endfor %}
   </tbody>
+<tfoot>
+<tr>
+<th><input type="text" name="search_name" value="{% trans 'Search Name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="搜索简介" class="search_init" /></th>
+<th><input type="text" name="search_attendee" value="搜索参加者" class="search_init" /></th>
+<th></th>
+<th></th>
+</tr>
+</tfoot>
 </table>
 </div>
 {% endblock %}
@@ -45,11 +57,49 @@
 {% block extrascript %}
 {{block.super}}
 <script>
+var asInitVals = new Array();
 $(document).ready(function() {
-  $('#traininglist').dataTable( {
-    "bJQueryUI": true,
-    "sPaginationType": "full_numbers",
-  });
+    var oTable = $('.dataTable').dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sLast": "最后一页",
+            "sNext": "下一页",
+            "sPrevious": "上一页"
+        }
+      }
+    });
+
+    $("tfoot input").keyup( function () {
+      oTable.fnFilter( this.value, $("tfoot input").index(this) );
+    });
+
+    $("tfoot input").each( function (i) {
+      asInitVals[i] = this.value;
+    });
+
+    $("tfoot input").focus( function () {
+      if ( this.className == "search_init" ) {
+        this.className = "";
+        this.value = "";
+      }
+    });
+
+    $("tfoot input").blur( function (i) {
+        if ( this.value == "" ) {
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
+        }
+    });
 });
 </script>
 {% endblock %}

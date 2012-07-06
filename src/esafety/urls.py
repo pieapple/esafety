@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = patterns('',
+    url(r'^$', 'esafety.views.index', name='index'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page':'/'},name='logout'),
     url(r'^etraining/', include('etraining.urls')),

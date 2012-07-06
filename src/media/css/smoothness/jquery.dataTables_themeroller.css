@@ -189,11 +189,11 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 	background-color: #99B3FF;
 }
 
-table.display tr.even.row_selected td {
+table.dataTable tr.even.row_selected td {
     background-color: #B0BED9;
 }
 
-table.display tr.odd.row_selected td {
+table.dataTable tr.odd.row_selected td {
     background-color: #9FAFD1;
 }
 
@@ -259,3 +259,12 @@ table.dataTable th:active {
 	float: left;
 }
 
+tfoot input {
+  color: #444444;
+  margin: 0.5em 0;
+  width: 100%;
+}
+
+tfoot input.search_init {
+  color: #999999;
+}

@@ -11,6 +11,7 @@
 <div class="logo"></div>
 <div class="tools">
 <div class="logout">
+    <span style="padding-right: 30px;">欢迎您, {{user}}</span>
     <img src="{{media_url}}img/loginout.gif" /><a class="logouttext" href="/accounts/logout">{% trans "Log out" %}</a>
 </div>
 </div>
@@ -26,9 +27,11 @@
 {% block sidebar %}
 <div class="side-nav">
 	<div class="sidenav-top"></div>
+  <div class="sidenav-tree">
     <ul id="nav" class="sidenav-text">
+    {% block insidebar %} {% endblock %}
     </ul>
-    <div class="sidenav-down">
-    </div>
+  </div>
+  <div class="sidenav-down"></div>
 </div>
 {% endblock %}

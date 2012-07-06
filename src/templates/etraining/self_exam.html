@@ -6,12 +6,16 @@
 <div class="content_title">{% trans "Employment Training Exam" %}</div>
 <div class="summary">本次考试一共{{ qcount }}题，您还有{{left_qnum}}题未答</div>
 <form id="form" action="" method="post">{%csrf_token%}
-	<div class="question">
-		<div>{{question.content}}</div>
+  <div class="question">
+  <div class="question_body">{{question.content}}</div>
+	<div class="choices">
 		{% for choice in question.choice_set.all %}
-		<input type="radio" name="answer" {% if answer == choice.id %}checked{% endif %} value="{{choice.id}}" />{{choice.text}}<br>
-		{% endfor %}
+		<div class="choice">
+    <input type="radio" name="answer" {% if answer == choice.id %}checked{% endif %} value="{{choice.id}}" />{{choice.text}}
+		</div>
+    {% endfor %}
 	</div>
+  </div>
 	<input id="act" name="act" type="hidden" value="default" />
 	<div class="submit_row">
 		{% if has_pre %}
@@ -24,6 +28,7 @@
 		{% endif %}
 	</div>
 </form>
+</div>
 </div>
 {% endblock %}
 

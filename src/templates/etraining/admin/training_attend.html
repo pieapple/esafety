@@ -13,10 +13,11 @@
   <div class="document">
     <div class="document_body"> 
       {% for document in training.documents.all %}
-      <p>{{ document.name }}</p>
+      <h3 style="text-align:center">{{ document.name }}</h3>
       <p>{{ document.text }}</p>
       {% endfor %}
     </div>
+    <audio src="{{audio_clip}}" autoplay="autoplay" />
   </div>
 </div>
 {% endblock %}

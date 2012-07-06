@@ -2,6 +2,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class IsConfirmAvailable(models.Model):
+    registration = models.IntegerField()
+
 class QuestionType(models.Model):
     name = models.CharField(max_length=255)
 
@@ -114,4 +117,4 @@ class EntranceTrainingRecord(models.Model):
     admin = models.ForeignKey(User, blank=True, null=True)
 
     def __unicode__(self):
-        return self.training+'|'+self.registration
+        return self.training

@@ -7,3 +7,20 @@
 <h2 class="welcome_text2">{% trans "Please register at the reception!" %}</h2>
 </div>
 {% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+function checkRedirect() {
+  $.get("{% url is_available_entrance %}",
+    function(data) {
+      if (data) {
+        location.href = "/etraining/entrance_training/"+data;
+      }
+    });
+}
+$(document).ready(function() {
+  setInterval("checkRedirect()", 5000);
+});
+</script>
+{% endblock %}

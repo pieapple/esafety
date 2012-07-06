@@ -1,8 +1,11 @@
-{% extends "etraining/admin/base_etraining.html" %} {% load i18n %} {% block breadcrumbs %}
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
+<li>{% trans "view training list" %}</li>
 <li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
 <li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
@@ -12,54 +15,41 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "View Training Signup" %}</div>
-<table>
-<tr>
-<td class="formlabel">培训名称:</td>
-<td>{{training.name}}</td>
-<td class="formlabel">培训日期:</td>
-<td>{{training.training_date}}</td>
-</tr>
-<tr>
-<td class="formlabel">类别:</td>
-<td>{% if group.parent_group %} {{group.parent_group.name}}{%endif%}</td>
-<td>{{group.name}}</td>
-<td></td>
-</tr>
-</table>
+<div class="content_title">{% trans "Training List" %}</div>
+<div class="add_delete_toolbar"></div> <br />
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
-<thead>
-<tr>
-<th>{% trans "Attendee Name" %}</th>
-<th>{% trans "Attendee Identity" %}</th>
-<th>{% trans "Sign Up" %}</th>
-</tr>
-</thead>
-<tbody>
-{% if group.is_employee_group %}
-{% for employee in employee_list %}
-<tr id="{{employee.id}}" class="{% cycle odd even %}">
-<td>{{employee.name}}</td>
-<td>{{employee.identity}}</td>
-<td></td>
-</tr>
-{% endfor %} {% else %}
-{% for nonemployee in nonemployee_list %}
-<tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
-<td>{{nonemployee.name}}</td>
-<td>{{nonemployee.identity}}</td>
-<td></td>
-</tr>
-{% endfor %}
-{% endif %}
-</tbody>
+	<thead>
+		<tr>
+      <th>{% trans "Training Name" %}</th>
+      <th>{% trans "Training Description" %}</th>
+      <th>{% trans "Training Attendees" %}</th>
+      <th>{% trans "View Training Signup" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+  {% for group in groups %}
+  {% for training in group.trainings.all %}
+  {% if training.training_date < today %}
+  <tr id="{{training.id}}" class="{% cycle odd even %}">
+      <td>{{training.name}}</td>
+      <td>{{training.description}}</td>
+      <td>{{group.name}}</td>
+      <td><a href='{% url view_training_signup group.id training.id %}'>{% trans "View Sign Up" %}</a></td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+  </tbody>
 <tfoot>
-<th><input type="text" name="search_attendeename" value="搜索参加者姓名" class="search_init" /></th>
-<th><input type="text" name="search_attendeeid" value="搜索参加者身份证" class="search_init" /></th>
+<tr>
+<th><input type="text" name="search_name" value="{% trans 'Search Name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="搜索简介" class="search_init" /></th>
+<th><input type="text" name="search_attendee" value="搜索参加者" class="search_init" /></th>
 <th></th>
+<th></th>
+</tr>
 </tfoot>
 </table>
-<table
 </div>
 {% endblock %}
 
@@ -86,29 +76,29 @@ $(document).ready(function() {
             "sPrevious": "上一页"
         }
       }
-      });
+    });
 
     $("tfoot input").keyup( function () {
       oTable.fnFilter( this.value, $("tfoot input").index(this) );
-      });
+    });
 
     $("tfoot input").each( function (i) {
       asInitVals[i] = this.value;
-      });
+    });
 
     $("tfoot input").focus( function () {
       if ( this.className == "search_init" ) {
-      this.className = "";
-      this.value = "";
+        this.className = "";
+        this.value = "";
       }
-      });
+    });
 
     $("tfoot input").blur( function (i) {
         if ( this.value == "" ) {
-        this.className = "search_init";
-        this.value = asInitVals[$("tfoot input").index(this)];
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
         }
-        });
+    });
 });
 </script>
 {% endblock %}

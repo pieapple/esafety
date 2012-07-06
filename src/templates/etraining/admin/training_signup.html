@@ -4,38 +4,59 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li><a href="{% url training_schedule_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
+<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Training Signup" %}</div>
-<div>{{training.name}}</div>
-<div>{{training.training_date}}</div>
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="documentlist" width="100%">
-	<thead>
-		<tr>
-      <th>{% trans "Attendee Name" %}</th>
-      <th>{% trans "Attendee Identity" %}</th>
-      <th>{% trans "Sign Up" %}</th>
-		</tr>
-	</thead>
-	<tbody>
-  {% for employee in employee_list %}
-    <tr id="{{employee.id}}" class="{% cycle odd even %}">
-      <td>{{employee.name}}</td>
-      <td>{{employee.identity}}</td>
-      <td><button class="signup">{% trans "Sign Up" %}</button></td>
-    </tr>
-  {% endfor %}
-  {% for nonemployee in nonemployee_list %}
-    <tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
-      <td>{{nonemployee.name}}</td>
-      <td>{{nonemployee.identity}}</td>
-      <td><button class="signup">{% trans "Sign Up" %}</button></td>
-    </tr>
-  {% endfor %}
-  </tbody>
+<table class="formtable">
+<tr>
+<td class="formlabel">培训名称:</td>
+<td>{{training.name}}</td>
+<td class="formlabel">培训日期:</td>
+<td>{{training.training_date}}</td>
+<td class="formlabel">类别:</td>
+<td>{% if group.parent_group %} {{group.parent_group.name}},{%endif%}{{group.name}}</td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
+<thead>
+<tr>
+<th>{% trans "Attendee Name" %}</th>
+<th>{% trans "Attendee Identity" %}</th>
+<th>{% trans "Sign Up" %}</th>
+</tr>
+</thead>
+<tbody>
+{% if group.is_employee_group %}
+{% for employee in employee_list %}
+<tr id="{{employee.id}}" class="{% cycle odd even %}">
+<td>{{employee.name}}</td>
+<td>{{employee.identity}}</td>
+<td><button class="signup">{% trans "Sign Up" %}</button></td>
+</tr>
+{% endfor %}
+{% else %}
+{% for nonemployee in nonemployee_list %}
+<tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
+<td>{{nonemployee.name}}</td>
+<td>{{nonemployee.identity}}</td>
+<td><button class="signup">{% trans "Sign Up" %}</button></td>
+</tr>
+{% endfor %}
+{% endif %}
+</tbody>
+<tfoot>
+<th><input type="text" name="search_attendeename" value="搜索参加者姓名" class="search_init" /></th>
+<th><input type="text" name="search_attendeeid" value="搜索参加者身份证" class="search_init" /></th>
+<th></th>
+</tfoot>
 </table>
 <table
 </div>
@@ -44,10 +65,64 @@
 {% block extrascript %}
 {{block.super}}
 <script>
+var asInitVals = new Array();
 $(document).ready(function() {
-  $(".signup").button().click(function() {
-    alert($(this.parentNode.parentNode).attr('id'));
-  });
+    $(".signup").button().click(function() {
+      id = $(this.parentNode.parentNode).attr('id');
+      parent = $(this.parentNode);
+      $.post("{% url training_signup group.id training.id %}",
+        {% if group.is_employee_group %}
+        "employee_id="+id,
+        {% else %}
+        "registration_id="+id,
+        {% endif %}
+        function(data) {
+          if (data == "OK") {
+            parent.html("已签到");
+          }
+        });
+      });
+    var oTable = $('.dataTable').dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+          "sFirst": "第一页",
+          "sLast": "最后一页",
+          "sNext": "下一页",
+          "sPrevious": "上一页"
+        }
+      }
+    });
+
+    $("tfoot input").keyup( function () {
+        oTable.fnFilter( this.value, $("tfoot input").index(this) );
+      });
+
+    $("tfoot input").each( function (i) {
+        asInitVals[i] = this.value;
+      });
+
+    $("tfoot input").focus( function () {
+        if ( this.className == "search_init" ) {
+          this.className = "";
+          this.value = "";
+        }
+      });
+
+    $("tfoot input").blur( function (i) {
+        if ( this.value == "" ) {
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
+        }
+      });
 });
 </script>
 {% endblock %}

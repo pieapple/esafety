@@ -34,6 +34,7 @@ header .top-nav {
   width:188px; 
   position: absolute;
   top: 60px;
+  left: 10px;
   background-image:url(../img/main_bg.gif); 
   background-repeat:repeat-x;
 }
@@ -47,7 +48,19 @@ header .top-nav {
 .side-nav .sidenav-tree {
   width:184px; 
   background:url(../img/main_19.gif); 
-  height:260px; 
+}
+
+.side-nav .sidenav-tree ul.sidenav-text {
+  margin: 0;
+  margin-right: 10px;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.side-nav .sidenav-tree ul.sidenav-text li {
+  padding-top: 5;
+  padding-bottom: 5px;
 }
 
 .side-nav .sidenav-down {
@@ -56,35 +69,15 @@ header .top-nav {
   background:url(../img/main_21.gif);
 }
 
-.side-nav .sidenav-tree .sidenav-icon {
-  width:162px; 
-  height:95px; 
-  margin-left: 11px;
-}
-
-.side-nav .sidenav-tree .sidenav-icon.exam {
-  background:url(../img/main_12.gif); 
-}
-
-.side-nav .sidenav-tree .sidenav-icon.training {
-  background:url(../img/main_13.gif); 
-}
-
-.side-nav .sidenav-tree .sidenav-icon div {
-  display: inline-block;
-  margin-left:11px; 
-  margin-top:10px; 
-  cursor:pointer;
-}
-
-.side-nav .sidenav-tree ul.sidenav-text.hidden {
-  display: none;
-}
-
 .content {
   padding-top: 10px; 
-  padding-left:200px;
+  padding-left: 210px;
+  margin-right: 20px;
   margin-bottom: 60px;
+}
+
+.content.wider {
+  padding-left:20px;
 }
 
 h2.content-title {
@@ -95,8 +88,15 @@ h2.content-title {
 
 .content .content_title {
   font-size: 2em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content .center {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .content .document {
@@ -116,4 +116,52 @@ h2.content-title {
 .content .submit_row {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+table.formtable {
+  margin: 0 auto;
+  width: 70%;
+}
+
+table.formtable.wider {
+  margin: 0 auto;
+  width: 80%;
+}
+
+table.formtable tr td {
+  padding-top: 10px;
+}
+
+table.formtable tr.submitrow td {
+  padding-top: 30px;
+  text-align: center;
+}
+
+table.formtable td.formlabel {
+  text-align: right;
+  font-weight: bold;
+}
+
+table.formtable2 {
+  margin: 0 auto;
+  width: 60%;
+}
+
+table.formtable2 td.formlabel {
+  text-align: right;
+  font-weight: bold;
+}
+
+table.formtable2 tr td {
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+table.formtable2 tr.submitrow td {
+  padding-top: 20px;
+  text-align: center;
 }

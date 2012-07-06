@@ -4,24 +4,29 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block sidebar %}
+{% block insidebar %}
+<li><a href="{% url training_schedule_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
+<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li>{% trans "schedule visitor training" %}</li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Schedule Visitor Training" %}</div>
 <form action="" method="post">{% csrf_token %}
-<table>
+<table class="formtable2">
 <tr>
-<td><label>{% trans "Training Name" %}</label></td>
+<td class="formlabel"><label>{% trans "Training Name" %}</label></td>
 <td><input type="text" name="training_name" value="" /><br/></td>
 </tr>
 <tr>
-<td><label>{% trans "Training Description" %}</label></td>
+<td class="formlabel"><label>{% trans "Training Description" %}</label></td>
 <td><input type="text" name="training_description" value="" /></td>
 </tr>
 <tr>
-<td><label>{% trans "Training Content" %}</label></td>
+<td class="formlabel"><label>{% trans "Training Content" %}</label></td>
 <td><select name="document_id"><option value="">------------</option>
 {% for document in documents %}
 <option value="{{document.id}}">{{document.name}}</option>
@@ -29,7 +34,7 @@
 </select></td>
 </tr>
 <tr>
-<td><label>{% trans "Training Attendee" %}</label></td>
+<td class="formlabel"><label>{% trans "Training Attendee" %}</label></td>
 <td>
 <select id="parent" name="group"><option value="">{% trans "All People" %}</option>
 {% for group in groups %}
@@ -44,8 +49,10 @@
 </select>
 </td>
 </tr>
+<tr class="submitrow">
+<td colspan="2"><input type="submit" value="提交" /></td>
+</tr>
 </table>
-<input type="submit" value="Submit" />
 </form>
 </div>
 {% endblock %}

@@ -8,16 +8,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="content clearfix">
+<div class="content wider clearfix">
   <div class="content_title">{% trans "Factory Safety Instruction" %}</div>
   <div class="document">
     <div class="document_body"> 
       {% for document in training.documents.all %}
-      <p>{{ document.name }}</p>
+      <h3 style="text-align:center">{{ document.name }}</h3>
       <p>{{ document.text }}</p>
       {% endfor %}
     </div>
     <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
+    <audio src="{{audio_clip}}" autoplay="autoplay" />
   </div>
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}

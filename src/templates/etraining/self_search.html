@@ -61,6 +61,8 @@
 {% endif %}
 </table>
 </div>
+{% elif identity %}
+<div>没有合适的记录</div>
 {% endif %}
 {% if training_list %}
 <div class="training_records">
@@ -70,11 +72,9 @@
 {{ training.name }} 
 {% if training.status == 0 %}
 (未参加培训, 请至人事处参加培训并签到)
-{% endif %}
-{% if training.status == 1 %}
+{% elif training.status == 1 %}
 (考试未通过), <a href="{% url self_training training.id %}">播放培训</a>, <a href="{% url self_examination is_employee training.record %}">参加考试</a>
-{% endif %}
-{% if training.status == 2 %}
+{% elif training.status == 2 %}
 (考试已通过), <a href="{% url self_training training.id %}">播放培训</a>
 {% endif %}
 </div>

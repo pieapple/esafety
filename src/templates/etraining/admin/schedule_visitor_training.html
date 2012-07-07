@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url training_schedule_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url training_schedule_list %}">查看培训计划表</td>
 <li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
 <li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
 <li>{% trans "schedule visitor training" %}</li>
+<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
+<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
@@ -23,7 +25,7 @@
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "Training Description" %}</label></td>
-<td><input type="text" name="training_description" value="" /></td>
+<td><textarea name="training_description"></textarea></td>
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "Training Content" %}</label></td>

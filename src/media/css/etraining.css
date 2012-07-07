@@ -28,12 +28,14 @@
 
 .content .document_body {
   text-align: left;
-  padding-left: 20px;
-  padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .content .document_footer {
+  text-align: left;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .content .submit_row {
@@ -55,6 +57,26 @@
 
 }
 
+.content .question {
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: left;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.content .question_body {
+  font-weight: bold;
+}
+
+.content .choices {
+  padding-left: 10px;
+}
+
+.content .choice {
+  padding-top: 10px;
+}
+
 table.formtable {
   margin: 0 auto;
   width: 90%;
@@ -74,22 +96,3 @@ table.formtable td.formlabel {
   font-weight: bold;
 }
 
-.question {
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: left;
-  border: 1px solid black;
-  padding: 20px;
-}
-
-.question_body {
-  font-weight: bold;
-}
-
-.choices {
-  padding-left: 10px;
-}
-
-.choice {
-  padding-top: 10px;
-}

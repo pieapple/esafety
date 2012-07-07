@@ -5,12 +5,10 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
 <li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
 <li>{% trans "view vendor training" %}</li>
 <li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
-<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
-<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
@@ -36,19 +34,23 @@
       <td>{{vendor_training.registration.name}}</td>
       <td>{{vendor_training.registration.identity}}</td>
       <td>{{vendor_training.attend_date}}</td>
-      <td>{{vendor_training.score}}</td>
+      {% if vendor_training.score < vendor_training.training.pass_criteria %}
+      <td>未通过</td>
+      {% else %}
+      <td>已通过</td>
+      {% endif %}
       <td>{{vendor_training.admin}}</td>
     </tr>
   {% endfor %}
   </tbody>
 <tfoot>
 <tr>
-<th><input type="text" name="search_name" value="{% trans 'Search Name' %}" class="search_init" /></th>
+<th><input type="text" name="search_name" value="搜索名称" class="search_init" /></th>
 <th><input type="text" name="search_description" value="搜索简介" class="search_init" /></th>
 <th><input type="text" name="search_employeename" value="搜索参加者姓名" class="search_init" /></th>
 <th><input type="text" name="search_employeeid" value="搜索参加者身份证" class="search_init" /></th>
 <th><input type="text" name="search_date" value="搜索日期" class="search_init" /></th>
-<th></th>
+<th><input type="text" name="search_exam" value="搜索考试通过情况" class="search_init" /></th>
 <th><input type="text" name="search_admin" value="搜索管理员" class="search_init" /></th>
 </tr>
 </tfoot>

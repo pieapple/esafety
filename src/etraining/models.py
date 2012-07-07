@@ -1,6 +1,10 @@
 # coding: utf-8
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+import sys, datetime, pyekho
 
 class IsConfirmAvailable(models.Model):
     registration = models.IntegerField()
@@ -39,7 +43,7 @@ class Training(models.Model):
     pass_criteria = models.IntegerField(blank=True, null=True)
     question_count = models.IntegerField(blank=True, null=True)
     training_date = models.DateField(blank=True, null=True)
-    documents = models.ManyToManyField("Document")
+    document = models.ForeignKey("Document")
 
     def __unicode__(self):
         return self.name
@@ -118,3 +122,14 @@ class EntranceTrainingRecord(models.Model):
 
     def __unicode__(self):
         return self.training
+
+@receiver(pre_save, sender=Document)
+def convert_to_mp3(sender, **kwargs):
+    if sys.getdefaultencoding() != 'utf8':
+        reload(sys)
+    sys.setdefaultencoding('utf8')
+    instance = kwargs['instance']
+    if instance:
+        path = "audio/" + str(datetime.datetime.now()) + ".ogg"
+        pyekho.saveOgg(unicode(instance.name + "\n" + instance.text), settings.MEDIA_ROOT + path)
+        instance.audio_clip = settings.MEDIA_PATH + path

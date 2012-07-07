@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url training_schedule_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url training_schedule_list %}">查看培训计划表</td>
 <li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
 <li>{% trans "schedule employee training" %}</li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
@@ -15,7 +15,9 @@
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "Schedule Employee Training" %}</div>
+<div class="innerContent">
 {% trans "Schedule employee training Successfully" %}
 <a href="{% url schedule_employee_training %}">{% trans "Schedule another one" %}</a>
+</div>
 </div>
 {% endblock %}

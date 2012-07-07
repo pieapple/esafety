@@ -3,15 +3,13 @@
 
 {% block content %}
 <div class="content clearfix">
-  <div class="content_title">{% trans "Factory Safety Instruction" %}</div>
+  <div class="content_title">{{training.document.name}}</div>
   <div class="document">
     <div class="document_body"> 
-      {% for document in training.documents.all %}
-      <p>{{ document.name }}</p>
-      <p>{{ document.text }}</p>
-      {% endfor %}
+      <pre>{{ training.document.text }}</pre>
     </div>
     <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
+    <audio src="{{audio_clip}}" autoplay="autoplay" />
   </div>
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}

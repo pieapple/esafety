@@ -70,17 +70,19 @@ header .top-nav {
 }
 
 .content {
-  padding-top: 10px; 
-  padding-left: 210px;
+  margin-top: 10px; 
+  margin-left: 210px;
   margin-right: 20px;
   margin-bottom: 60px;
 }
 
 .content.wider {
-  padding-left:20px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px; 
 }
 
-h2.content-title {
+.content h2.content-title {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -94,9 +96,10 @@ h2.content-title {
   text-align: center;
 }
 
-.content .center {
-  margin: 0 auto;
+.content .innerContent {
+  padding: 30px;
   text-align: center;
+  font-size: 1.2em;
 }
 
 .content .document {
@@ -105,11 +108,16 @@ h2.content-title {
 
 .content .document_body {
   text-align: left;
-  padding-left: 20px;
-  padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.content .document_body.bigger {
+  font-size: 1.5em;
 }
 
 .content .document_footer {
+  margin-left: 20px;
   margin-top: 20px;
 }
 
@@ -134,6 +142,7 @@ table.formtable.wider {
 
 table.formtable tr td {
   padding-top: 10px;
+  padding-left: 10px;
 }
 
 table.formtable tr.submitrow td {

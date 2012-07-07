@@ -10,7 +10,7 @@
 {% block content %}
 <div class="content wider clearfix">
 <div class="content_title">{% trans "Visitor Registration" %}</div>
-<form action="" method="post">{% csrf_token %}
+<form id="reg_form" action="" method="post">{% csrf_token %}
 <table class="formtable wider">
 <tr>
 <td class="formlabel"><label for="id_identity">{% trans "Identity Card: " %}</label></td>
@@ -76,13 +76,13 @@
 </select>
 </td>
 <td class="formlabel"><label for="id_certid">{% trans "Cert ID: " %}</label></td>
-<td>{{ form.certid }}</td>
+<td><input type="text" value="" name="certid" id="id_certid" disabled />
 </tr>
 <tr>
 <td class="formlabel"><label for="id_reason">{% trans "Reason: " %}</label></td>
 <td colspan="3"><textarea id="id_reason" name="reason" style="width:70%"></textarea> </td>
 </tr>
-<tr class="submitrow">
+<tr class="submit_row">
 <td colspan="4" class="center"> <input type="submit" value="提交" /></td>
 </tr>
 </table>
@@ -95,6 +95,23 @@
 <script>
 $(document).ready(function() {
   makeSublist('parent', 'child', false, '');
+  $("#child").change( function() {
+    if ($(this).attr("value") == 23) {
+      if ($("#id_certid").attr("disabled")) {
+        $("#id_certid").removeAttr("disabled");
+      }
+    } else {
+      $("#id_certid").attr("disabled", "disabled");
+    }
+  });
+  $("#reg_form").submit( function() {
+    if ($("#child").attr("value") == 23) {
+      if (!$("#id_certid").attr("value")) {
+        alert("请输入特殊工种证件号码")
+        return false;
+      }
+    }
+  });
 });
 </script>
 {% endblock %}

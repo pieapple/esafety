@@ -9,24 +9,20 @@
 
 {% block content %}
 <div class="content wider clearfix">
-  <div class="content_title">{% trans "Factory Safety Instruction" %}</div>
+  <div class="content_title">{{training.document.name}}</div>
   <div class="document">
     <div class="document_body"> 
-      {% for document in training.documents.all %}
-      <h3 style="text-align:center">{{ document.name }}</h3>
-      <p>{{ document.text }}</p>
-      {% endfor %}
+      <pre>{{ training.document.text }}</pre>
     </div>
     <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
-    <audio src="{{audio_clip}}" autoplay="autoplay" />
   </div>
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}
       <input type="hidden" name="training_id" value="{{training.pk}}" />
       <input type="hidden" name="registration_id" value="{{registration.pk}}" />
       <input type="submit" value="{% trans 'confirm visitor accepted safety instructions' %}" />
+      <input type="button" value="{% trans 'print page' %}" />
     </form>
-    <input type="button" value="{% trans 'print page' %}" />
   </div>
 </div>
 {% endblock %}

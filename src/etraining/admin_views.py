@@ -1,25 +1,22 @@
 from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
-from django.template import RequestContext
-from etraining.models import Choice, Question, QuestionType
-from etraining.models import Document, Training
-from etraining.models import Employee, EmployeeTrainingRecord, NonemployeeRegistration, NonemployeeTrainingRecord, EntranceTrainingRecord, Group, IsConfirmAvailable
-from etraining.admin_forms import NonemployeeRegistrationForm, EmployeeRegistrationForm
-import datetime
-from django.utils.timezone import utc
-import pyekho
 from django.conf import settings
-import sys
+from etraining.models import Choice, Question, QuestionType, Document, Training, IsConfirmAvailable
+from etraining.models import Employee, EmployeeTrainingRecord, NonemployeeRegistration, NonemployeeTrainingRecord, Group
+from etraining.admin_forms import NonemployeeRegistrationForm, EmployeeRegistrationForm
+import datetime, sys, random
 
 def get_entrance_training_for_group(group):
-  if group.entrance_training:
-    return group.entrance_training
-  elif group.parent_group:
-    return get_entrance_training_for_group(group.parent_group)
-  else:
-    return None
+    if group.entrance_training:
+        return group.entrance_training
+    elif group.parent_group:
+        return get_entrance_training_for_group(group.parent_group)
+    else:
+        return None
 
 @login_required
 def visitor_entrance(request):
@@ -52,23 +49,9 @@ def visitor_entrance(request):
       available = IsConfirmAvailable(registration=visitor_entrance.pk)
       available.save()
 
-      if sys.getdefaultencoding() != 'utf8':
-        reload(sys)
-        sys.setdefaultencoding('utf8')
-
-      text = ""
-      for document in training.documents.all():
-        text += unicode(document.name)
-        text += u"\n"
-        text += unicode(document.text)
-        text += u"\n"
-      path = "audio/" + str(datetime.datetime.now()) + ".ogg"
-      pyekho.saveOgg(text, settings.MEDIA_ROOT + path)
-
       return render_to_response("etraining/admin/visitor_training.html", {
           "training": training,
           "registration": visitor_entrance,
-          "audio_clip": settings.MEDIA_URL + path,
         }, context_instance=RequestContext(request))
   else:
     form = NonemployeeRegistrationForm()
@@ -157,7 +140,7 @@ def training_signup(request, group_id, training_id):
         employeeTrainingRecord.save()
       else:
         registration_id = int(request.POST["registration_id"])
-        registration = NonemployeeRegistrationRecord.objects.get(pk=registration_id)
+        registration = NonemployeeRegistration.objects.get(pk=registration_id)
         try:
           nonemployeeTrainingRecord = NonemployeeTrainingRecord.objects.get(registration=registration, training=training)
         except:
@@ -177,11 +160,34 @@ def training_signup(request, group_id, training_id):
       for new_group in groups:
         if new_group == group or new_group.parent_group == group:
           employee_list.extend(new_group.employee_set.all())
+      for employee in employee_list:
+        try:
+          EmployeeTrainingRecord.objects.get(employee=employee, training=training)
+          employee.training_done = True
+        except:
+          employee.training_done = False
     else:
       groups = Group.objects.filter(is_employee_group=False)
       for new_group in groups:
         if new_group == group or new_group.parent_group == group:
-          nonemployee_list.extend(new_group.nonemployeeRegistration_set.all())
+          nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+      nonemployee_dict = {}
+      for nonemployee in nonemployee_list:
+        identity = nonemployee.identity
+        try:
+          item = nonemployee_dict[identity]
+          if item.entrance_time > nonemployee.entrance_time:
+            nonemployee_dict[identity] = nonemployee
+        except:
+          nonemployee_dict[identity] = nonemployee
+      nonemployee_list = nonemployee_dict.values()
+      for nonemployee in nonemployee_list:
+        try:
+          NonemployeeTrainingRecord.objects.get(registration=nonemployee, training=training)
+          nonemployee.training_done = True
+        except:
+          nonemployee.training_done = False
+
     return render_to_response("etraining/admin/training_signup.html", {
         "training": training,
         "group": group,
@@ -193,22 +199,9 @@ def training_signup(request, group_id, training_id):
 def attend_training(request, training_id):
   training = Training.objects.get(pk=training_id)
 
-  if sys.getdefaultencoding() != 'utf8':
-    reload(sys)
-    sys.setdefaultencoding('utf8')
-
-  text = ""
-  for document in training.documents.all():
-    text += unicode(document.name)
-    text += u"\n"
-    text += unicode(document.text)
-    text += u"\n"
-  path = "audio/" + str(datetime.datetime.now()) + ".ogg"
-  pyekho.saveOgg(text, settings.MEDIA_ROOT + path)
-
   return render_to_response("etraining/admin/training_attend.html", {
       "training": training,
-      "audio_clip": settings.MEDIA_URL + path,
+      "audio_clip": training.document.audio_clip,
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -225,8 +218,8 @@ def schedule_employee_training(request):
     training = Training(name=name, description=description, training_type=training_type, pass_criteria=pass_criteria, question_count=question_count)
     training.exam_type = QuestionType.objects.get(pk=exam_type_id)
     training.training_date = datetime.date.today() 
+    training.document = document
     training.save()
-    training.documents.add(document)
 
     try:
       group_id = request.POST['group']
@@ -276,8 +269,8 @@ def schedule_vendor_training(request):
     training = Training(name=name, description=description, pass_criteria=pass_criteria, question_count=question_count)
     training.exam_type = QuestionType.objects.get(pk=exam_type_id)
     training.training_date = datetime.date.today() 
+    training.document = document
     training.save()
-    training.documents.add(document)
 
     try:
       group_id = request.POST['group']
@@ -323,8 +316,8 @@ def schedule_visitor_training(request):
     document = Document.objects.get(pk=int(request.POST["document_id"]))
 
     training = Training(name=name, description=description)
+    training.document = document
     training.save()
-    training.documents.add(document)
 
     try:
       group_id = request.POST['group']
@@ -380,11 +373,39 @@ def view_training_signup(request, group_id, training_id):
     for new_group in groups:
       if new_group == group or new_group.parent_group == group:
         employee_list.extend(new_group.employee_set.all())
+    for employee in employee_list:
+      try:
+        record = EmployeeTrainingRecord.objects.get(employee=employee, training=training)
+        if not record.score or record.score < training.pass_criteria:
+          employee.status = 1
+        else:
+          employee.status = 2
+      except:
+        employee.status = 0
   else:
     groups = Group.objects.filter(is_employee_group=False)
     for new_group in groups:
       if new_group == group or new_group.parent_group == group:
-        nonemployee_list.extend(new_group.nonemployeeRegistration_set.all())
+        nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+    nonemployee_dict = {}
+    for nonemployee in nonemployee_list:
+      identity = nonemployee.identity
+      try:
+        item = nonemployee_dict[identity]
+        if item.entrance_time > nonemployee.entrance_time:
+          nonemployee_dict[identity] = nonemployee
+      except:
+        nonemployee_dict[identity] = nonemployee
+    nonemployee_list = nonemployee_dict.values()
+    for nonemployee in nonemployee_list:
+      try:
+        NonemployeeTrainingRecord.objects.get(registration=nonemployee, training=training)
+        if not record.score or record.score < training.pass_criteria:
+          nonemployee.status = 1
+        else:
+          nonemployee.status = 2
+      except:
+        nonemployee.status = 0
   return render_to_response("etraining/admin/view_training_signup.html", {
       "training": training,
       "group": group,

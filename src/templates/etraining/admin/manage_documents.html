@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
-<li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
-<li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
-<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
+<li><a href="{% url training_schedule_list %}">查看培训计划表</td>
+<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
+<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 <li>{% trans "manage documents" %}</li>
 <li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
@@ -22,7 +23,6 @@
 		<tr>
       <th>{% trans "Document Name" %}</th>
       <th>{% trans "Document Text" %}</th>
-      <th>{% trans "Document Preview" %}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -30,7 +30,6 @@
   <tr id="{{document.id}}" class="{% cycle odd even %}">
       <td>{{document.name}}</td>
       <td>{{document.text}}</td>
-      <td></td>
     </tr>
 {% endfor %}
   </tbody>
@@ -44,9 +43,9 @@
 <input type="text" name="name" id="name" class="required" rel="0" />
 <br />
 <label for="text">{% trans "Document Text" %}</label>
-<input type="text" name="text" id="text" class="required" rel="1" />
+<textarea name="text" id="text">
+</textarea>
 <br />
-<input type="hidden" value="preview" rel="2" />
 </form>
 </div>
 {% endblock %}
@@ -88,13 +87,9 @@ $(document).ready(function() {
     "aoColumns": [
       {},
       {
-        indicator: 'Saving text...',
-        tooltip: 'Click to edit training text',
+        indicator: '保存中。。。',
         type: 'textarea',
-        submit:'Save changes',
-        fnOnCellUpdated: function(sStatus, sValue, settings){
-          alert("(Cell Callback): Cell is updated with value " + sValue);
-        }
+        submit:'保存',
       },
       null
     ],

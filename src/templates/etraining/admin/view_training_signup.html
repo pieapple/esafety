@@ -2,12 +2,10 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">{% trans "view training list" %}</a></li>
+<li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
 <li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
 <li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
-<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
-<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
@@ -32,6 +30,9 @@
 <tr>
 <th>{% trans "Attendee Name" %}</th>
 <th>{% trans "Attendee Identity" %}</th>
+{% if not group.is_employee_group %}
+<th>入厂时间</th>
+{% endif %}
 <th>{% trans "Sign Up" %}</th>
 </tr>
 </thead>
@@ -41,14 +42,27 @@
 <tr id="{{employee.id}}" class="{% cycle odd even %}">
 <td>{{employee.name}}</td>
 <td>{{employee.identity}}</td>
-<td></td>
+{% if employee.status == 0 %}
+<td>未参加培训</td>
+{% elif employee.status == 1 %}
+<td>考试未通过</td>
+{% elif employee.status == 2 %}
+<td>考试已通过</td>
+{% endif %}
 </tr>
 {% endfor %} {% else %}
 {% for nonemployee in nonemployee_list %}
 <tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
 <td>{{nonemployee.name}}</td>
 <td>{{nonemployee.identity}}</td>
-<td></td>
+<td>{{nonemployee.entrance_time}}</td>
+{% if nonemployee.status == 0 %}
+<td>未参加培训</td>
+{% elif nonemployee.status == 1 %}
+<td>考试未通过</td>
+{% elif nonemployee.status == 2 %}
+<td>考试已通过</td>
+{% endif %}
 </tr>
 {% endfor %}
 {% endif %}
@@ -56,6 +70,9 @@
 <tfoot>
 <th><input type="text" name="search_attendeename" value="搜索参加者姓名" class="search_init" /></th>
 <th><input type="text" name="search_attendeeid" value="搜索参加者身份证" class="search_init" /></th>
+{% if not group.is_employee_group %}
+<th><input type="text" name="search_entrancetime" value="搜索入厂时间" class="search_init" /></th>
+{% endif %}
 <th></th>
 </tfoot>
 </table>

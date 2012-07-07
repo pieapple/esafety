@@ -8,14 +8,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="content clearfix">
-  <div class="content_title">{% trans "Training" %}</div>
+<div class="content wider clearfix">
+  <div class="content_title">{{training.document.name}}</div>
   <div class="document">
-    <div class="document_body"> 
-      {% for document in training.documents.all %}
-      <h3 style="text-align:center">{{ document.name }}</h3>
-      <p>{{ document.text }}</p>
-      {% endfor %}
+    <div class="document_body bigger"> 
+      <pre>{{ training.document.text }}</pre>
     </div>
     <audio src="{{audio_clip}}" autoplay="autoplay" />
   </div>

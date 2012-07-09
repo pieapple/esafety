@@ -55,7 +55,7 @@ def self_search(request):
             is_employee = 1
         else:
             entries = NonemployeeRegistration.objects.filter(identity=identity).order_by('-entrance_time')
-        is_employee = 0
+            is_employee = 0
 
         if not len(entries):
             entry = None

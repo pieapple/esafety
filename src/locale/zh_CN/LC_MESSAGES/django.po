@@ -285,8 +285,10 @@ msgstr "查看临时工培训"
 #: templates/etraining/admin/view_vendor_training.html:11
 #: templates/etraining/admin/view_visitor_entrance.html:11
 msgid "view visitor entrance"
-msgstr "查看入厂记录"
+msgstr "查看访客入厂记录"
 
+msgid "view vendor entrance"
+msgstr "查看临时工入厂记录"
 #: templates/etraining/admin/manage_documents.html:12
 #: templates/etraining/admin/manage_question_poll.html:12
 #: templates/etraining/admin/view_employee_training.html:12

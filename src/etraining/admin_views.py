@@ -361,17 +361,17 @@ def view_training_signup(request, group_id, training_id):
             if new_group == group or new_group.parent_group == group:
                 employee_list.extend(new_group.employee_set.all())
         for employee in employee_list:
-        try:
-            record = EmployeeTrainingRecord.objects.get(employee=employee, training=training)
-        except:
-            record = None
+            try:
+                record = EmployeeTrainingRecord.objects.get(employee=employee, training=training)
+            except:
+                record = None
 
-        if not record:
-            employee.status = 0
-        elif not record.score or record.score < training.pass_criteria:
-            employee.status = 1
-        else:
-            employee.status = 2
+            if not record:
+                employee.status = 0
+            elif not record.score or record.score < training.pass_criteria:
+                employee.status = 1
+            else:
+                employee.status = 2
     else:
         groups = Group.objects.filter(is_employee_group=False)
         for new_group in groups:
@@ -399,12 +399,12 @@ def view_training_signup(request, group_id, training_id):
                 nonemployee.status = 1
             else:
                 nonemployee.status = 2
-      return render_to_response("etraining/admin/view_training_signup.html", {
-          "training": training,
-          "group": group,
-          "employee_list": employee_list,
-          "nonemployee_list": nonemployee_list,
-        }, context_instance=RequestContext(request))
+    return render_to_response("etraining/admin/view_training_signup.html", {
+        "training": training,
+        "group": group,
+        "employee_list": employee_list,
+        "nonemployee_list": nonemployee_list,
+    }, context_instance=RequestContext(request))
 
 @login_required
 def view_employee_training(request):

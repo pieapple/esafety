@@ -47,6 +47,16 @@ USE_I18N = True
 # calendars according to the current locale.
 USE_L10N = True
 
+# Date Format setting
+DATE_FORMAT = 'Y-m-d'
+DATETIME_FORMAT = 'Y-m-d H:i:s'
+SHORT_DATE_FORMAT = 'Y.m.d'
+SHORT_DATETIME_FORMAT = 'Y.m.d H:i'
+TIME_FORMAT = 'H:i'
+YEAR_MONTH_FORMAT = 'Y.m'
+MONTH_DAY_FORMAT = 'm.d'
+FIRST_DAY_OF_WEEK = 1
+
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 

@@ -118,7 +118,7 @@ def self_examination(request, is_employee, record_id):
                 question = session['questions'][qid]
                 answer = session['answers'][qid]
                 try:
-                  choice = question.choice_set.get(id=answer)
+                    choice = question.choice_set.get(id=answer)
                 except Choice.DoesNotExist:
                     wrongCount += 1
                 else:

@@ -33,16 +33,18 @@ class Choice(models.Model):
 class Document(models.Model):
     name = models.CharField(max_length=255)
     text = models.TextField()
-    audio_clip = models.CharField(max_length=255)
+    audio_clip = models.CharField(max_length=255, blank=True, null=True)
 
 class Training(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    credits = models.IntegerField(blank=True, null=True)
     training_type = models.CharField(max_length=255, blank=True, null=True)
     exam_type = models.ForeignKey("QuestionType", blank=True, null=True)
     pass_criteria = models.IntegerField(blank=True, null=True)
     question_count = models.IntegerField(blank=True, null=True)
     training_date = models.DateField(blank=True, null=True)
+    project = models.CharField(max_length=255, blank=True, null=True)
     document = models.ForeignKey("Document")
 
     def __unicode__(self):

@@ -1,5 +1,5 @@
 {% extends "etraining/admin/base_etraining.html" %}
-{% load i18n %}
+{% load i18n l10n %}
 
 {% block breadcrumbs %}
 {% endblock %}
@@ -8,6 +8,7 @@
 <li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
 <li>{% trans "view employee training" %}</li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
+<li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
 <li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
 {% endblock %}
 
@@ -32,7 +33,7 @@
 <tr class="{% cycle odd even %}">
 <td>{{employee_training.training.name}}</td>
 <td>{{employee_training.training.description}}</td>
-<td>{{employee_training.training.training_type}}</td>
+<td>{{employee_training.training.training_type|localize}}</td>
 <td>{{employee_training.employee.name}}</td>
 <td>{{employee_training.employee.identity}}</td>
 <td>{{employee_training.attend_date}}</td>

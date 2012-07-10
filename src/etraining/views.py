@@ -33,17 +33,29 @@ def is_available_entrance(request):
     else:
         return HttpResponse()
 
+def is_vendor_group(group):
+    if group and group.name == u"临时工":
+        return True
+    return False
+
+def is_vendor(registration):
+    if is_vendor_group(registration.group):
+        return True
+    else:
+        return is_vendor_group(registration.group.parent_group)
+
 def entrance_training(request, registration_id):
     if request.method == "POST":
         for available in IsConfirmAvailable.objects.all():
             available.delete()
         return HttpResponseRedirect(reverse("visitor_welcome"))
     else:
+        visitor_entrance = NonemployeeRegistration.objects.get(pk=registration_id)
         training = visitor_entrance.entrance_training.training
-
-    return render_to_response("etraining/entrance_training.html", {
+        return render_to_response("etraining/entrance_training.html", {
             "training": training,
             "registration": visitor_entrance,
+            "is_vendor": is_vendor(visitor_entrance),
             "audio_clip": training.document.audio_clip,
         }, context_instance=RequestContext(request))
 

@@ -14,7 +14,10 @@
     <div class="document_body"> 
       <pre>{{ training.document.text }}</pre>
     </div>
+    {% if is_vendor %}
     <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
+    {% endif %}
+    <audio src="/media/audio/training_confirm.ogg" autoplay="autoplay"></audio>
   </div>
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}

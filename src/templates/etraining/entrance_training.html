@@ -8,8 +8,12 @@
     <div class="document_body"> 
       <pre>{{ training.document.text }}</pre>
     </div>
-    <p class="document_footer">{% trans "[Vendor] * Please participate employment guidance at training reception." %}</p>
-    <audio src="{{audio_clip}}" autoplay="autoplay" />
+    <audio id="training_clip" src="{{audio_clip}}" autoplay="autoplay"></audio>
+    {% if is_vendor %}
+    <p class="document_footer">特别提示：承包商（施工队），请至人事处接受上岗培训</p>
+    <audio id="vendor_clip" src="/media/audio/vendor.ogg"></audio>
+    {% endif %}
+    <audio id="confirm_clip" src="/media/audio/confirm.ogg"></audio>
   </div>
   <div class="submit_row">
     <form action="" method="post">{%csrf_token%}
@@ -18,4 +22,29 @@
     </form>
   </div>
 </div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+    audio_clip = document.getElementById("training_clip");
+    vendor_clip = document.getElementById("vendor_clip");
+    confirm_clip = document.getElementById("confirm_clip");
+
+    audio_clip.addEventListener("ended", function() {
+        if(vendor_clip) {
+            setTimeout(function () { vendor_clip.play(); }, 1000);
+        } else {
+            setTimeout(function() { confirm_clip.play(); }, 2000);
+        }
+    });
+
+    if(vendor_clip) {
+        vendor_clip.addEventListener("ended", function() {
+            setTimeout(function() { confirm_clip.play(); }, 2000);
+        });
+    }
+});
+</script>
 {% endblock %}

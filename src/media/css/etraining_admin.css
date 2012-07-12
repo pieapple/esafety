@@ -135,19 +135,12 @@ table.formtable {
   width: 70%;
 }
 
+table.formtable.narrower {
+  width: 70%;
+}
+
 table.formtable.wider {
-  margin: 0 auto;
   width: 80%;
-}
-
-table.formtable tr td {
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-table.formtable tr.submitrow td {
-  padding-top: 30px;
-  text-align: center;
 }
 
 table.formtable td.formlabel {
@@ -155,22 +148,16 @@ table.formtable td.formlabel {
   font-weight: bold;
 }
 
-table.formtable2 {
-  margin: 0 auto;
-  width: 60%;
-}
-
-table.formtable2 td.formlabel {
-  text-align: right;
-  font-weight: bold;
-}
-
-table.formtable2 tr td {
+table.formtable tr td {
   padding-top: 10px;
+  padding-left: 10px;
+}
+
+table.formtable.narrower tr td {
   padding-left: 40px;
 }
 
-table.formtable2 tr.submitrow td {
-  padding-top: 20px;
+table.formtable tr.submitrow td {
+  padding-top: 30px;
   text-align: center;
 }

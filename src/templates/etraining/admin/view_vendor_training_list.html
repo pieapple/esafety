@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block insidebar %}
-<li>查看已结束培训列表</li>
+<li><a href="{% url view_employee_training_list %}">{% trans "view employee training list" %}</a></li>
+<li>{% trans "view vendor training list" %}</li>
 <li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
 <li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
@@ -14,37 +15,42 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">已结束培训列表</div>
+<div class="content_title">{% trans "view vendor training list" %}</div>
 <div class="add_delete_toolbar"></div> <br />
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 	<thead>
 		<tr>
-      <th>{% trans "Training Name" %}</th>
-      <th>{% trans "Training Description" %}</th>
-      <th>{% trans "Training Attendees" %}</th>
-      <th>{% trans "View Training Signup" %}</th>
+      <th>{% trans "training name" %}</th>
+      <th>{% trans "training description" %}</th>
+      <th>{% trans "training attendees" %}</th>
+      <th>{% trans "vendor project" %}</th>
+      <th>{% trans "training date" %}</th>
+      <th></th>
 		</tr>
 	</thead>
 	<tbody>
   {% for group in groups %}
   {% for training in group.trainings.all %}
-  {% if training.training_date < today %}
   <tr id="{{training.id}}" class="{% cycle odd even %}">
       <td>{{training.name}}</td>
       <td>{{training.description}}</td>
       <td>{{group.name}}</td>
-      <td><a href='{% url view_training_signup group.id training.id %}'>{% trans "View Sign Up" %}</a></td>
+      <td>{{training.type}}</td>
+      <td>{{training.project}}</td>
+      <td>{{training.credits}}</td>
+      <td>{{training.training_date}}</td>
+      <td><a href='{% url view_training_signup group.id training.id %}'>{% trans "view signup" %}</a></td>
   </tr>
-  {% endif %}
   {% endfor %}
   {% endfor %}
   </tbody>
 <tfoot>
 <tr>
-<th><input type="text" name="search_name" value="{% trans 'Search Name' %}" class="search_init" /></th>
-<th><input type="text" name="search_description" value="搜索简介" class="search_init" /></th>
-<th><input type="text" name="search_attendee" value="搜索参加者" class="search_init" /></th>
-<th></th>
+<th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
+<th><input type="text" name="search_attendee" value="{% trans 'search training attendees' %}" class="search_init" /></th>
+<th><input type="text" name="search_project" value="{% trans 'search vendor project' %}" class="search_init" /></th>
+<th><input type="text" name="search_date" value="{% trans 'search training date' %}" class="search_init" /></th>
 <th></th>
 </tr>
 </tfoot>

@@ -5,30 +5,33 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url training_schedule_list %}">查看培训计划表</td>
-<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
-<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url employee_training_schedule_list %}">{% trans "view employee training schedule" %}</a></li>
+<li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
+<li><a href="{% url training_schedule_list %}">{% trans "view training schedule" %}</a></li>
+<li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
+<li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
+<li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
-<li>{% trans "schedule visitor training" %}</li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 <li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
 <li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "Schedule Visitor Training" %}</div>
+<div class="content_title">{% trans "schedule visitor training" %}</div>
 <form action="" method="post">{% csrf_token %}
-<table class="formtable2">
+<table class="formtable narrower">
 <tr>
-<td class="formlabel"><label>{% trans "Training Name" %}</label></td>
+<td class="formlabel"><label>{% trans "training name" %}</label></td>
 <td><input type="text" name="training_name" value="" /><br/></td>
 </tr>
 <tr>
-<td class="formlabel"><label>{% trans "Training Description" %}</label></td>
+<td class="formlabel"><label>{% trans "training description" %}</label></td>
 <td><textarea name="training_description"></textarea></td>
 </tr>
 <tr>
-<td class="formlabel"><label>{% trans "Training Content" %}</label></td>
+<td class="formlabel"><label>{% trans "training content" %}</label></td>
 <td><select name="document_id"><option value="">------------</option>
 {% for document in documents %}
 <option value="{{document.id}}">{{document.name}}</option>
@@ -36,15 +39,15 @@
 </select></td>
 </tr>
 <tr>
-<td class="formlabel"><label>{% trans "Training Attendee" %}</label></td>
+<td class="formlabel"><label>{% trans "training attendee" %}</label></td>
 <td>
-<select id="parent" name="group"><option value="">{% trans "All People" %}</option>
+<select id="parent" name="group"><option value="">{% trans "all people" %}</option>
 {% for group in groups %}
 <option value="{{group.id}}">{{group.name}}</option>
 {% endfor %}
 </select>
 <select id="child" name="sub_group">
-<option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "All People" %}</option>
+<option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "all people" %}</option>
 {% for group in sub_groups %}
 <option class="sub_{{group.parent_group.id}}" value="{{group.id}}">{{group.name}}</option>
 {% endfor %}
@@ -52,7 +55,7 @@
 </td>
 </tr>
 <tr class="submitrow">
-<td colspan="2"><input type="submit" value="提交" /></td>
+<td colspan="2"><input type="submit" value="{% trans 'schedule training' %}" /></td>
 </tr>
 </table>
 </form>

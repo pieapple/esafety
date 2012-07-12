@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "Self Training Service" %}</div>
+<div class="content_title">{% trans "Self Training Exam Service" %}</div>
 <div class="submit_row">
 <form action="" method="post">{%csrf_token%}
 <label>{% trans "*Identity Number:" %}</label> <input type="text" name="identity" value="{{identity}}" />
@@ -14,40 +14,40 @@
 <div class="details">
 <table class="formtable" border="1">
 <tr>
-<td class="formlabel">{% trans "Identity Card: " %}</td>
+<td class="formlabel">{% trans "identity card: " %}</td>
 <td colspan="3">{{entry.identity}}</td>
 </tr>
 <tr>
-<td class="formlabel">{% trans "Name: " %}</td>
+<td class="formlabel">{% trans "name: " %}</td>
 <td >{{entry.name}}</td>
-<td class="formlabel">{% trans "Sex: " %}</td>
+<td class="formlabel">{% trans "sex: " %}</td>
 <td >{% if entry.sex %}男{%else%}女{%endif%}</td>
 </tr>
 <tr>
-<td class="formlabel">{% trans "Edu: " %}</td>
+<td class="formlabel">{% trans "edu: " %}</td>
 <td >{{entry.edu}}</td>
-<td class="formlabel">{% trans "Major: " %}</td>
+<td class="formlabel">{% trans "major: " %}</td>
 <td >{{entry.major}}</td>
 </tr>
 {% if entry.duty or entry.org %}
 <tr>
-<td class="formlabel">{% trans "Duty: " %}</td>
+<td class="formlabel">{% trans "duty: " %}</td>
 <td>{{ entry.duty }}</td>
-<td class="formlabel">{% trans "Org: " %}</td>
+<td class="formlabel">{% trans "org: " %}</td>
 <td>{{ entry.org }}</td>
 </tr>
 {% endif %}
 <tr>
-<td class="formlabel">{% trans "Homeaddress: " %}</td>
+<td class="formlabel">{% trans "home address: " %}</td>
 <td>{{ entry.home_address }}</td>
-<td class="formlabel">{% trans "Phone number: " %}</td>
+<td class="formlabel">{% trans "phone number: " %}</td>
 <td>{{ entry.phone_number }}</td>
 </tr>
 <tr>
-<td class="formlabel">{% trans "Group: " %}</td>
+<td class="formlabel">{% trans "group: " %}</td>
 {% if entry.certid %}
 <td>{% if entry.group.parent_group %} {{entry.group.parent_group.name}},{%endif%}{{entry.group.name}}</td>
-<td class="formlabel">{% trans "Cert ID: " %}</td>
+<td class="formlabel">{% trans "certid: " %}</td>
 <td>{{ entry.certid }}</td>
 {% else %}
 <td colspan="3">{% if entry.group.parent_group %} {{entry.group.parent_group.name}},{%endif%}{{entry.group.name}}</td>
@@ -55,7 +55,7 @@
 </tr>
 {% if entry.reason %}
 <tr>
-<td class="formlabel">{% trans "Reason: " %}</td>
+<td class="formlabel">{% trans "reason: " %}</td>
 <td colspan="3">{{entry.reason}}</td>
 </tr>
 {% endif %}

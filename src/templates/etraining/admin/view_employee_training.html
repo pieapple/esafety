@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
+<li><a href="{% url view_employee_training_list %}">{% trans "view employee training list" %}</a></li>
+<li><a href="{% url view_vendor_training_list %}">{% trans "view vendor training list" %}</a></li>
 <li>{% trans "view employee training" %}</li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
 <li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
@@ -14,18 +15,19 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "View Employee Trainings" %}</div>
+<div class="content_title">{% trans "view employee training" %}</div>
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 <thead>
 <tr>
-<th>{% trans "Training Name" %}</th>
-<th>{% trans "Training Description" %}</th>
-<th>{% trans "Training Type" %}</th>
-<th>{% trans "Training Attendee Name" %}</th>
-<th>{% trans "Training Attendee ID" %}</th>
-<th>{% trans "Training Attend Date" %}</th>
-<th>{% trans "Training Exam Detail" %}</th>
-<th>{% trans "Training Admin" %}</th>
+<th>{% trans "training name" %}</th>
+<th>{% trans "training description" %}</th>
+<th>{% trans "training type" %}</th>
+<th>{% trans "training credits" %}</th>
+<th>{% trans "training attendee name" %}</th>
+<th>{% trans "training attendee identity" %}</th>
+<th>{% trans "training attend date" %}</th>
+<th>{% trans "training status" %}</th>
+<th>{% trans "training admin" %}</th>
 </tr>
 </thead>
 <tbody>
@@ -33,14 +35,15 @@
 <tr class="{% cycle odd even %}">
 <td>{{employee_training.training.name}}</td>
 <td>{{employee_training.training.description}}</td>
-<td>{{employee_training.training.training_type|localize}}</td>
+<td>{{employee_training.training.training_type}}</td>
+<td>{{employee_training.training.credits}}</td>
 <td>{{employee_training.employee.name}}</td>
 <td>{{employee_training.employee.identity}}</td>
 <td>{{employee_training.attend_date}}</td>
 {% if employee_training.score < employee_training.training.pass_criteria %}
-<td>未通过</td>
+<td>{% trans "exam not passed" %}</td>
 {% else %}
-<td>已通过</td>
+<td>{% trans "exam passed" %}</td>
 {% endif %}
 <td>{{employee_training.admin}}</td>
 </tr>
@@ -48,14 +51,15 @@
 </tbody>
 <tfoot>
 <tr>
-<th><input type="text" name="search_name" value="搜索名称" class="search_init" /></th>
-<th><input type="text" name="search_description" value="搜索简介" class="search_init" /></th>
-<th><input type="text" name="search_type" value="搜索类型" class="search_init" /></th>
-<th><input type="text" name="search_employeename" value="搜索参加者姓名" class="search_init" /></th>
-<th><input type="text" name="search_employeeid" value="搜索参加者身份证" class="search_init" /></th>
-<th><input type="text" name="search_date" value="搜索时间" class="search_init" /></th>
-<th><input type="text" name="search_exam" value="搜索考试通过情况" class="search_init" /></th>
-<th><input type="text" name="search_admin" value="搜索管理员" class="search_init" /></th>
+<th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
+<th><input type="text" name="search_type" value="{% trans 'search training type' %}" class="search_init" /></th>
+<th><input type="text" name="search_credits" value="{% trans 'search training credits' %}" class="search_init" /></th>
+<th><input type="text" name="search_employeename" value="{% trans 'search employee name' %}" class="search_init" /></th>
+<th><input type="text" name="search_employeeid" value="{% trans 'search employee identity' %}" class="search_init" /></th>
+<th><input type="text" name="search_date" value="{% trans 'search training date' %}" class="search_init" /></th>
+<th><input type="text" name="search_exam" value="{% trans 'search training exam status '%}" class="search_init" /></th>
+<th><input type="text" name="search_admin" value="{% trans 'search training admin' %}" class="search_init" /></th>
 </tr>
 </tfoot>
 </table>
@@ -71,18 +75,18 @@ $(document).ready(function() {
       "bJQueryUI": true,
       "sPaginationType": "full_numbers",
       "oLanguage": {
-        "sSearch": "搜索",
-        "sLengthMenu": "每页显示_MENU_条数据",
-        "sZeroRecords": "对不起，没有查询到数据",
-        "sEmptyTable": "对不起，没有任何数据",
-        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
-        "sInfoEmpty": "没有记录显示",
-        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "sSearch": "{% trans 'search' %}",
+        "sLengthMenu": "{% trans 'display _MENU_ per page' %}",
+        "sZeroRecords": "{% trans 'sorry, no record found' %}",
+        "sEmptyTable": "{% trans 'sorry, no record found' %}",
+        "sInfo": '{% trans "_START_ to _END_ record, _TOTAL_ total" %}',
+        "sInfoEmpty": "{% trans 'no record displayed' %}",
+        "sInfoFiltered": "{% trans '(filtered from _MAX_ records)",
         "oPaginate": {
-            "sFirst": "第一页",
-            "sLast": "最后一页",
-            "sNext": "下一页",
-            "sPrevious": "上一页"
+            "sFirst": "{% trans 'first page' %}",
+            "sLast": "{% trans 'last page' %}",
+            "sNext": "{% trans 'next page' %}",
+            "sPrevious": "{% trans 'first page' %}"
         }
       }
     });

@@ -60,14 +60,43 @@ class Employee(models.Model):
     home_address = models.CharField(max_length=255, blank=True, null=True)
     phone_number = models.CharField(max_length=255, blank=True, null=True)
     group = models.ForeignKey("Group")
+
+    factory_training = models.ForeignKey("EmployeeTrainingRecord", blank=True, \
+                                        null=True, related_name="factory_attendee")
+    chejian_training = models.ForeignKey("EmployeeTrainingRecordTraining", blank=True, \
+                                        null=True, related_name="chejian_attendee")
+    banzu_training = models.ForeignKey("EmployeeTrainingRecord", blank=True, null=True, \
+                                        related_name="banzu_attendee")
+
     trainings = models.ManyToManyField("Training", blank=True, null=True, through="EmployeeTrainingRecord")
 
     def __unicode__(self):
         return self.name
 
+class BanzuTrainingManager(models.Manager):
+    def get_query_set(self):
+        return super(BanzuTrainingManager, self).get_query_set() \
+            .filter(training__training_type=u"班组培训")
+
+class ChejianTrainingManager(models.Manager):
+    def get_query_set(self):
+        return super(ChejianTrainingManager, self).get_query_set() \
+            .filter(training__training_type=u"车间培训")
+
+class FactoryManager(models.Manager):
+    def get_query_set(self):
+        return super(FactoryManager, self).get_query_set() \
+            .filter(training__training_type=u"厂级培训")
+
 class EmployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
     employee = models.ForeignKey("Employee")
+
+    objects = models.Manager()
+    banzu_trainings = BanzuTrainingManager()
+    chejian_trainings = ChejianTrainingManager()
+    factory_trainings = FactoryManager()
+
     attend_date = models.DateField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
     admin = models.ForeignKey(User, blank=True, null=True)
@@ -75,11 +104,34 @@ class EmployeeTrainingRecord(models.Model):
     def __unicode__(self):
         return self.training+'|'+self.employee
 
+class EmployeeGroupManager(models.Manager):
+    def get_query_set(self):
+        return super(EmployeeGroupManager, self).get_query_set() \
+            .filter(is_employee_group=True)
+
+class NonemployeeGroupManager(models.Manager):
+    def get_query_set(self):
+        return super(NonemployeeGroupManager, self).get_query_set() \
+            .filter(is_employee_group=False)
+
 class Group(models.Model):
     name = models.CharField(max_length=255)
     parent_group = models.ForeignKey("self", blank=True, null=True)
     is_employee_group = models.BooleanField() 
-    entrance_training = models.ForeignKey("Training", blank=True, null=True, related_name="entrance_attendee")
+
+    objects = models.Manager()
+    employee_groups = EmployeeGroupManager()
+    nonemployee_groups = NonemployeeManager()
+
+    # nonemployee training
+    entrance_training = models.ForeignKey("Training", blank=True, null=True, related_name="entrance_attendees")
+
+    # employee specific training
+    factory_training = models.ForeignKey("Training", blank=True, null=True, related_name="factory_attendees")
+    chejian_training = models.ForeignKey("Training", blank=True, null=True, related_name="chejian_attendees")
+    banzu_training = models.ForeignKey("Training", blank=True, null=True, related_name="banzu_attendees")
+
+    # common trainings
     trainings = models.ManyToManyField("Training", blank=True, null=True)
 
     def __unicode__(self):

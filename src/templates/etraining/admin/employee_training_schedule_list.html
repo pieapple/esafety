@@ -1,0 +1,151 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block insidebar %}
+<li>{% trans "view employee training schedule" %}</li>
+<li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
+<li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
+<li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
+<li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
+<li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
+<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
+<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "view employee training schedule" %}</div>
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
+	<thead>
+		<tr>
+      <th>{% trans "training name" %}</th>
+      <th>{% trans "training description" %}</th>
+      <th>{% trans "training attendees" %}</th>
+      <th>{% trans "training type" %}</th>
+      <th>{% trans "training credits" %}</th>
+      <th>{% trans "training date" %}</th>
+      <th></th>
+      <th></th>
+		</tr>
+	</thead>
+	<tbody>
+  {% for group in groups %}
+  {% if group.banzu_training %}
+  <tr id="{{group.banzu_training.id}}">
+      <td>{{group.banzu_training.name}}</td>
+      <td>{{group.banzu_training.description}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.banzu_training.type}}</td>
+      <td>{{group.banzu_training.credits}}</td>
+      <td>{{group.banzu_training.training_date}}</td>
+      <td><a href='{% url training_signup group.id group.banzu_training.id %}'>{% trans "sign up" %}</a></td>
+      <td><a href='{% url attend_training group.banzu_training.id %}'>{% trans "play training" %}</a></td>
+  </tr>
+  {% endif %}
+  {% if group.chejian_training %}
+  <tr id="{{group.chejian_training.id}}">
+      <td>{{group.chejian_training.name}}</td>
+      <td>{{group.chejian_training.description}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.chejian_training.type}}</td>
+      <td>{{group.chejian_training.credits}}</td>
+      <td>{{group.chejian_training.training_date}}</td>
+      <td><a href='{% url training_signup group.id group.chejian_training.id %}'>{% trans "sign up" %}</a></td>
+      <td><a href='{% url attend_training group.chejian_training.id %}'>{% trans "play training" %}</a></td>
+  </tr>
+  {% endif %}
+  {% if group.factory_training %}
+  <tr id="{{group.factory_training.id}}">
+      <td>{{group.factory_training.name}}</td>
+      <td>{{group.factory_training.description}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.factory_training.type}}</td>
+      <td>{{group.factory_training.credits}}</td>
+      <td>{{group.factory_training.training_date}}</td>
+      <td><a href='{% url training_signup group.id group.factory_training.id %}'>{% trans "sign up" %}</a></td>
+      <td><a href='{% url attend_training group.factory_training.id %}'>{% trans "play training" %}</a></td>
+  </tr>
+  {% endif %}
+  {% for training in group.trainings.all %}
+  <tr id="{{training.id}}" class="{% cycle odd even %}">
+      <td>{{training.name}}</td>
+      <td>{{training.description}}</td>
+      <td>{{group.name}}</td>
+      <td>{{training.type}}</td>
+      <td>{{training.credits}}</td>
+      <td>{{training.training_date}}</td>
+      <td><a href='{% url training_signup group.id training.id %}'>{% trans "sign up" %}</a></td>
+      <td><a href='{% url attend_training training.id %}'>{% trans "play training" %}</a></td>
+  </tr>
+  {% endfor %}
+  {% endfor %}
+  </tbody>
+<tfoot>
+<tr>
+<th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
+<th><input type="text" name="search_attendee" value="{% trans 'search training attendees' %}" class="search_init" /></th>
+<th><input type="text" name="search_type" value="{% trans 'search training type' %}" class="search_init" /></th>
+<th><input type="text" name="search_credits" value="{% trans 'search training credits' %}" class="search_init" /></th>
+<th><input type="text" name="search_date" value="{% trans 'search training date' %}" class="search_init" /></th>
+<th></th>
+<th></th>
+</tr>
+</tfoot>
+</table>
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+var asInitVals = new Array();
+$(document).ready(function() {
+    var oTable = $('.dataTable').dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sLast": "最后一页",
+            "sNext": "下一页",
+            "sPrevious": "上一页"
+        }
+      }
+    });
+
+    $("tfoot input").keyup( function () {
+      oTable.fnFilter( this.value, $("tfoot input").index(this) );
+    });
+
+    $("tfoot input").each( function (i) {
+      asInitVals[i] = this.value;
+    });
+
+    $("tfoot input").focus( function () {
+      if ( this.className == "search_init" ) {
+        this.className = "";
+        this.value = "";
+      }
+    });
+
+    $("tfoot input").blur( function (i) {
+        if ( this.value == "" ) {
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
+        }
+    });
+});
+</script>
+{% endblock %}

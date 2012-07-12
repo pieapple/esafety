@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
+<li><a href="{% url view_employee_training_list %}">{% trans "view employee training list" %}</a></li>
+<li><a href="{% url view_vendor_training_list %}">{% trans "view vendor training list" %}</a></li>
 <li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
 <li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
 <li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
@@ -18,13 +19,13 @@
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 	<thead>
 		<tr>
-      <th>{% trans "Identity" %}</th>
-      <th>{% trans "Name" %}</th>
-      <th>{% trans "Group" %}</th>
-      <th>{% trans "Certificate Id" %}</th>
-      <th>{% trans "Entrance Time" %}</th>
-      <th>{% trans "Entrance Training" %}</th>
-      <th>{% trans "Admin" %}</th>
+      <th>{% trans "visitor identity" %}</th>
+      <th>{% trans "visitor name" %}</th>
+      <th>{% trans "visitor group" %}</th>
+      <th>{% trans "visitor certid" %}</th>
+      <th>{% trans "entrance time" %}</th>
+      <th>{% trans "entrance training status" %}</th>
+      <th>{% trans "entrance admin" %}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -36,9 +37,9 @@
       <td>{{visitor_entrance.certid}}</td>
       <td>{{visitor_entrance.entrance_time}}</td>
       {% if visitor_entrance.entrance_training %}
-      <td>已参加</td>
+      <td>{% trans "training not attended"%}</td>
       {% else %}
-      <td>未参加</td>
+      <td>{% trans "training attended"%}</td>
       {% endif %}
       <td>{{visitor_entrance.admin}}</td>
     </tr>
@@ -46,13 +47,13 @@
   </tbody>
 <tfoot>
 <tr>
-<th><input type="text" name="search_identity" value="搜索身份证" class="search_init" /></th>
-<th><input type="text" name="search_name" value="搜索姓名" class="search_init" /></th>
-<th><input type="text" name="search_groupname" value="搜索类别" class="search_init" /></th>
-<th><input type="text" name="search_certid" value="搜索特殊证件号" class="search_init" /></th>
-<th><input type="text" name="search_entrancetime" value="搜索入厂时间" class="search_init" /></th>
-<th><input type="text" name="search_entrancetraining" value="搜索入厂培训" class="search_init" /></th>
-<th><input type="text" name="search_admin" value="搜索管理员" class="search_init" /></th>
+<th><input type="text" name="search_identity" value="{% trans 'search visitor identity' %}" class="search_init" /></th>
+<th><input type="text" name="search_name" value="{% trans 'search visitor name' %}" class="search_init" /></th>
+<th><input type="text" name="search_groupname" value="{% trans 'search visitor group' %}" class="search_init" /></th>
+<th><input type="text" name="search_certid" value="{% trans 'search visitor certid' %}" class="search_init" /></th>
+<th><input type="text" name="search_entrancetime" value="{% trans 'search entrance time' %}" class="search_init" /></th>
+<th><input type="text" name="search_entrancetraining" value="{% trans 'search entrance training status' %}" class="search_init" /></th>
+<th><input type="text" name="search_admin" value="{% trans 'search entrance training admin' %}" class="search_init" /></th>
 </tr>
 </tfoot>
 </table>

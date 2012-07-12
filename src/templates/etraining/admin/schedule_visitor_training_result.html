@@ -5,21 +5,24 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url training_schedule_list %}">查看培训计划表</td>
-<li><a href="{% url employee_registration %}">{% trans "employee registration" %}</a></li>
-<li><a href="{% url schedule_employee_training %}">{% trans "schedule employee training" %}</a></li>
+<li><a href="{% url employee_training_schedule_list %}">{% trans "view employee training schedule" %}</a></li>
+<li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
+<li><a href="{% url training_schedule_list %}">{% trans "view training schedule" %}</a></li>
+<li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
+<li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
+<li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
-<li>{% trans "schedule visitor training" %}</li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 <li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
 <li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "Schedule Visitor Training" %}</div>
+<div class="content_title">{% trans "schedule visitor training" %}</div>
 <div class="innerContent">
-{% trans "Schedule visitor training Successfully" %}
-<a href="{% url schedule_visitor_training %}">{% trans "Schedule another one" %}</a>
+{% trans "schedule visitor training success!" %}
+<a href="{% url schedule_visitor_training %}">{% trans "schedule another visitor training" %}</a>
 </div>
 </div>
 {% endblock %}

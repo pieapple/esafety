@@ -2,25 +2,26 @@
 {% endblock %}
 
 {% block insidebar %}
-<li><a href="{% url view_training_list %}">查看已结束培训列表</a></li>
-<li><a href="{% url view_employee_training %}">{% trans "view employee training" %}</a></li>
-<li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
-<li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
-<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "View Training Signup" %}</div>
+<div class="content_title">{% trans "view training signup" %}</div>
 <table>
 <tr>
-<td class="formlabel">培训名称:</td>
+<td class="formlabel">{% trans "training name" %}</td>
 <td>{{training.name}}</td>
-<td class="formlabel">培训日期:</td>
+<td class="formlabel">{% trans "training date" %}</td>
 <td>{{training.training_date}}</td>
 </tr>
 <tr>
-<td class="formlabel">类别:</td>
+<td class="formlabel">{% trans "vendor project" %}</td>
+<td>{{training.project}}</td>
+<td class="formlabel">{% trans "training credits" %}</td>
+<td>{{training.credits}}</td>
+</tr>
+<tr>
+<td class="formlabel">{% trans "training attendees" %}</td>
 <td>{% if group.parent_group %} {{group.parent_group.name}}{%endif%}</td>
 <td>{{group.name}}</td>
 <td></td>
@@ -29,12 +30,12 @@
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 <thead>
 <tr>
-<th>{% trans "Attendee Name" %}</th>
-<th>{% trans "Attendee Identity" %}</th>
+<th>{% trans "training attendee name" %}</th>
+<th>{% trans "training attendee identity" %}</th>
 {% if not group.is_employee_group %}
-<th>入厂时间</th>
+<th>{% trans "entrance time" %}</th>
 {% endif %}
-<th>{% trans "Sign Up" %}</th>
+<th>{% trans "sign up" %}</th>
 </tr>
 </thead>
 <tbody>
@@ -44,35 +45,36 @@
 <td>{{employee.name}}</td>
 <td>{{employee.identity}}</td>
 {% if employee.status == 0 %}
-<td>未参加培训</td>
+<td>{% trans "training not attended" %}</td>
 {% elif employee.status == 1 %}
-<td>考试未通过</td>
+<td>{% trans "exam not passed" %}</td>
 {% elif employee.status == 2 %}
-<td>考试已通过</td>
+<td>{% trans "exam passed" %}</td>
 {% endif %}
 </tr>
-{% endfor %} {% else %}
+{% endfor %} 
+{% else %}
 {% for nonemployee in nonemployee_list %}
 <tr id="{{nonemployee.id}}" class="{% cycle odd even %}">
 <td>{{nonemployee.name}}</td>
 <td>{{nonemployee.identity}}</td>
 <td>{{nonemployee.entrance_time}}</td>
 {% if nonemployee.status == 0 %}
-<td>未参加培训</td>
+<td>{% trans "training not attended" %}</td>
 {% elif nonemployee.status == 1 %}
-<td>考试未通过</td>
+<td>{% trans "exam not passed" %}</td>
 {% elif nonemployee.status == 2 %}
-<td>考试已通过</td>
+<td>{% trans "exam passed" %}</td>
 {% endif %}
 </tr>
 {% endfor %}
 {% endif %}
 </tbody>
 <tfoot>
-<th><input type="text" name="search_attendeename" value="搜索参加者姓名" class="search_init" /></th>
-<th><input type="text" name="search_attendeeid" value="搜索参加者身份证" class="search_init" /></th>
+<th><input type="text" name="search_attendeename" value="{% trans 'search attendee name' %}" class="search_init" /></th>
+<th><input type="text" name="search_attendeeid" value="{% trans 'search attendee identity' %}" class="search_init" /></th>
 {% if not group.is_employee_group %}
-<th><input type="text" name="search_entrancetime" value="搜索入厂时间" class="search_init" /></th>
+<th><input type="text" name="search_entrancetime" value="{% trans 'search entrance time' %}" class="search_init" /></th>
 {% endif %}
 <th></th>
 </tfoot>

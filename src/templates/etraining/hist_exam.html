@@ -1,0 +1,23 @@
+{% extends "etraining/base_etraining.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "Employment Training Exam" %}</div>
+<div class="test_result_summary">该次考试分数为：{{ score }}, 结果： {% if pass %}通过{% else %}未通过{% endif %}</div>
+<div class="questions">
+{% for question in questions %}
+	<div class="question">
+		<div class="question_body">{{question.id}}. {{question.content}}</div>
+		<div class="choices">
+			{% for choice in question.choice_set.all %}
+			<div class="choice {% if question.user_answer == choice.id %}{% if choice.is_answer %}green{% else %}red{% endif %}{% endif %}">
+			<input type="radio" disabled name="{{choice.id}}" {% if question.user_answer == choice.id %}checked{% endif %} value="{{choice.id}}" />{{choice.text}}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<br>
+{% endfor %}
+</div>
+{% endblock %}

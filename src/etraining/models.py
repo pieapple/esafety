@@ -162,6 +162,7 @@ class EmployeeTrainingRecord(models.Model):
     attend_date = models.DateField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
     admin = models.ForeignKey(User, blank=True, null=True)
+    exam_result = models.CharField(max_length=500, blank=True, null=True)
 
     def __unicode__(self):
         return self.training+'|'+self.employee
@@ -210,6 +211,7 @@ class NonemployeeTrainingRecord(models.Model):
     attend_date = models.DateField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
     admin = models.ForeignKey(User, blank=True, null=True)
+    exam_result = models.CharField(max_length=500, blank=True, null=True)
 
     objects = models.Manager()
     entrance_trainings = EntranceTrainingManager()

@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse
 from etraining.models import Choice, Question, QuestionType, Document, Training, IsConfirmAvailable
 from etraining.models import Employee, EmployeeTrainingRecord, NonemployeeRegistration, NonemployeeTrainingRecord, Group
 from etraining.admin_forms import NonemployeeRegistrationForm, EmployeeRegistrationForm
-import datetime, sys, random
+import datetime, sys, random, json
 
 def index(request):
     return HttpResponseRedirect(reverse("self_search"))
@@ -110,6 +110,30 @@ def self_training(request, training_id):
             "audio_clip": training.document.audio_clip,
         }, context_instance=RequestContext(request))
 
+def hist_exam(request, is_employee, record_id):  
+    if int(is_employee):
+        record = EmployeeTrainingRecord.objects.get(pk=record_id)
+    else:
+        record = NonemployeeTrainingRecord.objects.get(pk=record_id)
+        
+    score = record.score
+    isPass = (score >= record.training.pass_criteria)
+    exam_result = json.loads(record.exam_result)
+    qids = []
+    for qid in exam_result:
+        qids.append(int(qid))
+        
+    questions = Question.objects.filter(id__in=qids)
+    for question in questions:
+        question.user_answer = exam_result[str(question.id)]
+    return render_to_response("etraining/hist_exam.html", {
+                'score' : score,
+                'pass' : isPass,
+                'exam_result' : exam_result,
+                'questions' : questions,
+            }, context_instance=RequestContext(request))
+    
+
 def self_examination(request, is_employee, record_id):    
     if int(is_employee):
         record = EmployeeTrainingRecord.objects.get(pk=record_id)
@@ -126,9 +150,11 @@ def self_examination(request, is_employee, record_id):
         session['answers'][session['cur_qid']]=answer
         if action == 'finish':
             wrongCount = 0
+            qamap = {}
             for qid in session['answers']:
                 question = session['questions'][qid]
                 answer = session['answers'][qid]
+                qamap[question.id] = answer
                 try:
                     choice = question.choice_set.get(id=answer)
                 except Choice.DoesNotExist:
@@ -140,6 +166,7 @@ def self_examination(request, is_employee, record_id):
                         wrongCount += 1
             score = len(session['questions'])-wrongCount
             record.score = score
+            record.exam_result = json.dumps(qamap)
             record.save()
 
             isPass = (score >= record.training.pass_criteria)

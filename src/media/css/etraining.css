@@ -77,6 +77,14 @@
   padding-top: 10px;
 }
 
+.choices .green {
+  color: green
+}
+
+.choices .red {
+  color: red
+}
+
 table.formtable {
   margin: 0 auto;
   width: 90%;

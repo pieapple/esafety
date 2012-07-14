@@ -215,16 +215,13 @@ def schedule_new_employee_training(request):
         training.document = document
         training.save()
 
-        if request.POST.has_key('group'):
-            group_id = request.POST['group']
+        if request.POST.has_key('group') and request.POST['group']:
+            if request.POST.has_key('sub_group') and request.POST['sub_group']:
+                group = Group.employee_groups.get(pk=int(request.POST['sub_group']))
+            else:
+                group = Group.employee_groups.get(pk=int(request.POST['group']))
         else:
             group = Group.employee_groups.root_group()
-
-        if request.POST.has_key('sub_group'):
-            sub_group_id = request.POST['sub_group']
-            group = Group.employee_groups.subgroups().get(pk=int(sub_group_id))
-        else:
-            group = Group.employee_groups.groups().get(pk=int(group_id))
 
         if group:
             if training_type == u"班组培训":
@@ -269,16 +266,13 @@ def schedule_employee_regular_training(request):
         training.document = document
         training.save()
 
-        if request.POST.has_key('group'):
-            group_id = request.POST['group']
+        if request.POST.has_key('group') and request.POST['group']:
+            if request.POST.has_key('sub_group') and request.POST['sub_group']:
+                group = Group.employee_groups.get(pk=int(request.POST['sub_group']))
+            else:
+                group = Group.employee_groups.get(pk=int(request.POST['group']))
         else:
             group = Group.employee_groups.root_group()
-
-        if request.POST.has_key('sub_group'):
-            sub_group_id = request.POST['sub_group']
-            group = Group.employee_groups.subgroups().get(pk=int(sub_group_id))
-        else:
-            group = Group.employee_groups.groups().get(pk=int(group_id))
 
         if group:
             group.trainings.add(training)
@@ -305,7 +299,7 @@ def schedule_vendor_training(request):
     if request.method == "POST":
         name = request.POST["training_name"]
         description = request.POST["training_description"]
-        project = int(request.POST["vendor_project"])
+        project = request.POST["vendor_project"]
         pass_criteria = int(request.POST["pass_criteria"])
         question_count = int(request.POST["question_count"])
         exam_type_id = int(request.POST["exam_type"])
@@ -318,16 +312,13 @@ def schedule_vendor_training(request):
         training.document = document
         training.save()
 
-        if request.POST.has_key('group'):
-            group_id = request.POST['group']
+        if request.POST.has_key('group') and request.POST['group']:
+            if request.POST.has_key('sub_group') and request.POST['sub_group']:
+                group = Group.nonemployee_groups.get(pk=int(request.POST['sub_group']))
+            else:
+                group = Group.nonemployee_groups.get(pk=int(request.POST['group']))
         else:
             group = Group.nonemployee_groups.root_group()
-
-        if request.POST.has_key('sub_group'):
-            sub_group_id = request.POST['sub_group']
-            group = Group.nonemployee_groups.subgroups().get(pk=int(sub_group_id))
-        else:
-            group = Group.nonemployee_groups.groups().get(pk=int(group_id))
 
         if group:
             group.trainings.add(training)
@@ -356,16 +347,13 @@ def schedule_visitor_training(request):
         training.document = document
         training.save()
 
-        if request.POST.has_key('group'):
-            group_id = request.POST['group']
+        if request.POST.has_key('group') and request.POST['group']:
+            if request.POST.has_key('sub_group') and request.POST['sub_group']:
+                group = Group.nonemployee_groups.get(pk=int(request.POST['sub_group']))
+            else:
+                group = Group.nonemployee_groups.get(pk=int(request.POST['group']))
         else:
             group = Group.nonemployee_groups.root_group()
-
-        if request.POST.has_key('sub_group'):
-            sub_group_id = request.POST['sub_group']
-            group = Group.nonemployee_groups.subgroups().get(pk=int(sub_group_id))
-        else:
-            group = Group.nonemployee_groups.groups().get(pk=int(group_id))
 
         if group:
             group.entrance_training = training
@@ -479,14 +467,14 @@ def view_vendor_training(request):
 
 @login_required
 def view_vendor_entrance(request):
-    visitor_entrances = NonemployeeRegistration.entrance_trainings.vendor()
+    visitor_entrances = NonemployeeRegistration.vendors.all()
     return render_to_response("etraining/admin/view_vendor_entrance.html", {
         "visitor_entrance_list": visitor_entrances,
     }, context_instance=RequestContext(request))
 
 @login_required
 def view_visitor_entrance(request):
-    visitor_entrances = NonemployeeRegistration.objects.visitor()
+    visitor_entrances = NonemployeeRegistration.visitors.all()
     return render_to_response("etraining/admin/view_visitor_entrance.html", {
         "visitor_entrance_list": visitor_entrances,
     }, context_instance=RequestContext(request))

@@ -144,7 +144,7 @@ class Employee(models.Model):
 class NewemployeeTrainingManager(models.Manager):
     def get_query_set(self):
         return super(NewemployeeTrainingManager, self).get_query_set() \
-            .filter(training__training_type in [u"班组培训", u"厂级培训", u"车间培训"])
+            .filter(training__training_type__in=[u"班组培训", u"厂级培训", u"车间培训"])
 
 class RegularTrainingManager(models.Manager):
     def get_query_set(self):
@@ -167,6 +167,14 @@ class EmployeeTrainingRecord(models.Model):
     def __unicode__(self):
         return self.training+'|'+self.employee
 
+class VendorManager(models.Manager):
+    def get_query_set(self):
+        return super(VendorManager, self).get_query_set().filter(group__name=u"承包商")
+
+class VisitorManager(models.Manager):
+    def get_query_set(self):
+        return super(VisitorManager, self).get_query_set().filter(group__name=u"访客")
+
 class NonemployeeRegistration(models.Model):
     identity = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
@@ -186,6 +194,10 @@ class NonemployeeRegistration(models.Model):
     entrance_training = models.ForeignKey("NonemployeeTrainingRecord", blank=True, null=True, related_name="entrance_attendee")
     trainings = models.ManyToManyField("Training", blank=True, null=True, through="NonemployeeTrainingRecord")
 
+    objects = models.Manager()
+    vendors = VendorManager()
+    visitors = VisitorManager()
+
     def __unicode__(self):
         return self.identity
 
@@ -199,11 +211,6 @@ class EntranceTrainingManager(models.Manager):
         return super(EntranceTrainingManager, self).get_query_set() \
             .filter(training__training_type=u"告知培训")
 
-    def vendor(self):
-        return self.get_query_set().filter(registration__group_name=u"承包商")
-
-    def visitor(self):
-        return self.get_query_set().filter(registration__group_name=u"访客")
 
 class NonemployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")

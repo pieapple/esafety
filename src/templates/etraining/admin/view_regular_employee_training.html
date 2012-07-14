@@ -16,13 +16,12 @@
 
 {% block content %}
 <div class="content clearfix">
-<div class="content_title">{% trans "view employee training" %}</div>
+<div class="content_title">{% trans "view regular employee training" %}</div>
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
 <thead>
 <tr>
 <th>{% trans "training name" %}</th>
 <th>{% trans "training description" %}</th>
-<th>{% trans "training type" %}</th>
 <th>{% trans "training credits" %}</th>
 <th>{% trans "training attendee name" %}</th>
 <th>{% trans "training attendee identity" %}</th>
@@ -36,7 +35,6 @@
 <tr class="{% cycle odd even %}">
 <td>{{employee_training.training.name}}</td>
 <td>{{employee_training.training.description}}</td>
-<td>{{employee_training.training.training_type}}</td>
 <td>{{employee_training.training.credits}}</td>
 <td>{{employee_training.employee.name}}</td>
 <td>{{employee_training.employee.identity}}</td>
@@ -54,7 +52,6 @@
 <tr>
 <th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
 <th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
-<th><input type="text" name="search_type" value="{% trans 'search training type' %}" class="search_init" /></th>
 <th><input type="text" name="search_credits" value="{% trans 'search training credits' %}" class="search_init" /></th>
 <th><input type="text" name="search_employeename" value="{% trans 'search employee name' %}" class="search_init" /></th>
 <th><input type="text" name="search_employeeid" value="{% trans 'search employee identity' %}" class="search_init" /></th>

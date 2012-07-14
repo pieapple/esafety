@@ -4,13 +4,13 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block insidebar %}
+{% block sidebar %}
 {% endblock %}
 
 {% block content %}
-<div class="content clearfix">
+<div class="content wider clearfix">
 <div class="content_title">{% trans "training signup" %}</div>
-<table>
+<table class="formtable noborder">
 <tr>
 <td class="formlabel">{% trans "training name" %}</td>
 <td>{{training.name}}</td>
@@ -18,16 +18,15 @@
 <td>{{training.training_date}}</td>
 </tr>
 <tr>
+{% if training.project %}
 <td class="formlabel">{% trans "vendor project" %}</td>
 <td>{{training.project}}</td>
+{% else %}
 <td class="formlabel">{% trans "training credits" %}</td>
 <td>{{training.credits}}</td>
-</tr>
-<tr>
+{% endif %}
 <td class="formlabel">{% trans "training attendees" %}</td>
-<td>{% if group.parent_group %} {{group.parent_group.name}}{%endif%}</td>
-<td>{{group.name}}</td>
-<td></td>
+<td>{% if group.parent_group %} {{group.parent_group.name}}, {%endif%} {{group.name}}</td>
 </tr>
 </table>
 <table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
@@ -78,7 +77,6 @@
 <th></th>
 </tfoot>
 </table>
-<table
 </div>
 {% endblock %}
 

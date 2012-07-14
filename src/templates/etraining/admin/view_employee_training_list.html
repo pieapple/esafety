@@ -37,7 +37,7 @@
       <td>{{group.banzu_training.name}}</td>
       <td>{{group.banzu_training.description}}</td>
       <td>{{group.name}}</td>
-      <td>{{group.banzu_training.type}}</td>
+      <td>{{group.banzu_training.training_type}}</td>
       <td>{{group.banzu_training.credits}}</td>
       <td>{{group.banzu_training.training_date}}</td>
       <td><a target="_blank" href='{% url view_training_signup group.id group.banzu_training.id %}'>{% trans "view signup" %}</a></td>
@@ -48,7 +48,7 @@
       <td>{{group.chejian_training.name}}</td>
       <td>{{group.chejian_training.description}}</td>
       <td>{{group.name}}</td>
-      <td>{{group.chejian_training.type}}</td>
+      <td>{{group.chejian_training.training_type}}</td>
       <td>{{group.chejian_training.credits}}</td>
       <td>{{group.chejian_training.training_date}}</td>
       <td><a target="_blank" href='{% url view_training_signup group.id group.chejian_training.id %}'>{% trans "view signup" %}</a></td>
@@ -59,7 +59,7 @@
       <td>{{group.factory_training.name}}</td>
       <td>{{group.factory_training.description}}</td>
       <td>{{group.name}}</td>
-      <td>{{group.factory_training.type}}</td>
+      <td>{{group.factory_training.training_type}}</td>
       <td>{{group.factory_training.credits}}</td>
       <td>{{group.factory_training.training_date}}</td>
       <td><a target="_blank" href='{% url view_training_signup group.id group.factory_training.id %}'>{% trans "view signup" %}</a></td>
@@ -70,7 +70,7 @@
       <td>{{training.name}}</td>
       <td>{{training.description}}</td>
       <td>{{group.name}}</td>
-      <td>{{training.type}}</td>
+      <td>{{training.training_type}}</td>
       <td>{{training.credits}}</td>
       <td>{{training.training_date}}</td>
       <td><a target="_blank" href='{% url view_training_signup group.id training.id %}'>{% trans "view signup" %}</a></td>

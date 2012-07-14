@@ -32,6 +32,7 @@
 		</tr>
 	</thead>
 	<tbody>
+  {% for group in groups %}
   {% for training in group.trainings.all %}
   <tr id="{{training.id}}" class="{% cycle odd even %}">
       <td>{{training.name}}</td>

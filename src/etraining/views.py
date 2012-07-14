@@ -34,7 +34,7 @@ def is_available_entrance(request):
         return HttpResponse()
 
 def is_vendor_group(group):
-    if group and group.name == u"临时工":
+    if group and group.name == u"承包商":
         return True
     return False
 

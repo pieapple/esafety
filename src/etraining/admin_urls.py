@@ -16,7 +16,8 @@ urlpatterns = patterns('etraining.admin_views',
 
     url(r'^schedule_new_employee_training/$', 'schedule_new_employee_training', \
         name='schedule_new_employee_training'),
-    url(r'^schedule_employee_regular_training/$', 'schedule_employee_regular_training', name='schedule_employee_training'),
+    url(r'^schedule_employee_regular_training/$', 'schedule_employee_regular_training', \
+        name='schedule_employee_regular_training'),
     url(r'^schedule_vendor_training/$', 'schedule_vendor_training', name='schedule_vendor_training'),
     url(r'^schedule_visitor_training/$', 'schedule_visitor_training', name='schedule_visitor_training'),
 
@@ -34,7 +35,8 @@ urlpatterns = patterns('etraining.admin_views',
     url(r'^view_vendor_training_list/$', 'view_vendor_training_list', name='view_vendor_training_list'),
     url(r'^view_training_signup/(?P<group_id>\d+)/(?P<training_id>\d+)/$', 'view_training_signup', \
         name='view_training_signup'),
-    url(r'^view_employee_training/$', 'view_employee_training', name='view_employee_training'),
+    url(r'^view_new_employee_training/$', 'view_new_employee_training', name='view_new_employee_training'),
+    url(r'^view_regular_employee_training/$', 'view_regular_employee_training', name='view_regular_employee_training'),
     url(r'^view_vendor_training/$', 'view_vendor_training', name='view_vendor_training'),
     url(r'^view_vendor_entrance/$', 'view_vendor_entrance', name='view_vendor_entrance'),
     url(r'^view_visitor_entrance/$', 'view_visitor_entrance', name='view_visitor_entrance'),

@@ -75,7 +75,7 @@
 {% elif training.status == 1 %}
 (考试未通过), <a href="{% url self_training training.id %}">播放培训</a>, <a href="{% url self_examination is_employee training.record %}">参加考试</a>
 {% elif training.status == 2 %}
-(考试已通过), <a href="{% url self_training training.id %}">播放培训</a>
+(考试已通过), <a href="{% url self_training training.id %}">播放培训</a>, <a href="{% url hist_exam is_employee training.record %}">查看结果</a>
 {% endif %}
 </div>
 {% endfor %}

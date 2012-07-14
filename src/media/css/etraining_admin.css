@@ -56,6 +56,7 @@ header .top-nav {
   padding-left: 30px;
   padding-top: 15px;
   padding-bottom: 20px;
+  padding-right: 10px;
 }
 
 .side-nav .sidenav-tree ul.sidenav-text li {
@@ -122,6 +123,7 @@ header .top-nav {
 }
 
 .content .submit_row {
+  text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -143,14 +145,17 @@ table.formtable.wider {
   width: 80%;
 }
 
-table.formtable td.formlabel {
+table.formtable tr td.formlabel {
   text-align: right;
   font-weight: bold;
+  padding-right: 10px;
 }
 
 table.formtable tr td {
   padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 10px;
+  border: 1px solid black;
 }
 
 table.formtable.narrower tr td {
@@ -158,6 +163,6 @@ table.formtable.narrower tr td {
 }
 
 table.formtable tr.submitrow td {
-  padding-top: 30px;
+  padding-top: 20px;
   text-align: center;
 }

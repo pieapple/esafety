@@ -7,10 +7,9 @@
 {% block insidebar %}
 <li><a href="{% url employee_training_schedule_list %}">{% trans "view employee training schedule" %}</a></li>
 <li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
-<li><a href="{% url training_schedule_list %}">{% trans "view training schedule" %}</a></li>
 <li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
 <li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
-<li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
+<li>{% trans "schedule employee regular training" %}</li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
 <li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
 <li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
@@ -33,6 +32,8 @@
 <td colspan="3"><textarea style="width:70%" name="training_description"></textarea></td>
 </tr>
 <tr>
+<td class="formlabel"><label>{% trans "training credits" %}</label></td>
+<td><input type="text" name="credits" value="" /></td>
 <td class="formlabel"><label>{% trans "training exam type" %}</label></td>
 <td><select name="exam_type"><option value="">------------</option>
 {% for exam_type in exam_types %}
@@ -52,7 +53,8 @@
 <tr>
 <td class="formlabel"><label>{% trans "training attendee" %}</label></td>
 <td>
-<select id="parent" name="group"><option value="">{% trans "all people" %}</option>
+<select id="parent" name="group">
+<option value="{{root_group.id}}">{{root_group.name}}</option>
 {% for group in groups %}
 <option value="{{group.id}}">{{group.name}}</option>
 {% endfor %}
@@ -66,10 +68,6 @@
 </td>
 <td class="formlabel"><label>{% trans "training exam pass criteria" %}</label></td>
 <td><input type="text" name="pass_criteria" value="" /></td>
-</tr>
-<tr>
-<td class="formlabel"><label>{% trans "training credits" %}</label></td>
-<td><input type="text" name="credits" value="" /></td>
 </tr>
 <tr class="submitrow">
 <td colspan="4"><input type="submit" value="{% trans 'schedule training' %}" /></td>

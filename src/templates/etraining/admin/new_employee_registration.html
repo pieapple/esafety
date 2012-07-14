@@ -7,8 +7,7 @@
 {% block insidebar %}
 <li><a href="{% url employee_training_schedule_list %}">{% trans "view employee training schedule" %}</a></li>
 <li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
-<li><a href="{% url training_schedule_list %}">{% trans "view training schedule" %}</a></li>
-<li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
+<li>{% trans "new employee registration" %}</li>
 <li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
 <li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
 <li><a href="{% url schedule_vendor_training %}">{% trans "schedule vendor training" %}</a></li>
@@ -69,6 +68,7 @@
 <td class="formlabel"><label for="id_group">{% trans "group: " %}</label></td>
 <td colspan="3">
 <select id="parent" name="group">
+<option value="{{root_group.id}}">{{root_group.name}}</option>
 {% for group in groups %}
 <option value="{{group.id}}">{{group.name}}</option>
 {% endfor %}

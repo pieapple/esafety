@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import render_to_response
@@ -27,14 +28,16 @@ def visitor_entrance(request):
             visitor_entrance = form.save(commit=False)
             visitor_entrance.entrance_time = datetime.datetime.utcnow().replace(tzinfo=utc)
             visitor_entrance.admin = request.user
+            visitor_entrance.save()
 
             if request.POST.has_key('group') and request.POST.has_key('sub_group'):
                 group_id = request.POST['group']
                 sub_group_id = request.POST['sub_group']
-                group = Group.objects.get(pk=int(sub_group_id))
+                group = Group.nonemployee_groups.get(pk=int(sub_group_id))
 
                 training = get_entrance_training_for_group(group)
-                entrance_training_record = EntranceTrainingRecord(training=training)
+                entrance_training_record = NonemployeeTrainingRecord(registration=visitor_entrance, \
+                        training=training)
                 entrance_training_record.save()
 
                 visitor_entrance.group = group 
@@ -51,10 +54,12 @@ def visitor_entrance(request):
     else:
         form = NonemployeeRegistrationForm()
 
-    groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=True)
-    sub_groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=False)
+    root_group = Group.nonemployee_groups.root_group()
+    groups = Group.nonemployee_groups.groups()
+    sub_groups = Group.nonemployee_groups.subgroups()
     return render_to_response("etraining/admin/visitor_entrance.html", {
         'form': form,
+        'root_group': root_group,
         'groups': groups,
         'sub_groups': sub_groups,
     }, context_instance=RequestContext(request))
@@ -62,16 +67,14 @@ def visitor_entrance(request):
 @login_required
 def visitor_training(request):
     if request.method == "POST":
-        try:
-            training = Training.objects.get(pk=request.POST["training_id"])
-            registration = NonemployeeRegistration.objects.get(pk=request.POST["registration_id"])
+        training = Training.objects.get(pk=request.POST["training_id"])
+        registration = NonemployeeRegistration.objects.get(pk=request.POST["registration_id"])
 
-            entrance_training = EntranceTraining.objects.filter(registration=registration, training=training)
-            entrance_training.admin = request.user
-            entrance_training.attend_date = datetime.datetime.utcnow().replace(tzinfo=utc)
-            entrance_training.save()           
-        except:
-            pass
+        entrance_training = NonemployeeTrainingRecord.entrance_trainings.filter( \
+                registration=registration, training=training)
+        entrance_training.admin = request.user
+        entrance_training.attend_date = datetime.datetime.utcnow().replace(tzinfo=utc)
+        entrance_training.save()           
 
         return HttpResponseRedirect(reverse("visitor_entrance"))
 
@@ -85,19 +88,22 @@ def new_employee_registration(request):
             if request.POST.has_key('group') and request.POST.has_key('sub_group'):
                 group_id = request.POST['group']
                 sub_group_id = request.POST['sub_group']
-                group = Group.objects.get(pk=int(sub_group_id))
+                group = Group.employee_groups.get(pk=int(sub_group_id))
                 employee_registration.group = group
 
             employee_registration.save()
 
-            return render_to_response("etraining/admin/new_employee_registration_result.html", {}, context_instance=RequestContext(request))
+            return render_to_response("etraining/admin/new_employee_registration_result.html", {\
+            }, context_instance=RequestContext(request))
     else:
         form = EmployeeRegistrationForm()
 
-    groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=True)
-    sub_groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=False)
+    root_group = Group.employee_groups.root_group()
+    groups = Group.employee_groups.groups()
+    sub_groups = Group.employee_groups.subgroups()
     return render_to_response("etraining/admin/new_employee_registration.html", {
         'form': form,
+        'root_group': root_group,
         'groups': groups,
         'sub_groups': sub_groups,
     }, context_instance=RequestContext(request))
@@ -145,7 +151,7 @@ def training_signup(request, group_id, training_id):
         employee_list = []
         nonemployee_list = []
         if group.is_employee_group:
-            groups = Group.objects.filter(is_employee_group=True)
+            groups = Group.employee_groups.all()
             for new_group in groups:
                 if new_group == group or new_group.parent_group == group:
                     employee_list.extend(new_group.employee_set.all())
@@ -155,7 +161,7 @@ def training_signup(request, group_id, training_id):
                 else:
                     employee.training_done = False
         else:
-            groups = Group.objects.filter(is_employee_group=False)
+            groups = Group.nonemployee_groups.all()
             for new_group in groups:
                 if new_group == group or new_group.parent_group == group:
                     nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
@@ -212,13 +218,13 @@ def schedule_new_employee_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group = Group.objects.get(pk=0) # hack: id=0 is root employee group
+            group = Group.employee_groups.root_group()
 
         if request.POST.has_key('sub_group'):
             sub_group_id = request.POST['sub_group']
-            group = Group.objects.get(pk=int(sub_group_id))
+            group = Group.employee_groups.subgroups().get(pk=int(sub_group_id))
         else:
-            group = Group.objects.get(pk=int(group_id))
+            group = Group.employee_groups.groups().get(pk=int(group_id))
 
         if group:
             if training_type == u"班组培训":
@@ -229,15 +235,17 @@ def schedule_new_employee_training(request):
                 group.factory_training = training
             group.save()
 
-        return render_to_response("etraining/admin/schedule_employee_training_result.html", {
-            }, context_instance=RequestContext(request))
+        return render_to_response("etraining/admin/schedule_new_employee_training_result.html", {
+        }, context_instance=RequestContext(request))
     else:
         documents = Document.objects.all()
-        groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=True)
-        sub_groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=False)
         question_types = QuestionType.objects.all()
-        return render_to_response("etraining/admin/schedule_employee_training.html", {
+        root_group = Group.employee_groups.root_group()
+        groups = Group.employee_groups.groups()
+        sub_groups = Group.employee_groups.subgroups()
+        return render_to_response("etraining/admin/schedule_new_employee_training.html", {
             "documents": documents,
+            'root_group': root_group,
             "groups": groups,
             "sub_groups": sub_groups,
             "exam_types": question_types,
@@ -264,35 +272,29 @@ def schedule_employee_regular_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group_id = None
-if request.POST.has_key('sub_group'):
-            sub_group_id = request.POST['sub_group']
-        else:
-            sub_group_id = None
+            group = Group.employee_groups.root_group()
 
-        if not group_id:
-            # hack: id=0 is root employee group
-            group = Group.objects.get(pk=0)
-            group.trainings.add(training)
-            group.save()
-        elif group_id and not sub_group_id:
-            group = Group.objects.get(pk=int(group_id))
-            group.trainings.add(training)
-            group.save()
-        elif group_id and sub_group_id:
-            group = Group.objects.get(pk=int(sub_group_id))
+        if request.POST.has_key('sub_group'):
+            sub_group_id = request.POST['sub_group']
+            group = Group.employee_groups.subgroups().get(pk=int(sub_group_id))
+        else:
+            group = Group.employee_groups.groups().get(pk=int(group_id))
+
+        if group:
             group.trainings.add(training)
             group.save()
 
         return render_to_response("etraining/admin/schedule_employee_regular_training_result.html", {
-            }, context_instance=RequestContext(request))
+        }, context_instance=RequestContext(request))
     else:
         documents = Document.objects.all()
-        groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=True)
-        sub_groups = Group.objects.filter(is_employee_group=True).filter(parent_group__isnull=False)
         question_types = QuestionType.objects.all()
+        root_group = Group.employee_groups.root_group()
+        groups = Group.employee_groups.groups()
+        sub_groups = Group.employee_groups.subgroups()
         return render_to_response("etraining/admin/schedule_employee_regular_training.html", {
             "documents": documents,
+            "root_group": root_group,
             "groups": groups,
             "sub_groups": sub_groups,
             "exam_types": question_types,
@@ -319,37 +321,26 @@ def schedule_vendor_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group_id = None
+            group = Group.nonemployee_groups.root_group()
 
         if request.POST.has_key('sub_group'):
             sub_group_id = request.POST['sub_group']
+            group = Group.nonemployee_groups.subgroups().get(pk=int(sub_group_id))
         else:
-            sub_group_id = None
+            group = Group.nonemployee_groups.groups().get(pk=int(group_id))
 
-        if not group_id:
-            # hack: id=0 is root non-employee group
-            group = Group.objects.get(pk=1)
-            group.trainings.add(training)
-            group.save()
-        elif group_id and not sub_group_id:
-            group = Group.objects.get(pk=int(group_id))
-            group.trainings.add(training)
-            group.save()
-        elif group_id and sub_group_id:
-            group = Group.objects.get(pk=int(sub_group_id))
+        if group:
             group.trainings.add(training)
             group.save()
 
         return render_to_response("etraining/admin/schedule_vendor_training_result.html", {
-            }, context_instance=RequestContext(request))
+        }, context_instance=RequestContext(request))
     else:
         documents = Document.objects.all()
-        groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=True)
-        sub_groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=False)
         question_types = QuestionType.objects.all()
+        sub_groups = Group.nonemployee_groups.vendorgroups()
         return render_to_response("etraining/admin/schedule_vendor_training.html", {
             "documents": documents,
-            "groups": groups,
             "sub_groups": sub_groups,
             "exam_types": question_types,
         }, context_instance=RequestContext(request))
@@ -368,34 +359,27 @@ def schedule_visitor_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group_id = None
+            group = Group.nonemployee_groups.root_group()
 
         if request.POST.has_key('sub_group'):
             sub_group_id = request.POST['sub_group']
+            group = Group.nonemployee_groups.subgroups().get(pk=int(sub_group_id))
         else:
-            sub_group_id = None
+            group = Group.nonemployee_groups.groups().get(pk=int(group_id))
 
-        if not group_id:
-            # hack: id=0 is root non-employee group
-            group = Group.objects.get(pk=1)
-            group.trainings.add(training)
-            group.save()
-        elif group_id and not sub_group_id:
-            group = Group.objects.get(pk=int(group_id))
-            group.entrance_training = training
-            group.save()
-        elif group_id and sub_group_id:
-            group = Group.objects.get(pk=int(sub_group_id))
+        if group:
             group.entrance_training = training
             group.save()
 
         return render_to_response("etraining/admin/schedule_visitor_training_result.html", {}, context_instance=RequestContext(request))
     else:
         documents = Document.objects.all()
-        groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=True)
-        sub_groups = Group.objects.filter(is_employee_group=False).filter(parent_group__isnull=False)
+        root_group = Group.nonemployee_groups.root_group()
+        groups = Group.nonemployee_groups.groups()
+        sub_groups = Group.nonemployee_groups.subgroups()
         return render_to_response("etraining/admin/schedule_visitor_training.html", {
             "documents": documents,
+            "root_group": root_group,
             "groups": groups,
             "sub_groups": sub_groups,
         }, context_instance=RequestContext(request))
@@ -422,7 +406,7 @@ def view_training_signup(request, group_id, training_id):
     employee_list = []
     nonemployee_list = []
     if group.is_employee_group:
-        groups = Group.objects.filter(is_employee_group=True)
+        groups = Group.employee_groups.all()
         for new_group in groups:
             if new_group == group or new_group.parent_group == group:
                 employee_list.extend(new_group.employee_set.all())
@@ -439,7 +423,7 @@ def view_training_signup(request, group_id, training_id):
             else:
                 employee.status = 2
     else:
-        groups = Group.objects.filter(is_employee_group=False)
+        groups = Group.nonemployee_groups.all()
         for new_group in groups:
             if new_group == group or new_group.parent_group == group:
                 nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
@@ -473,29 +457,36 @@ def view_training_signup(request, group_id, training_id):
     }, context_instance=RequestContext(request))
 
 @login_required
-def view_employee_training(request):
-    employee_trainings = EmployeeTrainingRecord.objects.all()
-    return render_to_response("etraining/admin/view_employee_training.html", {
+def view_new_employee_training(request):
+    employee_trainings = EmployeeTrainingRecord.newemployee_trainings.all()
+    return render_to_response("etraining/admin/view_new_employee_training.html", {
+        "employee_training_list": employee_trainings,
+    }, context_instance=RequestContext(request))
+
+@login_required
+def view_regular_employee_training(request):
+    employee_trainings = EmployeeTrainingRecord.regular_trainings.all()
+    return render_to_response("etraining/admin/view_regular_employee_training.html", {
         "employee_training_list": employee_trainings,
     }, context_instance=RequestContext(request))
 
 @login_required
 def view_vendor_training(request):
-    vendor_trainings = NonemployeeTrainingRecord.objects.all()
+    vendor_trainings = NonemployeeTrainingRecord.vendor_trainings.all()
     return render_to_response("etraining/admin/view_vendor_training.html", {
         "vendor_training_list": vendor_trainings,
     }, context_instance=RequestContext(request))
 
 @login_required
 def view_vendor_entrance(request):
-    visitor_entrances = NonemployeeRegistration.objects.filter(group__id=17)
+    visitor_entrances = NonemployeeRegistration.entrance_trainings.vendor()
     return render_to_response("etraining/admin/view_vendor_entrance.html", {
         "visitor_entrance_list": visitor_entrances,
     }, context_instance=RequestContext(request))
 
 @login_required
 def view_visitor_entrance(request):
-    visitor_entrances = NonemployeeRegistration.objects.filter(group__id=18)
+    visitor_entrances = NonemployeeRegistration.objects.visitor()
     return render_to_response("etraining/admin/view_visitor_entrance.html", {
         "visitor_entrance_list": visitor_entrances,
     }, context_instance=RequestContext(request))
@@ -505,7 +496,7 @@ def manage_documents(request):
     documents = Document.objects.all()
     return render_to_response("etraining/admin/manage_documents.html", {
         'document_list': documents,
-      }, context_instance=RequestContext(request))
+    }, context_instance=RequestContext(request))
 
 @login_required
 def add_document(request):

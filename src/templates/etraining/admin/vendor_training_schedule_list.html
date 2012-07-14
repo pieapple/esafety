@@ -32,6 +32,7 @@
 		</tr>
 	</thead>
 	<tbody>
+  {% for group in groups %}
   {% for training in group.trainings.all %}
   <tr id="{{training.id}}" class="{% cycle odd even %}">
       <td>{{training.name}}</td>
@@ -39,8 +40,8 @@
       <td>{{group.name}}</td>
       <td>{{training.project}}</td>
       <td>{{training.training_date}}</td>
-      <td><a href='{% url training_signup group.id training.id %}'>{% trans "sign up" %}</a></td>
-      <td><a href='{% url attend_training training.id %}'>{% trans "play training" %}</a></td>
+      <td><a target="_blank" href='{% url training_signup group.id training.id %}'>{% trans "sign up" %}</a></td>
+      <td><a target="_blank" href='{% url attend_training training.id %}'>{% trans "play training" %}</a></td>
   </tr>
   {% endfor %}
   {% endfor %}

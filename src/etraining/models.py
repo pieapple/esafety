@@ -88,6 +88,13 @@ class NonemployeeGroupManager(models.Manager):
             subgroups.extend(self.get_query_set().filter(parent_group=group))
         return subgroups
 
+    def vendorgroups(self):
+        vendorgroups = []
+        groups = self.filter(name=u"承包商") 
+        for group in groups:
+            vendorgroups.extend(self.get_query_set().filter(parent_group=group))
+        return vendorgroups
+
 class Group(models.Model):
     name = models.CharField(max_length=255)
     parent_group = models.ForeignKey("self", blank=True, null=True)

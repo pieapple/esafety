@@ -40,7 +40,7 @@
       <td>{{training.project}}</td>
       <td>{{training.credits}}</td>
       <td>{{training.training_date}}</td>
-      <td><a href='{% url view_training_signup group.id training.id %}'>{% trans "view signup" %}</a></td>
+      <td><a target="_blank" href='{% url view_training_signup group.id training.id %}'>{% trans "view signup" %}</a></td>
   </tr>
   {% endfor %}
   {% endfor %}

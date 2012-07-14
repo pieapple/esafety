@@ -32,6 +32,10 @@
 <td colspan="3"><textarea style="width:70%" name="training_description"></textarea></td>
 </tr>
 <tr>
+<td class="formlabel"><label>{% trans "training credits" %}</label></td>
+<td colspan="3"><input type="text" name="credits" value="" /></td>
+</tr>
+<tr>
 <td class="formlabel"><label>{% trans "training type" %}</label></td>
 <td><select name="training_type">
 <option value="班组培训">班组培训</option>
@@ -73,10 +77,6 @@
 </td>
 <td class="formlabel"><label>{% trans "training exam pass criteria" %}</label></td>
 <td><input type="text" name="pass_criteria" value="" /></td>
-</tr>
-<tr>
-<td class="formlabel"><label>{% trans "training credits" %}</label></td>
-<td><input type="text" name="credits" value="" /></td>
 </tr>
 <tr class="submitrow">
 <td colspan="4"><input type="submit" value="{% trans 'schedule training' %}" /></td>

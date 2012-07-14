@@ -53,12 +53,6 @@
 <tr>
 <td class="formlabel"><label>{% trans "training attendee" %}</label></td>
 <td>
-<select id="parent" name="group">
-<option value="{{root_group.id}}">{{root_group.name}}</option>
-{% for group in groups %}
-<option value="{{group.id}}">{{group.name}}</option>
-{% endfor %}
-</select>
 <select id="child" name="sub_group">
 <option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "all people" %}</option>
 {% for group in sub_groups %}
@@ -82,7 +76,6 @@
 <script>
 $(document).ready(function() {
   $("#datepicker").datepicker($.datepicker.regional["zh-CN"]);
-  makeSublist('parent', 'child', false, '');
 });
 </script>
 {% endblock %}

@@ -288,7 +288,7 @@ def schedule_employee_regular_training(request):
         }, context_instance=RequestContext(request))
     else:
         documents = Document.objects.all()
-        question_types = QunestionType.objects.all()
+        question_types = QuestionType.objects.all()
         root_group = Group.employee_groups.root_group()
         groups = Group.employee_groups.groups()
         sub_groups = Group.employee_groups.subgroups()
@@ -321,7 +321,7 @@ def schedule_vendor_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group = Group.employee_groups.root_group()
+            group = Group.nonemployee_groups.root_group()
 
         if request.POST.has_key('sub_group'):
             sub_group_id = request.POST['sub_group']
@@ -338,12 +338,9 @@ def schedule_vendor_training(request):
     else:
         documents = Document.objects.all()
         question_types = QuestionType.objects.all()
-        root_group = Group.nonemployee_groups.root_group()
-        groups = Group.nonemployee_groups.groups()
-        sub_groups = Group.nonemployee_groups.subgroups()
+        sub_groups = Group.nonemployee_groups.vendorgroups()
         return render_to_response("etraining/admin/schedule_vendor_training.html", {
             "documents": documents,
-            "groups": groups,
             "sub_groups": sub_groups,
             "exam_types": question_types,
         }, context_instance=RequestContext(request))
@@ -362,7 +359,7 @@ def schedule_visitor_training(request):
         if request.POST.has_key('group'):
             group_id = request.POST['group']
         else:
-            group = Group.employee_groups.root_group()
+            group = Group.nonemployee_groups.root_group()
 
         if request.POST.has_key('sub_group'):
             sub_group_id = request.POST['sub_group']

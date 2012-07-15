@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-14 21:28+0800\n"
+"POT-Creation-Date: 2012-07-15 22:41+0800\n"
 "PO-Revision-Date: 2012-06-13 22:31+0800\n"
 "Last-Translator: Zhihong Liu <pieapple03@gmail.com>\n"
 "Language-Team: Zhihong Liu\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: etraining/admin_views.py:492
+#: etraining/admin_views.py:502
 msgid "Error to add document"
 msgstr "不能添加文档"
 
-#: etraining/admin_views.py:503
+#: etraining/admin_views.py:513
 msgid "Error to edit document"
 msgstr "不能编辑文档"
 
-#: etraining/admin_views.py:518
+#: etraining/admin_views.py:528
 msgid "Error to delete document"
 msgstr "不能删除文档"
 
-#: etraining/admin_views.py:578
+#: etraining/admin_views.py:589
 msgid "Error to add question"
 msgstr "不能添加题目"
 
-#: etraining/admin_views.py:624
+#: etraining/admin_views.py:635
 msgid "Error to edit question"
 msgstr "不能编辑题目"
 
-#: etraining/admin_views.py:650
+#: etraining/admin_views.py:661
 msgid "Error to delete question"
 msgstr "不能删除题目"
 
@@ -57,7 +57,7 @@ msgstr "欢迎访问我们的系统。"
 msgid "accept safety instructions"
 msgstr "理解安全守则"
 
-#: templates/etraining/self_exam.html:6
+#: templates/etraining/hist_exam.html:6 templates/etraining/self_exam.html:6
 #: templates/etraining/self_exam_result.html:6
 msgid "Employment Training Exam"
 msgstr "上岗培训考试"
@@ -67,8 +67,8 @@ msgid "previous page"
 msgstr "上一页"
 
 #: templates/etraining/self_exam.html:25
-#: templates/etraining/admin/view_new_employee_training.html:89
-#: templates/etraining/admin/view_regular_employee_training.html:86
+#: templates/etraining/admin/view_new_employee_training.html:92
+#: templates/etraining/admin/view_regular_employee_training.html:88
 msgid "next page"
 msgstr "下一页"
 
@@ -97,8 +97,8 @@ msgid "*Identity Number:"
 msgstr "*身份证号码:"
 
 #: templates/etraining/self_search.html:10
-#: templates/etraining/admin/view_new_employee_training.html:79
-#: templates/etraining/admin/view_regular_employee_training.html:76
+#: templates/etraining/admin/view_new_employee_training.html:82
+#: templates/etraining/admin/view_regular_employee_training.html:78
 msgid "search"
 msgstr "搜索"
 
@@ -173,11 +173,11 @@ msgstr "培训记录"
 msgid "print page"
 msgstr "打印本页"
 
-#: templates/etraining/welcome.html:6
+#: templates/etraining/welcome.html:7
 msgid "Welcome to visiting xx factory!"
 msgstr "欢迎光临XX厂！"
 
-#: templates/etraining/welcome.html:7
+#: templates/etraining/welcome.html:8
 msgid "Please register at the reception!"
 msgstr "请在门卫处登记！"
 
@@ -435,7 +435,7 @@ msgstr "培训日期"
 #: templates/etraining/admin/training_signup.html:52
 #: templates/etraining/admin/training_signup.html:65
 #: templates/etraining/admin/vendor_training_schedule_list.html:43
-#: templates/etraining/admin/view_training_signup.html:37
+#: templates/etraining/admin/view_training_signup.html:38
 msgid "sign up"
 msgstr "签到"
 
@@ -450,9 +450,9 @@ msgstr "播放培训"
 #: templates/etraining/admin/employee_training_schedule_list.html:89
 #: templates/etraining/admin/vendor_training_schedule_list.html:51
 #: templates/etraining/admin/view_employee_training_list.html:83
-#: templates/etraining/admin/view_new_employee_training.html:55
-#: templates/etraining/admin/view_regular_employee_training.html:53
-#: templates/etraining/admin/view_vendor_training.html:55
+#: templates/etraining/admin/view_new_employee_training.html:57
+#: templates/etraining/admin/view_regular_employee_training.html:55
+#: templates/etraining/admin/view_vendor_training.html:57
 #: templates/etraining/admin/view_vendor_training_list.html:48
 msgid "search training name"
 msgstr "搜索培训名称"
@@ -460,9 +460,9 @@ msgstr "搜索培训名称"
 #: templates/etraining/admin/employee_training_schedule_list.html:90
 #: templates/etraining/admin/vendor_training_schedule_list.html:52
 #: templates/etraining/admin/view_employee_training_list.html:84
-#: templates/etraining/admin/view_new_employee_training.html:56
-#: templates/etraining/admin/view_regular_employee_training.html:54
-#: templates/etraining/admin/view_vendor_training.html:56
+#: templates/etraining/admin/view_new_employee_training.html:58
+#: templates/etraining/admin/view_regular_employee_training.html:56
+#: templates/etraining/admin/view_vendor_training.html:58
 #: templates/etraining/admin/view_vendor_training_list.html:49
 msgid "search training description"
 msgstr "搜索培训简介"
@@ -476,23 +476,23 @@ msgstr "搜索培训参加人员"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:92
 #: templates/etraining/admin/view_employee_training_list.html:86
-#: templates/etraining/admin/view_new_employee_training.html:57
+#: templates/etraining/admin/view_new_employee_training.html:59
 msgid "search training type"
 msgstr "搜索培训类型"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:93
 #: templates/etraining/admin/view_employee_training_list.html:87
-#: templates/etraining/admin/view_new_employee_training.html:58
-#: templates/etraining/admin/view_regular_employee_training.html:55
+#: templates/etraining/admin/view_new_employee_training.html:60
+#: templates/etraining/admin/view_regular_employee_training.html:57
 msgid "search training credits"
 msgstr "搜索培训学时"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:94
 #: templates/etraining/admin/vendor_training_schedule_list.html:55
 #: templates/etraining/admin/view_employee_training_list.html:88
-#: templates/etraining/admin/view_new_employee_training.html:61
-#: templates/etraining/admin/view_regular_employee_training.html:58
-#: templates/etraining/admin/view_vendor_training.html:61
+#: templates/etraining/admin/view_new_employee_training.html:63
+#: templates/etraining/admin/view_regular_employee_training.html:60
+#: templates/etraining/admin/view_vendor_training.html:63
 #: templates/etraining/admin/view_vendor_training_list.html:52
 msgid "search training date"
 msgstr "搜索培训日期"
@@ -714,7 +714,7 @@ msgid "training attendee identity"
 msgstr "参加者身份证"
 
 #: templates/etraining/admin/training_signup.html:38
-#: templates/etraining/admin/view_training_signup.html:35
+#: templates/etraining/admin/view_training_signup.html:36
 #: templates/etraining/admin/view_vendor_entrance.html:27
 #: templates/etraining/admin/view_vendor_training.html:28
 #: templates/etraining/admin/view_visitor_entrance.html:27
@@ -727,25 +727,29 @@ msgid "signed up"
 msgstr "已签到"
 
 #: templates/etraining/admin/training_signup.html:72
-#: templates/etraining/admin/view_training_signup.html:73
+#: templates/etraining/admin/view_training_signup.html:76
 msgid "search attendee name"
 msgstr "搜索姓名"
 
 #: templates/etraining/admin/training_signup.html:73
-#: templates/etraining/admin/view_training_signup.html:74
+#: templates/etraining/admin/view_training_signup.html:77
 msgid "search attendee identity"
 msgstr "搜索身份证"
 
 #: templates/etraining/admin/training_signup.html:75
-#: templates/etraining/admin/view_training_signup.html:76
+#: templates/etraining/admin/view_training_signup.html:80
 #: templates/etraining/admin/view_vendor_entrance.html:55
-#: templates/etraining/admin/view_vendor_training.html:60
+#: templates/etraining/admin/view_vendor_training.html:62
 #: templates/etraining/admin/view_visitor_entrance.html:55
 msgid "search entrance time"
 msgstr "搜索入厂时间"
 
+#: templates/etraining/admin/training_signup.html:82
+msgid "Sign Up"
+msgstr "签到"
+
 #: templates/etraining/admin/vendor_training_schedule_list.html:54
-#: templates/etraining/admin/view_vendor_training.html:57
+#: templates/etraining/admin/view_vendor_training.html:59
 #: templates/etraining/admin/view_vendor_training_list.html:51
 msgid "search vendor project"
 msgstr "搜索承包商项目"
@@ -843,85 +847,92 @@ msgstr "参加日期"
 
 #: templates/etraining/admin/view_new_employee_training.html:30
 #: templates/etraining/admin/view_regular_employee_training.html:29
+#: templates/etraining/admin/view_training_signup.html:34
 #: templates/etraining/admin/view_vendor_training.html:30
-msgid "training status"
-msgstr "培训状态"
+msgid "training signature"
+msgstr "培训签名"
 
 #: templates/etraining/admin/view_new_employee_training.html:31
 #: templates/etraining/admin/view_regular_employee_training.html:30
 #: templates/etraining/admin/view_vendor_training.html:31
+msgid "training status"
+msgstr "培训状态"
+
+#: templates/etraining/admin/view_new_employee_training.html:32
+#: templates/etraining/admin/view_regular_employee_training.html:31
+#: templates/etraining/admin/view_vendor_training.html:32
 msgid "training admin"
 msgstr "培训管理员"
-
-#: templates/etraining/admin/view_new_employee_training.html:45
-#: templates/etraining/admin/view_regular_employee_training.html:43
-#: templates/etraining/admin/view_training_signup.html:49
-#: templates/etraining/admin/view_training_signup.html:64
-#: templates/etraining/admin/view_vendor_training.html:45
-msgid "exam not passed"
-msgstr "对不起，您未通过考试！"
 
 #: templates/etraining/admin/view_new_employee_training.html:47
 #: templates/etraining/admin/view_regular_employee_training.html:45
 #: templates/etraining/admin/view_training_signup.html:51
-#: templates/etraining/admin/view_training_signup.html:66
+#: templates/etraining/admin/view_training_signup.html:67
 #: templates/etraining/admin/view_vendor_training.html:47
+msgid "exam not passed"
+msgstr "未通过考试"
+
+#: templates/etraining/admin/view_new_employee_training.html:49
+#: templates/etraining/admin/view_regular_employee_training.html:47
+#: templates/etraining/admin/view_training_signup.html:53
+#: templates/etraining/admin/view_training_signup.html:69
+#: templates/etraining/admin/view_vendor_training.html:49
 msgid "exam passed"
 msgstr "已通过考试"
 
-#: templates/etraining/admin/view_new_employee_training.html:59
-#: templates/etraining/admin/view_regular_employee_training.html:56
+#: templates/etraining/admin/view_new_employee_training.html:61
+#: templates/etraining/admin/view_regular_employee_training.html:58
 msgid "search employee name"
 msgstr "搜索员工姓名"
 
-#: templates/etraining/admin/view_new_employee_training.html:60
-#: templates/etraining/admin/view_regular_employee_training.html:57
+#: templates/etraining/admin/view_new_employee_training.html:62
+#: templates/etraining/admin/view_regular_employee_training.html:59
 msgid "search employee identity"
 msgstr "搜索员工身份证"
 
-#: templates/etraining/admin/view_new_employee_training.html:62
-#: templates/etraining/admin/view_regular_employee_training.html:59
-#: templates/etraining/admin/view_vendor_training.html:62
+#: templates/etraining/admin/view_new_employee_training.html:65
+#: templates/etraining/admin/view_regular_employee_training.html:61
+#: templates/etraining/admin/view_vendor_training.html:64
 msgid "search training exam status "
 msgstr "搜索考试状态"
 
-#: templates/etraining/admin/view_new_employee_training.html:63
-#: templates/etraining/admin/view_regular_employee_training.html:60
-#: templates/etraining/admin/view_vendor_training.html:63
+#: templates/etraining/admin/view_new_employee_training.html:66
+#: templates/etraining/admin/view_regular_employee_training.html:62
+#: templates/etraining/admin/view_vendor_training.html:65
 msgid "search training admin"
 msgstr "搜索培训管理员"
 
-#: templates/etraining/admin/view_new_employee_training.html:80
-#: templates/etraining/admin/view_regular_employee_training.html:77
+#: templates/etraining/admin/view_new_employee_training.html:83
+#: templates/etraining/admin/view_regular_employee_training.html:79
 msgid "display _MENU_ per page"
 msgstr "每页显示_MENU_条数据"
 
-#: templates/etraining/admin/view_new_employee_training.html:81
-#: templates/etraining/admin/view_new_employee_training.html:82
-#: templates/etraining/admin/view_regular_employee_training.html:78
-#: templates/etraining/admin/view_regular_employee_training.html:79
+#: templates/etraining/admin/view_new_employee_training.html:84
+#: templates/etraining/admin/view_new_employee_training.html:85
+#: templates/etraining/admin/view_regular_employee_training.html:80
+#: templates/etraining/admin/view_regular_employee_training.html:81
 msgid "sorry, no record found"
 msgstr "对不起，没有任何数据"
 
-#: templates/etraining/admin/view_new_employee_training.html:83
-#: templates/etraining/admin/view_regular_employee_training.html:80
+#: templates/etraining/admin/view_new_employee_training.html:86
+#: templates/etraining/admin/view_regular_employee_training.html:82
 msgid "_START_ to _END_ record, _TOTAL_ total"
 msgstr "第_START_-_END_条数据，共计_TOTAL_条数据"
 
-#: templates/etraining/admin/view_new_employee_training.html:84
-#: templates/etraining/admin/view_regular_employee_training.html:81
+#: templates/etraining/admin/view_new_employee_training.html:87
+#: templates/etraining/admin/view_regular_employee_training.html:83
 msgid "no record displayed"
 msgstr "没有记录显示"
 
-#: templates/etraining/admin/view_new_employee_training.html:87
 #: templates/etraining/admin/view_new_employee_training.html:90
-#: templates/etraining/admin/view_regular_employee_training.html:84
-#: templates/etraining/admin/view_regular_employee_training.html:87
+#: templates/etraining/admin/view_new_employee_training.html:93
+#: templates/etraining/admin/view_regular_employee_training.html:86
+#: templates/etraining/admin/view_regular_employee_training.html:89
 msgid "first page"
 msgstr "第一页"
 
-#: templates/etraining/admin/view_new_employee_training.html:88
-#: templates/etraining/admin/view_regular_employee_training.html:85
+#: templates/etraining/admin/view_new_employee_training.html:91
+#: templates/etraining/admin/view_regular_employee_training.html:87
 msgid "last page"
 msgstr "最后一页"
 
@@ -929,8 +940,8 @@ msgstr "最后一页"
 msgid "view training signup"
 msgstr "查看培训签到情况"
 
-#: templates/etraining/admin/view_training_signup.html:47
-#: templates/etraining/admin/view_training_signup.html:62
+#: templates/etraining/admin/view_training_signup.html:49
+#: templates/etraining/admin/view_training_signup.html:65
 #: templates/etraining/admin/view_vendor_entrance.html:41
 #: templates/etraining/admin/view_visitor_entrance.html:41
 msgid "training not attended"
@@ -968,12 +979,12 @@ msgid "training attended"
 msgstr "已参加培训"
 
 #: templates/etraining/admin/view_vendor_entrance.html:51
-#: templates/etraining/admin/view_vendor_training.html:59
+#: templates/etraining/admin/view_vendor_training.html:61
 msgid "search vendor identity"
 msgstr "搜索身份证"
 
 #: templates/etraining/admin/view_vendor_entrance.html:52
-#: templates/etraining/admin/view_vendor_training.html:58
+#: templates/etraining/admin/view_vendor_training.html:60
 msgid "search vendor name"
 msgstr "搜索姓名"
 

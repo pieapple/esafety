@@ -27,6 +27,7 @@
     <th>{% trans "training attendee identity" %}</th>
     <th>{% trans "entrance time" %}</th>
     <th>{% trans "training attend date" %}</th>
+    <th>{% trans "training signature" %}</th>
     <th>{% trans "training status" %}</th>
     <th>{% trans "training admin" %}</th>
     </tr>
@@ -41,6 +42,7 @@
       <td>{{vendor_training.registration.identity}}</td>
       <td>{{vendor_training.registration.entrance_time}}</td>
       <td>{{vendor_training.attend_date}}</td>
+      <td><img style="width:50px;height:50px;" src="{{vendor_training.signature|safe}}" /></td>
       {% if vendor_training.score < vendor_training.training.pass_criteria %}
 <td>{% trans "exam not passed" %}</td>
 {% else %}

@@ -142,10 +142,10 @@ def training_signup(request, group_id, training_id):
     training = Training.objects.get(pk=training_id)
 
     if request.method == "POST":
-        try:
+        #try:
             if group.is_employee_group:
                 employee = Employee.objects.get(pk=request.POST["employee_id"])
-                employeeTrainingRecord = EmployeeTrainingRecord.objects.get_or_create( \
+                employeeTrainingRecord,created = EmployeeTrainingRecord.objects.get_or_create( \
                     employee=employee, training=training)
                 employeeTrainingRecord.signature = request.POST["signature"]
                 employeeTrainingRecord.attend_date = datetime.date.today()
@@ -153,7 +153,7 @@ def training_signup(request, group_id, training_id):
                 employeeTrainingRecord.save()
             else:
                 registration = NonemployeeRegistration.objects.get(pk=request.POST["registration_id"])
-                nonemployeeTrainingRecord, = NonemployeeTrainingRecord.objects.get_or_create( \
+                nonemployeeTrainingRecord,created = NonemployeeTrainingRecord.objects.get_or_create( \
                     registration=registration, training=training)
                 nonemployeeTrainingRecord.signature = request.POST["signature"]
                 nonemployeeTrainingRecord.attend_date = datetime.date.today()
@@ -161,20 +161,17 @@ def training_signup(request, group_id, training_id):
                 nonemployeeTrainingRecord.save()
 
             return HttpResponse("OK")
-        except:
-            return HttpResponse("Error")
+        #except:
+        #    return HttpResponse("Error")
     else: 
         employee_list = []
         nonemployee_list = []
         if group.is_employee_group:
             employee_list =  get_employees_by_group(group)
             for employee in employee_list:
-                print employee
                 if EmployeeTrainingRecord.objects.filter(employee=employee, training=training).count():
-                    print "done"
                     employee.training_done = True
                 else:
-                    print "not done"
                     employee.training_done = False
         else:
             nonemployee_list = get_nonemployees_by_group(group)
@@ -420,6 +417,9 @@ def view_training_signup(request, group_id, training_id):
                 employee.status = 1
             else:
                 employee.status = 2
+
+            if record:
+                employee.signature = record.signature
     else:
         nonemployee_list = get_nonemployees_by_group(group)
         nonemployee_dict = {}
@@ -444,6 +444,9 @@ def view_training_signup(request, group_id, training_id):
                 nonemployee.status = 1
             else:
                 nonemployee.status = 2
+
+            if record:
+                nonemployee.signature = record.signature
     return render_to_response("etraining/admin/view_training_signup.html", {
         "training": training,
         "group": group,

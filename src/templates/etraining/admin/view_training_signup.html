@@ -31,6 +31,7 @@
 <tr>
 <th>{% trans "training attendee name" %}</th>
 <th>{% trans "training attendee identity" %}</th>
+<th>{% trans "training signature" %}</th>
 {% if not group.is_employee_group %}
 <th>{% trans "entrance time" %}</th>
 {% endif %}
@@ -43,6 +44,7 @@
 <tr id="{{employee.id}}" class="{% cycle odd even %}">
 <td>{{employee.name}}</td>
 <td>{{employee.identity}}</td>
+<td><img style="width:50px;height:50px;" src="{{employee.signature|safe}}" /></td>
 {% if employee.status == 0 %}
 <td>{% trans "training not attended" %}</td>
 {% elif employee.status == 1 %}
@@ -58,6 +60,7 @@
 <td>{{nonemployee.name}}</td>
 <td>{{nonemployee.identity}}</td>
 <td>{{nonemployee.entrance_time}}</td>
+<td><img style="width:50px;height:50px;" src="{{nonemployee.signature|safe}}" /></td>
 {% if nonemployee.status == 0 %}
 <td>{% trans "training not attended" %}</td>
 {% elif nonemployee.status == 1 %}
@@ -72,6 +75,7 @@
 <tfoot>
 <th><input type="text" name="search_attendeename" value="{% trans 'search attendee name' %}" class="search_init" /></th>
 <th><input type="text" name="search_attendeeid" value="{% trans 'search attendee identity' %}" class="search_init" /></th>
+<th></th>
 {% if not group.is_employee_group %}
 <th><input type="text" name="search_entrancetime" value="{% trans 'search entrance time' %}" class="search_init" /></th>
 {% endif %}

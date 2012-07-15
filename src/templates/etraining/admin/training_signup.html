@@ -88,24 +88,29 @@
 {{block.super}}
 <script>
 var asInitVals = new Array();
-var idt, parent;
 $(document).ready(function() {
+  var idt, parent;
+  var draw = new Draw("signature_canvas");
+
   $("#signup_dialog").dialog({
     autoOpen: false,
-    height: 300,
-    width: 400,
+    height: 350,
+    width: 250,
     modal: true,
     buttons: {
       "确认": function() {
-        b64 = $("#signature_canvas")[0].toDataURL().substring(22);
+        b64 = document.getElementById("signature_canvas").toDataURL("image/png");
         $.post("{% url training_signup group.id training.id %}",
-        {% if group.is_employee_group %}
-        "signature="+b64+"&employee_id="+idt,
-        {% else %}
-        "signature="+b64+"&registration_id="+idt,
-        {% endif %}
-        function(data) {
-          if (data == "OK") {
+            {
+                signature: b64, 
+                {% if group.is_employee_group %}
+                employee_id: idt
+                {% else %}
+                registration: idt
+                {% endif %}
+            },
+            function(data) {
+              if (data == "OK") {
             parent.html("已签到");
           }
         });

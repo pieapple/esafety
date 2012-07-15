@@ -20,6 +20,20 @@ def get_entrance_training_for_group(group):
     else:
         return None
 
+def get_employees_by_group(group):
+    employee_list = []
+    employee_list.extend(group.employee_set.all())
+    for new_group in group.child_groups.all():
+        employee_list.extend(get_employees_by_group(new_group))
+    return employee_list
+
+def get_nonemployees_by_group(group):
+    nonemployee_list = []
+    nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+    for new_group in group.child_groups.all():
+        nonemployee_list.extend(get_nonemployees_by_group(new_group))
+    return nonemployee_list
+
 @login_required
 def visitor_entrance(request):
     if request.method == "POST":
@@ -128,43 +142,41 @@ def training_signup(request, group_id, training_id):
     training = Training.objects.get(pk=training_id)
 
     if request.method == "POST":
-        try:
+        #try:
             if group.is_employee_group:
                 employee = Employee.objects.get(pk=request.POST["employee_id"])
                 employeeTrainingRecord = EmployeeTrainingRecord.objects.get_or_create( \
                     employee=employee, training=training)
+                print employeeTrainingRecord
                 employeeTrainingRecord.attend_date = datetime.date.today()
                 employeeTrainingRecord.admin = request.user
                 employeeTrainingRecord.save()
             else:
                 registration = NonemployeeRegistration.objects.get(pk=request.POST["registration_id"])
-                nonemployeeTrainingRecord = NonemployeeTrainingRecord.objects.get_or_create( \
+                nonemployeeTrainingRecord, = NonemployeeTrainingRecord.objects.get_or_create( \
                     registration=registration, training=training)
                 nonemployeeTrainingRecord.attend_date = datetime.date.today()
                 nonemployeeTrainingRecord.admin = request.user
                 nonemployeeTrainingRecord.save()
 
             return HttpResponse("OK")
-        except:
-            return HttpResponse("Error")
+        #except:
+        #    return HttpResponse("Error")
     else: 
         employee_list = []
         nonemployee_list = []
         if group.is_employee_group:
-            groups = Group.employee_groups.all()
-            for new_group in groups:
-                if new_group == group or new_group.parent_group == group:
-                    employee_list.extend(new_group.employee_set.all())
+            employee_list =  get_employees_by_group(group)
             for employee in employee_list:
+                print employee
                 if EmployeeTrainingRecord.objects.filter(employee=employee, training=training).count():
+                    print "done"
                     employee.training_done = True
                 else:
+                    print "not done"
                     employee.training_done = False
         else:
-            groups = Group.nonemployee_groups.all()
-            for new_group in groups:
-                if new_group == group or new_group.parent_group == group:
-                    nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+            nonemployee_list = get_nonemployees_by_group(group)
             nonemployee_dict = {}
             for nonemployee in nonemployee_list:
                 identity = nonemployee.identity
@@ -394,10 +406,7 @@ def view_training_signup(request, group_id, training_id):
     employee_list = []
     nonemployee_list = []
     if group.is_employee_group:
-        groups = Group.employee_groups.all()
-        for new_group in groups:
-            if new_group == group or new_group.parent_group == group:
-                employee_list.extend(new_group.employee_set.all())
+        employee_list = get_employees_by_group(group)
         for employee in employee_list:
             try:
                 record = EmployeeTrainingRecord.objects.get(employee=employee, training=training)
@@ -411,10 +420,7 @@ def view_training_signup(request, group_id, training_id):
             else:
                 employee.status = 2
     else:
-        groups = Group.nonemployee_groups.all()
-        for new_group in groups:
-            if new_group == group or new_group.parent_group == group:
-                nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+        nonemployee_list = get_nonemployees_by_group(group)
         nonemployee_dict = {}
         for nonemployee in nonemployee_list:
             identity = nonemployee.identity
@@ -563,6 +569,7 @@ def manage_question_poll(request):
     else:
         return render_to_response("etraining/admin/manage_question_poll.html", {
             'question_type_list': question_type_list,
+            'init_page': True,
         }, context_instance=RequestContext(request))
 
 @login_required

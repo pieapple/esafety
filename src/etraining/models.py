@@ -98,7 +98,7 @@ class NonemployeeGroupManager(models.Manager):
 
 class Group(models.Model):
     name = models.CharField(max_length=255)
-    parent_group = models.ForeignKey("self", blank=True, null=True)
+    parent_group = models.ForeignKey("self", blank=True, null=True, related_name="child_groups")
     is_employee_group = models.BooleanField() 
 
     objects = models.Manager()
@@ -166,7 +166,7 @@ class EmployeeTrainingRecord(models.Model):
     exam_result = models.CharField(max_length=500, blank=True, null=True)
 
     def __unicode__(self):
-        return self.training+'|'+self.employee
+        return self.training.name+'|'+self.employee.name
 
 class VendorManager(models.Manager):
     def get_query_set(self):

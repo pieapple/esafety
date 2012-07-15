@@ -14,14 +14,19 @@ import datetime, sys, random, json
 def index(request):
     return HttpResponseRedirect(reverse("self_search"))
 
-def get_training_for_group(group):
+def get_training_for_group(is_employee, group):
+    trainings = []
+    trainings.extend(group.trainings.all())
+    if is_employee:
+        if group.banzu_training:
+            trainings.append(group.banzu_training)
+        if group.chejian_training:
+            trainings.append(group.chejian_training)
+        if group.factory_training:
+            trainings.append(group.factory_training)
     if group.parent_group:
-        trainings = []
-        trainings.extend(group.trainings.all())
-        trainings.extend(get_training_for_group(group.parent_group))
-        return trainings
-    else:
-        return group.trainings.all() 
+        trainings.extend(get_training_for_group(is_employee, group.parent_group))
+    return trainings
 
 def visitor_welcome(request):
     return render_to_response("etraining/welcome.html", {}, context_instance=RequestContext(request))
@@ -75,7 +80,8 @@ def self_search(request):
             is_employee = 0
         else:
             entry = entries[0]
-            trainings = get_training_for_group(entry.group)
+            trainings = get_training_for_group(is_employee, entry.group)
+            print trainings
             for training in trainings:
                 try:
                     if is_employee:

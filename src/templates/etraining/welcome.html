@@ -1,5 +1,6 @@
 {% extends "etraining/base_etraining.html" %}
 {% load i18n %}
+{% load url from future %}
 
 {% block content %}
 <div class="content clearfix">
@@ -12,10 +13,10 @@
 {{block.super}}
 <script>
 function checkRedirect() {
-  $.get("{% url is_available_entrance %}",
+  $.get("{% url 'is_available_entrance' %}",
     function(data) {
       if (data) {
-        location.href = "/etraining/entrance_training/"+data;
+        location.href = "/etraining/entrance_training/" + data;
       }
     });
 }

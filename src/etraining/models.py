@@ -156,14 +156,15 @@ class EmployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
     employee = models.ForeignKey("Employee")
 
-    objects = models.Manager()
-    newemployee_trainings = NewemployeeTrainingManager()
-    regular_trainings = RegularTrainingManager()
-
+    signature = models.TextField(blank=True, null=True)
     attend_date = models.DateField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
     admin = models.ForeignKey(User, blank=True, null=True)
     exam_result = models.CharField(max_length=500, blank=True, null=True)
+
+    objects = models.Manager()
+    newemployee_trainings = NewemployeeTrainingManager()
+    regular_trainings = RegularTrainingManager()
 
     def __unicode__(self):
         return self.training.name+'|'+self.employee.name
@@ -215,6 +216,8 @@ class EntranceTrainingManager(models.Manager):
 class NonemployeeTrainingRecord(models.Model):
     training = models.ForeignKey("Training")
     registration = models.ForeignKey("NonemployeeRegistration")
+
+    signature = models.TextField(blank=True, null=True)
     attend_date = models.DateField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
     admin = models.ForeignKey(User, blank=True, null=True)

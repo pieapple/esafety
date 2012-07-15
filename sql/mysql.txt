@@ -24,6 +24,232 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `esafety` /*!40100 DEFAULT CHARACTER SE
 USE `esafety`;
 
 --
+-- Table structure for table `auth_group`
+--
+
+DROP TABLE IF EXISTS `auth_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_group`
+--
+
+LOCK TABLES `auth_group` WRITE;
+/*!40000 ALTER TABLE `auth_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_group_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_group_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `group_id` (`group_id`,`permission_id`),
+  KEY `auth_group_permissions_425ae3c4` (`group_id`),
+  KEY `auth_group_permissions_1e014c8f` (`permission_id`),
+  CONSTRAINT `group_id_refs_id_3cea63fe` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
+  CONSTRAINT `permission_id_refs_id_5886d21f` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_group_permissions`
+--
+
+LOCK TABLES `auth_group_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_group_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_group_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_permission`
+--
+
+DROP TABLE IF EXISTS `auth_permission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_permission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `content_type_id` int(11) NOT NULL,
+  `codename` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
+  KEY `auth_permission_1bb8f392` (`content_type_id`),
+  CONSTRAINT `content_type_id_refs_id_728de91f` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_permission`
+--
+
+LOCK TABLES `auth_permission` WRITE;
+/*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
+INSERT INTO `auth_permission` VALUES (1,'Can add permission',1,'add_permission'),(2,'Can change permission',1,'change_permission'),(3,'Can delete permission',1,'delete_permission'),(4,'Can add group',2,'add_group'),(5,'Can change group',2,'change_group'),(6,'Can delete group',2,'delete_group'),(7,'Can add user',3,'add_user'),(8,'Can change user',3,'change_user'),(9,'Can delete user',3,'delete_user'),(10,'Can add content type',4,'add_contenttype'),(11,'Can change content type',4,'change_contenttype'),(12,'Can delete content type',4,'delete_contenttype'),(13,'Can add session',5,'add_session'),(14,'Can change session',5,'change_session'),(15,'Can delete session',5,'delete_session'),(16,'Can add is confirm available',6,'add_isconfirmavailable'),(17,'Can change is confirm available',6,'change_isconfirmavailable'),(18,'Can delete is confirm available',6,'delete_isconfirmavailable'),(19,'Can add question type',7,'add_questiontype'),(20,'Can change question type',7,'change_questiontype'),(21,'Can delete question type',7,'delete_questiontype'),(22,'Can add question',8,'add_question'),(23,'Can change question',8,'change_question'),(24,'Can delete question',8,'delete_question'),(25,'Can add choice',9,'add_choice'),(26,'Can change choice',9,'change_choice'),(27,'Can delete choice',9,'delete_choice'),(28,'Can add document',10,'add_document'),(29,'Can change document',10,'change_document'),(30,'Can delete document',10,'delete_document'),(31,'Can add training',11,'add_training'),(32,'Can change training',11,'change_training'),(33,'Can delete training',11,'delete_training'),(34,'Can add group',12,'add_group'),(35,'Can change group',12,'change_group'),(36,'Can delete group',12,'delete_group'),(37,'Can add employee',13,'add_employee'),(38,'Can change employee',13,'change_employee'),(39,'Can delete employee',13,'delete_employee'),(40,'Can add employee training record',14,'add_employeetrainingrecord'),(41,'Can change employee training record',14,'change_employeetrainingrecord'),(42,'Can delete employee training record',14,'delete_employeetrainingrecord'),(43,'Can add nonemployee registration',15,'add_nonemployeeregistration'),(44,'Can change nonemployee registration',15,'change_nonemployeeregistration'),(45,'Can delete nonemployee registration',15,'delete_nonemployeeregistration'),(46,'Can add nonemployee training record',16,'add_nonemployeetrainingrecord'),(47,'Can change nonemployee training record',16,'change_nonemployeetrainingrecord'),(48,'Can delete nonemployee training record',16,'delete_nonemployeetrainingrecord');
+/*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user`
+--
+
+DROP TABLE IF EXISTS `auth_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(75) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `is_staff` tinyint(1) NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `is_superuser` tinyint(1) NOT NULL,
+  `last_login` datetime NOT NULL,
+  `date_joined` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user`
+--
+
+LOCK TABLES `auth_user` WRITE;
+/*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
+INSERT INTO `auth_user` VALUES (1,'门卫一','','','','pbkdf2_sha256$10000$5Luj1yX4FKep$PBDoU1CJDXLitUF0twwnGVYbPx88VMkLt8EjR3e8Ucw=',1,1,1,'2012-07-06 17:10:28','2012-07-06 17:10:28'),(2,'门卫二','','','','pbkdf2_sha256$10000$JhOESQeZtOhh$mqeD6ZmZxdD5hlfTRjPJ9DEVOPBAO5OAgxaEjEnZu3M=',1,1,1,'2012-07-06 17:10:39','2012-07-06 17:10:39'),(3,'人事处一','','','','pbkdf2_sha256$10000$CSqyNH16M7C6$on0EZXfJoj72pau8tan5S068PWc1SdcsNDf03TdogOI=',1,1,1,'2012-07-06 17:11:03','2012-07-06 17:11:03'),(4,'人事处二','','','','pbkdf2_sha256$10000$EIqVmOQ4gz6a$4YzKsjcG2I07zDl5z+wIpRU5XBnkE9kFG2tpJnS+F00=',1,1,1,'2012-07-06 17:11:15','2012-07-06 17:11:15'),(5,'主管一','','','','pbkdf2_sha256$10000$BcILubEd3naK$+p3Pe6FddsvoTZWWiebjeFi02yfr9GA5U7H5Dxm63Yw=',1,1,1,'2012-07-06 17:11:30','2012-07-06 17:11:30'),(6,'主管二','','','','pbkdf2_sha256$10000$g6Q0iJ6HjNl0$hEcDd56FzrdvZkTd1S/Sn93wXL7wDIRFUh8+ZF3WebA=',1,1,1,'2012-07-06 17:11:46','2012-07-06 17:11:46');
+/*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user_groups`
+--
+
+DROP TABLE IF EXISTS `auth_user_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`group_id`),
+  KEY `auth_user_groups_403f60f` (`user_id`),
+  KEY `auth_user_groups_425ae3c4` (`group_id`),
+  CONSTRAINT `user_id_refs_id_7ceef80f` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `group_id_refs_id_f116770` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user_groups`
+--
+
+LOCK TABLES `auth_user_groups` WRITE;
+/*!40000 ALTER TABLE `auth_user_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_user_groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user_user_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_user_user_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_user_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`permission_id`),
+  KEY `auth_user_user_permissions_403f60f` (`user_id`),
+  KEY `auth_user_user_permissions_1e014c8f` (`permission_id`),
+  CONSTRAINT `user_id_refs_id_dfbab7d` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `permission_id_refs_id_67e79cb` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user_user_permissions`
+--
+
+LOCK TABLES `auth_user_user_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_user_user_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_user_user_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_content_type`
+--
+
+DROP TABLE IF EXISTS `django_content_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_content_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `app_label` varchar(100) NOT NULL,
+  `model` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `app_label` (`app_label`,`model`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_content_type`
+--
+
+LOCK TABLES `django_content_type` WRITE;
+/*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
+INSERT INTO `django_content_type` VALUES (1,'permission','auth','permission'),(2,'group','auth','group'),(3,'user','auth','user'),(4,'content type','contenttypes','contenttype'),(5,'session','sessions','session'),(6,'is confirm available','etraining','isconfirmavailable'),(7,'question type','etraining','questiontype'),(8,'question','etraining','question'),(9,'choice','etraining','choice'),(10,'document','etraining','document'),(11,'training','etraining','training'),(12,'group','etraining','group'),(13,'employee','etraining','employee'),(14,'employee training record','etraining','employeetrainingrecord'),(15,'nonemployee registration','etraining','nonemployeeregistration'),(16,'nonemployee training record','etraining','nonemployeetrainingrecord');
+/*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_session`
+--
+
+DROP TABLE IF EXISTS `django_session`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_session` (
+  `session_key` varchar(40) NOT NULL,
+  `session_data` longtext NOT NULL,
+  `expire_date` datetime NOT NULL,
+  PRIMARY KEY (`session_key`),
+  KEY `django_session_3da3d3d8` (`expire_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_session`
+--
+
+LOCK TABLES `django_session` WRITE;
+/*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
+/*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `etraining_choice`
 --
 
@@ -60,10 +286,12 @@ DROP TABLE IF EXISTS `etraining_document`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `etraining_document` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
   `text` longtext NOT NULL,
-  `audio_clip` varchar(255) NOT NULL,
+  `audio_clip` varchar(255) DEFAULT NULL,
+  `audio_file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,6 +300,7 @@ CREATE TABLE `etraining_document` (
 
 LOCK TABLES `etraining_document` WRITE;
 /*!40000 ALTER TABLE `etraining_document` DISABLE KEYS */;
+INSERT INTO `etraining_document` VALUES (1,'员工班组培训','本班组员工均需遵守以下条例：\n1. 。。。','/media/audio/1342274050.58.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342274050.58.ogg'),(2,'入厂告知培训','为了您和他人的安全，进入厂区请遵守以下安全条例：\n1. 请关闭手机等无线设备\n2. 请戴好安全帽，注意脚下安全\n3. 厂区所有位置不准吸烟\n4. 请遵守。。。。。。。','/media/audio/1342273978.69.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342273978.69.ogg'),(3,'承包商上岗培训','承包商作业时需遵守下列条例：\n1. 持证上岗 \n2. 通过本培训考试后方能上岗 \n3. 请遵守。。。','/media/audio/1342274056.94.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342274056.94.ogg'),(4,'员工全厂培训','全厂员工均需遵守以下条例：\n1. 。。。','/media/audio/1342274047.55.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342274047.55.ogg'),(5,'员工车间培训','本车间员工均需遵守以下条例：\n1. 。。。','/media/audio/1342274053.23.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342274053.23.ogg'),(6,'老员工日常培训','老员工均需遵守以下条例：\n1. 。。。','/media/audio/1342274060.65.ogg','/home/pieapple/prototype2/esafety/src/media/audio/1342274060.65.ogg');
 /*!40000 ALTER TABLE `etraining_document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,16 +316,24 @@ CREATE TABLE `etraining_employee` (
   `identity` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `sex` tinyint(1) NOT NULL,
-  `edu` varchar(255) NOT NULL,
-  `major` varchar(255) NOT NULL,
-  `duty` varchar(255) NOT NULL,
-  `home_address` varchar(255) NOT NULL,
-  `phone_number` varchar(255) NOT NULL,
-  `is_admin` int(11) NOT NULL,
-  `employee_group_id` int(11) NOT NULL,
+  `edu` varchar(255) DEFAULT NULL,
+  `major` varchar(255) DEFAULT NULL,
+  `duty` varchar(255) DEFAULT NULL,
+  `home_address` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  `group_id` int(11) NOT NULL,
+  `factory_training_id` int(11) DEFAULT NULL,
+  `chejian_training_id` int(11) DEFAULT NULL,
+  `banzu_training_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `etraining_employee_29158556` (`employee_group_id`),
-  CONSTRAINT `employee_group_id_refs_id_676b7d93` FOREIGN KEY (`employee_group_id`) REFERENCES `etraining_group` (`id`)
+  KEY `etraining_employee_425ae3c4` (`group_id`),
+  KEY `etraining_employee_75aa3957` (`factory_training_id`),
+  KEY `etraining_employee_2bdb17d1` (`chejian_training_id`),
+  KEY `etraining_employee_132951df` (`banzu_training_id`),
+  CONSTRAINT `banzu_training_id_refs_id_6f852656` FOREIGN KEY (`banzu_training_id`) REFERENCES `etraining_employeetrainingrecord` (`id`),
+  CONSTRAINT `chejian_training_id_refs_id_6f852656` FOREIGN KEY (`chejian_training_id`) REFERENCES `etraining_employeetrainingrecord` (`id`),
+  CONSTRAINT `factory_training_id_refs_id_6f852656` FOREIGN KEY (`factory_training_id`) REFERENCES `etraining_employeetrainingrecord` (`id`),
+  CONSTRAINT `group_id_refs_id_676b7d93` FOREIGN KEY (`group_id`) REFERENCES `etraining_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -110,34 +347,37 @@ LOCK TABLES `etraining_employee` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `etraining_employeetraining`
+-- Table structure for table `etraining_employeetrainingrecord`
 --
 
-DROP TABLE IF EXISTS `etraining_employeetraining`;
+DROP TABLE IF EXISTS `etraining_employeetrainingrecord`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `etraining_employeetraining` (
+CREATE TABLE `etraining_employeetrainingrecord` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `training_id` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
-  `attend_date` date NOT NULL,
-  `training_date` date NOT NULL,
-  `score` int(11) NOT NULL,
+  `attend_date` date DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL,
+  `exam_result` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `etraining_employeetraining_16dec52a` (`training_id`),
-  KEY `etraining_employeetraining_359f2ab4` (`employee_id`),
-  CONSTRAINT `employee_id_refs_id_2fb84db5` FOREIGN KEY (`employee_id`) REFERENCES `etraining_employee` (`id`),
-  CONSTRAINT `training_id_refs_id_2ad49665` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`)
+  KEY `etraining_employeetrainingrecord_16dec52a` (`training_id`),
+  KEY `etraining_employeetrainingrecord_359f2ab4` (`employee_id`),
+  KEY `etraining_employeetrainingrecord_e972820` (`admin_id`),
+  CONSTRAINT `training_id_refs_id_4d72face` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `admin_id_refs_id_3c20b26d` FOREIGN KEY (`admin_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `employee_id_refs_id_4dd339d8` FOREIGN KEY (`employee_id`) REFERENCES `etraining_employee` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `etraining_employeetraining`
+-- Dumping data for table `etraining_employeetrainingrecord`
 --
 
-LOCK TABLES `etraining_employeetraining` WRITE;
-/*!40000 ALTER TABLE `etraining_employeetraining` DISABLE KEYS */;
-/*!40000 ALTER TABLE `etraining_employeetraining` ENABLE KEYS */;
+LOCK TABLES `etraining_employeetrainingrecord` WRITE;
+/*!40000 ALTER TABLE `etraining_employeetrainingrecord` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_employeetrainingrecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -150,12 +390,24 @@ DROP TABLE IF EXISTS `etraining_group`;
 CREATE TABLE `etraining_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `parentgroup_id` int(11) NOT NULL,
+  `parent_group_id` int(11) DEFAULT NULL,
   `is_employee_group` tinyint(1) NOT NULL,
+  `entrance_training_id` int(11) DEFAULT NULL,
+  `factory_training_id` int(11) DEFAULT NULL,
+  `chejian_training_id` int(11) DEFAULT NULL,
+  `banzu_training_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `etraining_group_1a9ea78a` (`parentgroup_id`),
-  CONSTRAINT `parentgroup_id_refs_id_4b38287d` FOREIGN KEY (`parentgroup_id`) REFERENCES `etraining_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `etraining_group_c876d7c` (`parent_group_id`),
+  KEY `etraining_group_4898616e` (`entrance_training_id`),
+  KEY `etraining_group_75aa3957` (`factory_training_id`),
+  KEY `etraining_group_2bdb17d1` (`chejian_training_id`),
+  KEY `etraining_group_132951df` (`banzu_training_id`),
+  CONSTRAINT `banzu_training_id_refs_id_2751013` FOREIGN KEY (`banzu_training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `chejian_training_id_refs_id_2751013` FOREIGN KEY (`chejian_training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `entrance_training_id_refs_id_2751013` FOREIGN KEY (`entrance_training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `factory_training_id_refs_id_2751013` FOREIGN KEY (`factory_training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `parent_group_id_refs_id_4b38287d` FOREIGN KEY (`parent_group_id`) REFERENCES `etraining_group` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,6 +416,7 @@ CREATE TABLE `etraining_group` (
 
 LOCK TABLES `etraining_group` WRITE;
 /*!40000 ALTER TABLE `etraining_group` DISABLE KEYS */;
+INSERT INTO `etraining_group` VALUES (1,'所有员工',NULL,1,NULL,NULL,NULL,NULL),(2,'第一车间',1,1,NULL,NULL,NULL,NULL),(3,'第二车间',1,1,NULL,NULL,NULL,NULL),(4,'第三车间',1,1,NULL,NULL,NULL,NULL),(5,'第四车间',1,1,NULL,NULL,NULL,NULL),(6,'第一班组',2,1,NULL,NULL,NULL,NULL),(7,'第二班组',2,1,NULL,NULL,NULL,NULL),(8,'第三班组',2,1,NULL,NULL,NULL,NULL),(9,'第四班组',3,1,NULL,NULL,NULL,NULL),(10,'第五班组',3,1,NULL,NULL,NULL,NULL),(11,'第六班组',3,1,NULL,NULL,NULL,NULL),(12,'第七班组',4,1,NULL,NULL,NULL,NULL),(13,'第八班组',4,1,NULL,NULL,NULL,NULL),(14,'第九班组',4,1,NULL,NULL,NULL,NULL),(15,'第十班组',5,1,NULL,NULL,NULL,NULL),(16,'第十一班组',5,1,NULL,NULL,NULL,NULL),(17,'第十二班组',5,1,NULL,NULL,NULL,NULL),(18,'所有外来人员',NULL,0,NULL,NULL,NULL,NULL),(19,'承包商',18,0,NULL,NULL,NULL,NULL),(20,'访客',18,0,NULL,NULL,NULL,NULL),(21,'领导',20,0,NULL,NULL,NULL,NULL),(22,'检查人员',20,0,NULL,NULL,NULL,NULL),(23,'其他人员',20,0,NULL,NULL,NULL,NULL),(24,'水电工',19,0,NULL,NULL,NULL,NULL),(25,'电焊工',19,0,NULL,NULL,NULL,NULL),(26,'装卸工',19,0,NULL,NULL,NULL,NULL),(27,'其他工种',19,0,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `etraining_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,6 +450,29 @@ LOCK TABLES `etraining_group_trainings` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `etraining_isconfirmavailable`
+--
+
+DROP TABLE IF EXISTS `etraining_isconfirmavailable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `etraining_isconfirmavailable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `registration` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `etraining_isconfirmavailable`
+--
+
+LOCK TABLES `etraining_isconfirmavailable` WRITE;
+/*!40000 ALTER TABLE `etraining_isconfirmavailable` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_isconfirmavailable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `etraining_nonemployeeregistration`
 --
 
@@ -205,24 +481,28 @@ DROP TABLE IF EXISTS `etraining_nonemployeeregistration`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `etraining_nonemployeeregistration` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `group_id` int(11) NOT NULL,
   `identity` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `sex` tinyint(1) NOT NULL,
-  `edu` varchar(255) NOT NULL,
-  `major` varchar(255) NOT NULL,
-  `duty` varchar(255) NOT NULL,
-  `org` varchar(255) NOT NULL,
-  `home_address` varchar(255) NOT NULL,
-  `phone_number` varchar(255) NOT NULL,
-  `certid` varchar(255) NOT NULL,
+  `edu` varchar(255) DEFAULT NULL,
+  `major` varchar(255) DEFAULT NULL,
+  `duty` varchar(255) DEFAULT NULL,
+  `org` varchar(255) DEFAULT NULL,
+  `home_address` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  `certid` varchar(255) DEFAULT NULL,
   `reason` longtext NOT NULL,
+  `group_id` int(11) NOT NULL,
   `entrance_time` datetime NOT NULL,
-  `entrance_training_id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `entrance_training_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `etraining_nonemployeeregistration_425ae3c4` (`group_id`),
+  KEY `etraining_nonemployeeregistration_e972820` (`admin_id`),
   KEY `etraining_nonemployeeregistration_4898616e` (`entrance_training_id`),
-  CONSTRAINT `group_id_refs_id_3e37b112` FOREIGN KEY (`group_id`) REFERENCES `etraining_group` (`id`),
-  CONSTRAINT `entrance_training_id_refs_id_46fc9224` FOREIGN KEY (`entrance_training_id`) REFERENCES `etraining_training` (`id`)
+  CONSTRAINT `entrance_training_id_refs_id_41a9a103` FOREIGN KEY (`entrance_training_id`) REFERENCES `etraining_nonemployeetrainingrecord` (`id`),
+  CONSTRAINT `admin_id_refs_id_21f78477` FOREIGN KEY (`admin_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `group_id_refs_id_3e37b112` FOREIGN KEY (`group_id`) REFERENCES `etraining_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -236,34 +516,37 @@ LOCK TABLES `etraining_nonemployeeregistration` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `etraining_nonemployeetraining`
+-- Table structure for table `etraining_nonemployeetrainingrecord`
 --
 
-DROP TABLE IF EXISTS `etraining_nonemployeetraining`;
+DROP TABLE IF EXISTS `etraining_nonemployeetrainingrecord`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `etraining_nonemployeetraining` (
+CREATE TABLE `etraining_nonemployeetrainingrecord` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `training_id` int(11) NOT NULL,
   `registration_id` int(11) NOT NULL,
-  `attend_date` date NOT NULL,
-  `training_date` date NOT NULL,
-  `score` int(11) NOT NULL,
+  `attend_date` date DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL,
+  `exam_result` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `etraining_nonemployeetraining_16dec52a` (`training_id`),
-  KEY `etraining_nonemployeetraining_4db98c09` (`registration_id`),
-  CONSTRAINT `training_id_refs_id_4706c941` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
-  CONSTRAINT `registration_id_refs_id_3f4a8a68` FOREIGN KEY (`registration_id`) REFERENCES `etraining_nonemployeeregistration` (`id`)
+  KEY `etraining_nonemployeetrainingrecord_16dec52a` (`training_id`),
+  KEY `etraining_nonemployeetrainingrecord_4db98c09` (`registration_id`),
+  KEY `etraining_nonemployeetrainingrecord_e972820` (`admin_id`),
+  CONSTRAINT `training_id_refs_id_68075f8c` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
+  CONSTRAINT `admin_id_refs_id_268f5d9f` FOREIGN KEY (`admin_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `registration_id_refs_id_10d47683` FOREIGN KEY (`registration_id`) REFERENCES `etraining_nonemployeeregistration` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `etraining_nonemployeetraining`
+-- Dumping data for table `etraining_nonemployeetrainingrecord`
 --
 
-LOCK TABLES `etraining_nonemployeetraining` WRITE;
-/*!40000 ALTER TABLE `etraining_nonemployeetraining` DISABLE KEYS */;
-/*!40000 ALTER TABLE `etraining_nonemployeetraining` ENABLE KEYS */;
+LOCK TABLES `etraining_nonemployeetrainingrecord` WRITE;
+/*!40000 ALTER TABLE `etraining_nonemployeetrainingrecord` DISABLE KEYS */;
+/*!40000 ALTER TABLE `etraining_nonemployeetrainingrecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -327,13 +610,20 @@ DROP TABLE IF EXISTS `etraining_training`;
 CREATE TABLE `etraining_training` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `training_type` varchar(255) NOT NULL,
-  `exam_type_id` int(11) NOT NULL,
-  `pass_criteria` int(11) NOT NULL,
-  `question_count` int(11) NOT NULL,
+  `description` longtext NOT NULL,
+  `credits` int(11) DEFAULT NULL,
+  `training_type` varchar(255) DEFAULT NULL,
+  `exam_type_id` int(11) DEFAULT NULL,
+  `pass_criteria` int(11) DEFAULT NULL,
+  `question_count` int(11) DEFAULT NULL,
+  `training_date` date DEFAULT NULL,
+  `project` varchar(255) DEFAULT NULL,
+  `document_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `etraining_training_393940d5` (`exam_type_id`),
-  CONSTRAINT `exam_type_id_refs_id_325436df` FOREIGN KEY (`exam_type_id`) REFERENCES `etraining_questiontype` (`id`)
+  KEY `etraining_training_bdd92ed` (`document_id`),
+  CONSTRAINT `exam_type_id_refs_id_325436df` FOREIGN KEY (`exam_type_id`) REFERENCES `etraining_questiontype` (`id`),
+  CONSTRAINT `document_id_refs_id_595fe128` FOREIGN KEY (`document_id`) REFERENCES `etraining_document` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -345,35 +635,6 @@ LOCK TABLES `etraining_training` WRITE;
 /*!40000 ALTER TABLE `etraining_training` DISABLE KEYS */;
 /*!40000 ALTER TABLE `etraining_training` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `etraining_training_documents`
---
-
-DROP TABLE IF EXISTS `etraining_training_documents`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `etraining_training_documents` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `training_id` int(11) NOT NULL,
-  `document_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `training_id` (`training_id`,`document_id`),
-  KEY `etraining_training_documents_16dec52a` (`training_id`),
-  KEY `etraining_training_documents_bdd92ed` (`document_id`),
-  CONSTRAINT `training_id_refs_id_383c7552` FOREIGN KEY (`training_id`) REFERENCES `etraining_training` (`id`),
-  CONSTRAINT `document_id_refs_id_51f898c1` FOREIGN KEY (`document_id`) REFERENCES `etraining_document` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `etraining_training_documents`
---
-
-LOCK TABLES `etraining_training_documents` WRITE;
-/*!40000 ALTER TABLE `etraining_training_documents` DISABLE KEYS */;
-/*!40000 ALTER TABLE `etraining_training_documents` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -384,4 +645,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-06-30  0:43:11
+-- Dump completed on 2012-07-15 15:36:42

@@ -9,7 +9,7 @@ from django.conf import settings
 from etraining.models import Choice, Question, QuestionType, Document, Training, IsConfirmAvailable
 from etraining.models import Employee, EmployeeTrainingRecord, NonemployeeRegistration, NonemployeeTrainingRecord, Group
 from etraining.admin_forms import NonemployeeRegistrationForm, EmployeeRegistrationForm
-import datetime, sys, random
+import datetime, sys, random, base64
 from django.utils.timezone import utc
 
 def get_entrance_training_for_group(group):
@@ -142,12 +142,12 @@ def training_signup(request, group_id, training_id):
     training = Training.objects.get(pk=training_id)
 
     if request.method == "POST":
-        #try:
+        try:
             if group.is_employee_group:
                 employee = Employee.objects.get(pk=request.POST["employee_id"])
                 employeeTrainingRecord = EmployeeTrainingRecord.objects.get_or_create( \
                     employee=employee, training=training)
-                print employeeTrainingRecord
+                employeeTrainingRecord.signature = request.POST["signature"]
                 employeeTrainingRecord.attend_date = datetime.date.today()
                 employeeTrainingRecord.admin = request.user
                 employeeTrainingRecord.save()
@@ -155,13 +155,14 @@ def training_signup(request, group_id, training_id):
                 registration = NonemployeeRegistration.objects.get(pk=request.POST["registration_id"])
                 nonemployeeTrainingRecord, = NonemployeeTrainingRecord.objects.get_or_create( \
                     registration=registration, training=training)
+                nonemployeeTrainingRecord.signature = request.POST["signature"]
                 nonemployeeTrainingRecord.attend_date = datetime.date.today()
                 nonemployeeTrainingRecord.admin = request.user
                 nonemployeeTrainingRecord.save()
 
             return HttpResponse("OK")
-        #except:
-        #    return HttpResponse("Error")
+        except:
+            return HttpResponse("Error")
     else: 
         employee_list = []
         nonemployee_list = []

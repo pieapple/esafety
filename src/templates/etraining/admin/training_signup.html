@@ -78,28 +78,51 @@
 </tfoot>
 </table>
 </div>
+<div style="display:none">
+<div id="signup_dialog" title="{% trans "Sign Up" %}">
+<canvas id="signature_canvas" style="border:1px solid black;" height="200" width="200"></canvas>
+</div>
 {% endblock %}
 
 {% block extrascript %}
 {{block.super}}
 <script>
 var asInitVals = new Array();
+var idt, parent;
 $(document).ready(function() {
-    $(".signup").button().click(function() {
-      id = $(this.parentNode.parentNode).attr('id');
-      parent = $(this.parentNode);
-      $.post("{% url training_signup group.id training.id %}",
+  $("#signup_dialog").dialog({
+    autoOpen: false,
+    height: 300,
+    width: 400,
+    modal: true,
+    buttons: {
+      "确认": function() {
+        b64 = $("#signature_canvas")[0].toDataURL().substring(22);
+        $.post("{% url training_signup group.id training.id %}",
         {% if group.is_employee_group %}
-        "employee_id="+id,
+        "signature="+b64+"&employee_id="+idt,
         {% else %}
-        "registration_id="+id,
+        "signature="+b64+"&registration_id="+idt,
         {% endif %}
         function(data) {
           if (data == "OK") {
             parent.html("已签到");
           }
         });
-      });
+        $(this).dialog("close");
+      },
+      "取消": function() {
+        $(this).dialog("close");
+      }
+    }
+  });
+
+  $(".signup").click(function() {
+    idt = $(this.parentNode.parentNode).attr('id');
+    parent = $(this.parentNode);
+    $("#signup_dialog" ).dialog( "open" );
+  });
+
     var oTable = $('.dataTable').dataTable({
       "bJQueryUI": true,
       "sPaginationType": "full_numbers",

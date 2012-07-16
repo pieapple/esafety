@@ -19,13 +19,13 @@
 {% block content %}
 <div class="content clearfix">
 <div class="content_title">{% trans "schedule employee regular training" %}</div>
-<form action="" method="post">{% csrf_token %}
+<form id="schedule_form" action="" method="post">{% csrf_token %}
 <table class="formtable">
 <tr>
 <td class="formlabel"><label>{% trans "training name" %}</label></td>
-<td><input type="text" name="training_name" value="" /><br/></td>
+<td><input validate="required:true, minlength:2" title="请输入正确的培训名称" type="text" name="training_name" value="" /><br/></td>
 <td class="formlabel"><label>{% trans "training date" %}</label></td>
-<td><input id="datepicker" name="training_date" type="text" value="" /></td>
+<td><input validate="required:true, date:true" title="请输入正确的培训日期" id="datepicker" name="training_date" type="text" value="" /></td>
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "training description" %}</label></td>
@@ -33,22 +33,22 @@
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "training credits" %}</label></td>
-<td><input type="text" name="credits" value="" /></td>
+<td><input validate="required:true, number:true" title="请输入正确的培训学时" type="text" name="credits" value="" /></td>
 <td class="formlabel"><label>{% trans "training exam type" %}</label></td>
-<td><select name="exam_type"><option value="">------------</option>
+<td><select validate="required:true" title="请选择培训考试题库" name="exam_type"><option value="">------------</option>
 {% for exam_type in exam_types %}
 <option value="{{exam_type.id}}">{{exam_type.name}}</option>
 {% endfor %}
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "training content" %}</label></td>
-<td><select name="document_id"><option value="">------------</option>
+<td><select validate="required:true" title="请选择培训内容" name="document_id"><option value="">------------</option>
 {% for document in documents %}
 <option value="{{document.id}}">{{document.name}}</option>
 {% endfor %}
 </select></td>
 <td class="formlabel"><label>{% trans "training exam question count" %}</label></td>
-<td><input type="text" name="question_count" value="" /></td>
+<td><input validate="required:true, number:true" title="请输入正确的考试题目数" type="text" id="question_count" name="question_count" value="" /></td>
 </tr>
 <tr>
 <td class="formlabel"><label>{% trans "training attendee" %}</label></td>
@@ -67,7 +67,7 @@
 </select>
 </td>
 <td class="formlabel"><label>{% trans "training exam pass criteria" %}</label></td>
-<td><input type="text" name="pass_criteria" value="" /></td>
+<td><input validate="required:true, number:true" title="通过分数需小于总题目数" type="text" name="pass_criteria" value="" /></td>
 </tr>
 <tr class="submitrow">
 <td colspan="4"><input type="submit" value="{% trans 'schedule training' %}" /></td>
@@ -83,6 +83,17 @@
 $(document).ready(function() {
   $("#datepicker").datepicker($.datepicker.regional["zh-CN"]);
   makeSublist('parent', 'child', false, '');
+  $("#schedule_form").validate({
+      rules: {
+          training_date: {
+              laterThanToday: true
+          },
+          pass_criteria: {
+              lessEqualThan: "#question_count"
+          }
+      },
+      submitHandler: function() { alert("Submitted!") }
+  });
 });
 </script>
 {% endblock %}

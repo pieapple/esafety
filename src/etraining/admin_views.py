@@ -210,13 +210,16 @@ def attend_training(request, training_id):
 def schedule_new_employee_training(request):
     if request.method == "POST":
         name = request.POST["training_name"]
-        description = request.POST["training_description"]
         training_type = request.POST["training_type"]
         credits = int(request.POST["credits"])
         pass_criteria = int(request.POST["pass_criteria"])
         question_count = int(request.POST["question_count"])
         exam_type_id = int(request.POST["exam_type"])
         document = Document.objects.get(pk=int(request.POST["document_id"]))
+        try:
+            description = request.POST["training_description"]
+        except:
+            description = None
 
         training = Training(name=name, description=description, training_type=training_type, \
                 credits=credits, pass_criteria=pass_criteria, question_count=question_count)
@@ -262,12 +265,15 @@ def schedule_new_employee_training(request):
 def schedule_employee_regular_training(request):
     if request.method == "POST":
         name = request.POST["training_name"]
-        description = request.POST["training_description"]
         credits = int(request.POST["credits"])
         pass_criteria = int(request.POST["pass_criteria"])
         question_count = int(request.POST["question_count"])
         exam_type_id = int(request.POST["exam_type"])
         document = Document.objects.get(pk=int(request.POST["document_id"]))
+        try:
+            description = request.POST["training_description"]
+        except:
+            description = None
 
         training = Training(name=name, description=description, training_type=u"日常培训", \
                 credits=credits, pass_criteria=pass_criteria, question_count=question_count)
@@ -308,12 +314,15 @@ def schedule_employee_regular_training(request):
 def schedule_vendor_training(request):
     if request.method == "POST":
         name = request.POST["training_name"]
-        description = request.POST["training_description"]
         project = request.POST["vendor_project"]
         pass_criteria = int(request.POST["pass_criteria"])
         question_count = int(request.POST["question_count"])
         exam_type_id = int(request.POST["exam_type"])
         document = Document.objects.get(pk=int(request.POST["document_id"]))
+        try:
+            description = request.POST["training_description"]
+        except:
+            description = None
 
         training = Training(name=name, description=description, training_type=u"承包商上岗培训", \
             project=project, pass_criteria=pass_criteria, question_count=question_count)
@@ -350,8 +359,11 @@ def schedule_vendor_training(request):
 def schedule_visitor_training(request):
     if request.method == "POST":
         name = request.POST["training_name"]
-        description = request.POST["training_description"]
         document = Document.objects.get(pk=int(request.POST["document_id"]))
+        try:
+            description = request.POST["training_description"]
+        except:
+            description = None
 
         training = Training(name=name, description=description, training_type=u"告知培训")
         training.document = document

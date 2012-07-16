@@ -158,6 +158,13 @@ table.formtable tr td {
   border: 1px solid black;
 }
 
+table.formtable tr td label.error {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
 table.formtable.noborder tr td {
   border: none;
 }

@@ -1,6 +1,7 @@
-#Mon Jul 09 22:34:23 CST 2012
+#Mon Jul 16 22:54:51 CST 2012
 eclipse.preferences.version=1
 encoding//src/esafety/views.py=utf-8
+encoding//src/etraining/admin_views.py=utf-8
 encoding//src/etraining/models.py=utf-8
 encoding//src/etraining/views.py=utf-8
 encoding//src/templates=UTF-8

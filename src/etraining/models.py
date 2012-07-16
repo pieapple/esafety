@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-import sys, time, pyekho, os
+import sys, time, os, urllib2
 
 class IsConfirmAvailable(models.Model):
     registration = models.IntegerField()
@@ -234,7 +234,7 @@ class NonemployeeTrainingRecord(models.Model):
 def convert_to_mp3(sender, **kwargs):
     if sys.getdefaultencoding() != 'utf8':
         reload(sys)
-    sys.setdefaultencoding('utf8')
+#    sys.setdefaultencoding('utf8')
     instance = kwargs['instance']
     if instance:
         if instance.audio_file:
@@ -242,7 +242,28 @@ def convert_to_mp3(sender, **kwargs):
                 os.remove(instance.audio_file)
             except:
                 pass
-        path = "audio/" + str(time.time()) + ".ogg"
-        pyekho.saveOgg(unicode(instance.name + "\n" + instance.text), settings.MEDIA_ROOT + path)
+        path = "audio/" + str(time.time()) + ".mp3"
+        #pyekho.saveOgg(unicode(instance.name + "\n" + instance.text), settings.MEDIA_ROOT + path)
+        f = file(path,"wb")
+        src = instance.name + "\n" + instance.text
+        length = 150
+        start = 0
+        while start < len(src):
+            text = src[start:length]
+            data = googleTTS(text)
+            f.write(data)
+            start = start + length
+        else:
+            f.close()
         instance.audio_clip = settings.MEDIA_URL + path
         instance.audio_file = settings.MEDIA_ROOT + path
+
+def googleTTS(text):
+    url = u"http://translate.google.com/translate_tts?ie=UTF-8&tl=zh_CN&q="
+    url = url + unicode(text)
+    req = urllib2.Request(url.encode('utf-8'))
+    req.add_header("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; .NET CLR 1.2.30703)")
+    res = urllib2.urlopen(req)
+    html = res.read()
+    res.close()
+    return html

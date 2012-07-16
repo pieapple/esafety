@@ -244,7 +244,7 @@ def convert_to_mp3(sender, **kwargs):
                 pass
         path = "audio/" + str(time.time()) + ".mp3"
         #pyekho.saveOgg(unicode(instance.name + "\n" + instance.text), settings.MEDIA_ROOT + path)
-        f = file(path,"wb")
+        f = file(settings.MEDIA_ROOT + path,"wb")
         src = instance.name + "\n" + instance.text
         length = 150
         start = 0

@@ -29,7 +29,7 @@ def get_employees_by_group(group):
 
 def get_nonemployees_by_group(group):
     nonemployee_list = []
-    nonemployee_list.extend(new_group.nonemployeeregistration_set.all())
+    nonemployee_list.extend(group.nonemployeeregistration_set.all())
     for new_group in group.child_groups.all():
         nonemployee_list.extend(get_nonemployees_by_group(new_group))
     return nonemployee_list

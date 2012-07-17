@@ -1,7 +1,7 @@
 {% extends "etraining/admin/base_etraining.html" %}
 {% load i18n %}
 
-{% block breadcrumbs %}
+{% block readcrumbs %}
 {% endblock %}
 
 {% block insidebar %}
@@ -23,7 +23,7 @@
 <table class="formtable">
 <tr>
 <td class="formlabel"><label>{% trans "training name" %}</label></td>
-<td><input validate="required:true, minlength:2" title="请输入正确的培训名称" type="text" name="training_name" value="" /><br/></td>
+<td><input validate="required:true, minlength:2" title="请输入正确的培训名称" type="text" name="training_name" value="" /></td>
 <td class="formlabel"><label>{% trans "training date" %}</label></td>
 <td><input validate="required:true, date:true" title="请输入正确的培训日期" id="datepicker" name="training_date" type="text" value="" /></td>
 </tr>
@@ -76,7 +76,7 @@
 </select>
 </td>
 <td class="formlabel"><label>{% trans "training exam pass criteria" %}</label></td>
-<td><input validate="required:true, number:true" title="通过分数需小于总题目数" type="text" name="pass_criteria" value="" /></td>
+<td><input validate="required:true, number:true" title="通过题目数需小于总题目数" type="text" name="pass_criteria" value="" /></td>
 </tr>
 <tr class="submitrow">
 <td colspan="4"><input type="submit" value="{% trans 'schedule training' %}" /></td>

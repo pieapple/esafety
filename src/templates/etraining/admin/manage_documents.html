@@ -39,14 +39,16 @@
 </div>
 
 <div style="display:none">
-<form id="formAddNewRow" action="#" title="Add new record">
+<form id="formAddNewRow" action="#" title="{% trans 'Add new document' %}">
 {% csrf_token %}
+<div>
 <label for="name">{% trans "Document Name" %}</label>
-<input type="text" name="name" id="name" class="required" rel="0" />
-<br />
+<input type="text" name="name" id="name" class="required" title="请输入正确的文档名称" rel="0" />
+</div>
+<div>
 <label for="text">{% trans "Document Text" %}</label>
-<textarea name="text" id="text" rel="1"></textarea>
-<br />
+<textarea name="text" id="text" class="required" title="请输入正确的文档内容" rel="1"></textarea>
+</div>
 </form>
 </div>
 {% endblock %}
@@ -86,11 +88,14 @@ $(document).ready(function() {
       icons: { primary: 'ui-icon-trash' },
     },
     "aoColumns": [
-      {},
+      {
+          cssclass: "required"
+      },
       {
         indicator: '保存中。。。',
         type: 'textarea',
         submit:'保存',
+        cssclass: "required"
       },
       null
     ],

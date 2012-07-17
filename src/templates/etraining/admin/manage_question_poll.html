@@ -58,23 +58,29 @@
   </tbody>
 </table>
 <div style="display:none">
-<form id="formAddNewRow" action="#" title="Add new record">{% csrf_token %}
+<form id="formAddNewRow" action="#" title="{% trans 'Add new question' %}">{% csrf_token %}
 <input type="hidden" name="question_type" value="1" />
+<div>
 <label for="question_content">{% trans "Question Content" %}</label>
 <input type="text" name="question_content" id="question_content" class="required" rel="0" />
-<br />
+</div>
+<div>
 <label for="choice_1">{% trans "Choice #1" %}</label>
 <input type="text" name="choice_1" id="choice_1" class="required" rel="1" />
-<br />
+</div>
+<div>
 <label for="choice_2">{% trans "Choice #2" %}</label>
 <input type="text" name="choice_2" id="choice_2" class="required" rel="2" />
-<br />
+</div>
+<div>
 <label for="choice_3">{% trans "Choice #3" %}</label>
-<input type="text" name="choice_3" id="choice_3" class="required" rel="3" />
-<br />
+<input type="text" name="choice_3" id="choice_3" rel="3" />
+</div>
+<div>
 <label for="choice_4">{% trans "Choice #4" %}</label>
-<input type="text" name="choice_4" id="choice_4" class="required" rel="4" />
-<br />
+<input type="text" name="choice_4" id="choice_4" rel="4" />
+</div>
+<div>
 <label for="answer">{% trans "Answer" %}</label>
 <select name="answer" id="answer" class="required" rel="5" >
 <option value="1">A</option>
@@ -82,18 +88,16 @@
 <option value="3">C</option>
 <option value="4">D</option>
 </select>
-<br />
+</div>
 </form>
 </div>
 {% endif %}
 </div>
 <div style="display:none">
-<div id="create_poll_dialog" title="{% trans "Create Question Poll" %}">
+<div id="create_poll_dialog" title="{% trans 'Create Question Poll' %}">
 <form id="create_poll_form">
-<fieldset>
 <label for="question_type">{% trans "Question Type" %}</label>
-<input type="text" name="question_type" id="question_type" class="text ui-widget-content ui-corner-all" />
-</fieldset>
+<input type="text" name="question_type" id="question_type" validate="required:true" title="请输入正确的题库标签" class="text ui-widget-content ui-corner-all" />
 </form>
 </div>
 </div>
@@ -103,18 +107,20 @@
 {{block.super}}
 <script>
 $(document).ready(function() {
+  var v = $("#create_poll_form").validate();
   $("#create_poll_dialog").dialog({
     autoOpen: false,
-    height: 160,
-    width: 450,
     modal: true,
     buttons: {
       "{% trans 'Create Question Poll' %}": function() {
-        $.post("{% url add_question_poll %}", $("#create_poll_form").serialize());
-        $(this).dialog("close");
-        location.reload();
+        if (v.form()) {
+            $.post("{% url add_question_poll %}", $("#create_poll_form").serialize());
+            $(this).dialog("close");
+            location.reload();
+        }
       },
       "取消": function() {
+        v.resetForm();
         $(this).dialog("close");
       }
     }
@@ -171,7 +177,7 @@ $(document).ready(function() {
       {
         type: 'select',
         onblur: 'submit',
-        data: "{'0':'Please select...', '1':'A','2':'B','3':'C','4':'D'}",
+        data: "{'0':'请选择...', '1':'A','2':'B','3':'C','4':'D'}",
       }
     ],
   });

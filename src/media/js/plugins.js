@@ -1454,7 +1454,7 @@ b; a++) if (d.filter(":lt(2)").hasClass(e.asStripClasses[a])) { c = true; break 
             onblur     : 'cancel',
             loadtype   : 'GET',
             loadtext   : 'Loading...',
-            placeholder: 'Click to edit',
+            placeholder: '',
             loaddata   : {},
             submitdata : {},
             ajaxoptions: {}

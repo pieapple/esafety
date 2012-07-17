@@ -204,7 +204,7 @@ msgstr "首页"
 #: templates/etraining/admin/schedule_visitor_training_result.html:8
 #: templates/etraining/admin/vendor_training_schedule_list.html:8
 msgid "view employee training schedule"
-msgstr "查看员工培训计划"
+msgstr "员工培训计划"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:9
 #: templates/etraining/admin/manage_documents.html:9
@@ -222,7 +222,7 @@ msgstr "查看员工培训计划"
 #: templates/etraining/admin/vendor_training_schedule_list.html:9
 #: templates/etraining/admin/vendor_training_schedule_list.html:21
 msgid "view vendor training schedule"
-msgstr "查看承包商培训计划表"
+msgstr "承包商培训计划"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:10
 #: templates/etraining/admin/manage_documents.html:10
@@ -279,7 +279,7 @@ msgstr "安排新员工培训"
 #: templates/etraining/admin/schedule_visitor_training_result.html:12
 #: templates/etraining/admin/vendor_training_schedule_list.html:12
 msgid "schedule employee regular training"
-msgstr "安排员工日常培训"
+msgstr "安排老员工培训"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:13
 #: templates/etraining/admin/manage_documents.html:13
@@ -298,7 +298,7 @@ msgstr "安排员工日常培训"
 #: templates/etraining/admin/schedule_visitor_training_result.html:13
 #: templates/etraining/admin/vendor_training_schedule_list.html:13
 msgid "schedule vendor training"
-msgstr "安排承包商(施工队)培训"
+msgstr "安排承包商培训"
 
 #: templates/etraining/admin/employee_training_schedule_list.html:14
 #: templates/etraining/admin/manage_documents.html:14
@@ -649,7 +649,7 @@ msgstr "所有人"
 #: templates/etraining/admin/schedule_new_employee_training.html:78
 #: templates/etraining/admin/schedule_vendor_training.html:63
 msgid "training exam pass criteria"
-msgstr "通过分数"
+msgstr "通过题目数"
 
 #: templates/etraining/admin/schedule_employee_regular_training.html:73
 #: templates/etraining/admin/schedule_new_employee_training.html:82
@@ -717,7 +717,7 @@ msgstr "参加者"
 #: templates/etraining/admin/view_training_signup.html:33
 #: templates/etraining/admin/view_vendor_training.html:27
 msgid "training attendee identity"
-msgstr "参加者身份证"
+msgstr "身份证"
 
 #: templates/etraining/admin/training_signup.html:38
 #: templates/etraining/admin/view_training_signup.html:36
@@ -769,7 +769,7 @@ msgstr "搜索承包商项目"
 #: templates/etraining/admin/view_vendor_training_list.html:8
 #: templates/etraining/admin/view_visitor_entrance.html:8
 msgid "view employee training list"
-msgstr "查看员工培训列表"
+msgstr "员工培训列表"
 
 #: templates/etraining/admin/view_employee_training_list.html:9
 #: templates/etraining/admin/view_new_employee_training.html:9
@@ -780,7 +780,7 @@ msgstr "查看员工培训列表"
 #: templates/etraining/admin/view_vendor_training_list.html:19
 #: templates/etraining/admin/view_visitor_entrance.html:9
 msgid "view vendor training list"
-msgstr "查看承包商培训列表"
+msgstr "承包商培训列表"
 
 #: templates/etraining/admin/view_employee_training_list.html:10
 #: templates/etraining/admin/view_new_employee_training.html:10
@@ -791,7 +791,7 @@ msgstr "查看承包商培训列表"
 #: templates/etraining/admin/view_vendor_training_list.html:10
 #: templates/etraining/admin/view_visitor_entrance.html:10
 msgid "view new employee training"
-msgstr "查看新员工培训记录"
+msgstr "新员工培训记录"
 
 #: templates/etraining/admin/view_employee_training_list.html:11
 #: templates/etraining/admin/view_new_employee_training.html:11
@@ -802,7 +802,7 @@ msgstr "查看新员工培训记录"
 #: templates/etraining/admin/view_vendor_training_list.html:11
 #: templates/etraining/admin/view_visitor_entrance.html:11
 msgid "view regular employee training"
-msgstr "查看老员工培训记录"
+msgstr "老员工培训记录"
 
 #: templates/etraining/admin/view_employee_training_list.html:12
 #: templates/etraining/admin/view_new_employee_training.html:12
@@ -813,7 +813,7 @@ msgstr "查看老员工培训记录"
 #: templates/etraining/admin/view_vendor_training_list.html:12
 #: templates/etraining/admin/view_visitor_entrance.html:12
 msgid "view vendor training"
-msgstr "查看承包商培训记录"
+msgstr "承包商培训记录"
 
 #: templates/etraining/admin/view_employee_training_list.html:13
 #: templates/etraining/admin/view_new_employee_training.html:13
@@ -824,7 +824,7 @@ msgstr "查看承包商培训记录"
 #: templates/etraining/admin/view_vendor_training_list.html:13
 #: templates/etraining/admin/view_visitor_entrance.html:13
 msgid "view vendor entrance"
-msgstr "查看承包商入厂记录"
+msgstr "承包商入厂记录"
 
 #: templates/etraining/admin/view_employee_training_list.html:14
 #: templates/etraining/admin/view_new_employee_training.html:14
@@ -835,7 +835,7 @@ msgstr "查看承包商入厂记录"
 #: templates/etraining/admin/view_visitor_entrance.html:14
 #: templates/etraining/admin/view_visitor_entrance.html:19
 msgid "view visitor entrance"
-msgstr "查看访客入厂记录"
+msgstr "访客入厂记录"
 
 #: templates/etraining/admin/view_employee_training_list.html:43
 #: templates/etraining/admin/view_employee_training_list.html:54
@@ -843,7 +843,7 @@ msgstr "查看访客入厂记录"
 #: templates/etraining/admin/view_employee_training_list.html:76
 #: templates/etraining/admin/view_vendor_training_list.html:41
 msgid "view signup"
-msgstr "查看签到情况"
+msgstr "签到情况"
 
 #: templates/etraining/admin/view_new_employee_training.html:29
 #: templates/etraining/admin/view_regular_employee_training.html:28
@@ -868,7 +868,7 @@ msgstr "培训状态"
 #: templates/etraining/admin/view_regular_employee_training.html:31
 #: templates/etraining/admin/view_vendor_training.html:32
 msgid "training admin"
-msgstr "培训管理员"
+msgstr "管理员"
 
 #: templates/etraining/admin/view_new_employee_training.html:47
 #: templates/etraining/admin/view_regular_employee_training.html:45
@@ -889,12 +889,12 @@ msgstr "已通过考试"
 #: templates/etraining/admin/view_new_employee_training.html:61
 #: templates/etraining/admin/view_regular_employee_training.html:58
 msgid "search employee name"
-msgstr "搜索员工姓名"
+msgstr "搜索姓名"
 
 #: templates/etraining/admin/view_new_employee_training.html:62
 #: templates/etraining/admin/view_regular_employee_training.html:59
 msgid "search employee identity"
-msgstr "搜索员工身份证"
+msgstr "搜索身份证"
 
 #: templates/etraining/admin/view_new_employee_training.html:65
 #: templates/etraining/admin/view_regular_employee_training.html:61
@@ -906,7 +906,7 @@ msgstr "搜索考试状态"
 #: templates/etraining/admin/view_regular_employee_training.html:62
 #: templates/etraining/admin/view_vendor_training.html:65
 msgid "search training admin"
-msgstr "搜索培训管理员"
+msgstr "搜索管理员"
 
 #: templates/etraining/admin/view_new_employee_training.html:83
 #: templates/etraining/admin/view_regular_employee_training.html:79
@@ -944,7 +944,7 @@ msgstr "最后一页"
 
 #: templates/etraining/admin/view_training_signup.html:9
 msgid "view training signup"
-msgstr "查看培训签到情况"
+msgstr "培训签到情况"
 
 #: templates/etraining/admin/view_training_signup.html:49
 #: templates/etraining/admin/view_training_signup.html:65
@@ -977,7 +977,7 @@ msgstr "入厂培训状态"
 #: templates/etraining/admin/view_vendor_entrance.html:29
 #: templates/etraining/admin/view_visitor_entrance.html:29
 msgid "entrance admin"
-msgstr "培训管理员"
+msgstr "管理员"
 
 #: templates/etraining/admin/view_vendor_entrance.html:43
 #: templates/etraining/admin/view_visitor_entrance.html:43
@@ -1010,7 +1010,7 @@ msgstr "搜索培训状态"
 #: templates/etraining/admin/view_vendor_entrance.html:57
 #: templates/etraining/admin/view_visitor_entrance.html:57
 msgid "search entrance training admin"
-msgstr "搜索培训管理员"
+msgstr "搜索管理员"
 
 #: templates/etraining/admin/view_visitor_entrance.html:23
 msgid "visitor identity"

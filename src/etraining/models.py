@@ -260,7 +260,7 @@ def convert_to_mp3(sender, **kwargs):
 
 def googleTTS(text):
     url = u"http://translate.google.com/translate_tts?ie=UTF-8&tl=zh_CN&q="
-    url = url + unicode(text)
+    url = url + urllib2.quote(unicode(text).encode('utf-8'))
     req = urllib2.Request(url.encode('utf-8'))
     req.add_header("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; .NET CLR 1.2.30703)")
     res = urllib2.urlopen(req)

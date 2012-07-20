@@ -68,7 +68,7 @@
 $(document).ready(function() {
   makeSublist('parent', 'child', false, '');
   $("#schedule_form").validate({
-      submitHandler: function() { alert("Submitted!") }
+      submitHandler: function(form) { form.submit(); }
   });
 });
 </script>

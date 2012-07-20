@@ -85,7 +85,7 @@ $(document).ready(function() {
               lessEqualThan: "#question_count"
           }
       },
-      submitHandler: function() { alert("Submitted!") }
+      submitHandler: function(form) { form.submit(); }
   });
 });
 </script>

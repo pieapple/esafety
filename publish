@@ -2,16 +2,21 @@
 
 echo "rm release"
 rm -rf release
+mkdir release
 
-echo "cp -rf src release"
-cp -rf src release
+echo "cp -rf src/* release"
+cp -rf src/* release/
 
 cd release
 
 echo "compiling python..."
 python -OO -m compileall .
+rm -rf $(find . -type f -name "*.py" -o -name "*.pyc")
+cp ../src/esafety/wsgi.py esafety/wsgi.py
 
 echo "clean up files..."
-rm -rf $(find . -type f -name "*.py" -o -name "*.pyc")
+rm -rf esafety/wsgi.pyo
+rm -rf esafety/settings.pyo
+rm -rf esafety/settings_linux.pyo
 rm -rf locale/zh_CN/LC_MESSAGES/django.po
 rm -rf etraining/sql

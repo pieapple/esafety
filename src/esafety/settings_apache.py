@@ -1,4 +1,6 @@
 # Django settings for esafety project.
+import os.path
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'd:/work/esafety/src/esafety.db',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_DIR, 'esafety.db'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -34,7 +36,7 @@ TIME_ZONE = 'Asia/Shanghai'
 LANGUAGE_CODE = 'zh'
 
 LOCALE_PATHS = (
-    'D:/work/esafety/src/locale/',
+    os.path.join(PROJECT_DIR, 'locale/'),
 )
 
 SITE_ID = 1
@@ -62,7 +64,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'D:/work/esafety/src/media/'
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -119,7 +121,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'D:/work/esafety/src/templates/',
+    os.path.join(PROJECT_DIR, 'templates/'),
 )
 
 INSTALLED_APPS = (

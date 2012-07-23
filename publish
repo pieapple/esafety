@@ -1,13 +1,19 @@
 #!/bin/bash
 
-echo "rm release"
-rm -rf release
-mkdir release
+# How to Run our website
+# 1. run this script, it would copy src into release/website with source code stripped
+# 2. set PYTHONHOME and add python path to system path. Python is located at release/Python27
+# 3. start apache server. Go to release/Apache2.2/bin, and run httpd
+# 4. Now you can visit the website via http://localhost/etraining
+
+echo "rm release/website"
+rm -rf release/website
+mkdir release/website
 
 echo "cp -rf src/* release"
-cp -rf src/* release/
+cp -rf src/* release/website
 
-cd release
+cd release/website
 
 echo "compiling python..."
 python -OO -m compileall .

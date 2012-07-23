@@ -1,0 +1,121 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n l10n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block insidebar %}
+<li><a href="{% url view_employee_training_list %}">{% trans "view employee training list" %}</a></li>
+<li><a href="{% url view_vendor_training_list %}">{% trans "view vendor training list" %}</a></li>
+<li>{% trans "view new employee training" %}</li>
+<li><a href="{% url view_regular_employee_training %}">{% trans "view regular employee training" %}</a></li>
+<li><a href="{% url view_vendor_training %}">{% trans "view vendor training" %}</a></li>
+<li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
+<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "view new employee training" %}</div>
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
+<thead>
+<tr>
+<th>{% trans "training name" %}</th>
+<th>{% trans "training description" %}</th>
+<th>{% trans "training type" %}</th>
+<th>{% trans "training credits" %}</th>
+<th>{% trans "training attendee name" %}</th>
+<th>{% trans "training attendee identity" %}</th>
+<th>{% trans "training attend date" %}</th>
+<th>{% trans "training signature" %}</th>
+<th>{% trans "training status" %}</th>
+<th>{% trans "training admin" %}</th>
+</tr>
+</thead>
+<tbody>
+{% for employee_training in employee_training_list %}
+<tr class="{% cycle odd even %}">
+<td>{{employee_training.training.name}}</td>
+<td>{{employee_training.training.description}}</td>
+<td>{{employee_training.training.training_type}}</td>
+<td>{{employee_training.training.credits}}</td>
+<td>{{employee_training.employee.name}}</td>
+<td>{{employee_training.employee.identity}}</td>
+<td>{{employee_training.attend_date}}</td>
+<td><img style="width:50px;height:50px;" src="{{employee_training.signature|safe}}" /></td>
+{% if employee_training.score < employee_training.training.pass_criteria %}
+<td>{% trans "exam not passed" %}</td>
+{% else %}
+<td>{% trans "exam passed" %}</td>
+{% endif %}
+<td>{{employee_training.admin}}</td>
+</tr>
+{% endfor %}
+</tbody>
+<tfoot>
+<tr>
+<th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
+<th><input type="text" name="search_type" value="{% trans 'search training type' %}" class="search_init" /></th>
+<th><input type="text" name="search_credits" value="{% trans 'search training credits' %}" class="search_init" /></th>
+<th><input type="text" name="search_employeename" value="{% trans 'search employee name' %}" class="search_init" /></th>
+<th><input type="text" name="search_employeeid" value="{% trans 'search employee identity' %}" class="search_init" /></th>
+<th><input type="text" name="search_date" value="{% trans 'search training date' %}" class="search_init" /></th>
+<th></th>
+<th><input type="text" name="search_exam" value="{% trans 'search training exam status '%}" class="search_init" /></th>
+<th><input type="text" name="search_admin" value="{% trans 'search training admin' %}" class="search_init" /></th>
+</tr>
+</tfoot>
+</table>
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+var asInitVals = new Array();
+$(document).ready(function() {
+    var oTable = $('.dataTable').dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "{% trans 'search' %}",
+        "sLengthMenu": "{% trans 'display _MENU_ per page' %}",
+        "sZeroRecords": "{% trans 'sorry, no record found' %}",
+        "sEmptyTable": "{% trans 'sorry, no record found' %}",
+        "sInfo": '{% trans "_START_ to _END_ record, _TOTAL_ total" %}',
+        "sInfoEmpty": "{% trans 'no record displayed' %}",
+        "sInfoFiltered": "{% trans '(filtered from _MAX_ records)",
+        "oPaginate": {
+            "sFirst": "{% trans 'first page' %}",
+            "sLast": "{% trans 'last page' %}",
+            "sNext": "{% trans 'next page' %}",
+            "sPrevious": "{% trans 'first page' %}"
+        }
+      }
+    });
+
+    $("tfoot input").keyup( function () {
+      oTable.fnFilter( this.value, $("tfoot input").index(this) );
+    });
+
+    $("tfoot input").each( function (i) {
+      asInitVals[i] = this.value;
+    });
+
+    $("tfoot input").focus( function () {
+      if ( this.className == "search_init" ) {
+        this.className = "";
+        this.value = "";
+      }
+    });
+
+    $("tfoot input").blur( function (i) {
+        if ( this.value == "" ) {
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
+        }
+    });
+});
+</script>
+{% endblock %}

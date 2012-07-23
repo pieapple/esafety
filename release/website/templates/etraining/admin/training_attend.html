@@ -1,0 +1,20 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content wider clearfix">
+  <div class="content_title">{{training.document.name}}</div>
+  <div class="document">
+    <div class="document_body bigger"> 
+      <pre>{{ training.document.text }}</pre>
+    </div>
+    <audio src="{{audio_clip}}" autoplay="autoplay"></audio>
+  </div>
+</div>
+{% endblock %}

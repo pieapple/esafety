@@ -1,0 +1,92 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block insidebar %}
+<li><a href="{% url employee_training_schedule_list %}">{% trans "view employee training schedule" %}</a></li>
+<li><a href="{% url vendor_training_schedule_list %}">{% trans "view vendor training schedule" %}</a></li>
+<li><a href="{% url new_employee_registration %}">{% trans "new employee registration" %}</a></li>
+<li><a href="{% url schedule_new_employee_training %}">{% trans "schedule new employee training" %}</a></li>
+<li><a href="{% url schedule_employee_regular_training %}">{% trans "schedule employee regular training" %}</a></li>
+<li>{% trans "schedule vendor training" %}</li>
+<li><a href="{% url schedule_visitor_training %}">{% trans "schedule visitor training" %}</a></li>
+<li><a href="{% url manage_documents %}">{% trans "manage documents" %}</a></li>
+<li><a href="{% url manage_question_poll %}">{% trans "manage question poll" %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "schedule vendor training" %}</div>
+<form id="schedule_form" action="" method="post">{% csrf_token %}
+<table class="formtable">
+<tr>
+<td class="formlabel"><label>{% trans "training name" %}</label></td>
+<td><input validate="required:true, minlength:2" title="请输入正确的培训名称" type="text" name="training_name" value="" /></td>
+<td class="formlabel"><label>{% trans "training date" %}</label></td>
+<td><input validate="required:true, date:true" title="请输入正确的培训日期" id="datepicker" name="training_date" type="text" value="" /></td>
+</tr>
+<tr>
+<td class="formlabel"><label>{% trans "training description" %}</label></td>
+<td colspan="3"><textarea style="width:70%" name="training_description"></textarea></td>
+</tr>
+<tr>
+<td class="formlabel"><label>{% trans "vendor project" %}</label></td>
+<td><input validate="required:true" title="请输入正确的项目名称" id="id_project" name="vendor_project" type="text" value="" /></td>
+<td class="formlabel"><label>{% trans "training exam type" %}</label></td>
+<td><select validate="required:true" title="请选择培训考试题库" name="exam_type"><option value="">------------</option>
+{% for exam_type in exam_types %}
+<option value="{{exam_type.id}}">{{exam_type.name}}</option>
+{% endfor %}
+</tr>
+<tr>
+<td class="formlabel"><label>{% trans "training content" %}</label></td>
+<td><select validate="required:true" title="请选择培训内容" name="document_id"><option value="">------------</option>
+{% for document in documents %}
+<option value="{{document.id}}">{{document.name}}</option>
+{% endfor %}
+</select></td>
+<td class="formlabel"><label>{% trans "training exam question count" %}</label></td>
+<td><input validate="required:true, number:true" title="请输入正确的考试题目数" type="text" id="question_count" name="question_count" value="" /></td>
+</tr>
+<tr>
+<td class="formlabel"><label>{% trans "training attendee" %}</label></td>
+<td>
+<select id="child" name="sub_group">
+<option class="{% for group in groups %}sub_{{group.id}} {% endfor %}" value="">{% trans "all people" %}</option>
+{% for group in sub_groups %}
+<option class="sub_{{group.parent_group.id}}" value="{{group.id}}">{{group.name}}</option>
+{% endfor %}
+</select>
+</td>
+<td class="formlabel"><label>{% trans "training exam pass criteria" %}</label></td>
+<td><input validate="required:true, number:true" title="通过题目数需小于总题目数" type="text" name="pass_criteria" value="" /></td>
+</tr>
+<tr class="submitrow">
+<td colspan="4"><input type="submit" value="{% trans 'schedule training' %}" /></td>
+</tr>
+</table>
+</form>
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+$(document).ready(function() {
+  $("#datepicker").datepicker($.datepicker.regional["zh-CN"]);
+  $("#schedule_form").validate({
+      rules: {
+          training_date: {
+              laterThanToday: true
+          },
+          pass_criteria: {
+              lessEqualThan: "#question_count"
+          }
+      },
+      submitHandler: function(form) { form.submit(); }
+  });
+});
+</script>
+{% endblock %}

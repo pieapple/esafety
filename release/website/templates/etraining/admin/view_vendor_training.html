@@ -1,0 +1,120 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block insidebar %}
+<li><a href="{% url view_employee_training_list %}">{% trans "view employee training list" %}</a></li>
+<li><a href="{% url view_vendor_training_list %}">{% trans "view vendor training list" %}</a></li>
+<li><a href="{% url view_new_employee_training %}">{% trans "view new employee training" %}</a></li>
+<li><a href="{% url view_regular_employee_training %}">{% trans "view regular employee training" %}</a></li>
+<li>{% trans "view vendor training" %}</li>
+<li><a href="{% url view_vendor_entrance %}">{% trans "view vendor entrance" %}</a></li>
+<li><a href="{% url view_visitor_entrance %}">{% trans "view visitor entrance" %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+<div class="content_title">{% trans "view vendor training" %}</div>
+<table cellpadding="0" cellspacing="0" border="0" class="dataTable" width="100%">
+	<thead>
+    <tr>
+    <th>{% trans "training name" %}</th>
+    <th>{% trans "training description" %}</th>
+    <th>{% trans "vendor project" %}</th>
+    <th>{% trans "training attendee name" %}</th>
+    <th>{% trans "training attendee identity" %}</th>
+    <th>{% trans "entrance time" %}</th>
+    <th>{% trans "training attend date" %}</th>
+    <th>{% trans "training signature" %}</th>
+    <th>{% trans "training status" %}</th>
+    <th>{% trans "training admin" %}</th>
+    </tr>
+	</thead>
+	<tbody>
+  {% for vendor_training in vendor_training_list %}
+    <tr class="{% cycle odd even %}">
+      <td>{{vendor_training.training.name}}</td>
+      <td>{{vendor_training.training.description}}</td>
+      <td>{{vendor_training.training.project}}</td>
+      <td>{{vendor_training.registration.name}}</td>
+      <td>{{vendor_training.registration.identity}}</td>
+      <td>{{vendor_training.registration.entrance_time}}</td>
+      <td>{{vendor_training.attend_date}}</td>
+      <td><img style="width:50px;height:50px;" src="{{vendor_training.signature|safe}}" /></td>
+      {% if vendor_training.score < vendor_training.training.pass_criteria %}
+<td>{% trans "exam not passed" %}</td>
+{% else %}
+<td>{% trans "exam passed" %}</td>
+      {% endif %}
+      <td>{{vendor_training.admin}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+<tfoot>
+<tr>
+<th><input type="text" name="search_name" value="{% trans 'search training name' %}" class="search_init" /></th>
+<th><input type="text" name="search_description" value="{% trans 'search training description' %}" class="search_init" /></th>
+<th><input type="text" name="search_project" value="{% trans 'search vendor project' %}" class="search_init" /></th>
+<th><input type="text" name="search_vendorname" value="{% trans 'search vendor name' %}" class="search_init" /></th>
+<th><input type="text" name="search_vendorid" value="{% trans 'search vendor identity' %}" class="search_init" /></th>
+<th><input type="text" name="search_entrancetime" value="{% trans 'search entrance time' %}" class="search_init" /></th>
+<th><input type="text" name="search_date" value="{% trans 'search training date' %}" class="search_init" /></th>
+<th><input type="text" name="search_exam" value="{% trans 'search training exam status '%}" class="search_init" /></th>
+<th><input type="text" name="search_admin" value="{% trans 'search training admin' %}" class="search_init" /></th>
+</tr>
+</tfoot>
+</table>
+</div>
+{% endblock %}
+
+{% block extrascript %}
+{{block.super}}
+<script>
+var asInitVals = new Array();
+$(document).ready(function() {
+    var oTable = $('.dataTable').dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "oLanguage": {
+        "sSearch": "搜索",
+        "sLengthMenu": "每页显示_MENU_条数据",
+        "sZeroRecords": "对不起，没有查询到数据",
+        "sEmptyTable": "对不起，没有任何数据",
+        "sInfo": "第_START_-_END_条数据，共计_TOTAL_条数据",
+        "sInfoEmpty": "没有记录显示",
+        "sInfoFiltered": "(筛选自从_MAX_条数据)",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sLast": "最后一页",
+            "sNext": "下一页",
+            "sPrevious": "上一页"
+        }
+      }
+    });
+
+    $("tfoot input").keyup( function () {
+      oTable.fnFilter( this.value, $("tfoot input").index(this) );
+    });
+
+    $("tfoot input").each( function (i) {
+      asInitVals[i] = this.value;
+    });
+
+    $("tfoot input").focus( function () {
+      if ( this.className == "search_init" ) {
+        this.className = "";
+        this.value = "";
+      }
+    });
+
+    $("tfoot input").blur( function (i) {
+        if ( this.value == "" ) {
+          this.className = "search_init";
+          this.value = asInitVals[$("tfoot input").index(this)];
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{{media_url}}css/esafety.css">
+{% endblock %}
+
+{% block branding %}
+<div class="logo"></div>
+</div>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="top-nav"> 
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="copyright">{% trans "Copy Right" %}&copy; 2012-2013</div>
+{% endblock %}

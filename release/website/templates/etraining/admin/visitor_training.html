@@ -1,0 +1,31 @@
+{% extends "etraining/admin/base_etraining.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="content wider clearfix">
+  <div class="content_title">{{training.document.name}}</div>
+  <div class="document">
+    <div class="document_body"> 
+      <pre>{{ training.document.text }}</pre>
+    </div>
+    {% if is_vendor %}
+    <p class="document_footer">特别提示：承包商（施工队），请至人事处接受上岗培训</p>
+    {% endif %}
+    <audio src="/media/audio/training_confirm.ogg" autoplay="autoplay"></audio>
+  </div>
+  <div class="submit_row">
+    <form action="" method="post">{%csrf_token%}
+      <input type="hidden" name="training_id" value="{{training.pk}}" />
+      <input type="hidden" name="registration_id" value="{{registration.pk}}" />
+      <input type="submit" value="{% trans 'confirm visitor accepted safety instructions' %}" />
+      <input type="button" value="{% trans 'print page' %}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

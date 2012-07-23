@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "rm release"
+rm -rf release
+
+echo "cp -rf src release"
+cp -rf src release
+
+cd release
+
+echo "compiling python..."
+python -OO -m compileall .
+
+echo "clean up files..."
+rm -rf $(find . -type f -name "*.py" -o -name "*.pyc")
+rm -rf locale/zh_CN/LC_MESSAGES/django.po
+rm -rf etraining/sql

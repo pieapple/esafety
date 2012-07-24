@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# How to Run our website
-# 1. run this script, it would copy src into release/website with source code stripped
-# 2. set PYTHONHOME and add python path to system path. Python is located at release/Python27
-# 3. start apache server. Go to release/Apache2.2/bin, and run httpd
-# 4. Now you can visit the website via http://localhost/etraining
-
 echo "rm release/website"
 rm -rf release/website
 mkdir release/website
@@ -16,9 +10,9 @@ cp -rf src/* release/website
 cd release/website
 
 echo "compiling python..."
-python -OO -m compileall .
+../Python27/python -OO -m compileall .
 rm -rf $(find . -type f -name "*.py" -o -name "*.pyc")
-cp ../src/esafety/wsgi.py esafety/wsgi.py
+cp ../../src/esafety/wsgi.py esafety/wsgi.py
 
 echo "clean up files..."
 rm -rf esafety/wsgi.pyo
@@ -26,3 +20,5 @@ rm -rf esafety/settings.pyo
 rm -rf esafety/settings_linux.pyo
 rm -rf locale/zh_CN/LC_MESSAGES/django.po
 rm -rf etraining/sql
+
+echo "publish done"

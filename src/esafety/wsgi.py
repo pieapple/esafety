@@ -14,8 +14,9 @@ framework.
 
 """
 import os, sys
-sys.path.append('d:/work/esafety/src')
-sys.path.append('d:/work/esafety/src/esafety')
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(os.path.dirname(__file__))
+print sys.path
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "esafety.settings_apache")
 
 # This application object is used by any WSGI server configured to use this

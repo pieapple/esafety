@@ -10,14 +10,14 @@ cp -rf src/* release/website
 cd release/website
 
 echo "compiling python..."
-../Python27/python -OO -m compileall .
-rm -rf $(find . -type f -name "*.py" -o -name "*.pyc")
+../Python27/python -m compileall .
+rm -rf $(find . -type f -name "*.py") 
 cp ../../src/esafety/wsgi.py esafety/wsgi.py
 
 echo "clean up files..."
-rm -rf esafety/wsgi.pyo
-rm -rf esafety/settings.pyo
-rm -rf esafety/settings_linux.pyo
+rm -rf esafety/wsgi.pyc
+rm -rf esafety/settings.pyc
+rm -rf esafety/settings_linux.pyc
 rm -rf locale/zh_CN/LC_MESSAGES/django.po
 rm -rf etraining/sql
 

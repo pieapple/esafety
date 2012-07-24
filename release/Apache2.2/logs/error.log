@@ -1,0 +1,1340 @@
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:37:40 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:37:40 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:37:40 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:37:40 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:37:40 2012] [notice] Parent: Created child process 3228
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:37:41 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:37:41 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:37:41 2012] [notice] Child 3228: Child process is running
+ImportError: No module named site
+[Mon Jul 23 22:37:41 2012] [crit] master_main: create child process failed. Exiting.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:37:54 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:37:54 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:37:54 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:37:54 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:37:54 2012] [notice] Parent: Created child process 4280
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:37:55 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:37:55 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:37:55 2012] [notice] Child 4280: Child process is running
+ImportError: No module named site
+[Mon Jul 23 22:37:55 2012] [crit] master_main: create child process failed. Exiting.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:41:38 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:41:38 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:41:38 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:41:38 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:41:38 2012] [notice] Parent: Created child process 568
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:41:38 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:41:38 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:41:38 2012] [notice] Child 568: Child process is running
+[Mon Jul 23 22:41:39 2012] [notice] Child 568: Acquired the start mutex.
+[Mon Jul 23 22:41:39 2012] [notice] Child 568: Starting 64 worker threads.
+[Mon Jul 23 22:41:39 2012] [notice] Child 568: Starting thread to listen on port 8080.
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:42:11 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost:8080/etraining/self_search/
+[Mon Jul 23 22:43:37 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:43:37 2012] [notice] Child 568: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:43:38 2012] [notice] Child 568: Released the start mutex
+[Mon Jul 23 22:43:39 2012] [notice] Child 568: All worker threads have exited.
+[Mon Jul 23 22:43:40 2012] [notice] Child 568: Child process is exiting
+[Mon Jul 23 22:43:40 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:43:44 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:43:44 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:43:44 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:43:44 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:43:44 2012] [notice] Parent: Created child process 5540
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:43:45 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:43:45 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:43:45 2012] [notice] Child 5540: Child process is running
+[Mon Jul 23 22:43:45 2012] [notice] Child 5540: Acquired the start mutex.
+[Mon Jul 23 22:43:45 2012] [notice] Child 5540: Starting 64 worker threads.
+[Mon Jul 23 22:43:45 2012] [notice] Child 5540: Starting thread to listen on port 80.
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media, referer: http://localhost/etraining/self_search/
+[Mon Jul 23 22:43:59 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:44:36 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:45:06 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:45:06 2012] [notice] Child 5540: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:45:07 2012] [notice] Child 5540: Released the start mutex
+[Mon Jul 23 22:45:08 2012] [notice] Child 5540: All worker threads have exited.
+[Mon Jul 23 22:45:08 2012] [notice] Child 5540: Child process is exiting
+[Mon Jul 23 22:45:08 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:45:29 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:45:29 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:45:29 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:45:29 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:45:29 2012] [notice] Parent: Created child process 2936
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:45:29 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:45:29 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:45:29 2012] [notice] Child 2936: Child process is running
+[Mon Jul 23 22:45:30 2012] [notice] Child 2936: Acquired the start mutex.
+[Mon Jul 23 22:45:30 2012] [notice] Child 2936: Starting 64 worker threads.
+[Mon Jul 23 22:45:30 2012] [notice] Child 2936: Starting thread to listen on port 80.
+[Mon Jul 23 22:45:31 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:45:31 2012] [notice] Child 2936: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:45:32 2012] [notice] Child 2936: Released the start mutex
+[Mon Jul 23 22:45:33 2012] [notice] Child 2936: All worker threads have exited.
+[Mon Jul 23 22:45:33 2012] [notice] Child 2936: Child process is exiting
+[Mon Jul 23 22:45:33 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:45:58 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:45:58 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:45:58 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:45:58 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:45:58 2012] [notice] Parent: Created child process 5880
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:45:59 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:45:59 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:45:59 2012] [notice] Child 5880: Child process is running
+[Mon Jul 23 22:45:59 2012] [notice] Child 5880: Acquired the start mutex.
+[Mon Jul 23 22:45:59 2012] [notice] Child 5880: Starting 64 worker threads.
+[Mon Jul 23 22:45:59 2012] [notice] Child 5880: Starting thread to listen on port 80.
+[Mon Jul 23 22:46:00 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:46:02 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:46:04 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:46:05 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:46:23 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:46:23 2012] [notice] Child 5880: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:46:24 2012] [notice] Child 5880: Released the start mutex
+[Mon Jul 23 22:46:25 2012] [notice] Child 5880: All worker threads have exited.
+[Mon Jul 23 22:46:25 2012] [notice] Child 5880: Child process is exiting
+[Mon Jul 23 22:46:25 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:46:29 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:46:29 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:46:29 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:46:29 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:46:29 2012] [notice] Parent: Created child process 2944
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:46:30 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:46:30 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:46:30 2012] [notice] Child 2944: Child process is running
+[Mon Jul 23 22:46:30 2012] [notice] Child 2944: Acquired the start mutex.
+[Mon Jul 23 22:46:30 2012] [notice] Child 2944: Starting 64 worker threads.
+[Mon Jul 23 22:46:30 2012] [notice] Child 2944: Starting thread to listen on port 80.
+[Mon Jul 23 22:46:32 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/run/release/media/css/style.css
+[Mon Jul 23 22:46:34 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/run/release/media/css/style.css
+[Mon Jul 23 22:46:36 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/run/release/media/css/style.css
+[Mon Jul 23 22:47:57 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:47:57 2012] [notice] Child 2944: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:47:58 2012] [notice] Child 2944: Released the start mutex
+[Mon Jul 23 22:47:59 2012] [notice] Child 2944: All worker threads have exited.
+[Mon Jul 23 22:47:59 2012] [notice] Child 2944: Child process is exiting
+[Mon Jul 23 22:47:59 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:48:33 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:48:33 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:48:33 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:48:33 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:48:33 2012] [notice] Parent: Created child process 5936
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:48:34 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:48:34 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:48:34 2012] [notice] Child 5936: Child process is running
+[Mon Jul 23 22:48:34 2012] [notice] Child 5936: Acquired the start mutex.
+[Mon Jul 23 22:48:34 2012] [notice] Child 5936: Starting 64 worker threads.
+[Mon Jul 23 22:48:34 2012] [notice] Child 5936: Starting thread to listen on port 80.
+[Mon Jul 23 22:48:36 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:48:37 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:48:41 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:49:21 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:49:21 2012] [notice] Child 5936: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:49:22 2012] [notice] Child 5936: Released the start mutex
+[Mon Jul 23 22:49:23 2012] [notice] Child 5936: All worker threads have exited.
+[Mon Jul 23 22:49:23 2012] [notice] Child 5936: Child process is exiting
+[Mon Jul 23 22:49:23 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:49:28 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:49:28 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:49:28 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:49:28 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:49:28 2012] [notice] Parent: Created child process 3096
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:49:28 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:49:28 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:49:28 2012] [notice] Child 3096: Child process is running
+[Mon Jul 23 22:49:28 2012] [notice] Child 3096: Acquired the start mutex.
+[Mon Jul 23 22:49:28 2012] [notice] Child 3096: Starting 64 worker threads.
+[Mon Jul 23 22:49:28 2012] [notice] Child 3096: Starting thread to listen on port 80.
+[Mon Jul 23 22:49:30 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:49:32 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:49:36 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:50:47 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:50:47 2012] [notice] Child 3096: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:50:48 2012] [notice] Child 3096: Released the start mutex
+[Mon Jul 23 22:50:49 2012] [notice] Child 3096: All worker threads have exited.
+[Mon Jul 23 22:50:49 2012] [notice] Child 3096: Child process is exiting
+[Mon Jul 23 22:50:49 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:50:50 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:50:50 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:50:50 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:50:50 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:50:50 2012] [notice] Parent: Created child process 4112
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:50:51 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:50:51 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:50:51 2012] [notice] Child 4112: Child process is running
+[Mon Jul 23 22:50:51 2012] [notice] Child 4112: Acquired the start mutex.
+[Mon Jul 23 22:50:51 2012] [notice] Child 4112: Starting 64 worker threads.
+[Mon Jul 23 22:50:51 2012] [notice] Child 4112: Starting thread to listen on port 80.
+[Mon Jul 23 22:50:53 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:50:55 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:50:55 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:50:55 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:50:56 2012] [error] [client 127.0.0.1] client denied by server configuration: D:/work/esafety/release/media
+[Mon Jul 23 22:52:34 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+otice] Child 4112: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:52:35 2012] [notice] Child 4112: Released the start mutex
+[Mon Jul 23 22:52:36 2012] [notice] Child 4112: All worker threads have exited.
+[Mon Jul 23 22:52:36 2012] [notice] Child 4112: Child process is exiting
+[Mon Jul 23 22:52:37 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:52:44 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:52:44 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:52:44 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:52:44 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:52:44 2012] [notice] Parent: Created child process 5492
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:52:44 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:52:44 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:52:44 2012] [notice] Child 5492: Child process is running
+[Mon Jul 23 22:52:44 2012] [notice] Child 5492: Acquired the start mutex.
+[Mon Jul 23 22:52:44 2012] [notice] Child 5492: Starting 64 worker threads.
+[Mon Jul 23 22:52:44 2012] [notice] Child 5492: Starting thread to listen on port 80.
+[Mon Jul 23 22:52:47 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media
+[Mon Jul 23 22:52:49 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media
+[Mon Jul 23 22:53:27 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:53:27 2012] [notice] Child 5492: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:53:28 2012] [notice] Child 5492: Released the start mutex
+[Mon Jul 23 22:53:29 2012] [notice] Child 5492: All worker threads have exited.
+[Mon Jul 23 22:53:29 2012] [notice] Child 5492: Child process is exiting
+[Mon Jul 23 22:53:29 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:53:31 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:53:31 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:53:31 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:53:31 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:53:31 2012] [notice] Parent: Created child process 5592
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:53:32 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:53:32 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:53:32 2012] [notice] Child 5592: Child process is running
+[Mon Jul 23 22:53:32 2012] [notice] Child 5592: Acquired the start mutex.
+[Mon Jul 23 22:53:32 2012] [notice] Child 5592: Starting 64 worker threads.
+[Mon Jul 23 22:53:32 2012] [notice] Child 5592: Starting thread to listen on port 80.
+[Mon Jul 23 22:53:59 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 22:53:59 2012] [notice] Child 5592: Exit event signaled. Child process is ending.
+[Mon Jul 23 22:54:00 2012] [notice] Child 5592: Released the start mutex
+[Mon Jul 23 22:54:01 2012] [notice] Child 5592: All worker threads have exited.
+[Mon Jul 23 22:54:01 2012] [notice] Child 5592: Child process is exiting
+[Mon Jul 23 22:54:01 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:54:05 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:54:05 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:54:05 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 22:54:05 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 22:54:05 2012] [notice] Parent: Created child process 844
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 22:54:06 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 22:54:06 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 22:54:06 2012] [notice] Child 844: Child process is running
+[Mon Jul 23 22:54:06 2012] [notice] Child 844: Acquired the start mutex.
+[Mon Jul 23 22:54:06 2012] [notice] Child 844: Starting 64 worker threads.
+[Mon Jul 23 22:54:06 2012] [notice] Child 844: Starting thread to listen on port 80.
+[Mon Jul 23 23:02:53 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:02:53 2012] [notice] Child 844: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:02:54 2012] [notice] Child 844: Released the start mutex
+[Mon Jul 23 23:02:55 2012] [notice] Child 844: All worker threads have exited.
+[Mon Jul 23 23:02:55 2012] [notice] Child 844: Child process is exiting
+[Mon Jul 23 23:02:55 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:02:59 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:02:59 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:02:59 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:02:59 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:02:59 2012] [notice] Parent: Created child process 3132
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:03:00 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:03:00 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:03:00 2012] [notice] Child 3132: Child process is running
+[Mon Jul 23 23:03:00 2012] [notice] Child 3132: Acquired the start mutex.
+[Mon Jul 23 23:03:00 2012] [notice] Child 3132: Starting 64 worker threads.
+[Mon Jul 23 23:03:00 2012] [notice] Child 3132: Starting thread to listen on port 80.
+[Mon Jul 23 23:13:02 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:13:02 2012] [notice] Child 3132: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:13:03 2012] [notice] Child 3132: Released the start mutex
+[Mon Jul 23 23:13:04 2012] [notice] Child 3132: All worker threads have exited.
+[Mon Jul 23 23:13:04 2012] [notice] Child 3132: Child process is exiting
+[Mon Jul 23 23:13:04 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:15:07 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:15:07 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:15:07 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:15:07 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:15:07 2012] [notice] Parent: Created child process 5600
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:15:08 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:15:08 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:15:08 2012] [notice] Child 5600: Child process is running
+[Mon Jul 23 23:15:08 2012] [notice] Child 5600: Acquired the start mutex.
+[Mon Jul 23 23:15:08 2012] [notice] Child 5600: Starting 64 worker threads.
+[Mon Jul 23 23:15:08 2012] [notice] Child 5600: Starting thread to listen on port 80.
+[Mon Jul 23 23:15:31 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:15:31 2012] [notice] Child 5600: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:15:32 2012] [notice] Child 5600: Released the start mutex
+[Mon Jul 23 23:15:33 2012] [notice] Child 5600: All worker threads have exited.
+[Mon Jul 23 23:15:34 2012] [notice] Child 5600: Child process is exiting
+[Mon Jul 23 23:15:34 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:15:35 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:15:35 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:15:35 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:15:35 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:15:35 2012] [notice] Parent: Created child process 2428
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:15:37 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:15:37 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:15:37 2012] [notice] Child 2428: Child process is running
+[Mon Jul 23 23:15:37 2012] [notice] Child 2428: Acquired the start mutex.
+[Mon Jul 23 23:15:37 2012] [notice] Child 2428: Starting 64 worker threads.
+[Mon Jul 23 23:15:37 2012] [notice] Child 2428: Starting thread to listen on port 80.
+[Mon Jul 23 23:18:59 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:18:59 2012] [notice] Child 2428: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:19:00 2012] [notice] Child 2428: Released the start mutex
+[Mon Jul 23 23:19:01 2012] [notice] Child 2428: All worker threads have exited.
+[Mon Jul 23 23:19:01 2012] [notice] Child 2428: Child process is exiting
+[Mon Jul 23 23:19:01 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:20:31 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:20:31 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:20:31 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:20:31 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:20:31 2012] [notice] Parent: Created child process 4888
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:20:32 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:20:32 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:20:32 2012] [notice] Child 4888: Child process is running
+[Mon Jul 23 23:20:32 2012] [notice] Child 4888: Acquired the start mutex.
+[Mon Jul 23 23:20:32 2012] [notice] Child 4888: Starting 64 worker threads.
+[Mon Jul 23 23:20:32 2012] [notice] Child 4888: Starting thread to listen on port 80.
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:20:37 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:04 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:21:04 2012] [notice] Child 4888: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:21:05 2012] [notice] Child 4888: Released the start mutex
+[Mon Jul 23 23:21:06 2012] [notice] Child 4888: All worker threads have exited.
+[Mon Jul 23 23:21:06 2012] [notice] Child 4888: Child process is exiting
+[Mon Jul 23 23:21:06 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:21:16 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:21:16 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:21:16 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:21:16 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:21:16 2012] [notice] Parent: Created child process 4300
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:21:16 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:21:16 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:21:16 2012] [notice] Child 4300: Child process is running
+[Mon Jul 23 23:21:17 2012] [notice] Child 4300: Acquired the start mutex.
+[Mon Jul 23 23:21:17 2012] [notice] Child 4300: Starting 64 worker threads.
+[Mon Jul 23 23:21:17 2012] [notice] Child 4300: Starting thread to listen on port 80.
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:22 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:25 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:21:28 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/media, referer: http://localhost/accounts/login/?next=/admin/
+[Mon Jul 23 23:22:20 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:22:20 2012] [notice] Child 4300: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:22:21 2012] [notice] Child 4300: Released the start mutex
+[Mon Jul 23 23:22:22 2012] [notice] Child 4300: All worker threads have exited.
+[Mon Jul 23 23:22:22 2012] [notice] Child 4300: Child process is exiting
+[Mon Jul 23 23:22:22 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:22:24 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:22:24 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:22:24 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:22:24 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:22:24 2012] [notice] Parent: Created child process 2704
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:22:25 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:22:25 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:22:25 2012] [notice] Child 2704: Child process is running
+[Mon Jul 23 23:22:25 2012] [notice] Child 2704: Acquired the start mutex.
+[Mon Jul 23 23:22:25 2012] [notice] Child 2704: Starting 64 worker threads.
+[Mon Jul 23 23:22:25 2012] [notice] Child 2704: Starting thread to listen on port 80.
+[Mon Jul 23 23:23:56 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:23:56 2012] [notice] Child 2704: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:23:57 2012] [notice] Child 2704: Released the start mutex
+[Mon Jul 23 23:23:58 2012] [notice] Child 2704: All worker threads have exited.
+[Mon Jul 23 23:23:58 2012] [notice] Child 2704: Child process is exiting
+[Mon Jul 23 23:23:58 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:24:00 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:24:00 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:24:00 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:24:00 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:24:00 2012] [notice] Parent: Created child process 5696
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:24:00 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:24:00 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:24:00 2012] [notice] Child 5696: Child process is running
+[Mon Jul 23 23:24:01 2012] [notice] Child 5696: Acquired the start mutex.
+[Mon Jul 23 23:24:01 2012] [notice] Child 5696: Starting 64 worker threads.
+[Mon Jul 23 23:24:01 2012] [notice] Child 5696: Starting thread to listen on port 80.
+[Mon Jul 23 23:24:39 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:24:39 2012] [notice] Child 5696: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:24:40 2012] [notice] Child 5696: Released the start mutex
+[Mon Jul 23 23:24:41 2012] [notice] Child 5696: All worker threads have exited.
+[Mon Jul 23 23:24:41 2012] [notice] Child 5696: Child process is exiting
+[Mon Jul 23 23:24:41 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:24:47 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:24:47 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:24:47 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:24:47 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:24:47 2012] [notice] Parent: Created child process 5220
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server shutdown initiated...
+ine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:24:47 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:24:47 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:24:47 2012] [notice] Child 5220: Child process is running
+[Mon Jul 23 23:24:47 2012] [notice] Child 5220: Acquired the start mutex.
+[Mon Jul 23 23:24:47 2012] [notice] Child 5220: Starting 64 worker threads.
+[Mon Jul 23 23:24:47 2012] [notice] Child 5220: Starting thread to listen on port 80.
+[Mon Jul 23 23:25:10 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:25:10 2012] [notice] Child 5220: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:25:11 2012] [notice] Child 5220: Released the start mutex
+[Mon Jul 23 23:25:12 2012] [notice] Child 5220: All worker threads have exited.
+[Mon Jul 23 23:25:12 2012] [notice] Child 5220: Child process is exiting
+[Mon Jul 23 23:25:12 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:35:31 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:35:31 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:35:31 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:35:31 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:35:31 2012] [notice] Parent: Created child process 3524
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:35:32 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:35:32 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:35:32 2012] [notice] Child 3524: Child process is running
+[Mon Jul 23 23:35:32 2012] [notice] Child 3524: Acquired the start mutex.
+[Mon Jul 23 23:35:32 2012] [notice] Child 3524: Starting 64 worker threads.
+[Mon Jul 23 23:35:32 2012] [notice] Child 3524: Starting thread to listen on port 80.
+[Mon Jul 23 23:35:38 2012] [error] [client 127.0.0.1] Target WSGI script not found or unable to stat: D:/work/esafety/release/release
+[Mon Jul 23 23:35:43 2012] [error] [client 127.0.0.1] Target WSGI script not found or unable to stat: D:/work/esafety/release/release
+[Mon Jul 23 23:35:49 2012] [error] [client 127.0.0.1] Target WSGI script not found or unable to stat: D:/work/esafety/release/release
+[Mon Jul 23 23:35:53 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/release
+[Mon Jul 23 23:36:57 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:36:57 2012] [notice] Child 3524: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:36:58 2012] [notice] Child 3524: Released the start mutex
+[Mon Jul 23 23:36:59 2012] [notice] Child 3524: All worker threads have exited.
+[Mon Jul 23 23:36:59 2012] [notice] Child 3524: Child process is exiting
+[Mon Jul 23 23:36:59 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:37:02 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:37:02 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:37:02 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Mon Jul 23 23:37:02 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Mon Jul 23 23:37:02 2012] [notice] Parent: Created child process 2652
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server shutdown initiated...
+ine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Mon Jul 23 23:37:02 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Mon Jul 23 23:37:02 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Mon Jul 23 23:37:02 2012] [notice] Child 2652: Child process is running
+[Mon Jul 23 23:37:02 2012] [notice] Child 2652: Acquired the start mutex.
+[Mon Jul 23 23:37:02 2012] [notice] Child 2652: Starting 64 worker threads.
+[Mon Jul 23 23:37:02 2012] [notice] Child 2652: Starting thread to listen on port 80.
+[Mon Jul 23 23:37:13 2012] [error] [client 127.0.0.1] Attempt to serve directory: D:/work/esafety/release/website/media/
+[Mon Jul 23 23:37:40 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 23 23:37:40 2012] [notice] Child 2652: Exit event signaled. Child process is ending.
+[Mon Jul 23 23:37:41 2012] [notice] Child 2652: Released the start mutex
+[Mon Jul 23 23:37:42 2012] [notice] Child 2652: All worker threads have exited.
+[Mon Jul 23 23:37:42 2012] [notice] Child 2652: Child process is exiting
+[Mon Jul 23 23:37:42 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Tue Jul 24 09:23:39 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 09:23:39 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 09:23:39 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 09:23:39 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 09:23:39 2012] [notice] Parent: Created child process 2940
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Tue Jul 24 09:23:40 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 09:23:40 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 09:23:40 2012] [notice] Child 2940: Child process is running
+[Tue Jul 24 09:23:41 2012] [notice] Child 2940: Acquired the start mutex.
+[Tue Jul 24 09:23:41 2012] [notice] Child 2940: Starting 64 worker threads.
+[Tue Jul 24 09:23:41 2012] [notice] Child 2940: Starting thread to listen on port 80.
+[Tue Jul 24 09:24:55 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 09:24:55 2012] [notice] Child 2940: Exit event signaled. Child process is ending.
+[Tue Jul 24 09:24:56 2012] [notice] Child 2940: Released the start mutex
+[Tue Jul 24 09:24:57 2012] [notice] Child 2940: All worker threads have exited.
+[Tue Jul 24 09:24:57 2012] [notice] Child 2940: Child process is exiting
+[Tue Jul 24 09:24:57 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Tue Jul 24 18:20:22 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 18:20:22 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 18:20:22 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 18:20:22 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 18:20:22 2012] [notice] Parent: Created child process 2992
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+Apache server shutdown initiated...
+ine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+[Tue Jul 24 18:20:23 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 18:20:23 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 18:20:23 2012] [notice] Child 2992: Child process is running
+[Tue Jul 24 18:20:23 2012] [notice] Child 2992: Acquired the start mutex.
+[Tue Jul 24 18:20:23 2012] [notice] Child 2992: Starting 64 worker threads.
+[Tue Jul 24 18:20:23 2012] [notice] Child 2992: Starting thread to listen on port 80.
+[Tue Jul 24 18:25:19 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 18:25:19 2012] [notice] Child 2992: Exit event signaled. Child process is ending.
+[Tue Jul 24 18:25:20 2012] [notice] Child 2992: Released the start mutex
+[Tue Jul 24 18:25:21 2012] [notice] Child 2992: All worker threads have exited.
+[Tue Jul 24 18:25:21 2012] [notice] Child 2992: Child process is exiting
+[Tue Jul 24 18:25:21 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 19:16:26 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 19:16:26 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 19:16:26 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 19:16:26 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 19:16:26 2012] [notice] Parent: Created child process 2076
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server shutdown initiated...
+ine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 19:16:27 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 19:16:27 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 19:16:27 2012] [notice] Child 2076: Child process is running
+[Tue Jul 24 19:16:27 2012] [notice] Child 2076: Acquired the start mutex.
+[Tue Jul 24 19:16:27 2012] [notice] Child 2076: Starting 64 worker threads.
+[Tue Jul 24 19:16:27 2012] [notice] Child 2076: Starting thread to listen on port 80.
+[Tue Jul 24 19:16:32 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 19:16:32 2012] [notice] Child 2076: Exit event signaled. Child process is ending.
+[Tue Jul 24 19:16:33 2012] [notice] Child 2076: Released the start mutex
+[Tue Jul 24 19:16:34 2012] [notice] Child 2076: All worker threads have exited.
+[Tue Jul 24 19:16:34 2012] [notice] Child 2076: Child process is exiting
+[Tue Jul 24 19:16:34 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:22:28 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:22:28 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:22:28 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 20:22:28 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 20:22:28 2012] [notice] Parent: Created child process 380
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:22:28 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:22:28 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:22:28 2012] [notice] Child 380: Child process is running
+[Tue Jul 24 20:22:29 2012] [notice] Child 380: Acquired the start mutex.
+[Tue Jul 24 20:22:29 2012] [notice] Child 380: Starting 64 worker threads.
+[Tue Jul 24 20:22:29 2012] [notice] Child 380: Starting thread to listen on port 80.
+[Tue Jul 24 20:26:19 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 20:26:19 2012] [notice] Child 380: Exit event signaled. Child process is ending.
+[Tue Jul 24 20:26:20 2012] [notice] Child 380: Released the start mutex
+[Tue Jul 24 20:26:21 2012] [notice] Child 380: All worker threads have exited.
+[Tue Jul 24 20:26:21 2012] [notice] Child 380: Child process is exiting
+[Tue Jul 24 20:26:21 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:28:34 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:28:34 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:28:34 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 20:28:34 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 20:28:34 2012] [notice] Parent: Created child process 5868
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:28:35 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:28:35 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:28:35 2012] [notice] Child 5868: Child process is running
+[Tue Jul 24 20:28:35 2012] [notice] Child 5868: Acquired the start mutex.
+[Tue Jul 24 20:28:35 2012] [notice] Child 5868: Starting 64 worker threads.
+[Tue Jul 24 20:28:35 2012] [notice] Child 5868: Starting thread to listen on port 80.
+[Tue Jul 24 20:34:18 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/website/media/audio/1343132570.22.mp3, referer: http://localhost/etraining/entrance_training/2/
+[Tue Jul 24 20:34:48 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/website/media/audio/1343132570.22.mp3
+[Tue Jul 24 20:35:21 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 20:35:21 2012] [notice] Child 5868: Exit event signaled. Child process is ending.
+[Tue Jul 24 20:35:22 2012] [notice] Child 5868: Released the start mutex
+[Tue Jul 24 20:35:23 2012] [notice] Child 5868: All worker threads have exited.
+[Tue Jul 24 20:35:23 2012] [notice] Child 5868: Child process is exiting
+[Tue Jul 24 20:35:23 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:35:56 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:35:56 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:35:56 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 20:35:56 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 20:35:56 2012] [notice] Parent: Created child process 1680
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 20:35:57 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 20:35:57 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 20:35:57 2012] [notice] Child 1680: Child process is running
+[Tue Jul 24 20:35:57 2012] [notice] Child 1680: Acquired the start mutex.
+[Tue Jul 24 20:35:57 2012] [notice] Child 1680: Starting 64 worker threads.
+[Tue Jul 24 20:35:57 2012] [notice] Child 1680: Starting thread to listen on port 80.
+[Tue Jul 24 21:28:19 2012] [error] [client 127.0.0.1] File does not exist: D:/work/esafety/release/website/media/audio/1343136402.52.mp3, referer: http://localhost/etraining/entrance_training/2/
+[Tue Jul 24 21:40:24 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 21:40:24 2012] [notice] Child 1680: Exit event signaled. Child process is ending.
+[Tue Jul 24 21:40:25 2012] [notice] Child 1680: Released the start mutex
+[Tue Jul 24 21:40:26 2012] [notice] Child 1680: All worker threads have exited.
+[Tue Jul 24 21:40:26 2012] [notice] Child 1680: Child process is exiting
+[Tue Jul 24 21:40:26 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:41:54 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:41:54 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:41:54 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:41:54 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:41:54 2012] [notice] Parent: Created child process 2368
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:41:55 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:41:55 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:41:55 2012] [notice] Child 2368: Child process is running
+[Tue Jul 24 21:41:55 2012] [notice] Child 2368: Acquired the start mutex.
+[Tue Jul 24 21:41:55 2012] [notice] Child 2368: Starting 64 worker threads.
+[Tue Jul 24 21:41:55 2012] [notice] Child 2368: Starting thread to listen on port 80.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:42:56 2012] [warn] pid file D:/work/esafety/release/Apache2.2/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Jul 24 21:42:56 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:42:56 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:42:56 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:42:56 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:42:56 2012] [notice] Parent: Created child process 5208
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:42:57 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:42:57 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:42:57 2012] [notice] Child 5208: Child process is running
+[Tue Jul 24 21:42:57 2012] [notice] Child 5208: Acquired the start mutex.
+[Tue Jul 24 21:42:57 2012] [notice] Child 5208: Starting 64 worker threads.
+[Tue Jul 24 21:42:57 2012] [notice] Child 5208: Starting thread to listen on port 80.
+[Tue Jul 24 21:45:15 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 21:45:15 2012] [notice] Child 5208: Exit event signaled. Child process is ending.
+[Tue Jul 24 21:45:16 2012] [notice] Child 5208: Released the start mutex
+[Tue Jul 24 21:45:17 2012] [notice] Child 5208: All worker threads have exited.
+[Tue Jul 24 21:45:17 2012] [notice] Child 5208: Child process is exiting
+[Tue Jul 24 21:45:19 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:45:32 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:45:32 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:45:32 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:45:32 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:45:32 2012] [notice] Parent: Created child process 5680
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:45:32 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:45:32 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:45:32 2012] [notice] Child 5680: Child process is running
+[Tue Jul 24 21:45:32 2012] [notice] Child 5680: Acquired the start mutex.
+[Tue Jul 24 21:45:32 2012] [notice] Child 5680: Starting 64 worker threads.
+[Tue Jul 24 21:45:32 2012] [notice] Child 5680: Starting thread to listen on port 80.
+[Tue Jul 24 21:53:45 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 21:53:45 2012] [notice] Child 5680: Exit event signaled. Child process is ending.
+[Tue Jul 24 21:53:46 2012] [notice] Child 5680: Released the start mutex
+[Tue Jul 24 21:53:47 2012] [notice] Child 5680: All worker threads have exited.
+[Tue Jul 24 21:53:47 2012] [notice] Child 5680: Child process is exiting
+[Tue Jul 24 21:53:47 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:54:09 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:54:09 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:54:09 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:54:09 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:54:09 2012] [notice] Parent: Created child process 1628
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:54:09 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:54:09 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:54:09 2012] [notice] Child 1628: Child process is running
+[Tue Jul 24 21:54:09 2012] [notice] Child 1628: Acquired the start mutex.
+[Tue Jul 24 21:54:09 2012] [notice] Child 1628: Starting 64 worker threads.
+[Tue Jul 24 21:54:09 2012] [notice] Child 1628: Starting thread to listen on port 80.
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1] mod_wsgi (pid=1628): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:54:16 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1] mod_wsgi (pid=1628): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:54:25 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 21:55:09 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 21:55:09 2012] [notice] Child 1628: Exit event signaled. Child process is ending.
+[Tue Jul 24 21:55:10 2012] [notice] Child 1628: Released the start mutex
+[Tue Jul 24 21:55:11 2012] [notice] Child 1628: All worker threads have exited.
+[Tue Jul 24 21:55:11 2012] [notice] Child 1628: Child process is exiting
+[Tue Jul 24 21:55:11 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:55:18 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:55:18 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:55:18 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:55:18 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:55:18 2012] [notice] Parent: Created child process 5724
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:55:18 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:55:18 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:55:18 2012] [notice] Child 5724: Child process is running
+[Tue Jul 24 21:55:19 2012] [notice] Child 5724: Acquired the start mutex.
+[Tue Jul 24 21:55:19 2012] [notice] Child 5724: Starting 64 worker threads.
+[Tue Jul 24 21:55:19 2012] [notice] Child 5724: Starting thread to listen on port 80.
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1] mod_wsgi (pid=5724): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:55:24 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 21:56:55 2012] [error] D:/work/esafety/release/website/esafety
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1] mod_wsgi (pid=5724): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:56:55 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 21:57:03 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+otice] Child 5724: Exit event signaled. Child process is ending.
+[Tue Jul 24 21:57:04 2012] [notice] Child 5724: Released the start mutex
+[Tue Jul 24 21:57:05 2012] [notice] Child 5724: All worker threads have exited.
+[Tue Jul 24 21:57:05 2012] [notice] Child 5724: Child process is exiting
+[Tue Jul 24 21:57:05 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:57:10 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:57:10 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:57:10 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 21:57:10 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 21:57:10 2012] [notice] Parent: Created child process 4728
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 21:57:11 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 21:57:11 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 21:57:11 2012] [notice] Child 4728: Child process is running
+[Tue Jul 24 21:57:11 2012] [notice] Child 4728: Acquired the start mutex.
+[Tue Jul 24 21:57:11 2012] [notice] Child 4728: Starting 64 worker threads.
+[Tue Jul 24 21:57:11 2012] [notice] Child 4728: Starting thread to listen on port 80.
+[Tue Jul 24 21:57:21 2012] [error] D:/work/esafety/release/website/esafety
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4728): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:57:22 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 21:57:57 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety']
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4728): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 21:57:57 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4728): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:00:48 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:01:28 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+otice] Child 4728: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:01:29 2012] [notice] Child 4728: Released the start mutex
+[Tue Jul 24 22:01:30 2012] [notice] Child 4728: All worker threads have exited.
+[Tue Jul 24 22:01:31 2012] [notice] Child 4728: Child process is exiting
+[Tue Jul 24 22:01:31 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:01:41 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:01:41 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:01:41 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:01:41 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:01:41 2012] [notice] Parent: Created child process 4804
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:01:42 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:01:42 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:01:42 2012] [notice] Child 4804: Child process is running
+[Tue Jul 24 22:01:42 2012] [notice] Child 4804: Acquired the start mutex.
+[Tue Jul 24 22:01:42 2012] [notice] Child 4804: Starting 64 worker threads.
+[Tue Jul 24 22:01:42 2012] [notice] Child 4804: Starting thread to listen on port 80.
+[Tue Jul 24 22:01:52 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety']
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4804): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:01:53 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4804): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:01:59 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4804): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:02:50 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:03:08 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:03:08 2012] [notice] Child 4804: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:03:09 2012] [notice] Child 4804: Released the start mutex
+[Tue Jul 24 22:03:10 2012] [notice] Child 4804: All worker threads have exited.
+[Tue Jul 24 22:03:10 2012] [notice] Child 4804: Child process is exiting
+[Tue Jul 24 22:03:10 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:03:16 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:03:16 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:03:16 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:03:16 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:03:16 2012] [notice] Parent: Created child process 5460
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:03:17 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:03:17 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:03:17 2012] [notice] Child 5460: Child process is running
+[Tue Jul 24 22:03:17 2012] [notice] Child 5460: Acquired the start mutex.
+[Tue Jul 24 22:03:17 2012] [notice] Child 5460: Starting 64 worker threads.
+[Tue Jul 24 22:03:17 2012] [notice] Child 5460: Starting thread to listen on port 80.
+[Tue Jul 24 22:03:20 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety']
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1] mod_wsgi (pid=5460): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:03:20 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:04:19 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:04:19 2012] [notice] Child 5460: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:04:20 2012] [notice] Child 5460: Released the start mutex
+[Tue Jul 24 22:04:21 2012] [notice] Child 5460: All worker threads have exited.
+[Tue Jul 24 22:04:21 2012] [notice] Child 5460: Child process is exiting
+[Tue Jul 24 22:04:22 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:04:29 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:04:29 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:04:29 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:04:29 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:04:29 2012] [notice] Parent: Created child process 4108
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:04:30 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:04:30 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:04:30 2012] [notice] Child 4108: Child process is running
+[Tue Jul 24 22:04:30 2012] [notice] Child 4108: Acquired the start mutex.
+[Tue Jul 24 22:04:30 2012] [notice] Child 4108: Starting 64 worker threads.
+[Tue Jul 24 22:04:30 2012] [notice] Child 4108: Starting thread to listen on port 80.
+[Tue Jul 24 22:04:32 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:\\\\work\\\\esafety\\release\\\\website', 'D:\\\\work\\\\esafety\\release\\\\website\\\\esafety']
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4108): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:04:33 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:04:59 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:04:59 2012] [notice] Child 4108: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:05:00 2012] [notice] Child 4108: Released the start mutex
+[Tue Jul 24 22:05:01 2012] [notice] Child 4108: All worker threads have exited.
+[Tue Jul 24 22:05:01 2012] [notice] Child 4108: Child process is exiting
+[Tue Jul 24 22:05:01 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:05:10 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:05:10 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:05:10 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:05:10 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:05:10 2012] [notice] Parent: Created child process 5788
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:05:10 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:05:10 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:05:10 2012] [notice] Child 5788: Child process is running
+[Tue Jul 24 22:05:10 2012] [notice] Child 5788: Acquired the start mutex.
+[Tue Jul 24 22:05:10 2012] [notice] Child 5788: Starting 64 worker threads.
+[Tue Jul 24 22:05:10 2012] [notice] Child 5788: Starting thread to listen on port 80.
+[Tue Jul 24 22:05:12 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:\\\\work\\\\esafety\\\\src', 'D:\\\\work\\\\esafety\\\\src\\\\esafety']
+[Tue Jul 24 22:06:10 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:06:10 2012] [notice] Child 5788: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:06:11 2012] [notice] Child 5788: Released the start mutex
+[Tue Jul 24 22:06:12 2012] [notice] Child 5788: All worker threads have exited.
+[Tue Jul 24 22:06:12 2012] [notice] Child 5788: Child process is exiting
+[Tue Jul 24 22:06:12 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:06:19 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:06:19 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:06:19 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:06:19 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:06:19 2012] [notice] Parent: Created child process 4876
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:06:19 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:06:19 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:06:19 2012] [notice] Child 4876: Child process is running
+[Tue Jul 24 22:06:19 2012] [notice] Child 4876: Acquired the start mutex.
+[Tue Jul 24 22:06:19 2012] [notice] Child 4876: Starting 64 worker threads.
+[Tue Jul 24 22:06:19 2012] [notice] Child 4876: Starting thread to listen on port 80.
+[Tue Jul 24 22:06:22 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:\\\\work\\\\esafety\\release\\\\website', 'D:\\\\work\\\\esafety\\release\\\\website\\\\esafety']
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4876): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:06:23 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1] mod_wsgi (pid=4876): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:06:43 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:07:58 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:07:58 2012] [notice] Child 4876: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:07:59 2012] [notice] Child 4876: Released the start mutex
+[Tue Jul 24 22:08:00 2012] [notice] Child 4876: All worker threads have exited.
+[Tue Jul 24 22:08:00 2012] [notice] Child 4876: Child process is exiting
+[Tue Jul 24 22:08:00 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:08:05 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:08:05 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:08:05 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:08:05 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:08:06 2012] [notice] Parent: Created child process 3960
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:08:06 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:08:06 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:08:06 2012] [notice] Child 3960: Child process is running
+[Tue Jul 24 22:08:06 2012] [notice] Child 3960: Acquired the start mutex.
+[Tue Jul 24 22:08:06 2012] [notice] Child 3960: Starting 64 worker threads.
+[Tue Jul 24 22:08:06 2012] [notice] Child 3960: Starting thread to listen on port 80.
+[Tue Jul 24 22:08:07 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:\\\\work\\\\esafety\\\\release\\\\website', 'D:\\\\work\\\\esafety\\\\release\\\\website\\\\esafety']
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1] mod_wsgi (pid=3960): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 241, in __call__
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     response = self.get_response(request)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 179, in get_response
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 221, in handle_uncaught_exception
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return debug.technical_500_response(request, *exc_info)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 66, in technical_500_response
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     html = reporter.get_traceback_html()
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 276, in get_traceback_html
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return t.render(c)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 140, in render
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return self._render(context)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 134, in _render
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return self.nodelist.render(context)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 823, in render
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     bit = self.render_node(node, context)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 74, in render_node
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return node.render(context)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 84, in render
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     output = self.filter_expression.resolve(context)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 599, in resolve
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     new_obj = func(obj, *arg_vals)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\defaultfilters.py", line 718, in date
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return format(value, arg)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 310, in format
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return df.format(format_string)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 214, in r
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return self.format('D, j M Y H:i:s O')
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\encoding.py", line 71, in force_unicode
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     s = unicode(s)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 121, in __unicode_cast
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return func(*self.__args, **self.__kw)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\__init__.py", line 86, in ugettext
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return _trans.ugettext(message)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 278, in ugettext
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     return do_translate(message, 'ugettext')
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 268, in do_translate
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     _default = translation(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 183, in translation
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     default_translation = _fetch(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 160, in _fetch
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     app = import_module(appname)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\importlib.py", line 35, in import_module
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1]     __import__(name)
+[Tue Jul 24 22:08:09 2012] [error] [client 127.0.0.1] ImportError: No module named etraining
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1] mod_wsgi (pid=3960): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 241, in __call__
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     response = self.get_response(request)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 179, in get_response
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 221, in handle_uncaught_exception
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return debug.technical_500_response(request, *exc_info)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 66, in technical_500_response
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     html = reporter.get_traceback_html()
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 276, in get_traceback_html
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return t.render(c)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 140, in render
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return self._render(context)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 134, in _render
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return self.nodelist.render(context)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 823, in render
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     bit = self.render_node(node, context)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 74, in render_node
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return node.render(context)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 84, in render
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     output = self.filter_expression.resolve(context)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 599, in resolve
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     new_obj = func(obj, *arg_vals)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\defaultfilters.py", line 718, in date
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return format(value, arg)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 310, in format
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return df.format(format_string)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 214, in r
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return self.format('D, j M Y H:i:s O')
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\encoding.py", line 71, in force_unicode
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     s = unicode(s)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 121, in __unicode_cast
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return func(*self.__args, **self.__kw)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\__init__.py", line 86, in ugettext
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return _trans.ugettext(message)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 278, in ugettext
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     return do_translate(message, 'ugettext')
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 268, in do_translate
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     _default = translation(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 183, in translation
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     default_translation = _fetch(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 160, in _fetch
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     app = import_module(appname)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\importlib.py", line 35, in import_module
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1]     __import__(name)
+[Tue Jul 24 22:08:12 2012] [error] [client 127.0.0.1] ImportError: No module named etraining
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1] mod_wsgi (pid=3960): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 241, in __call__
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     response = self.get_response(request)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 179, in get_response
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 221, in handle_uncaught_exception
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return debug.technical_500_response(request, *exc_info)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 66, in technical_500_response
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     html = reporter.get_traceback_html()
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\views\\debug.py", line 276, in get_traceback_html
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return t.render(c)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 140, in render
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return self._render(context)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 134, in _render
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return self.nodelist.render(context)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 823, in render
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     bit = self.render_node(node, context)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 74, in render_node
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return node.render(context)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\debug.py", line 84, in render
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     output = self.filter_expression.resolve(context)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\base.py", line 599, in resolve
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     new_obj = func(obj, *arg_vals)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\template\\defaultfilters.py", line 718, in date
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return format(value, arg)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 310, in format
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return df.format(format_string)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 214, in r
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return self.format('D, j M Y H:i:s O')
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\dateformat.py", line 33, in format
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     pieces.append(force_unicode(getattr(self, piece)()))
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\encoding.py", line 71, in force_unicode
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     s = unicode(s)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 121, in __unicode_cast
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return func(*self.__args, **self.__kw)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\__init__.py", line 86, in ugettext
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return _trans.ugettext(message)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 278, in ugettext
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     return do_translate(message, 'ugettext')
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 268, in do_translate
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     _default = translation(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 183, in translation
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     default_translation = _fetch(settings.LANGUAGE_CODE)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\translation\\trans_real.py", line 160, in _fetch
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     app = import_module(appname)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\importlib.py", line 35, in import_module
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1]     __import__(name)
+[Tue Jul 24 22:08:50 2012] [error] [client 127.0.0.1] ImportError: No module named etraining
+[Tue Jul 24 22:13:29 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:13:29 2012] [notice] Child 3960: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:13:30 2012] [notice] Child 3960: Released the start mutex
+[Tue Jul 24 22:13:31 2012] [notice] Child 3960: All worker threads have exited.
+[Tue Jul 24 22:13:31 2012] [notice] Child 3960: Child process is exiting
+[Tue Jul 24 22:13:31 2012] [notice] Parent: Child process exited successfully.
+httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:14:09 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:14:09 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:14:09 2012] [notice] Apache/2.2.22 (Win32) mod_wsgi/3.3 Python/2.7.3 configured -- resuming normal operations
+[Tue Jul 24 22:14:09 2012] [notice] Server built: Jan 28 2012 11:16:39
+[Tue Jul 24 22:14:09 2012] [notice] Parent: Created child process 5316
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+Apache server interrupted...
+ determine the server's fully qualified domain name, using 192.168.1.104 for ServerName
+[Tue Jul 24 22:14:10 2012] [warn] mod_wsgi: Compiled for Python/2.7.
+[Tue Jul 24 22:14:10 2012] [warn] mod_wsgi: Runtime using Python/2.7.3.
+[Tue Jul 24 22:14:10 2012] [notice] Child 5316: Child process is running
+[Tue Jul 24 22:14:10 2012] [notice] Child 5316: Acquired the start mutex.
+[Tue Jul 24 22:14:10 2012] [notice] Child 5316: Starting 64 worker threads.
+[Tue Jul 24 22:14:10 2012] [notice] Child 5316: Starting thread to listen on port 80.
+[Tue Jul 24 22:14:15 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety']
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1] mod_wsgi (pid=5316): Exception occurred processing WSGI script 'D:/work/esafety/release/website/esafety/wsgi.py'.
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1] Traceback (most recent call last):
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\wsgi.py", line 219, in __call__
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]     self.load_middleware()
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\core\\handlers\\base.py", line 39, in load_middleware
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\utils\\functional.py", line 184, in inner
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]     self._setup()
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 42, in _setup
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]     self._wrapped = Settings(settings_module)
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]   File "D:\\work\\esafety\\release\\Python27\\lib\\site-packages\\django\\conf\\__init__.py", line 95, in __init__
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Tue Jul 24 22:14:15 2012] [error] [client 127.0.0.1] ImportError: Could not import settings 'esafety.settings_apache' (Is it on sys.path?): No module named esafety.settings_apache
+[Tue Jul 24 22:15:24 2012] [error] ['D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\python27.zip', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\DLLs', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\plat-win', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\lib-tk', 'D:\\\\work\\\\esafety\\\\release\\\\Apache2.2\\\\bin', 'D:\\\\work\\\\esafety\\\\release\\\\Python27', 'D:\\\\work\\\\esafety\\\\release\\\\Python27\\\\lib\\\\site-packages', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety', 'D:/work/esafety/release/website', 'D:/work/esafety/release/website/esafety']
+[Tue Jul 24 22:16:58 2012] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 24 22:16:58 2012] [notice] Child 5316: Exit event signaled. Child process is ending.
+[Tue Jul 24 22:16:59 2012] [notice] Child 5316: Released the start mutex
+[Tue Jul 24 22:17:00 2012] [notice] Child 5316: All worker threads have exited.
+[Tue Jul 24 22:17:00 2012] [notice] Child 5316: Child process is exiting
+[Tue Jul 24 22:17:00 2012] [notice] Parent: Child process exited successfully.

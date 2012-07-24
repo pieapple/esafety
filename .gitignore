@@ -1,5 +1,5 @@
-*.log
 *.pot
 *.pyc
+*.pyo
 *.swp
 local_settings.py

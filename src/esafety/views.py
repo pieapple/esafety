@@ -16,3 +16,5 @@ def admin_index(request):
         return HttpResponseRedirect(reverse("view_employee_training_list"))
     else:
         return HttpResponse("不允许访问, 请注销重新登陆！<a href='/accounts/logout'>注销</a>")
+
+def 

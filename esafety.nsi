@@ -35,7 +35,7 @@
   ; Instfiles page
   !insertmacro MUI_PAGE_INSTFILES
   ; Finish page
-  !define MUI_FINISHPAGE_RUN "$INSTDIR\start.bat"
+  !define MUI_FINISHPAGE_RUN "$INSTDIR\start_min.bat"
   !insertmacro MUI_PAGE_FINISH
 
   !insertmacro MUI_UNPAGE_WELCOME
@@ -70,11 +70,12 @@
     SectionIn RO
     SetOverwrite on
     SetOutPath "$INSTDIR"
-    File release\start.bat
     File /r /x *.pyc /x *.pyo "release\Python27"
     File /r "release\Apache2.2"
     File /r "release\website"
-    File /r "release\start.bat"
+    File "release\start.bat"
+    File "release\start_min.bat"
+    File "esafety.ico"
 
     WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\esafety" "DisplayName" "${PRODUCT_NAME}"
     WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\esafety" "UninstallString" '"$INSTDIR\uninstall.exe"'
@@ -85,11 +86,11 @@
 
   SectionGroup /e "快捷方式" SECGRP_SHORTCUT
     Section "桌面" SEC_DESKTOP
-      CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\start.bat"
+      CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\start_min.bat" "" "$INSTDIR\esafety.ico" 0
     SectionEnd
     Section "开始菜单" SEC_SMPROGRAMS
       CreateDirectory "$SMPROGRAMS\${PRODUCT_NAME}"
-      CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\启动系统.lnk" "$INSTDIR\start.bat"
+      CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\启动系统.lnk" "$INSTDIR\start_min.bat" "" "$INSTDIR\esafety.ico" 0
       CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\卸载程序.lnk" "$INSTDIR\Uninstall.exe"
     SectionEnd
   SectionGroupEnd
@@ -132,7 +133,7 @@ FunctionEnd
 ;--------------------------------
 ;Version Information
 
-  VIProductVersion "1.2.3.4"
+  VIProductVersion "1.0.0.0"
   VIAddVersionKey /LANG=${LANG_SIMPCHINESE} "ProductName" ${PRODUCT_NAME}
   VIAddVersionKey /LANG=${LANG_SIMPCHINESE} "Comments" ""
   VIAddVersionKey /LANG=${LANG_SIMPCHINESE} "CompanyName" "pieapple && snakeqing"
